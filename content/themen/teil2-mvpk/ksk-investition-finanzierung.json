@@ -141,6 +141,82 @@
       "optionen": ["Sie berücksichtigt den zeitlichen Anfall der Zahlungen durch Abzinsung.", "Sie kommt ohne Zinssatz aus.", "Sie betrachtet nur ein durchschnittliches Jahr.", "Sie ist einfacher zu berechnen."],
       "loesung": 0,
       "erklaerung": "Dynamische Verfahren (Kapitalwert, interner Zinsfuß, Annuitätenmethode) betrachten die gesamte Nutzungsdauer und bewerten frühere Zahlungen höher als spätere. Statische Verfahren rechnen mit Durchschnittswerten einer Periode."
+    },
+    {
+      "id": "if-16",
+      "typ": "zahl",
+      "frage": "Gewinnvergleich für eine neue Laserschneidanlage: erwarteter Absatz {{x}} Teile/Jahr zu {{p|€}}. Fixkosten (inkl. kalk. AfA und Zinsen) {{kf|€}}/Jahr, variable Kosten {{kv|€}}/Teil.\n\nWie hoch ist der **jährliche Gewinn**?",
+      "vars": {
+        "x": 30000,
+        "p": 6.8,
+        "kf": 72000,
+        "kv": 3.6
+      },
+      "calc": "r2(x*p - kf - x*kv)",
+      "einheit": "€",
+      "loesung": 24000,
+      "erklaerung": "Erlöse = {{x}} × {{p|€}} = {{x*p|€}}\nKosten = {{kf|€}} + {{x}} × {{kv|€}} = {{kf + x*kv|€}}\nGewinn = **{{r2(x*p - kf - x*kv)|€}}**"
+    },
+    {
+      "id": "if-17",
+      "typ": "zahl",
+      "frage": "Maschine A: Fixkosten {{kfA|€}}/Jahr, variable Kosten {{kvA|€}}/Stück. Geplant sind {{x}} Stück/Jahr.\n\nWie hoch sind die **Stückkosten** (zwei Nachkommastellen)?",
+      "vars": {
+        "kfA": 39800,
+        "kvA": 1.9,
+        "x": 22000
+      },
+      "calc": "r2(kfA/x + kvA)",
+      "einheit": "€",
+      "loesung": 3.71,
+      "erklaerung": "k = {{kfA}} ÷ {{x}} + {{kvA}} = {{kfA/x|€}} + {{kvA|€}} = **{{r2(kfA/x + kvA)|€}}**"
+    },
+    {
+      "id": "if-18",
+      "typ": "zahl",
+      "frage": "Ein Annuitätendarlehen über {{k|€}} hat einen Zinssatz von {{i|%}} und eine Laufzeit von {{n}} Jahren.\n\nWie hoch ist die **jährliche Annuität**?",
+      "vars": {
+        "k": 150000,
+        "i": 4.5,
+        "n": 6
+      },
+      "calc": "r2(annuitaet(k,i,n))",
+      "einheit": "€",
+      "loesung": 29081.76,
+      "erklaerung": "Annuität = K × (q^n × (q − 1)) ÷ (q^n − 1) mit q = {{1+i/100}}\n= {{k}} × {{r(annuitaet(1,i,n),6)}} (Annuitätenfaktor) = **{{r2(annuitaet(k,i,n))|€}}**\nGesamtzinsen über die Laufzeit = {{r2(annuitaet(k,i,n))*n - k|€}}"
+    },
+    {
+      "id": "if-19",
+      "typ": "zahl",
+      "frage": "Für einen Stapler gibt es zwei Angebote über 4 Jahre:\n- Leasing: Sonderzahlung {{sz|€}}, monatliche Rate {{rate|€}}, kein Restwert\n- Kreditkauf: Kaufpreis {{kp|€}}, Zinsen gesamt {{zins|€}}, Restwert nach 4 Jahren {{rw|€}}\n\nUm wie viel Euro ist die **günstigere Variante** billiger? (Betrag positiv)",
+      "vars": {
+        "sz": 3000,
+        "rate": 690,
+        "kp": 32000,
+        "zins": 3400,
+        "rw": 6000
+      },
+      "calc": "abs((sz + rate*48) - (kp + zins - rw))",
+      "einheit": "€",
+      "loesung": 6720,
+      "erklaerung": "Leasing: {{sz|€}} + 48 × {{rate|€}} = {{sz + rate*48|€}}\nKreditkauf: {{kp|€}} + {{zins|€}} − Restwert {{rw|€}} = {{kp + zins - rw|€}}\nDifferenz = **{{abs((sz + rate*48) - (kp + zins - rw))|€}}** zugunsten {{(sz + rate*48) < (kp + zins - rw) ? 'Leasing' : 'Kreditkauf'}}. Qualitativ: Liquidität, Bilanz, Service, technischer Fortschritt."
+    },
+    {
+      "id": "if-20",
+      "typ": "zahl",
+      "frage": "Eine Investition kostet {{a0|€}}, bringt {{n}} Jahre lang jährlich {{rf|€}} Rückfluss und hat am Ende einen Restwert von {{rw|€}}. Kalkulationszinssatz {{i|%}}.\n\nBerechnen Sie den **Kapitalwert** (auf ganze Euro gerundet).",
+      "vars": {
+        "a0": 90000,
+        "n": 4,
+        "rf": 24000,
+        "rw": 10000,
+        "i": 7
+      },
+      "calc": "r0(-a0 + abzinsen(rf,i,1) + abzinsen(rf,i,2) + abzinsen(rf,i,3) + abzinsen(rf + rw,i,4))",
+      "einheit": "€",
+      "toleranz": 1,
+      "loesung": -1078,
+      "erklaerung": "Barwerte: {{abzinsen(rf,i,1)|€}} + {{abzinsen(rf,i,2)|€}} + {{abzinsen(rf,i,3)|€}} + ({{rf}} + {{rw}}) ÷ 1,07⁴ = {{abzinsen(rf + rw,i,4)|€}}\nKapitalwert = Summe − {{a0|€}} = **{{r0(-a0 + abzinsen(rf,i,1) + abzinsen(rf,i,2) + abzinsen(rf,i,3) + abzinsen(rf + rw,i,4))|€}}**"
     }
   ],
   "karten": [

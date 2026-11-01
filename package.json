@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "test": "node scripts/test-content.mjs && node tests/merge.test.mjs",
     "fill": "node scripts/fill-answers.mjs",
-    "icons": "node scripts/make-icons.mjs"
+    "icons": "node scripts/make-icons.mjs",
+    "uebersicht": "node scripts/uebersicht.mjs"
   },
   "devDependencies": {
     "vite": "6.4.1"

@@ -123,6 +123,33 @@
       "optionen": ["Die Tarifverträge gelten für ihn kraft arbeitsvertraglicher Bezugnahme.", "Die Tarifverträge gelten für ihn nicht, da er nicht Gewerkschaftsmitglied ist.", "Die Tarifverträge gelten nur, wenn der Betriebsrat zustimmt.", "Für ihn gilt ausschließlich der Mindestlohn."],
       "loesung": 0,
       "erklaerung": "Kraft Gesetzes (§ 3 TVG) gilt ein Tarifvertrag nur bei beiderseitiger Tarifbindung. Arbeitgeber wenden ihn aber meist über eine **Bezugnahmeklausel** auf alle an, um keinen Anreiz zum Gewerkschaftseintritt zu schaffen und einheitliche Bedingungen zu haben."
+    },
+    {
+      "id": "wt-16",
+      "typ": "zahl",
+      "frage": "Ein Tarifabschluss sieht vor: ab Januar +{{s1|%}}, ab Oktober desselben Jahres weitere +{{s2|%}} (auf das erhöhte Entgelt). Das Monatsentgelt beträgt vorher {{alt|€}}.\n\nWie hoch ist das **Monatsentgelt ab Oktober**?",
+      "vars": {
+        "s1": 2.8,
+        "s2": 2.2,
+        "alt": 3420
+      },
+      "calc": "r2(r2(alt*(1+s1/100))*(1+s2/100))",
+      "einheit": "€",
+      "loesung": 3593.11,
+      "erklaerung": "Ab Januar: {{alt|€}} × {{1+s1/100}} = {{r2(alt*(1+s1/100))|€}}\nAb Oktober: × {{1+s2/100}} = **{{r2(r2(alt*(1+s1/100))*(1+s2/100))|€}}** (Gesamterhöhung {{r2((r2(r2(alt*(1+s1/100))*(1+s2/100))/alt-1)*100)|%}} – mehr als {{s1+s2|%}}, weil die zweite Stufe auf die erste aufbaut)."
+    },
+    {
+      "id": "wt-17",
+      "typ": "zahl",
+      "frage": "In der Urabstimmung einer Gewerkschaft stimmen {{ja}} von {{mitgl}} stimmberechtigten Mitgliedern für einen Streik. Die Satzung verlangt mindestens 75 %.\n\nWie viel Prozent haben zugestimmt? (zwei Nachkommastellen)",
+      "vars": {
+        "ja": 6815,
+        "mitgl": 8740
+      },
+      "calc": "r2(ja/mitgl*100)",
+      "einheit": "%",
+      "loesung": 77.97,
+      "erklaerung": "{{ja}} ÷ {{mitgl}} × 100 = **{{r2(ja/mitgl*100)|%}}** → {{ja/mitgl >= 0.75 ? 'die 75-%-Hürde ist erreicht, Streik möglich' : 'unter 75 % – kein Streik'}}."
     }
   ],
   "karten": [

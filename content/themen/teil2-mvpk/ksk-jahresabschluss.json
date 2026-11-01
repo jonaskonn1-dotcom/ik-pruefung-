@@ -132,6 +132,74 @@
       "optionen": ["Um Positionen nach Fristigkeit (kurz-/langfristig) zusammenzufassen und vergleichbare Kennzahlen bilden zu können", "Um den Jahresüberschuss steuerlich zu senken", "Um die Bilanz im Handelsregister zu veröffentlichen", "Um die GuV zu ersetzen"],
       "loesung": 0,
       "erklaerung": "Strukturbilanz: AV, Vorräte, Forderungen, flüssige Mittel / EK, lang- und kurzfristiges FK. Rückstellungen und Verbindlichkeiten werden nach Laufzeit zugeordnet, ggf. der Bilanzgewinn (Ausschüttung) ins kurzfristige FK."
+    },
+    {
+      "id": "ja-16",
+      "typ": "zahl",
+      "frage": "Jahresüberschuss {{g}} Tsd. €, Eigenkapital zu Jahresbeginn {{ek0}} Tsd. €, zum Jahresende {{ek1}} Tsd. €.\n\nBerechnen Sie die **Eigenkapitalrentabilität** auf Basis des durchschnittlichen Eigenkapitals (zwei Nachkommastellen).",
+      "vars": {
+        "g": 420,
+        "ek0": 3300,
+        "ek1": 3500
+      },
+      "calc": "r2(g/((ek0+ek1)/2)*100)",
+      "einheit": "%",
+      "loesung": 12.35,
+      "erklaerung": "Ø EK = ({{ek0}} + {{ek1}}) ÷ 2 = {{(ek0+ek1)/2}}\nEK-Rentabilität = {{g}} ÷ {{(ek0+ek1)/2}} × 100 = **{{r2(g/((ek0+ek1)/2)*100)|%}}**"
+    },
+    {
+      "id": "ja-17",
+      "typ": "zahl",
+      "frage": "Eigenkapital {{ek}} Tsd. €, langfristiges Fremdkapital {{lfk}} Tsd. €, kurzfristiges Fremdkapital {{kfk}} Tsd. €.\n\nWie hoch ist der **Verschuldungsgrad** (zwei Nachkommastellen)?",
+      "vars": {
+        "ek": 3500,
+        "lfk": 3900,
+        "kfk": 2600
+      },
+      "calc": "r2((lfk+kfk)/ek*100)",
+      "einheit": "%",
+      "loesung": 185.71,
+      "erklaerung": "Verschuldungsgrad = FK ÷ EK × 100 = ({{lfk}} + {{kfk}}) ÷ {{ek}} × 100 = **{{r2((lfk+kfk)/ek*100)|%}}**\nAuf 1 € Eigenkapital kommen {{r2((lfk+kfk)/ek)}} € Fremdkapital."
+    },
+    {
+      "id": "ja-18",
+      "typ": "zahl",
+      "frage": "Flüssige Mittel {{fm}} Tsd. €, kurzfristige Verbindlichkeiten {{kfk}} Tsd. €.\n\nBerechnen Sie die **Liquidität 1. Grades** (zwei Nachkommastellen).",
+      "vars": {
+        "fm": 400,
+        "kfk": 2600
+      },
+      "calc": "r2(fm/kfk*100)",
+      "einheit": "%",
+      "loesung": 15.38,
+      "erklaerung": "Liquidität I = {{fm}} ÷ {{kfk}} × 100 = **{{r2(fm/kfk*100)|%}}** (Richtwert ca. 10–30 %)."
+    },
+    {
+      "id": "ja-19",
+      "typ": "zahl",
+      "frage": "Umlaufvermögen {{uv}} Tsd. €, kurzfristige Verbindlichkeiten {{kfk}} Tsd. €.\n\nBerechnen Sie die **Liquidität 3. Grades** (zwei Nachkommastellen).",
+      "vars": {
+        "uv": 3800,
+        "kfk": 2600
+      },
+      "calc": "r2(uv/kfk*100)",
+      "einheit": "%",
+      "loesung": 146.15,
+      "erklaerung": "Liquidität III = {{uv}} ÷ {{kfk}} × 100 = **{{r2(uv/kfk*100)|%}}** (Richtwert 150–200 %, hier knapp darunter)."
+    },
+    {
+      "id": "ja-20",
+      "typ": "zahl",
+      "frage": "Umsatzerlöse {{u}} Tsd. €, Gewinn {{g}} Tsd. €, Gesamtkapital {{gk}} Tsd. €.\n\nBerechnen Sie den **Return on Investment (ROI)** über Umsatzrentabilität × Kapitalumschlag (zwei Nachkommastellen).",
+      "vars": {
+        "u": 16800,
+        "g": 420,
+        "gk": 10000
+      },
+      "calc": "r2(g/u * u/gk * 100)",
+      "einheit": "%",
+      "loesung": 4.2,
+      "erklaerung": "Umsatzrentabilität = {{g}} ÷ {{u}} = {{g/u*100|%}}\nKapitalumschlag = {{u}} ÷ {{gk}} = {{u/gk}}\nROI = {{g/u*100}} % × {{u/gk}} = **{{r2(g/u * u/gk * 100)|%}}**"
     }
   ],
   "karten": [

@@ -124,6 +124,50 @@
       "einheit": "€",
       "loesung": 17158,
       "erklaerung": "Anzeigen {{anz|€}} + Berater {{berater|€}} + Auswahl {{zeit}} × {{satz|€}} = {{zeit*satz|€}} + Einarbeitung {{einarb|€}} = **{{anz + berater + zeit*satz + einarb|€}}**\nSolche Zahlen zeigen, warum niedrige Fluktuation wirtschaftlich wichtig ist."
+    },
+    {
+      "id": "pp-16",
+      "typ": "zahl",
+      "frage": "Im Versand gab es im Jahr {{krank}} Krankheitstage bei {{ma}} Mitarbeitenden und {{soll}} Soll-Arbeitstagen je Mitarbeitendem.\n\nWie hoch ist die **Krankenquote** (zwei Nachkommastellen)?",
+      "vars": {
+        "krank": 312,
+        "ma": 18,
+        "soll": 220
+      },
+      "calc": "r2(krank/(ma*soll)*100)",
+      "einheit": "%",
+      "loesung": 7.88,
+      "erklaerung": "Soll-Arbeitstage gesamt = {{ma}} × {{soll}} = {{ma*soll}}\nKrankenquote = {{krank}} ÷ {{ma*soll}} × 100 = **{{r2(krank/(ma*soll)*100)|%}}**"
+    },
+    {
+      "id": "pp-17",
+      "typ": "zahl",
+      "frage": "Für die Auftragsabwicklung im Vertrieb werden {{auftr}} Aufträge pro Jahr erwartet, je Auftrag {{min}} Minuten. Eine Vollzeitkraft arbeitet {{tage}} Tage à {{std}} Stunden; die Ausfallzeit (Urlaub ist schon berücksichtigt, Krankheit) beträgt {{ausf|%}}.\n\nWie viele **Vollzeitkräfte** werden benötigt? (zwei Nachkommastellen)",
+      "vars": {
+        "auftr": 21000,
+        "min": 25,
+        "tage": 205,
+        "std": 7.5,
+        "ausf": 6
+      },
+      "calc": "r2(auftr*min/60 / (tage*std*(1-ausf/100)))",
+      "einheit": "VZK",
+      "loesung": 6.05,
+      "erklaerung": "Bedarf = {{auftr}} × {{min}} ÷ 60 = {{auftr*min/60|n0}} Std.\nVerfügbar je VZK = {{tage}} × {{std}} × {{1-ausf/100}} = {{tage*std*(1-ausf/100)|n2}} Std.\nVZK = **{{r2(auftr*min/60 / (tage*std*(1-ausf/100)))}}**"
+    },
+    {
+      "id": "pp-18",
+      "typ": "zahl",
+      "frage": "Für Personalentwicklung standen {{budget|€}} zur Verfügung. {{tn}} Mitarbeitende nahmen an Schulungen teil; die Kosten betrugen {{kosten|€}}.\n\nWie hoch sind die **Weiterbildungskosten je Teilnehmer**? (zwei Nachkommastellen)",
+      "vars": {
+        "budget": 60000,
+        "tn": 74,
+        "kosten": 52540
+      },
+      "calc": "r2(kosten/tn)",
+      "einheit": "€",
+      "loesung": 710,
+      "erklaerung": "{{kosten|€}} ÷ {{tn}} = **{{r2(kosten/tn)|€}}** je Teilnehmer. Budgetausschöpfung: {{r2(kosten/budget*100)|%}}."
     }
   ],
   "karten": [

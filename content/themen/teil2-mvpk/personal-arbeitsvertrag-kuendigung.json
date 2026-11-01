@@ -120,6 +120,34 @@
       "optionen": ["Er beendet das Arbeitsverhältnis einvernehmlich ohne Kündigungsfristen und Kündigungsschutz, kann aber zu einer Sperrzeit beim Arbeitslosengeld führen.", "Er muss vom Betriebsrat genehmigt werden.", "Er kann mündlich geschlossen werden.", "Er ist nur bei Schwerbehinderten zulässig."],
       "loesung": 0,
       "erklaerung": "Aufhebungsvertrag: beidseitige Vereinbarung, **Schriftform** (§ 623 BGB), keine Anhörung des BR, kein Kündigungsschutz. Risiko für AN: Sperrzeit von bis zu 12 Wochen beim Arbeitslosengeld, wenn kein wichtiger Grund vorliegt."
+    },
+    {
+      "id": "pk-16",
+      "typ": "zahl",
+      "frage": "Ein Mitarbeiter mit {{jahresurlaub}} Arbeitstagen Jahresurlaub scheidet nach erfüllter Wartezeit zum **30. Juni** aus. Er hat in diesem Jahr bereits {{genommen}} Tage genommen.\n\nWie viele Urlaubstage stehen ihm **noch zu** (Teilurlaub nach § 5 BUrlG: 1/12 je vollem Monat, Austritt in der ersten Jahreshälfte)?",
+      "vars": {
+        "jahresurlaub": 30,
+        "genommen": 9
+      },
+      "calc": "jahresurlaub*6/12 - genommen",
+      "einheit": "Tage",
+      "toleranz": 0,
+      "loesung": 6,
+      "erklaerung": "Teilurlaub = {{jahresurlaub}} × 6/12 = {{jahresurlaub*6/12}} Tage\n− bereits genommen {{genommen}} = **{{jahresurlaub*6/12 - genommen}} Tage** (Bruchteile ab einem halben Tag werden aufgerundet)."
+    },
+    {
+      "id": "pk-17",
+      "typ": "zahl",
+      "frage": "Eine Mitarbeiterin kann wegen der Beendigung des Arbeitsverhältnisses {{rest}} Urlaubstage nicht mehr nehmen. Ihr Monatsgehalt beträgt {{gehalt|€}}; gerechnet wird mit {{tage}} Arbeitstagen pro Monat (vereinfacht).\n\nWie hoch ist die **Urlaubsabgeltung** (brutto)?",
+      "vars": {
+        "rest": 7,
+        "gehalt": 3510,
+        "tage": 21.75
+      },
+      "calc": "r2(gehalt/tage*rest)",
+      "einheit": "€",
+      "loesung": 1129.66,
+      "erklaerung": "Tagessatz = {{gehalt|€}} ÷ {{tage}} = {{gehalt/tage|€}}\nAbgeltung = {{gehalt/tage|€}} × {{rest}} = **{{r2(gehalt/tage*rest)|€}}** (§ 7 Abs. 4 BUrlG – nur bei Beendigung zulässig, steuer- und SV-pflichtig)."
     }
   ],
   "karten": [

@@ -127,6 +127,47 @@
       "optionen": ["Nach den vereinbarten Beteiligungsverhältnissen, hilfsweise nach dem Verhältnis der vereinbarten Werte der Beiträge", "4 % auf die Kapitalanteile, Rest nach Köpfen", "Nur nach Köpfen", "Ausschließlich an den geschäftsführenden Gesellschafter"],
       "loesung": 0,
       "erklaerung": "Das Gesetz zur Modernisierung des Personengesellschaftsrechts (MoPeG, in Kraft seit 01.01.2024) hat die alte Regel „4 % Vorabverzinsung, Rest nach Köpfen“ abgeschafft (§ 120 HGB i. V. m. § 709 Abs. 3 BGB). In der Praxis regelt der Gesellschaftsvertrag die Verteilung. Ältere Lehrbücher enthalten noch die 4-%-Regel!"
+    },
+    {
+      "id": "wr-16",
+      "typ": "zahl",
+      "frage": "Laut Gesellschaftsvertrag einer KG erhält jeder Gesellschafter zunächst {{vz|%}} auf seinen Kapitalanteil, der Rest wird im Verhältnis 3 : 1 auf Komplementär und Kommanditistin verteilt. Kapital: Komplementär {{k1|€}}, Kommanditistin {{k2|€}}. Gewinn {{g|€}}.\n\nWie hoch ist der **Gewinnanteil der Kommanditistin**?",
+      "vars": {
+        "vz": 5,
+        "k1": 400000,
+        "k2": 200000,
+        "g": 150000
+      },
+      "calc": "k2*vz/100 + (g - (k1+k2)*vz/100)/4",
+      "einheit": "€",
+      "loesung": 40000,
+      "erklaerung": "Vorabverzinsung: Komplementär {{k1*vz/100|€}}, Kommanditistin {{k2*vz/100|€}}\nRestgewinn = {{g|€}} − {{(k1+k2)*vz/100|€}} = {{g - (k1+k2)*vz/100|€}} → ¼ für die Kommanditistin = {{(g - (k1+k2)*vz/100)/4|€}}\nAnteil Kommanditistin = **{{k2*vz/100 + (g - (k1+k2)*vz/100)/4|€}}**\n(Die Verteilung folgt hier dem Gesellschaftsvertrag – gesetzlich gilt seit MoPeG das Beteiligungsverhältnis.)"
+    },
+    {
+      "id": "wr-17",
+      "typ": "zahl",
+      "frage": "Eine UG (haftungsbeschränkt) erzielt einen Jahresüberschuss von {{jue|€}} (kein Verlustvortrag).\n\nWelchen Betrag muss sie mindestens in die **gesetzliche Rücklage** einstellen?",
+      "vars": {
+        "jue": 18400
+      },
+      "calc": "jue*0.25",
+      "einheit": "€",
+      "loesung": 4600,
+      "erklaerung": "§ 5a Abs. 3 GmbHG: ein Viertel des Jahresüberschusses (gemindert um einen Verlustvortrag) = {{jue|€}} × 25 % = **{{jue*0.25|€}}** – so lange, bis das Stammkapital von 25.000 € erreicht werden kann."
+    },
+    {
+      "id": "wr-18",
+      "typ": "zahl",
+      "frage": "Eine Aktiengesellschaft schüttet insgesamt {{aus|€}} Dividende aus. Das Grundkapital von {{gk|€}} ist in Stückaktien mit einem rechnerischen Anteil von 1 € aufgeteilt. Eine Aktionärin besitzt {{stk}} Aktien.\n\nWie hoch ist ihre **Bruttodividende**?",
+      "vars": {
+        "aus": 1350000,
+        "gk": 9000000,
+        "stk": 2400
+      },
+      "calc": "r2(aus/gk*stk)",
+      "einheit": "€",
+      "loesung": 360,
+      "erklaerung": "Dividende je Aktie = {{aus}} ÷ {{gk}} Aktien = {{aus/gk|€}}\n× {{stk}} Aktien = **{{r2(aus/gk*stk)|€}}** (davon werden Kapitalertragsteuer und Soli einbehalten)."
     }
   ],
   "karten": [

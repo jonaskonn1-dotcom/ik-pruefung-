@@ -132,6 +132,87 @@
       "einheit": "€",
       "loesung": 23.8,
       "erklaerung": "Materialkosten = {{fm|€}} × {{1+mgk/100}} = {{r2(fm*(1+mgk/100))|€}}\nMaschinenkosten = {{mss|€}} × {{min}}/60 Std. = {{mss*min/60|€}}\nFertigungslöhne + Rest-FGK = {{fl|€}} × {{1+rfgk/100}} = {{r2(fl*(1+rfgk/100))|€}}\n**Herstellkosten** = {{r2(fm*(1+mgk/100) + mss*min/60 + fl*(1+rfgk/100))|€}}"
+    },
+    {
+      "id": "klr-16",
+      "typ": "zahl",
+      "frage": "In der Ergebnistabelle stehen bilanzielle Abschreibungen von {{bafa|€}} und kalkulatorische Abschreibungen von {{kafa|€}}; außerdem Zinsaufwendungen von {{zaufw|€}} und kalkulatorische Zinsen von {{kz|€}}.\n\nWie hoch ist das **Ergebnis aus kostenrechnerischen Korrekturen**? (positiv = Erfolg)",
+      "vars": {
+        "bafa": 410000,
+        "kafa": 460000,
+        "zaufw": 260000,
+        "kz": 310000
+      },
+      "calc": "(bafa + zaufw) - (kafa + kz)",
+      "einheit": "€",
+      "loesung": -100000,
+      "erklaerung": "Kostenrechnerische Korrekturen: aufwandsseitig (FiBu) − kostenseitig (KLR)\n= ({{bafa}} + {{zaufw}}) − ({{kafa}} + {{kz}}) = **{{(bafa + zaufw) - (kafa + kz)|€}}**\nNegativ bedeutet: In der KLR wurden mehr Kosten verrechnet als Aufwand angefallen ist – das Betriebsergebnis ist entsprechend niedriger als das Gesamtergebnis."
+    },
+    {
+      "id": "klr-17",
+      "typ": "zahl",
+      "frage": "Die Forderungsausfälle der letzten drei Jahre betrugen {{a1|€}}, {{a2|€}} und {{a3|€}} bei Umsätzen von {{u1|€}}, {{u2|€}} und {{u3|€}}. Für das laufende Jahr wird ein Umsatz von {{u|€}} geplant.\n\nWie hoch ist das **kalkulatorische Wagnis** (Durchschnittssatz der Vorjahre)?",
+      "vars": {
+        "a1": 42000,
+        "a2": 51000,
+        "a3": 33000,
+        "u1": 15200000,
+        "u2": 16100000,
+        "u3": 16700000,
+        "u": 16800000
+      },
+      "calc": "r2(u * (a1+a2+a3)/(u1+u2+u3))",
+      "einheit": "€",
+      "loesung": 44100,
+      "erklaerung": "Wagnissatz = Σ Ausfälle ÷ Σ Umsätze = {{a1+a2+a3|€}} ÷ {{u1+u2+u3|€}} = {{(a1+a2+a3)/(u1+u2+u3)*100|%}}\nKalk. Wagnis = {{u|€}} × {{(a1+a2+a3)/(u1+u2+u3)*100|%}} = **{{r2(u * (a1+a2+a3)/(u1+u2+u3))|€}}**"
+    },
+    {
+      "id": "klr-18",
+      "typ": "zahl",
+      "frage": "Im BAB hat die Fertigungshauptstelle primäre Gemeinkosten von {{prim|€}}. Von der Hilfskostenstelle Energie ({{energie|€}}) erhält sie {{anteil|%}}. Die Fertigungslöhne betragen {{fl|€}}.\n\nBerechnen Sie den **FGK-Zuschlagssatz** nach der Umlage (zwei Nachkommastellen).",
+      "vars": {
+        "prim": 318000,
+        "energie": 64000,
+        "anteil": 75,
+        "fl": 240000
+      },
+      "calc": "r2((prim + energie*anteil/100)/fl*100)",
+      "einheit": "%",
+      "loesung": 152.5,
+      "erklaerung": "Umlage Energie = {{energie|€}} × {{anteil|%}} = {{energie*anteil/100|€}}\nFGK gesamt = {{prim|€}} + {{energie*anteil/100|€}} = {{prim + energie*anteil/100|€}}\nZuschlagssatz = {{prim + energie*anteil/100}} ÷ {{fl}} × 100 = **{{r2((prim + energie*anteil/100)/fl*100)|%}}**"
+    },
+    {
+      "id": "klr-19",
+      "typ": "zahl",
+      "frage": "Kostenträgerzeitrechnung für die Produktgruppe Gehäuse im Quartal: Umsatzerlöse {{u|€}}, Selbstkosten des Umsatzes (Istkosten) {{sk|€}}, Selbstkosten des Umsatzes zu Normalkosten {{skn|€}}.\n\nWie hoch ist das **Umsatzergebnis** (Basis Normalkosten)?",
+      "vars": {
+        "u": 1860000,
+        "sk": 1742000,
+        "skn": 1715000
+      },
+      "calc": "u - skn",
+      "einheit": "€",
+      "loesung": 145000,
+      "erklaerung": "Umsatzergebnis = Umsatzerlöse − Selbstkosten des Umsatzes (Normal) = {{u|€}} − {{skn|€}} = **{{u-skn|€}}**\nKostenunterdeckung = {{skn|€}} − {{sk|€}} = {{skn-sk|€}}\nBetriebsergebnis = Umsatzergebnis + Über-/Unterdeckung = {{u-skn + skn-sk|€}} (= Umsatz − Istkosten)."
+    },
+    {
+      "id": "klr-20",
+      "typ": "zahl",
+      "frage": "Normalgemeinkosten laut BAB: Material {{nm|€}}, Fertigung {{nf|€}}, Verwaltung {{nv|€}}, Vertrieb {{nt|€}}. Istgemeinkosten: Material {{im|€}}, Fertigung {{if_|€}}, Verwaltung {{iv|€}}, Vertrieb {{it|€}}.\n\nWie hoch ist die **gesamte Kostenüber- bzw. -unterdeckung**? (Überdeckung positiv)",
+      "vars": {
+        "nm": 36000,
+        "nf": 288000,
+        "nv": 72000,
+        "nt": 54000,
+        "im": 37800,
+        "if_": 279500,
+        "iv": 74100,
+        "it": 52300
+      },
+      "calc": "(nm+nf+nv+nt) - (im+if_+iv+it)",
+      "einheit": "€",
+      "loesung": 6300,
+      "erklaerung": "Normal gesamt = {{nm+nf+nv+nt|€}}\nIst gesamt = {{im+if_+iv+it|€}}\nDifferenz = **{{(nm+nf+nv+nt) - (im+if_+iv+it)|€}}** → {{(nm+nf+nv+nt) - (im+if_+iv+it) >= 0 ? 'Überdeckung' : 'Unterdeckung'}}\nJe Stelle: Material {{nm-im|€}}, Fertigung {{nf-if_|€}}, Verwaltung {{nv-iv|€}}, Vertrieb {{nt-it|€}}."
     }
   ],
   "karten": [

@@ -132,6 +132,81 @@
       "einheit": "%",
       "loesung": 17.17,
       "erklaerung": "Sicherheitskoeffizient = (Ist-Menge − BEP-Menge) ÷ Ist-Menge × 100 = ({{x}} − {{bep}}) ÷ {{x}} × 100 = **{{r2((x - bep)/x*100)|%}}**\nDer Absatz darf um diesen Prozentsatz sinken, bevor Verlust entsteht."
+    },
+    {
+      "id": "tk-16",
+      "typ": "zahl",
+      "frage": "Die Halterung H-50 wird für {{p|€}} verkauft (kv {{kv|€}}, Kf {{kf|€}}, Absatz {{x}} Stück). Der Vertrieb schlägt eine Preissenkung auf {{p2|€}} vor, wodurch der Absatz auf {{x2}} Stück steigen soll.\n\nUm wie viel Euro **verändert sich das Betriebsergebnis**? (Verschlechterung negativ)",
+      "vars": {
+        "p": 14.2,
+        "kv": 8.7,
+        "kf": 41000,
+        "x": 9000,
+        "p2": 13.4,
+        "x2": 10200
+      },
+      "calc": "r2((p2-kv)*x2 - (p-kv)*x)",
+      "einheit": "€",
+      "loesung": -1560,
+      "erklaerung": "Bisher: DB = {{p-kv|€}} × {{x}} = {{(p-kv)*x|€}}\nNeu: DB = {{p2-kv|€}} × {{x2}} = {{(p2-kv)*x2|€}}\nDie Fixkosten bleiben gleich → Ergebnisänderung = **{{r2((p2-kv)*x2 - (p-kv)*x)|€}}**"
+    },
+    {
+      "id": "tk-17",
+      "typ": "zahl",
+      "frage": "Ein Zusatzauftrag über {{z}} Gehäuse zu {{pz|€}}/Stück erfordert ein Spezialwerkzeug für {{wz|€}} (auftragsfixe Kosten). Variable Kosten {{kv|€}}/Stück, freie Kapazität ist vorhanden.\n\nUm wie viel Euro **verändert sich das Betriebsergebnis** bei Annahme?",
+      "vars": {
+        "z": 400,
+        "pz": 104,
+        "kv": 92,
+        "wz": 3500
+      },
+      "calc": "(pz - kv)*z - wz",
+      "einheit": "€",
+      "loesung": 1300,
+      "erklaerung": "DB des Auftrags = ({{pz}} − {{kv}}) × {{z}} = {{(pz-kv)*z|€}}\n− auftragsfixe Kosten {{wz|€}}\n= **{{(pz - kv)*z - wz|€}}** → {{(pz - kv)*z - wz > 0 ? 'annehmen' : 'ablehnen'}}"
+    },
+    {
+      "id": "tk-18",
+      "typ": "zahl",
+      "frage": "Mit den Daten des Zusatzauftrags ({{z}} Stück, kv {{kv|€}}, Spezialwerkzeug {{wz|€}}):\n\nWo liegt die **Preisuntergrenze je Stück** für diesen Auftrag? (zwei Nachkommastellen)",
+      "vars": {
+        "z": 400,
+        "kv": 92,
+        "wz": 3500
+      },
+      "calc": "r2(kv + wz/z)",
+      "einheit": "€",
+      "loesung": 100.75,
+      "erklaerung": "PUG = kv + auftragsfixe Kosten ÷ Menge = {{kv}} + {{wz}} ÷ {{z}} = **{{r2(kv + wz/z)|€}}**"
+    },
+    {
+      "id": "tk-19",
+      "typ": "zahl",
+      "frage": "Ein Produkt hat einen Stückdeckungsbeitrag von {{db|€}} und einen Preis von {{p|€}}. Die Fixkosten betragen {{kf|€}}.\n\nWie hoch ist der **Break-even-Umsatz** in Euro?",
+      "vars": {
+        "db": 24,
+        "p": 80,
+        "kf": 168000
+      },
+      "calc": "kf/db*p",
+      "einheit": "€",
+      "loesung": 560000,
+      "erklaerung": "Break-even-Menge = {{kf}} ÷ {{db}} = {{kf/db}} Stück\nBreak-even-Umsatz = {{kf/db}} × {{p|€}} = **{{kf/db*p|€}}**\nAlternativ: Kf ÷ DB-Quote = {{kf}} ÷ ({{db}} ÷ {{p}}) = {{kf/(db/p)|€}}"
+    },
+    {
+      "id": "tk-20",
+      "typ": "zahl",
+      "frage": "Der Lieferant der Dichtungen erhöht den Preis bei Fremdbezug auf {{pb|€}}/Stück. Eigenfertigung: Fixkosten {{kf|€}}/Jahr, variable Kosten {{kv|€}}/Stück. Bedarf {{x}} Stück/Jahr.\n\nWie hoch ist die **jährliche Kostenersparnis** durch Eigenfertigung?",
+      "vars": {
+        "pb": 1.95,
+        "kf": 24000,
+        "kv": 1.15,
+        "x": 52000
+      },
+      "calc": "r2(pb*x - (kf + kv*x))",
+      "einheit": "€",
+      "loesung": 17600,
+      "erklaerung": "Fremdbezug: {{pb}} × {{x}} = {{pb*x|€}}\nEigenfertigung: {{kf}} + {{kv}} × {{x}} = {{kf+kv*x|€}}\nErsparnis = **{{r2(pb*x - (kf + kv*x))|€}}** (kritische Menge jetzt {{kf/(pb-kv)|n0}} Stück)."
     }
   ],
   "karten": [

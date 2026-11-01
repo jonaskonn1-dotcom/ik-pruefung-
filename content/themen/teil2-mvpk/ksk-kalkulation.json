@@ -185,6 +185,82 @@
       "einheit": "€",
       "loesung": 744800,
       "erklaerung": "Materialkosten = {{fm|€}} + {{mgkS|€}} = {{fm+mgkS|€}}\nFertigungskosten = {{fl|€}} + {{fgkS|€}} = {{fl+fgkS|€}}\n**HK der Erzeugung** = {{fm+mgkS+fl+fgkS|€}}"
+    },
+    {
+      "id": "ksk-kalk-17",
+      "typ": "zahl",
+      "frage": "Für einen Auftrag über Gehäuse wurden kalkuliert: Fertigungsmaterial {{fm|€}}, Fertigungslöhne {{fl|€}}.\n- Vorkalkulation (Normalzuschläge): MGK {{nmgk|%}}, FGK {{nfgk|%}}, VwVtGK {{nvv|%}}\n- Nachkalkulation (Istzuschläge): MGK {{imgk|%}}, FGK {{ifgk|%}}, VwVtGK {{ivv|%}}\nEinzelkosten wie geplant.\n\nUm wie viel Euro weichen die **Selbstkosten** der Nachkalkulation von der Vorkalkulation ab? (Mehrkosten positiv)",
+      "vars": {
+        "fm": 24000,
+        "fl": 15000,
+        "nmgk": 10,
+        "nfgk": 120,
+        "nvv": 14,
+        "imgk": 11,
+        "ifgk": 128,
+        "ivv": 13
+      },
+      "calc": "r2((fm*(1+imgk/100) + fl*(1+ifgk/100))*(1+ivv/100) - (fm*(1+nmgk/100) + fl*(1+nfgk/100))*(1+nvv/100))",
+      "einheit": "€",
+      "loesung": 1033.2,
+      "erklaerung": "Vorkalkulation: HK = {{fm*(1+nmgk/100)|€}} + {{fl*(1+nfgk/100)|€}} = {{fm*(1+nmgk/100) + fl*(1+nfgk/100)|€}} → SK = {{r2((fm*(1+nmgk/100) + fl*(1+nfgk/100))*(1+nvv/100))|€}}\nNachkalkulation: HK = {{fm*(1+imgk/100)|€}} + {{fl*(1+ifgk/100)|€}} = {{fm*(1+imgk/100) + fl*(1+ifgk/100)|€}} → SK = {{r2((fm*(1+imgk/100) + fl*(1+ifgk/100))*(1+ivv/100))|€}}\nAbweichung = **{{r2((fm*(1+imgk/100) + fl*(1+ifgk/100))*(1+ivv/100) - (fm*(1+nmgk/100) + fl*(1+nfgk/100))*(1+nvv/100))|€}}** → der kalkulierte Gewinn sinkt um diesen Betrag (Kostenunterdeckung)."
+    },
+    {
+      "id": "ksk-kalk-18",
+      "typ": "zahl",
+      "frage": "Der Listenverkaufspreis (netto) eines Flansches F-80 beträgt {{lvp|€}}.\n\nWelchen **Bruttopreis** (inkl. 19 % USt) stellt die Westpfalz Metallwerk GmbH einem Kunden in Rechnung, der {{rb|%}} Rabatt erhält?",
+      "vars": {
+        "lvp": 86.5,
+        "rb": 12
+      },
+      "calc": "r2(r2(lvp*(1-rb/100))*1.19)",
+      "einheit": "€",
+      "loesung": 90.58,
+      "erklaerung": "Nettopreis nach Rabatt = {{lvp|€}} × {{1-rb/100}} = {{r2(lvp*(1-rb/100))|€}}\n+ 19 % USt = **{{r2(r2(lvp*(1-rb/100))*1.19)|€}}**"
+    },
+    {
+      "id": "ksk-kalk-19",
+      "typ": "zahl",
+      "frage": "Für die Halterung H-50 liegt der Zielverkaufspreis bei mindestens {{zvp|€}}, damit der geplante Gewinn erreicht wird. Der Listenverkaufspreis beträgt {{lvp|€}}.\n\nWie viel Prozent **Rabatt** kann höchstens gewährt werden? (zwei Nachkommastellen)",
+      "vars": {
+        "zvp": 14.21,
+        "lvp": 15.79
+      },
+      "calc": "r2((lvp - zvp)/lvp*100)",
+      "einheit": "%",
+      "loesung": 10.01,
+      "erklaerung": "Rabatt in € = {{lvp|€}} − {{zvp|€}} = {{r2(lvp-zvp)|€}}\nRabatt in % (vom Listenpreis = 100 %) = {{r2(lvp-zvp)}} ÷ {{lvp}} × 100 = **{{r2((lvp - zvp)/lvp*100)|%}}**"
+    },
+    {
+      "id": "ksk-kalk-20",
+      "typ": "zahl",
+      "frage": "Ein Auftrag wird zum Barverkaufspreis von {{bvp|€}} abgerechnet. Die Nachkalkulation ergibt Ist-Selbstkosten von {{sk|€}}. Kalkuliert war ein Gewinnzuschlag von {{g|%}}.\n\nWie hoch ist der **tatsächliche Gewinn in Prozent** der Ist-Selbstkosten? (zwei Nachkommastellen)",
+      "vars": {
+        "bvp": 64800,
+        "sk": 61350,
+        "g": 8
+      },
+      "calc": "r2((bvp - sk)/sk*100)",
+      "einheit": "%",
+      "loesung": 5.62,
+      "erklaerung": "Ist-Gewinn = {{bvp|€}} − {{sk|€}} = {{bvp-sk|€}}\nIn % = {{bvp-sk}} ÷ {{sk}} × 100 = **{{r2((bvp - sk)/sk*100)|%}}** statt geplanter {{g|%}} → Kostenunterdeckung."
+    },
+    {
+      "id": "ksk-kalk-21",
+      "typ": "zahl",
+      "frage": "Für einen Exportauftrag gilt: Herstellkosten {{hk|€}}, VwGK {{vw|%}}, VtGK {{vt|%}}, Sondereinzelkosten des Vertriebs (Seefracht, Verpackung) {{sekv|€}}, Gewinn {{g|%}}, Kundenskonto {{s|%}}, kein Rabatt.\n\nWie hoch ist der **Zielverkaufspreis**?",
+      "vars": {
+        "hk": 42000,
+        "vw": 8,
+        "vt": 6,
+        "sekv": 2800,
+        "g": 10,
+        "s": 2
+      },
+      "calc": "r2(r2(r2(hk*(1+(vw+vt)/100) + sekv)*(1+g/100))/(1-s/100))",
+      "einheit": "€",
+      "loesung": 56885.71,
+      "erklaerung": "SK = {{hk|€}} × {{1+(vw+vt)/100}} + SEKV {{sekv|€}} = {{r2(hk*(1+(vw+vt)/100) + sekv)|€}}\n+ {{g|%}} Gewinn = BVP {{r2(r2(hk*(1+(vw+vt)/100) + sekv)*(1+g/100))|€}}\n÷ (1 − {{s/100}}) = **ZVP {{r2(r2(r2(hk*(1+(vw+vt)/100) + sekv)*(1+g/100))/(1-s/100))|€}}**"
     }
   ],
   "karten": [

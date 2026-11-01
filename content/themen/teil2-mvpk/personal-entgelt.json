@@ -143,6 +143,140 @@
       "einheit": "€",
       "loesung": 611.04,
       "erklaerung": "KV ({{(W.kvAllgemein+zb)/2|%}}) {{svAN(brutto, { zusatz: zb, kinder: 1 }).kv|€}}\nPV ({{W.pv/2|%}}) {{svAN(brutto, { zusatz: zb, kinder: 1 }).pv|€}}\nRV ({{W.rv/2|%}}) {{svAN(brutto, { zusatz: zb, kinder: 1 }).rv|€}}\nAV ({{W.av/2|%}}) {{svAN(brutto, { zusatz: zb, kinder: 1 }).av|€}}\n= **{{svAN(brutto, { zusatz: zb, kinder: 1 }).summe|€}}** (jeder Zweig wird einzeln kaufmännisch gerundet)"
+    },
+    {
+      "id": "pe-17",
+      "typ": "zahl",
+      "frage": "Ein Lagermitarbeiter erhält {{lohn|€}} Stundenlohn. Im Oktober arbeitet er {{std}} reguläre Stunden und {{ue}} Überstunden mit {{zuschl|%}} Überstundenzuschlag.\n\nWie hoch ist sein **Bruttolohn**?",
+      "vars": {
+        "lohn": 17.8,
+        "std": 162,
+        "ue": 12,
+        "zuschl": 25
+      },
+      "calc": "r2(std*lohn + ue*lohn*(1+zuschl/100))",
+      "einheit": "€",
+      "loesung": 3150.6,
+      "erklaerung": "Grundlohn = {{std}} × {{lohn|€}} = {{std*lohn|€}}\nÜberstunden = {{ue}} × {{lohn|€}} × {{1+zuschl/100}} = {{ue*lohn*(1+zuschl/100)|€}}\nBrutto = **{{r2(std*lohn + ue*lohn*(1+zuschl/100))|€}}**"
+    },
+    {
+      "id": "pe-18",
+      "typ": "zahl",
+      "frage": "Entgeltabrechnung für Thomas Wagner (2 Kinder unter 25, Zusatzbeitrag {{zb|%}}, ev., Rheinland-Pfalz):\n- Gehalt {{gehalt|€}}\n- Lohnsteuer laut Tabelle {{lst|€}}, Soli 0,00 €\n- Kirchensteuer 9 % der Lohnsteuer\n\nBerechnen Sie das **Nettogehalt**.",
+      "vars": {
+        "gehalt": 4850,
+        "lst": 532.16,
+        "zb": 2.9
+      },
+      "calc": "r2(gehalt - lst - r2(lst*0.09) - svAN(gehalt, { zusatz: zb, kinder: 2 }).summe)",
+      "einheit": "€",
+      "loesung": 3256.29,
+      "erklaerung": "Brutto {{gehalt|€}}\n− LSt {{lst|€}} − KiSt {{r2(lst*0.09)|€}}\n− KV {{svAN(gehalt, { zusatz: zb, kinder: 2 }).kv|€}} − PV {{svAN(gehalt, { zusatz: zb, kinder: 2 }).pv|€}} ({{svAN(gehalt, { zusatz: zb, kinder: 2 }).pvSatz|%}}, Abschlag für das 2. Kind) − RV {{svAN(gehalt, { zusatz: zb, kinder: 2 }).rv|€}} − AV {{svAN(gehalt, { zusatz: zb, kinder: 2 }).av|€}}\n= **Netto {{r2(gehalt - lst - r2(lst*0.09) - svAN(gehalt, { zusatz: zb, kinder: 2 }).summe)|€}}**\n(Lohnsteuer fiktiv.)"
+    },
+    {
+      "id": "pe-19",
+      "typ": "zahl",
+      "frage": "Ein Mitarbeiter (1 Kind) wechselt zu einer Krankenkasse mit einem Zusatzbeitrag von {{zb2|%}} statt bisher {{zb1|%}}. Sein Gehalt beträgt {{brutto|€}}.\n\nUm wie viel Euro **ändert sich sein monatlicher KV-Beitrag**? (Erhöhung positiv)",
+      "vars": {
+        "zb1": 2.9,
+        "zb2": 3.4,
+        "brutto": 3900
+      },
+      "calc": "r2(svAN(brutto, { zusatz: zb2, kinder: 1 }).kv - svAN(brutto, { zusatz: zb1, kinder: 1 }).kv)",
+      "einheit": "€",
+      "loesung": 9.75,
+      "erklaerung": "Bisher: {{brutto|€}} × {{(W.kvAllgemein+zb1)/2|%}} = {{svAN(brutto, { zusatz: zb1, kinder: 1 }).kv|€}}\nNeu: {{brutto|€}} × {{(W.kvAllgemein+zb2)/2|%}} = {{svAN(brutto, { zusatz: zb2, kinder: 1 }).kv|€}}\nDifferenz = **{{r2(svAN(brutto, { zusatz: zb2, kinder: 1 }).kv - svAN(brutto, { zusatz: zb1, kinder: 1 }).kv)|€}}** (der Arbeitgeber trägt die gleiche Mehrbelastung)."
+    },
+    {
+      "id": "pe-20",
+      "typ": "zahl",
+      "frage": "Ein Tarifabschluss erhöht das Gehalt von {{alt|€}} um {{plus|%}}. Der Mitarbeiter hat 1 Kind, Zusatzbeitrag {{zb|%}}.\n\nUm wie viel Euro **steigen seine Arbeitnehmeranteile zur Sozialversicherung**?",
+      "vars": {
+        "alt": 3600,
+        "plus": 3.5,
+        "zb": 2.9
+      },
+      "calc": "r2(svAN(r2(alt*(1+plus/100)), { zusatz: zb, kinder: 1 }).summe - svAN(alt, { zusatz: zb, kinder: 1 }).summe)",
+      "einheit": "€",
+      "loesung": 26.66,
+      "erklaerung": "Neues Gehalt = {{alt|€}} × {{1+plus/100}} = {{r2(alt*(1+plus/100))|€}}\nSV-AN alt = {{svAN(alt, { zusatz: zb, kinder: 1 }).summe|€}}, neu = {{svAN(r2(alt*(1+plus/100)), { zusatz: zb, kinder: 1 }).summe|€}}\nErhöhung = **{{r2(svAN(r2(alt*(1+plus/100)), { zusatz: zb, kinder: 1 }).summe - svAN(alt, { zusatz: zb, kinder: 1 }).summe)|€}}**"
+    },
+    {
+      "id": "pe-21",
+      "typ": "zahl",
+      "frage": "Ein Mitarbeiter verdient {{gehalt|€}} pro Monat (12 Gehälter) und erhält zusätzlich ein Weihnachtsgeld in Höhe eines halben Monatsgehalts. Die Arbeitgeberanteile zur Sozialversicherung und Umlagen betragen pauschal {{ag|%}} des Bruttos.\n\nWie hoch sind die **jährlichen Personalkosten**?",
+      "vars": {
+        "gehalt": 3600,
+        "ag": 21.8
+      },
+      "calc": "r2((gehalt*12 + gehalt/2)*(1+ag/100))",
+      "einheit": "€",
+      "loesung": 54810,
+      "erklaerung": "Jahresbrutto = 12 × {{gehalt|€}} + {{gehalt/2|€}} = {{gehalt*12 + gehalt/2|€}}\n+ {{ag|%}} AG-Anteile = **{{r2((gehalt*12 + gehalt/2)*(1+ag/100))|€}}**"
+    },
+    {
+      "id": "pe-22",
+      "typ": "zahl",
+      "frage": "Zeitakkord in der Kantabteilung: Vorgabezeit {{tv}} Minuten je Werkstück, Akkordrichtsatz {{ars|€}}/Std. Ein Mitarbeiter fertigt in einer 8-Stunden-Schicht {{stueck}} Werkstücke.\n\nWie hoch ist sein **Schichtverdienst**?",
+      "vars": {
+        "tv": 4,
+        "ars": 21,
+        "stueck": 138
+      },
+      "calc": "r2(stueck * tv * ars/60)",
+      "einheit": "€",
+      "loesung": 193.2,
+      "erklaerung": "Minutenfaktor = {{ars|€}} ÷ 60 = {{ars/60|€}}\nVorgabezeit gesamt = {{stueck}} × {{tv}} Min. = {{stueck*tv}} Min.\nVerdienst = {{stueck*tv}} × {{ars/60}} = **{{r2(stueck * tv * ars/60)|€}}**\nLeistungsgrad = {{stueck*tv}} ÷ 480 × 100 = {{r2(stueck*tv/480*100)|%}}"
+    },
+    {
+      "id": "pe-23",
+      "typ": "zahl",
+      "frage": "Eine Aushilfe soll als Minijobberin zum gesetzlichen Mindestlohn 2026 ({{W.mindestlohn|€}}/Std.) arbeiten.\n\nWie viele **volle Stunden** darf sie höchstens pro Monat arbeiten, ohne die Minijob-Grenze von {{W.minijobGrenze|€}} zu überschreiten?",
+      "calc": "floor(W.minijobGrenze / W.mindestlohn)",
+      "einheit": "Std.",
+      "toleranz": 0,
+      "loesung": 43,
+      "erklaerung": "{{W.minijobGrenze}} ÷ {{W.mindestlohn}} = {{r2(W.minijobGrenze / W.mindestlohn)}} → höchstens **{{floor(W.minijobGrenze / W.mindestlohn)}} Stunden** (abrunden, sonst wird die Grenze überschritten)."
+    },
+    {
+      "id": "pe-24",
+      "typ": "zahl",
+      "frage": "Eine Auszubildende im ersten Lehrjahr erhält eine Vergütung von {{verg|€}} (Geringverdienergrenze 325 €). Die Krankenkasse erhebt {{zb|%}} Zusatzbeitrag.\n\nWie hoch ist der **Gesamtsozialversicherungsbeitrag**, den der Ausbildungsbetrieb allein trägt (KV, PV, RV, AV; ohne Umlagen)?",
+      "vars": {
+        "verg": 310,
+        "zb": 2.9
+      },
+      "calc": "r2(verg*(W.kvAllgemein + zb + W.pv + W.rv + W.av)/100)",
+      "einheit": "€",
+      "loesung": 131.13,
+      "erklaerung": "Bei Auszubildenden bis 325 € trägt der Arbeitgeber den **gesamten** Beitrag (Geringverdienergrenze, § 20 Abs. 3 SGB IV).\nSatz = {{W.kvAllgemein}} + {{zb}} + {{W.pv}} + {{W.rv}} + {{W.av}} = {{W.kvAllgemein + zb + W.pv + W.rv + W.av|%}}\n{{verg|€}} × {{W.kvAllgemein + zb + W.pv + W.rv + W.av|%}} = **{{r2(verg*(W.kvAllgemein + zb + W.pv + W.rv + W.av)/100)|€}}**\nDer Kinderlosenzuschlag fällt hier nicht an."
+    },
+    {
+      "id": "pe-25",
+      "typ": "zahl",
+      "frage": "Gehaltsabrechnung März für alle Angestellten der Westpfalz Metallwerk GmbH:\n- Bruttogehälter {{brutto|€}}\n- Lohnsteuer/Soli/Kirchensteuer {{steuer|€}}\n- Arbeitnehmeranteile SV {{an|€}}\n- Arbeitgeberanteile SV {{ag|€}}\n\nWie hoch ist der Betrag, der am drittletzten Bankarbeitstag an die **Krankenkassen** überwiesen wird?",
+      "vars": {
+        "brutto": 412000,
+        "steuer": 58300,
+        "an": 85700,
+        "ag": 87100
+      },
+      "calc": "an + ag",
+      "einheit": "€",
+      "loesung": 172800,
+      "erklaerung": "An die Krankenkassen (Einzugsstellen) geht der **Gesamtsozialversicherungsbeitrag** = AN-Anteile + AG-Anteile = {{an|€}} + {{ag|€}} = **{{an+ag|€}}**\nAn das Finanzamt: {{steuer|€}} (bis 10. des Folgemonats). Auszahlung an Mitarbeitende: {{brutto - steuer - an|€}}."
+    },
+    {
+      "id": "pe-26",
+      "typ": "zahl",
+      "frage": "Eine Mitarbeiterin (kinderlos, 34 Jahre) verdient {{brutto|€}} brutto.\n\nWie hoch ist ihr **Arbeitnehmeranteil zur Pflegeversicherung**? Beachten Sie die Beitragsbemessungsgrenze.",
+      "vars": {
+        "brutto": 6200
+      },
+      "calc": "svAN(brutto, { kinderlos: true }).pv",
+      "einheit": "€",
+      "loesung": 139.5,
+      "erklaerung": "BBG KV/PV 2026 = {{W.bbgKvMonat|€}} < {{brutto|€}} → Basis {{W.bbgKvMonat|€}}\nSatz = {{W.pv/2}} % + {{W.pvKinderlosZuschlag}} % = {{W.pv/2 + W.pvKinderlosZuschlag|%}}\n{{W.bbgKvMonat|€}} × {{W.pv/2 + W.pvKinderlosZuschlag|%}} = **{{svAN(brutto, { kinderlos: true }).pv|€}}**"
     }
   ],
   "karten": [
