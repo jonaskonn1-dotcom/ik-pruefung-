@@ -1,5 +1,5 @@
 // Auswertung von Ausdrücken in Content-Texten: {{ ausdruck }} oder {{ ausdruck | format }}
-// Formate: €  → 1.234,56 €   |  %  → 12,5 %   |  n0 / n1 / n2 … → feste Nachkommastellen
+// Formate: €  → 1.234,56 €   |  T€ → 400 Tsd. € (= 400.000 €)   |  %  → 12,5 %   |  n0 / n1 / n2 … → feste Nachkommastellen
 //          (ohne Format: bis zu 2 Nachkommastellen)
 import { makeScope } from './calc.js';
 
@@ -30,6 +30,7 @@ export function fmt(x, format) {
   switch ((format || '').trim()) {
     case '€': return fmtNumber(x, 2) + ' €';
     case '%': return fmtNumber(x) + ' %';
+    case 'T€': return fmtNumber(x) + ' Tsd. € (= ' + fmtNumber(x * 1000, 0) + ' €)';
     case '': return typeof x === 'number' ? fmtNumber(x) : String(x);
     default: {
       const m = /^n(\d)$/.exec(format.trim());
@@ -46,7 +47,7 @@ export function render(text, vars = {}, W = {}) {
     const i = inner.lastIndexOf('|');
     let expr = inner, format = '';
     // "|" nur als Format-Trenner werten, wenn rechts ein bekanntes Format steht (kein ||)
-    if (i > 0 && inner[i - 1] !== '|' && /^\s*(€|%|n\d)\s*$/.test(inner.slice(i + 1))) {
+    if (i > 0 && inner[i - 1] !== '|' && /^\s*(T€|€|%|n\d)\s*$/.test(inner.slice(i + 1))) {
       expr = inner.slice(0, i); format = inner.slice(i + 1);
     }
     return fmt(evalExpr(expr.trim(), vars, W), format);

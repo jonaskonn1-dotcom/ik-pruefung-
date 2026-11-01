@@ -3,6 +3,7 @@
 import { esc, rich, plain, shuffle, badge2026 } from '../ui.js';
 import { parseNumber, fmtNumber } from '../lib/template.js';
 import { config } from '../content.js';
+import { faktorAbweichung } from '../lib/calc.js';
 
 export const TYP_LABEL = {
   einfach: 'Einfachauswahl',
@@ -87,7 +88,9 @@ export function evaluate(st) {
     case 'zahl': {
       const v = parseNumber(st.value);
       const tol = q.toleranz ?? config.quiz.toleranzStandard;
-      ok = Math.abs(v - q.loesung) <= tol + 1e-9; punkte = ok ? 1 : 0; break;
+      ok = Math.abs(v - q.loesung) <= tol + 1e-9; punkte = ok ? 1 : 0;
+      st.faktor = ok ? null : faktorAbweichung(v, q.loesung);
+      break;
     }
     case 'offen': {
       const b = BEWERTUNG[st.rating];
@@ -98,6 +101,18 @@ export function evaluate(st) {
   }
   st.revealed = true; st.ok = ok; st.punkte = punkte;
   return { ok, punkte };
+}
+
+function faktorText(st) {
+  const { f, zuGross } = st.faktor;
+  const q = st.q;
+  const tsd = /Tsd/.test(q.einheit || '') || /T€|Tsd\./.test(q.frage);
+  let tipp = 'Kommastelle bzw. Einheit prüfen.';
+  if (f === 1000 && tsd) tipp = zuGross ? 'Gefragt ist das Ergebnis in Tsd. € – nicht in vollen Euro.' : 'Prüfe die Einheit: Tsd. € und volle Euro unterscheiden sich um den Faktor 1.000.';
+  else if (f === 1000) tipp = 'Tsd. € und volle Euro verwechselt? Die Werte unterscheiden sich um den Faktor 1.000.';
+  else if (f === 100 && q.einheit === '%') tipp = zuGross ? 'Prozentwert noch einmal prüfen.' : 'Als Dezimalzahl statt in Prozent geantwortet? Mit 100 multiplizieren.';
+  else if (f === 100) tipp = 'Prozent und Dezimalzahl verwechselt oder Komma um zwei Stellen verschoben?';
+  return `Fast richtig gerechnet: Dein Ergebnis ist genau um den Faktor ${f.toLocaleString('de-DE')} zu ${zuGross ? 'groß' : 'klein'}. ${tipp}`;
 }
 
 const keyHint = (i) => (i < 9 ? `<kbd class="k" aria-hidden="true">${i + 1}</kbd>` : '');
@@ -160,6 +175,7 @@ export function renderQuestion(st, { showFeedback = true } = {}) {
       ${q.einheit ? `<span class="unit">${esc(q.einheit)}</span>` : ''}
     </div>
     <p class="hint" id="num-hint">Komma oder Punkt möglich. Toleranz ± ${fmtNumber(tol)}${q.einheit ? ' ' + esc(q.einheit) : ''}.</p>
+    ${rev && !st.ok && st.faktor ? `<p class="faktor-hint" role="note">⚠ ${esc(faktorText(st))}</p>` : ''}
     ${rev && !st.ok ? `<p class="sol">Richtige Lösung: <strong>${fmtNumber(q.loesung, Number.isInteger(q.loesung) ? 0 : 2)} ${esc(q.einheit || '')}</strong></p>` : ''}`;
   }
 

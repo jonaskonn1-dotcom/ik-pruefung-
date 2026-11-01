@@ -373,3 +373,4 @@ h3.h-small { margin-top: .9rem; }
 .rate-nicht.chosen { background: var(--bad-soft); color: var(--bad); border-color: var(--bad); opacity: 1; }
 .feedback.part { border-color: var(--warn); background: var(--warn-soft); }
 .feedback.part .fb-head { color: var(--warn); }
+.faktor-hint { background: var(--warn-soft); color: var(--warn); border-radius: 10px; padding: .6rem .8rem; font-weight: 600; font-size: .95rem; }

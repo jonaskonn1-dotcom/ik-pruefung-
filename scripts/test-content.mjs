@@ -4,7 +4,7 @@
 //   npm test -- --verbose  → zeigt jede Rechenaufgabe mit Ergebnis
 import { loadAll } from './lib-content.mjs';
 import { evalExpr, render, parseNumber } from '../src/lib/template.js';
-import { svAN, svAG, r2 } from '../src/lib/calc.js';
+import { svAN, svAG, r2, faktorAbweichung } from '../src/lib/calc.js';
 
 const verbose = process.argv.includes('--verbose');
 const MIN_FRAGEN = 15;
@@ -185,6 +185,14 @@ eq('r2(-2.345)', r2(-2.345), -2.35);
 for (const [s, v] of [['1.234,56', 1234.56], ['1234,5', 1234.5], ['1.234', 1234], ['12.5', 12.5], ['-4.500', -4500], ['46 368,40 €', 46368.4], ['6,79 %', 6.79]]) {
   if (Math.abs(parseNumber(s) - v) > 1e-9) err('unit', `parseNumber("${s}") = ${parseNumber(s)} ≠ ${v}`);
 }
+
+// Faktor-Hinweis (Tsd. € vs. €, Prozent vs. Dezimal, Kommafehler)
+for (const [v, l, f, gross] of [[1115000, 1115, 1000, true], [1.115, 1115, 1000, false], [0.7308, 73.08, 100, false], [151.0, 15.1, 10, true]]) {
+  const r = faktorAbweichung(v, l);
+  if (!r || r.f !== f || r.zuGross !== gross) err('unit', `faktorAbweichung(${v}, ${l}) = ${JSON.stringify(r)}`);
+}
+if (faktorAbweichung(1116, 1115) || faktorAbweichung(0, 5)) err('unit', 'faktorAbweichung meldet fälschlich');
+if (render('{{x|T€}}', { x: 400 }) !== '400\u00a0Tsd.\u00a0€ (=\u00a0400.000\u00a0€)') err('unit', `T€-Format: ${render('{{x|T€}}', { x: 400 })}`);
 
 // ---------- Ausgabe ----------
 for (const w of warnings) console.warn(w);

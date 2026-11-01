@@ -70,3 +70,14 @@ export function makeScope(W) {
     sum: (...a) => a.flat().reduce((s, x) => s + x, 0),
   };
 }
+
+/** Erkennt Abweichungen um Faktor 10/100/1.000 (Kommastelle, Tsd. € vs. €, Prozent vs. Dezimalzahl). */
+export function faktorAbweichung(v, loesung) {
+  if (!Number.isFinite(v) || !v || !loesung) return null;
+  const r = v / loesung;
+  for (const f of [10, 100, 1000]) {
+    if (Math.abs(r / f - 1) < 0.002) return { f, zuGross: true };
+    if (Math.abs(r * f - 1) < 0.002) return { f, zuGross: false };
+  }
+  return null;
+}
