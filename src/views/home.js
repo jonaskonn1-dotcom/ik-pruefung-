@@ -69,6 +69,7 @@ export function homeView(el) {
 
     <section class="quick" aria-label="Schnellstart">
       <a class="quick-btn primary" href="#/quiz?modus=mix">${icon.quiz}<span>Gemischtes Quiz</span></a>
+      <a class="quick-btn" href="#/simulation${s.simLauf ? '/laufend' : ''}">${icon.clock}<span>${s.simLauf ? 'Simulation fortsetzen' : 'Prüfungs&shy;simulation'}</span></a>
       <a class="quick-btn" href="#/karten/lernen">${icon.cards}<span>Karten <b class="pill">${faellig}</b></span></a>
       <a class="quick-btn" href="#/fehler">${icon.basket}<span>Fehlerkorb <b class="pill${fehler ? ' red' : ''}">${fehler}</b></span></a>
     </section>

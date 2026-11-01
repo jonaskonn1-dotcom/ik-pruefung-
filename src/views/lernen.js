@@ -40,6 +40,7 @@ export function lernenView(el, _p, query) {
       <a class="btn" href="#/fehler">${icon.basket} Fehlerkorb (${fehler})</a>
     </div>
     ${profil.bereiche.some((b) => b.teil === 1) ? `<label class="switch"><input type="checkbox" id="mitT1" ${s.settings.mitTeil1 ? 'checked' : ''}><span class="switch-ui" aria-hidden="true"></span><span>Teil 1 im gemischten Quiz und bei den fälligen Karten einbeziehen</span></label>` : ''}
+    <a class="btn big" href="#/simulation" style="margin-bottom:.5rem">${icon.clock} Prüfungssimulation mit Zeitlimit</a>
     ${sections}
     ${eigen ? `<section><h2>Eigene</h2><ul class="topics"><li><a class="topic" href="#/thema/eigene"><span class="topic-main"><span class="topic-title">${esc(eigen.titel)}</span></span><span class="topic-num">${eigen.fragen.length}</span></a></li></ul></section>` : ''}`;
 

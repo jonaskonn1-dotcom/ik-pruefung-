@@ -178,3 +178,21 @@ export function keyToAction(st, key) {
   }
   return null;
 }
+
+/** Zustand speicherbar machen (Simulation übersteht Neuladen). */
+export function serialize(st) {
+  return {
+    id: st.q.id, perm: st.perm, rows: st.rows, rights: st.rights, order: st.order, value: st.value,
+    sel: st.sel instanceof Set ? [...st.sel] : st.sel, flag: !!st.flag,
+  };
+}
+export function restore(q, d) {
+  const st = prepare(q);
+  if (!d) return st;
+  for (const k of ['perm', 'rows', 'rights', 'order', 'value']) if (d[k] !== undefined) st[k] = d[k];
+  if (d.sel !== undefined) st.sel = Array.isArray(d.sel) ? new Set(d.sel) : d.sel;
+  st.flag = !!d.flag;
+  return st;
+}
+/** Punktgewicht in der Simulation: Rechenaufgaben zählen doppelt. */
+export const gewicht = (q) => (q.typ === 'zahl' ? 2 : 1);

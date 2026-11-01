@@ -5,19 +5,19 @@
   "rechtsgrundlage": "IndKflAusbV vom 12.03.2024 (BGBl. 2024 I Nr. 94), in Kraft seit 01.08.2024",
   "bereiche": [
     {
-      "id": "t1", "teil": 1, "kurz": "Teil 1",
+      "id": "t1", "simFragen": 25, "teil": 1, "kurz": "Teil 1",
       "name": "Leistungserstellung, Logistik, Beschaffung und Buchhaltung",
       "dauer": 90, "gewicht": 25, "art": "schriftlich",
       "hinweis": "Im 4. Ausbildungshalbjahr abgelegt – hier zum Wiederholen."
     },
     {
-      "id": "mvpk", "teil": 2, "kurz": "MVPK",
+      "id": "mvpk", "simFragen": 40, "teil": 2, "kurz": "MVPK",
       "name": "Marketing, Vertrieb, Personalwesen und kaufmännische Steuerung und Kontrolle",
       "dauer": 150, "gewicht": 35, "art": "schriftlich",
       "aufgaben": "ca. 60 % offene / 40 % gebundene Aufgaben"
     },
     {
-      "id": "wiso", "teil": 2, "kurz": "WiSo",
+      "id": "wiso", "simFragen": 30, "teil": 2, "kurz": "WiSo",
       "name": "Wirtschafts- und Sozialkunde",
       "dauer": 60, "gewicht": 10, "art": "schriftlich",
       "aufgaben": "gebunden (maschinell auswertbar)"
