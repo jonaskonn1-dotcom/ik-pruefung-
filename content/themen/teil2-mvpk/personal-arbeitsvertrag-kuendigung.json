@@ -1,0 +1,138 @@
+{
+  "id": "personal-arbeitsvertrag-kuendigung",
+  "titel": "Personal: Arbeitsvertrag, Befristung, Kündigung, Kündigungsschutz",
+  "gruppe": "Personal",
+  "bereich": { "ao2024": "mvpk", "vo2002": "gp" },
+  "beschreibung": "Pflichten aus dem Arbeitsvertrag, Nachweisgesetz, Befristung (TzBfG), Kündigungsfristen (§ 622 BGB), ordentliche und außerordentliche Kündigung, KSchG, Sozialauswahl, besonderer Kündigungsschutz.",
+  "fragen": [
+    {
+      "id": "pk-01", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Pflichten aus dem Arbeitsvertrag zu.",
+      "paare": [
+        ["Arbeitspflicht", "Pflicht des Arbeitnehmers"],
+        ["Verschwiegenheitspflicht", "Nebenpflicht des Arbeitnehmers"],
+        ["Vergütungspflicht", "Pflicht des Arbeitgebers"],
+        ["Fürsorgepflicht (z. B. Arbeitsschutz)", "Nebenpflicht des Arbeitgebers"]
+      ],
+      "erklaerung": "Hauptpflichten: Arbeitsleistung (AN) ↔ Vergütung (AG). Nebenpflichten AN: Treue-, Verschwiegenheits-, Wettbewerbsverbot (während des Arbeitsverhältnisses). Nebenpflichten AG: Fürsorge, Gleichbehandlung, Urlaubsgewährung, Zeugniserteilung."
+    },
+    {
+      "id": "pk-02", "typ": "einfach",
+      "frage": "Ein Arbeitsvertrag ohne Sachgrund wird befristet. Was gilt nach dem Teilzeit- und Befristungsgesetz?",
+      "optionen": ["Höchstdauer 2 Jahre, innerhalb dieser Zeit höchstens dreimal verlängerbar; Schriftform für die Befristung", "Höchstdauer 5 Jahre, beliebig oft verlängerbar", "Befristungen ohne Sachgrund sind verboten", "Die Befristung kann auch mündlich vereinbart werden"],
+      "loesung": 0,
+      "erklaerung": "§ 14 Abs. 2 TzBfG: sachgrundlose Befristung bis **2 Jahre**, max. **3 Verlängerungen**, nicht bei vorheriger Beschäftigung beim selben AG (Vorbeschäftigungsverbot, mit Ausnahmen). Die Befristungsabrede braucht **Schriftform** (§ 14 Abs. 4), sonst gilt der Vertrag als unbefristet."
+    },
+    {
+      "id": "pk-03", "typ": "einfach",
+      "frage": "Ein Mitarbeiter ist seit 9 Jahren bei der Westpfalz Metallwerk GmbH beschäftigt. Welche **Kündigungsfrist** muss der **Arbeitgeber** bei einer ordentlichen Kündigung mindestens einhalten (§ 622 BGB, kein Tarifvertrag)?",
+      "optionen": ["3 Monate zum Ende eines Kalendermonats", "4 Wochen zum 15. oder zum Monatsende", "2 Monate zum Ende eines Kalendermonats", "4 Monate zum Ende eines Kalendermonats"],
+      "loesung": 0,
+      "erklaerung": "§ 622 Abs. 2 BGB (Arbeitgeberkündigung): ab 2 J. → 1 Monat, 5 J. → 2, **8 J. → 3**, 10 J. → 4, 12 J. → 5, 15 J. → 6, 20 J. → 7 Monate, jeweils zum Monatsende. Kündigt der **Arbeitnehmer**, gilt (ohne Vereinbarung) die Grundfrist von 4 Wochen zum 15. oder Monatsende."
+    },
+    {
+      "id": "pk-04", "typ": "zahl",
+      "frage": "Eine Mitarbeiterin ist seit {{jahre}} Jahren im Unternehmen (Eintritt mit 19 Jahren). Der Arbeitgeber kündigt ordentlich. Es gilt § 622 BGB.\n\nWie viele **Monate** beträgt die Kündigungsfrist?",
+      "vars": { "jahre": 13 },
+      "calc": "jahre >= 20 ? 7 : jahre >= 15 ? 6 : jahre >= 12 ? 5 : jahre >= 10 ? 4 : jahre >= 8 ? 3 : jahre >= 5 ? 2 : jahre >= 2 ? 1 : 0",
+      "einheit": "Monate",
+      "toleranz": 0,
+      "loesung": 5,
+      "erklaerung": "Bei {{jahre}} Jahren Betriebszugehörigkeit (ab 12 Jahren) → **5 Monate zum Monatsende**. Die gesetzliche Regel, dass Zeiten vor dem 25. Lebensjahr nicht zählen, ist wegen Altersdiskriminierung nicht anzuwenden (EuGH 2010) – es zählen alle Jahre."
+    },
+    {
+      "id": "pk-05", "typ": "einfach",
+      "frage": "Während der vereinbarten Probezeit von 6 Monaten kündigt die Westpfalz Metallwerk GmbH einem neuen Mitarbeiter. Welche Frist gilt?",
+      "optionen": ["2 Wochen (zu jedem Tag)", "4 Wochen zum 15. oder Monatsende", "1 Monat zum Monatsende", "Keine Frist, die Kündigung wirkt sofort"],
+      "loesung": 0,
+      "erklaerung": "§ 622 Abs. 3 BGB: Während einer vereinbarten Probezeit (max. 6 Monate) beträgt die Kündigungsfrist **2 Wochen**. (Achtung: Bei **Auszubildenden** ist in der Probezeit eine Kündigung jederzeit **ohne** Frist möglich.)"
+    },
+    {
+      "id": "pk-06", "typ": "mehrfach",
+      "frage": "Unter welchen Voraussetzungen gilt das **Kündigungsschutzgesetz** (allgemeiner Kündigungsschutz)?",
+      "optionen": ["Das Arbeitsverhältnis besteht länger als 6 Monate", "Im Betrieb sind in der Regel mehr als 10 Arbeitnehmer beschäftigt (ohne Azubis)", "Der Arbeitnehmer ist mindestens 25 Jahre alt", "Der Betrieb hat einen Betriebsrat", "Der Arbeitnehmer ist Gewerkschaftsmitglied"],
+      "loesung": [0, 1],
+      "erklaerung": "KSchG: Wartezeit **> 6 Monate** (§ 1) und Betrieb mit in der Regel **mehr als 10 AN** (§ 23; Teilzeit anteilig: bis 20 Std. = 0,5, bis 30 Std. = 0,75). Dann muss die Kündigung **sozial gerechtfertigt** sein."
+    },
+    {
+      "id": "pk-07", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Kündigungsgründe nach dem KSchG zu.",
+      "paare": [
+        ["Wegfall des Arbeitsplatzes durch Verlagerung der Fertigung", "betriebsbedingt"],
+        ["Wiederholtes unentschuldigtes Fehlen trotz Abmahnung", "verhaltensbedingt"],
+        ["Dauerhafte krankheitsbedingte Leistungsunfähigkeit mit negativer Prognose", "personenbedingt"],
+        ["Diebstahl von Firmeneigentum (wichtiger Grund)", "außerordentliche Kündigung möglich"]
+      ],
+      "erklaerung": "Sozial gerechtfertigt ist eine Kündigung nur aus personen-, verhaltens- oder betriebsbedingten Gründen (§ 1 Abs. 2 KSchG). Bei verhaltensbedingten Gründen ist i. d. R. eine **Abmahnung** vorher nötig. Schwere Pflichtverletzungen können eine fristlose Kündigung (§ 626 BGB) rechtfertigen."
+    },
+    {
+      "id": "pk-08", "typ": "mehrfach",
+      "frage": "Welche Kriterien sind bei einer betriebsbedingten Kündigung in der **Sozialauswahl** zu berücksichtigen (§ 1 Abs. 3 KSchG)?",
+      "optionen": ["Dauer der Betriebszugehörigkeit", "Lebensalter", "Unterhaltspflichten", "Schwerbehinderung", "Höhe des Gehalts", "Anzahl der Krankheitstage"],
+      "loesung": [0, 1, 2, 3],
+      "erklaerung": "Die vier Kriterien der Sozialauswahl: **Betriebszugehörigkeit, Lebensalter, Unterhaltspflichten, Schwerbehinderung**. Leistungsträger können unter Umständen herausgenommen werden (berechtigtes betriebliches Interesse)."
+    },
+    {
+      "id": "pk-09", "typ": "einfach",
+      "frage": "Eine Kündigung wird per **E-Mail** ausgesprochen. Ist sie wirksam?",
+      "optionen": ["Nein, Kündigungen bedürfen der Schriftform mit eigenhändiger Unterschrift (§ 623 BGB).", "Ja, die Textform genügt.", "Ja, wenn die E-Mail eine Lesebestätigung hat.", "Nur wenn der Betriebsrat zustimmt."],
+      "loesung": 0,
+      "erklaerung": "§ 623 BGB: Kündigung und Aufhebungsvertrag benötigen die **Schriftform**; die elektronische Form ist ausdrücklich ausgeschlossen. Eine Kündigung per E-Mail, SMS oder Fax ist nichtig."
+    },
+    {
+      "id": "pk-10", "typ": "einfach",
+      "frage": "Die Westpfalz Metallwerk GmbH kündigt einem Mitarbeiter, ohne vorher den Betriebsrat anzuhören. Folge?",
+      "optionen": ["Die Kündigung ist unwirksam (§ 102 BetrVG).", "Die Kündigung ist wirksam, der Betriebsrat erhält nur eine Kopie.", "Die Kündigungsfrist verlängert sich um einen Monat.", "Der Betriebsrat muss die Kündigung nachträglich genehmigen."],
+      "loesung": 0,
+      "erklaerung": "Der Betriebsrat ist **vor jeder Kündigung** anzuhören; eine ohne Anhörung ausgesprochene Kündigung ist unwirksam. Bedenken: bei ordentlicher Kündigung innerhalb 1 Woche, bei außerordentlicher innerhalb 3 Tagen. Ein Widerspruch verhindert die Kündigung nicht, kann aber einen Weiterbeschäftigungsanspruch auslösen."
+    },
+    {
+      "id": "pk-11", "typ": "einfach",
+      "frage": "Innerhalb welcher Frist muss ein Arbeitnehmer **Kündigungsschutzklage** beim Arbeitsgericht erheben?",
+      "optionen": ["3 Wochen nach Zugang der schriftlichen Kündigung", "2 Wochen nach Ende des Arbeitsverhältnisses", "1 Monat nach Zugang", "6 Monate nach Zugang"],
+      "loesung": 0,
+      "erklaerung": "§ 4 KSchG: **3 Wochen** nach Zugang. Danach gilt die Kündigung als von Anfang an wirksam (§ 7 KSchG) – auch wenn sie eigentlich sozial ungerechtfertigt war."
+    },
+    {
+      "id": "pk-12", "typ": "mehrfach",
+      "frage": "Welche Personengruppen genießen **besonderen Kündigungsschutz**?",
+      "optionen": ["Schwangere und Mütter bis 4 Monate nach der Entbindung (MuSchG)", "Beschäftigte in Elternzeit (BEEG)", "Schwerbehinderte Menschen (Zustimmung des Integrationsamts nötig)", "Betriebsratsmitglieder", "Alle Beschäftigten über 50 Jahre"],
+      "loesung": [0, 1, 2, 3],
+      "erklaerung": "Besonderer Kündigungsschutz: Mutterschutz, Elternzeit, Pflegezeit, Schwerbehinderte (Integrationsamt), Betriebsrats-/JAV-Mitglieder (nur außerordentlich mit Zustimmung des BR), Auszubildende nach der Probezeit. Ein allgemeiner Schutz ab 50 existiert gesetzlich nicht (ggf. tariflich)."
+    },
+    {
+      "id": "pk-13", "typ": "einfach",
+      "frage": "Ein Lagermitarbeiter wird beim Diebstahl erwischt. Die Geschäftsführung erfährt davon am 03.03. Bis wann muss die **außerordentliche Kündigung** spätestens zugehen?",
+      "optionen": ["Innerhalb von 2 Wochen nach Kenntnis, also bis 17.03.", "Innerhalb von 3 Wochen", "Innerhalb von 4 Wochen zum Monatsende", "Es gibt keine Frist"],
+      "loesung": 0,
+      "erklaerung": "§ 626 Abs. 2 BGB: Die fristlose Kündigung muss **innerhalb von 2 Wochen** ab Kenntnis der maßgebenden Tatsachen erklärt werden. Voraussetzung: wichtiger Grund, Fortsetzung bis zum Ablauf der Kündigungsfrist unzumutbar."
+    },
+    {
+      "id": "pk-14", "typ": "mehrfach",
+      "frage": "Was muss eine wirksame **Abmahnung** enthalten?",
+      "optionen": ["Genaue Beschreibung des Fehlverhaltens (Datum, Sachverhalt)", "Aufforderung, das Verhalten künftig zu ändern", "Androhung arbeitsrechtlicher Konsequenzen (bis zur Kündigung) im Wiederholungsfall", "Zustimmung des Betriebsrats", "Eine Abfindungszusage"],
+      "loesung": [0, 1, 2],
+      "erklaerung": "Abmahnung: **Hinweis-, Rüge- und Warnfunktion**. Sie ist formfrei (Schriftform aus Beweisgründen), ohne Mitbestimmung des Betriebsrats, und Voraussetzung für die meisten verhaltensbedingten Kündigungen."
+    },
+    {
+      "id": "pk-15", "typ": "einfach",
+      "frage": "Welche Aussage zum **Aufhebungsvertrag** ist richtig?",
+      "optionen": ["Er beendet das Arbeitsverhältnis einvernehmlich ohne Kündigungsfristen und Kündigungsschutz, kann aber zu einer Sperrzeit beim Arbeitslosengeld führen.", "Er muss vom Betriebsrat genehmigt werden.", "Er kann mündlich geschlossen werden.", "Er ist nur bei Schwerbehinderten zulässig."],
+      "loesung": 0,
+      "erklaerung": "Aufhebungsvertrag: beidseitige Vereinbarung, **Schriftform** (§ 623 BGB), keine Anhörung des BR, kein Kündigungsschutz. Risiko für AN: Sperrzeit von bis zu 12 Wochen beim Arbeitslosengeld, wenn kein wichtiger Grund vorliegt."
+    }
+  ],
+  "karten": [
+    { "id": "pk-k01", "vorne": "Kündigungsfristen § 622 BGB", "hinten": "Grundfrist: 4 Wochen zum 15. oder Monatsende\nProbezeit (max. 6 Mon.): 2 Wochen\nArbeitgeber nach Betriebszugehörigkeit: 2 J. 1 Mon., 5 J. 2, 8 J. 3, 10 J. 4, 12 J. 5, 15 J. 6, 20 J. 7 Monate – jeweils zum Monatsende" },
+    { "id": "pk-k02", "vorne": "Voraussetzungen des KSchG", "hinten": "Arbeitsverhältnis > 6 Monate und Betrieb mit regelmäßig > 10 AN (Teilzeit anteilig).\nDann nur sozial gerechtfertigt: personen-, verhaltens- oder betriebsbedingt." },
+    { "id": "pk-k03", "vorne": "Sozialauswahl – 4 Kriterien", "hinten": "Betriebszugehörigkeit, Lebensalter, Unterhaltspflichten, Schwerbehinderung" },
+    { "id": "pk-k04", "vorne": "Fristen rund um die Kündigung", "hinten": "Anhörung BR: Bedenken 1 Woche (ordentlich) / 3 Tage (außerordentlich)\nAußerordentliche Kündigung: innerhalb 2 Wochen ab Kenntnis\nKündigungsschutzklage: 3 Wochen ab Zugang" },
+    { "id": "pk-k05", "vorne": "Form der Kündigung", "hinten": "Schriftform mit eigenhändiger Unterschrift (§ 623 BGB). E-Mail, Fax, SMS, WhatsApp → unwirksam. Gründe müssen grundsätzlich nicht genannt werden (Ausnahme: Azubis nach Probezeit, Schwangere)." },
+    { "id": "pk-k06", "vorne": "Befristung nach TzBfG", "hinten": "Ohne Sachgrund: max. 2 Jahre, max. 3 Verlängerungen, keine Vorbeschäftigung beim selben AG.\nMit Sachgrund (§ 14 Abs. 1): z. B. Vertretung, Projekt, Erprobung.\nSchriftform vor Arbeitsbeginn, sonst unbefristet." },
+    { "id": "pk-k07", "vorne": "Abmahnung – Funktionen", "hinten": "Hinweisfunktion (Fehlverhalten benennen), Rügefunktion (Missbilligung), Warnfunktion (Kündigung droht). Meist Voraussetzung für die verhaltensbedingte Kündigung." },
+    { "id": "pk-k08", "vorne": "Besonderer Kündigungsschutz", "hinten": "Schwangere/Mutterschutz, Elternzeit, Pflegezeit, Schwerbehinderte (Integrationsamt), Betriebsrat/JAV, Auszubildende nach Probezeit, Wehr-/Zivildienstleistende" },
+    { "id": "pk-k09", "vorne": "Nachweisgesetz – Was muss dem AN nachgewiesen werden?", "hinten": "Wesentliche Vertragsbedingungen: Parteien, Beginn (ggf. Befristung), Arbeitsort, Tätigkeit, Entgelt (Zusammensetzung, Fälligkeit), Arbeitszeit/Pausen, Urlaub, Probezeit, Kündigungsverfahren, Tarifverträge. Form seit 2025 in vielen Fällen auch Textform – Stand prüfen.", "stand2026": true },
+    { "id": "pk-k10", "vorne": "Aufhebungsvertrag", "hinten": "Einvernehmliche Beendigung, Schriftform, ohne Kündigungsfrist und -schutz, ohne BR-Anhörung. Für AN: mögliche Sperrzeit beim Arbeitslosengeld (bis 12 Wochen)." },
+    { "id": "pk-k11", "vorne": "Ordentliche vs. außerordentliche Kündigung", "hinten": "**Ordentlich**: unter Einhaltung der Frist, beim KSchG sozial gerechtfertigt.\n**Außerordentlich** (§ 626 BGB): wichtiger Grund, Fortsetzung unzumutbar, meist fristlos, Erklärung innerhalb 2 Wochen ab Kenntnis." }
+  ]
+}

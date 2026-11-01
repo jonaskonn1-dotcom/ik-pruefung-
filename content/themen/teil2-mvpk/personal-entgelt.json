@@ -1,0 +1,161 @@
+{
+  "id": "personal-entgelt",
+  "titel": "Personal: Entgeltabrechnung und Personalkosten",
+  "gruppe": "Personal",
+  "bereich": { "ao2024": "mvpk", "vo2002": "gp" },
+  "beschreibung": "Brutto-Netto-Rechnung mit SV-Sätzen 2026, Beitragsbemessungsgrenzen, Kinderlosenzuschlag, vermögenswirksame Leistungen, Sachbezüge, Arbeitgeberanteile, Minijob, Entlohnungsformen. Mit Entgeltrechner unter „Mehr“.",
+  "fragen": [
+    {
+      "id": "pe-01", "typ": "zahl",
+      "frage": "Lukas Becker, Sachbearbeiter im Einkauf, verdient {{brutto|€}} brutto im Monat. Er hat ein Kind, seine Krankenkasse erhebt einen Zusatzbeitrag von {{zb|%}}.\n\nBerechnen Sie seinen **Arbeitnehmeranteil zur Krankenversicherung**.",
+      "vars": { "brutto": 3400, "zb": 2.9 },
+      "calc": "svAN(brutto, { zusatz: zb, kinder: 1 }).kv",
+      "einheit": "€",
+      "loesung": 297.5,
+      "erklaerung": "KV-Satz AN = ({{W.kvAllgemein|%}} + {{zb|%}}) ÷ 2 = {{(W.kvAllgemein+zb)/2|%}}\n{{brutto|€}} × {{(W.kvAllgemein+zb)/2|%}} = **{{svAN(brutto, { zusatz: zb, kinder: 1 }).kv|€}}**"
+    },
+    {
+      "id": "pe-02", "typ": "zahl",
+      "frage": "Aylin Demir (31 Jahre, **kinderlos**) verdient {{brutto|€}} brutto.\n\nBerechnen Sie ihren **Arbeitnehmeranteil zur Pflegeversicherung**.",
+      "vars": { "brutto": 3850 },
+      "calc": "svAN(brutto, { kinderlos: true }).pv",
+      "einheit": "€",
+      "loesung": 92.4,
+      "erklaerung": "PV-Satz AN = {{W.pv/2|%}} + Kinderlosenzuschlag {{W.pvKinderlosZuschlag|%}} = {{W.pv/2 + W.pvKinderlosZuschlag|%}}\n{{brutto|€}} × {{W.pv/2 + W.pvKinderlosZuschlag|%}} = **{{svAN(brutto, { kinderlos: true }).pv|€}}**\nDer Zuschlag gilt für Kinderlose ab 23 Jahren und wird allein vom Arbeitnehmer getragen."
+    },
+    {
+      "id": "pe-03", "typ": "zahl",
+      "frage": "Ein Mitarbeiter mit {{kinder}} Kindern unter 25 Jahren verdient {{brutto|€}} brutto (nicht in Sachsen).\n\nWie hoch ist sein **Arbeitnehmeranteil zur Pflegeversicherung**?",
+      "vars": { "brutto": 4200, "kinder": 3 },
+      "calc": "svAN(brutto, { kinder: kinder }).pv",
+      "einheit": "€",
+      "loesung": 54.6,
+      "erklaerung": "Grundsatz AN {{W.pv/2|%}}, Abschlag {{W.pvAbschlagJeKind}} Prozentpunkte je Kind **ab dem 2. bis zum 5. Kind**: ({{kinder}} − 1) × {{W.pvAbschlagJeKind}} = {{(kinder-1)*W.pvAbschlagJeKind}} Pkt.\nSatz = {{W.pv/2 - (kinder-1)*W.pvAbschlagJeKind|%}}\n{{brutto|€}} × {{W.pv/2 - (kinder-1)*W.pvAbschlagJeKind|%}} = **{{svAN(brutto, { kinder: kinder }).pv|€}}**"
+    },
+    {
+      "id": "pe-04", "typ": "zahl",
+      "frage": "Der Prokurist Michael Becker verdient {{brutto|€}} brutto im Monat. Er ist freiwillig gesetzlich versichert (Zusatzbeitrag {{zb|%}}) und hat ein Kind.\n\nWie hoch ist sein **Arbeitnehmeranteil zur Rentenversicherung**?",
+      "vars": { "brutto": 9200, "zb": 2.9 },
+      "calc": "svAN(brutto, { zusatz: zb, kinder: 1 }).rv",
+      "einheit": "€",
+      "loesung": 785.85,
+      "erklaerung": "Das Gehalt übersteigt die **Beitragsbemessungsgrenze RV** von {{W.bbgRvMonat|€}}. Beiträge werden nur bis zur BBG berechnet:\n{{W.bbgRvMonat|€}} × {{W.rv/2|%}} = **{{svAN(brutto, { zusatz: zb, kinder: 1 }).rv|€}}**\n(KV/PV entsprechend nur bis {{W.bbgKvMonat|€}}.)"
+    },
+    {
+      "id": "pe-05", "typ": "zahl",
+      "frage": "Entgeltabrechnung für Jana Schulz (Steuerklasse I, kinderlos, 27 Jahre, ev., Zusatzbeitrag {{zb|%}}):\n- Grundgehalt {{gehalt|€}}\n- Lohnsteuer laut Tabelle {{lst|€}}\n- Solidaritätszuschlag 0,00 €\n- Kirchensteuer 9 % der Lohnsteuer (Rheinland-Pfalz)\n\nBerechnen Sie das **Nettogehalt**.",
+      "vars": { "gehalt": 3600, "lst": 437.25, "zb": 2.9 },
+      "calc": "r2(gehalt - lst - r2(lst*0.09) - svAN(gehalt, { zusatz: zb, kinderlos: true }).summe)",
+      "einheit": "€",
+      "loesung": 2340.4,
+      "erklaerung": "Brutto {{gehalt|€}}\n− Lohnsteuer {{lst|€}}\n− Kirchensteuer 9 % = {{r2(lst*0.09)|€}}\n− KV {{svAN(gehalt, { zusatz: zb, kinderlos: true }).kv|€}} − PV {{svAN(gehalt, { zusatz: zb, kinderlos: true }).pv|€}} (inkl. Kinderlosenzuschlag) − RV {{svAN(gehalt, { zusatz: zb, kinderlos: true }).rv|€}} − AV {{svAN(gehalt, { zusatz: zb, kinderlos: true }).av|€}}\n= **Netto {{r2(gehalt - lst - r2(lst*0.09) - svAN(gehalt, { zusatz: zb, kinderlos: true }).summe)|€}}**\n(Lohnsteuerwert fiktiv – in der Prüfung wird er vorgegeben.)"
+    },
+    {
+      "id": "pe-06", "typ": "zahl",
+      "frage": "Ein Mitarbeiter (1 Kind, Zusatzbeitrag {{zb|%}}) erhält {{gehalt|€}} Gehalt. Der Arbeitgeber zahlt zusätzlich {{vlag|€}} **vermögenswirksame Leistungen**; der Mitarbeiter spart insgesamt {{vlspar|€}} in einen Bausparvertrag. Lohnsteuer {{lst|€}}, Kirchensteuer {{kist|€}}, Soli 0 €.\n\nWie hoch ist der **Auszahlungsbetrag**?",
+      "vars": { "gehalt": 3200, "vlag": 26.59, "vlspar": 40, "lst": 336.83, "kist": 30.31, "zb": 2.9 },
+      "calc": "r2(gehalt + vlag - lst - kist - svAN(gehalt + vlag, { zusatz: zb, kinder: 1 }).summe - vlspar)",
+      "einheit": "€",
+      "loesung": 2137.02,
+      "erklaerung": "Steuer- und SV-Brutto = {{gehalt|€}} + VL-Zuschuss {{vlag|€}} = {{gehalt+vlag|€}}\n− LSt {{lst|€}} − KiSt {{kist|€}}\n− SV-AN-Anteil {{svAN(gehalt + vlag, { zusatz: zb, kinder: 1 }).summe|€}}\n= Netto {{r2(gehalt + vlag - lst - kist - svAN(gehalt + vlag, { zusatz: zb, kinder: 1 }).summe)|€}}\n− VL-Sparbetrag {{vlspar|€}} (wird direkt an die Bausparkasse überwiesen)\n= **Auszahlung {{r2(gehalt + vlag - lst - kist - svAN(gehalt + vlag, { zusatz: zb, kinder: 1 }).summe - vlspar)|€}}**"
+    },
+    {
+      "id": "pe-07", "typ": "zahl",
+      "frage": "Für einen Mitarbeiter mit {{brutto|€}} Bruttogehalt (Zusatzbeitrag {{zb|%}}) sind die **Arbeitgeberanteile** zur Sozialversicherung zu ermitteln (KV, PV, RV, AV und Insolvenzgeldumlage; ohne U1/U2 und Unfallversicherung).\n\nWie hoch ist die Summe?",
+      "vars": { "brutto": 3400, "zb": 2.9 },
+      "calc": "svAG(brutto, { zusatz: zb }).summe",
+      "einheit": "€",
+      "loesung": 724.2,
+      "erklaerung": "KV {{svAG(brutto, { zusatz: zb }).kv|€}} + PV {{svAG(brutto, { zusatz: zb }).pv|€}} + RV {{svAG(brutto, { zusatz: zb }).rv|€}} + AV {{svAG(brutto, { zusatz: zb }).av|€}} + Insolvenzgeldumlage {{W.insolvenzgeldumlage|%}} = {{svAG(brutto, { zusatz: zb }).u3|€}}\n= **{{svAG(brutto, { zusatz: zb }).summe|€}}**\nPersonalkosten gesamt = Brutto + AG-Anteile (+ U1/U2 + BG-Beitrag)."
+    },
+    {
+      "id": "pe-08", "typ": "einfach",
+      "frage": "Welche Sozialversicherung trägt der **Arbeitgeber allein**?",
+      "optionen": ["Gesetzliche Unfallversicherung (Berufsgenossenschaft)", "Rentenversicherung", "Arbeitslosenversicherung", "Pflegeversicherung"],
+      "loesung": 0,
+      "erklaerung": "Die **Unfallversicherung** zahlt der AG allein (Beitrag nach Gefahrklasse und Lohnsumme). Ebenso allein: Umlagen U1 (Krankheit), U2 (Mutterschaft) und U3 (Insolvenzgeld). KV, PV, RV, AV: grundsätzlich hälftig (Ausnahmen: PV-Kinderlosenzuschlag, Sachsen)."
+    },
+    {
+      "id": "pe-09", "typ": "einfach",
+      "frage": "Eine Aushilfe im Lager verdient 2026 monatlich {{x|€}}. Wie wird sie sozialversicherungsrechtlich eingeordnet?",
+      "vars": { "x": 580 },
+      "optionen": ["Geringfügig entlohnte Beschäftigung (Minijob)", "Beschäftigung im Übergangsbereich (Midijob)", "Voll sozialversicherungspflichtige Beschäftigung", "Kurzfristige Beschäftigung"],
+      "loesung": 0,
+      "erklaerung": "Minijob-Grenze 2026: **{{W.minijobGrenze|€}}** im Monat. {{x|€}} liegt darunter → Minijob (AG zahlt Pauschalbeiträge; AN ist rentenversicherungspflichtig mit Befreiungsmöglichkeit). Übergangsbereich: {{W.minijobGrenze+0.01|€}} bis {{W.uebergangsbereichBis|€}}."
+    },
+    {
+      "id": "pe-10", "typ": "zahl",
+      "frage": "Ein Mitarbeiter im Akkord stellt Halterungen H-50 her. Es gilt: Mindestlohn (Grundlohn) {{grund|€}}/Std., Akkordzuschlag {{zuschl|%}}, Normalleistung {{norm}} Stück/Std. (Stückakkord). Er fertigt an einem Tag {{stueck}} Stück in 8 Stunden.\n\nWie hoch ist sein **Tagesverdienst**?",
+      "vars": { "grund": 17.5, "zuschl": 20, "norm": 30, "stueck": 288 },
+      "calc": "r2(stueck * r2(grund*(1+zuschl/100)/norm))",
+      "einheit": "€",
+      "loesung": 201.6,
+      "erklaerung": "Akkordrichtsatz = {{grund|€}} + {{zuschl|%}} = {{grund*(1+zuschl/100)|€}} je Std.\nStückakkordsatz = {{grund*(1+zuschl/100)|€}} ÷ {{norm}} Stück = {{r2(grund*(1+zuschl/100)/norm)|€}} je Stück\nVerdienst = {{stueck}} × {{r2(grund*(1+zuschl/100)/norm)|€}} = **{{r2(stueck * r2(grund*(1+zuschl/100)/norm))|€}}**\nLeistungsgrad: {{stueck/8}} ÷ {{norm}} = {{stueck/8/norm*100|%}}"
+    },
+    {
+      "id": "pe-11", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Entlohnungsformen zu.",
+      "paare": [
+        ["Bezahlung nach Anwesenheitszeit, unabhängig von der Menge", "Zeitlohn"],
+        ["Bezahlung nach erbrachter Menge, Normalleistung als Basis", "Akkordlohn"],
+        ["Grundlohn plus Zuschlag für Qualität oder Materialersparnis", "Prämienlohn"],
+        ["Beteiligung am Unternehmensgewinn", "Erfolgsbeteiligung"]
+      ],
+      "erklaerung": "Zeitlohn: bei Qualitätsarbeit, schwer messbarer Leistung. Akkord: bei messbaren, wiederkehrenden Tätigkeiten. Prämie: belohnt bestimmte Ziele. Gewinnbeteiligung: Mitarbeiterbindung."
+    },
+    {
+      "id": "pe-12", "typ": "mehrfach",
+      "frage": "Welche Abzüge sind Teil der **gesetzlichen Abzüge** in der Entgeltabrechnung?",
+      "optionen": ["Lohnsteuer", "Solidaritätszuschlag (falls anfallend)", "Kirchensteuer (bei Kirchenmitgliedschaft)", "Arbeitnehmeranteile zur Sozialversicherung", "Vermögenswirksame Sparleistung", "Gehaltsvorschuss"],
+      "loesung": [0, 1, 2, 3],
+      "erklaerung": "Gesetzliche Abzüge: Steuern (LSt, Soli, KiSt) und SV-Beiträge → ergibt das **Nettoentgelt**. Sonstige Abzüge (VL-Sparbetrag, Vorschuss, Pfändung, Sachbezüge) → ergibt den **Auszahlungsbetrag**."
+    },
+    {
+      "id": "pe-13", "typ": "zahl",
+      "frage": "Ein Mitarbeiter mit {{brutto|€}} Gehalt nutzt seinen Dienstwagen auch privat. Der Bruttolistenpreis des Verbrenners beträgt {{blp|€}}. Es gilt die **1-%-Regel**; die Fahrten zur Arbeit bleiben hier unberücksichtigt.\n\nWie hoch ist das **steuer- und sozialversicherungspflichtige Bruttoentgelt**?",
+      "vars": { "brutto": 5200, "blp": 42870 },
+      "calc": "brutto + floor(blp/100)*100*0.01",
+      "einheit": "€",
+      "loesung": 5628,
+      "erklaerung": "Geldwerter Vorteil = 1 % des auf volle 100 € abgerundeten Bruttolistenpreises: {{floor(blp/100)*100|€}} × 1 % = {{floor(blp/100)*100*0.01|€}}\nSteuer-/SV-Brutto = {{brutto|€}} + {{floor(blp/100)*100*0.01|€}} = **{{brutto + floor(blp/100)*100*0.01|€}}**\n(Hinzu kämen 0,03 % je Entfernungskilometer; für E-Autos gelten ermäßigte Sätze.)"
+    },
+    {
+      "id": "pe-14", "typ": "zahl",
+      "frage": "Für die Westpfalz Metallwerk GmbH sind die monatlichen **Personalkosten** eines Mitarbeiters zu berechnen: Bruttogehalt {{brutto|€}}, AG-Anteile zur SV {{agsv|€}}, Umlagen U1/U2 {{u12|€}}, Beitrag zur Berufsgenossenschaft {{bg|€}}, AG-Zuschuss zur betrieblichen Altersvorsorge {{bav|€}}.",
+      "vars": { "brutto": 3400, "agsv": 724.2, "u12": 64.6, "bg": 34, "bav": 50 },
+      "calc": "r2(brutto + agsv + u12 + bg + bav)",
+      "einheit": "€",
+      "loesung": 4272.8,
+      "erklaerung": "{{brutto|€}} + {{agsv|€}} + {{u12|€}} + {{bg|€}} + {{bav|€}} = **{{r2(brutto + agsv + u12 + bg + bav)|€}}**\nPersonalzusatzkosten = {{r2(agsv+u12+bg+bav)|€}} = {{r2((agsv+u12+bg+bav)/brutto*100)|%}} des Bruttogehalts."
+    },
+    {
+      "id": "pe-15", "typ": "einfach",
+      "frage": "Auf welchem Konto wird die **Summe der Arbeitnehmeranteile zur Sozialversicherung** bis zur Überweisung an die Krankenkasse gebucht?",
+      "optionen": ["Verbindlichkeiten gegenüber Sozialversicherungsträgern", "Gesetzliche soziale Aufwendungen", "Löhne und Gehälter", "Sonstige Forderungen"],
+      "loesung": 0,
+      "erklaerung": "AN-Anteile sind Teil des Bruttogehalts (Aufwand: Gehälter) und werden als **Verbindlichkeit gegenüber SV-Trägern** passiviert. Die AG-Anteile buchen auf **Gesetzliche soziale Aufwendungen** an Verbindlichkeiten SV. Fällig ist der Gesamtbetrag am drittletzten Bankarbeitstag des Monats."
+    },
+    {
+      "id": "pe-16", "typ": "zahl",
+      "frage": "Ein Mitarbeiter mit 1 Kind (Zusatzbeitrag {{zb|%}}) verdient {{brutto|€}}. Berechnen Sie die **Summe aller Arbeitnehmeranteile** zur Sozialversicherung.",
+      "vars": { "brutto": 2875.5, "zb": 3.1 },
+      "calc": "svAN(brutto, { zusatz: zb, kinder: 1 }).summe",
+      "einheit": "€",
+      "loesung": 611.04,
+      "erklaerung": "KV ({{(W.kvAllgemein+zb)/2|%}}) {{svAN(brutto, { zusatz: zb, kinder: 1 }).kv|€}}\nPV ({{W.pv/2|%}}) {{svAN(brutto, { zusatz: zb, kinder: 1 }).pv|€}}\nRV ({{W.rv/2|%}}) {{svAN(brutto, { zusatz: zb, kinder: 1 }).rv|€}}\nAV ({{W.av/2|%}}) {{svAN(brutto, { zusatz: zb, kinder: 1 }).av|€}}\n= **{{svAN(brutto, { zusatz: zb, kinder: 1 }).summe|€}}** (jeder Zweig wird einzeln kaufmännisch gerundet)"
+    }
+  ],
+  "karten": [
+    { "id": "pe-k01", "vorne": "Schema Brutto → Auszahlung", "hinten": "Bruttoentgelt (+ VL-Zuschuss AG, + geldwerte Vorteile)\n− LSt, Soli, KiSt\n− SV-AN-Anteile\n= Nettoentgelt\n− VL-Sparbetrag, Vorschuss, Sachbezugswert\n= Auszahlungsbetrag" },
+    { "id": "pe-k02", "vorne": "SV-Sätze 2026 Arbeitnehmeranteil", "hinten": "KV: 7,3 % + ½ Zusatzbeitrag (Ø 2,9 % → 1,45 %)\nPV: 1,8 % (+ 0,6 % kinderlos ab 23; − 0,25 Pkt. je Kind 2.–5.)\nRV: 9,3 %\nAV: 1,3 %", "stand2026": true },
+    { "id": "pe-k03", "vorne": "Beitragsbemessungsgrenzen 2026 (Monat)", "hinten": "KV/PV: 5.812,50 €\nRV/AV: 8.450 € (bundeseinheitlich)\nVersicherungspflichtgrenze KV: 6.450 €", "stand2026": true },
+    { "id": "pe-k04", "vorne": "Was trägt der Arbeitgeber allein?", "hinten": "Unfallversicherung (BG), Umlage U1 (Lohnfortzahlung Krankheit), U2 (Mutterschaft), U3 (Insolvenzgeld 0,15 %), Pauschalabgaben für Minijobs" },
+    { "id": "pe-k05", "vorne": "Minijob und Midijob 2026", "hinten": "Minijob: bis 603 €/Monat, AG zahlt Pauschalen, AN RV-pflichtig (Befreiung möglich)\nÜbergangsbereich: 603,01–2.000 €, reduzierte AN-Beiträge\nMindestlohn: 13,90 €/Std.", "stand2026": true },
+    { "id": "pe-k06", "vorne": "Kirchensteuer und Solidaritätszuschlag", "hinten": "KiSt: 9 % der Lohnsteuer (Bayern und Baden-Württemberg 8 %) – Rheinland-Pfalz 9 %.\nSoli: 5,5 % der LSt, fällt seit 2021 für die meisten AN wegen hoher Freigrenze nicht an." },
+    { "id": "pe-k07", "vorne": "Akkordlohn – Formeln", "hinten": "Akkordrichtsatz = Grundlohn + Akkordzuschlag\nStückakkord: Akkordrichtsatz ÷ Normalleistung je Std. = Satz je Stück\nZeitakkord: Vorgabezeit je Stück × Minutenfaktor (Richtsatz ÷ 60)" },
+    { "id": "pe-k08", "vorne": "Vermögenswirksame Leistungen (VL)", "hinten": "Zuschuss des AG (tariflich/vertraglich), steuer- und SV-pflichtig. Der Sparbetrag wird vom Netto abgezogen und direkt an den Anlageträger überwiesen. Staatliche Arbeitnehmer-Sparzulage bei Einkommensgrenzen." },
+    { "id": "pe-k09", "vorne": "Buchung der Gehaltsabrechnung (Grundprinzip)", "hinten": "Gehälter (Brutto) an Bank (Auszahlung), an Verbindlichkeiten Finanzamt (LSt, KiSt, Soli), an Verbindlichkeiten SV (AN-Anteil)\nGesetzl. soziale Aufwendungen an Verbindlichkeiten SV (AG-Anteil)" },
+    { "id": "pe-k10", "vorne": "Geldwerter Vorteil Dienstwagen", "hinten": "1 % des Bruttolistenpreises (abgerundet auf volle 100 €) je Monat + 0,03 % je Entfernungskilometer Wohnung–Arbeit. Elektro-/Hybridfahrzeuge: ermäßigte Bemessung (0,25 % bzw. 0,5 %) – Stand prüfen.", "stand2026": true },
+    { "id": "pe-k11", "vorne": "Fälligkeit der SV-Beiträge", "hinten": "Drittletzter Bankarbeitstag des laufenden Monats (Beitragsnachweis 2 Arbeitstage vorher). Lohnsteuer-Anmeldung und -Zahlung bis zum 10. des Folgemonats." }
+  ]
+}

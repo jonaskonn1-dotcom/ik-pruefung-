@@ -1,0 +1,142 @@
+{
+  "id": "personal-planung",
+  "titel": "Personal: Bedarf, Beschaffung, Auswahl, Entwicklung, Zeugnis",
+  "gruppe": "Personal",
+  "bereich": { "ao2024": "mvpk", "vo2002": "gp" },
+  "beschreibung": "Quantitativer und qualitativer Personalbedarf, interne/externe Beschaffung, AGG, Auswahlverfahren, Personalentwicklung, Arbeitszeugnis, Personalkennzahlen.",
+  "fragen": [
+    {
+      "id": "pp-01", "typ": "zahl",
+      "frage": "Für die Fertigung der Gehäuse G-200 werden im nächsten Jahr {{soll}} Mitarbeitende benötigt. Aktuell sind {{ist}} beschäftigt. Bekannt sind {{rente}} Renteneintritte und {{kuend}} Kündigungen. {{azubi}} Auszubildende werden übernommen und {{rueck}} Beschäftigte kehren aus der Elternzeit zurück.\n\nErmitteln Sie den **Nettopersonalbedarf**.",
+      "vars": { "soll": 86, "ist": 82, "rente": 3, "kuend": 2, "azubi": 2, "rueck": 1 },
+      "calc": "soll - ist + rente + kuend - azubi - rueck",
+      "einheit": "Personen",
+      "loesung": 6,
+      "erklaerung": "Bruttopersonalbedarf {{soll}}\n− aktueller Bestand {{ist}}\n+ Abgänge ({{rente}} + {{kuend}})\n− Zugänge ({{azubi}} + {{rueck}})\n= **Nettopersonalbedarf {{soll - ist + rente + kuend - azubi - rueck}}** → so viele Stellen müssen neu besetzt werden."
+    },
+    {
+      "id": "pp-02", "typ": "zahl",
+      "frage": "Im Versand sollen jährlich {{menge}} Sendungen kommissioniert werden. Je Sendung werden {{min}} Minuten benötigt. Eine Vollzeitkraft steht {{std}} Stunden pro Jahr zur Verfügung; zusätzlich ist eine Ausfallquote von {{ausfall|%}} zu berücksichtigen (die verfügbare Zeit verringert sich entsprechend).\n\nWie viele Vollzeitkräfte werden benötigt? (Auf zwei Nachkommastellen)",
+      "vars": { "menge": 48000, "min": 9, "std": 1680, "ausfall": 8 },
+      "calc": "r2(menge*min/60 / (std*(1-ausfall/100)))",
+      "einheit": "VZK",
+      "loesung": 4.66,
+      "erklaerung": "Arbeitszeitbedarf: {{menge}} × {{min}} Min. ÷ 60 = {{menge*min/60|n0}} Std.\nEffektive Zeit je VZK: {{std}} × (1 − {{ausfall/100}}) = {{std*(1-ausfall/100)|n1}} Std.\nBedarf = {{menge*min/60|n0}} ÷ {{std*(1-ausfall/100)|n1}} = **{{r2(menge*min/60 / (std*(1-ausfall/100)))}} Vollzeitkräfte** (in der Praxis aufrunden bzw. mit Teilzeit planen)."
+    },
+    {
+      "id": "pp-03", "typ": "mehrfach",
+      "frage": "Welche Aussagen sind **Vorteile der internen** Personalbeschaffung?",
+      "optionen": ["Bewerber und ihre Leistung sind bekannt", "Geringere Beschaffungskosten und kürzere Einarbeitung", "Motivation durch Aufstiegschancen", "Mehr neue Ideen und Impulse von außen", "Größere Auswahl an Bewerbern"],
+      "loesung": [0, 1, 2],
+      "erklaerung": "Intern: bekannt, günstig, schnell, motivierend – aber kleinere Auswahl, „Betriebsblindheit“, Lücke an alter Stelle, ggf. Enttäuschung abgelehnter Kollegen. Extern: größere Auswahl, neue Impulse – aber teurer, Risiko, längere Einarbeitung."
+    },
+    {
+      "id": "pp-04", "typ": "einfach",
+      "frage": "Ein Betrieb mit Betriebsrat will eine Stelle extern ausschreiben. Was kann der Betriebsrat verlangen?",
+      "optionen": ["Dass die Stelle vorher bzw. zugleich innerbetrieblich ausgeschrieben wird (§ 93 BetrVG)", "Dass er den Bewerber allein auswählt", "Dass die Stelle nur mit Betriebsratsmitgliedern besetzt wird", "Nichts, Personalbeschaffung ist mitbestimmungsfrei"],
+      "loesung": 0,
+      "erklaerung": "Nach § 93 BetrVG kann der Betriebsrat die **innerbetriebliche Ausschreibung** verlangen. Bei der Einstellung selbst hat er in Unternehmen mit mehr als 20 wahlberechtigten AN ein Zustimmungsverweigerungsrecht (§ 99 BetrVG)."
+    },
+    {
+      "id": "pp-05", "typ": "mehrfach",
+      "frage": "Welche Formulierungen in einer Stellenanzeige verstoßen gegen das **AGG** (Allgemeines Gleichbehandlungsgesetz)?",
+      "optionen": ["„Wir suchen eine junge, dynamische Sachbearbeiterin“", "„Deutsch als Muttersprache erforderlich“", "„Industriekaufmann (m/w/d) mit sehr guten Excel-Kenntnissen“", "„Sie verfügen über sichere Deutschkenntnisse in Wort und Schrift“"],
+      "loesung": [0, 1],
+      "erklaerung": "Benachteiligungsmerkmale nach § 1 AGG: Rasse/ethnische Herkunft, Geschlecht, Religion/Weltanschauung, Behinderung, Alter, sexuelle Identität. „jung“ (Alter), „Sachbearbeiterin“ (Geschlecht) und „Muttersprache“ (ethnische Herkunft) sind problematisch. Sachliche Anforderungen wie „sichere Deutschkenntnisse“ sind zulässig."
+    },
+    {
+      "id": "pp-06", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Instrumente der Personalauswahl zu.",
+      "paare": [
+        ["Mehrere Bewerber lösen Gruppenaufgaben, Beobachter bewerten", "Assessment-Center"],
+        ["Alle Bewerber erhalten dieselben Fragen in gleicher Reihenfolge", "strukturiertes Vorstellungsgespräch"],
+        ["Prüfung von Anschreiben, Lebenslauf, Zeugnissen", "Analyse der Bewerbungsunterlagen"],
+        ["Bewerber arbeitet einen Tag im Team mit", "Probearbeitstag"]
+      ],
+      "erklaerung": "Typischer Ablauf: Unterlagenanalyse (Vorauswahl) → ggf. Tests → Vorstellungsgespräch/AC → Entscheidung. Strukturierte Verfahren erhöhen Vergleichbarkeit und Rechtssicherheit (AGG)."
+    },
+    {
+      "id": "pp-07", "typ": "einfach",
+      "frage": "Im Vorstellungsgespräch fragt die Personalleitung eine Bewerberin, ob sie schwanger sei. Wie ist die Rechtslage?",
+      "optionen": ["Die Frage ist unzulässig; die Bewerberin darf die Unwahrheit sagen („Recht zur Lüge“).", "Die Frage ist zulässig und muss wahrheitsgemäß beantwortet werden.", "Die Frage ist nur bei befristeten Stellen zulässig.", "Die Bewerberin muss die Frage schriftlich beantworten."],
+      "loesung": 0,
+      "erklaerung": "Unzulässige Fragen (Schwangerschaft, Religion, Parteizugehörigkeit, Gewerkschaft, Familienplanung) dürfen falsch beantwortet werden, ohne dass später angefochten werden kann. Zulässig sind Fragen mit sachlichem Bezug zur Stelle (z. B. Qualifikation, einschlägige Vorstrafen bei Kassentätigkeit)."
+    },
+    {
+      "id": "pp-08", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Maßnahmen der **Personalentwicklung** zu.",
+      "paare": [
+        ["Systematischer Wechsel zwischen Einkauf, Vertrieb und Controlling", "Job-Rotation"],
+        ["Zusätzliche gleichartige Aufgaben auf gleichem Niveau", "Job-Enlargement"],
+        ["Zusätzliche Entscheidungs- und Verantwortungsbefugnisse", "Job-Enrichment"],
+        ["Externes Excel-Seminar an zwei Tagen", "Off-the-job-Maßnahme"]
+      ],
+      "erklaerung": "**On-the-job**: am Arbeitsplatz (Rotation, Enlargement, Enrichment, Unterweisung). **Near-the-job**: arbeitsnah (Qualitätszirkel, Projektarbeit). **Off-the-job**: außerhalb (Seminare, E-Learning, Studium)."
+    },
+    {
+      "id": "pp-09", "typ": "einfach",
+      "frage": "Ein Arbeitszeugnis enthält: „Sie erledigte die ihr übertragenen Aufgaben **stets zu unserer vollsten Zufriedenheit**.“ Welcher Note entspricht das?",
+      "optionen": ["sehr gut", "gut", "befriedigend", "ausreichend"],
+      "loesung": 0,
+      "erklaerung": "Zeugnissprache: „stets zur vollsten Zufriedenheit“ = sehr gut; „stets zur vollen“ = gut; „zur vollen“ = befriedigend; „zur Zufriedenheit“ = ausreichend; „im Großen und Ganzen zur Zufriedenheit“ = mangelhaft."
+    },
+    {
+      "id": "pp-10", "typ": "mehrfach",
+      "frage": "Welche Aussagen zum **Arbeitszeugnis** sind richtig?",
+      "optionen": ["Beschäftigte haben bei Beendigung Anspruch auf ein schriftliches Zeugnis (§ 109 GewO).", "Das qualifizierte Zeugnis beurteilt zusätzlich Leistung und Verhalten.", "Das Zeugnis muss wahr und wohlwollend formuliert sein.", "Das Zeugnis darf die Krankheitstage nennen.", "Ein Zwischenzeugnis darf grundsätzlich nicht verlangt werden."],
+      "loesung": [0, 1, 2],
+      "erklaerung": "Einfaches Zeugnis: Art und Dauer der Tätigkeit. Qualifiziertes Zeugnis (auf Verlangen): zusätzlich Leistung und Verhalten. Grundsätze: Wahrheit und Wohlwollen, keine Geheimcodes, Krankheit/Betriebsratstätigkeit nicht erwähnen. Zwischenzeugnis bei berechtigtem Interesse (z. B. Vorgesetztenwechsel)."
+    },
+    {
+      "id": "pp-11", "typ": "zahl",
+      "frage": "Die Westpfalz Metallwerk GmbH hatte zu Jahresbeginn {{anf}} und zum Jahresende {{end}} Beschäftigte. Im Laufe des Jahres haben {{abg}} Beschäftigte selbst gekündigt.\n\nBerechnen Sie die **Fluktuationsrate** (BDA-Formel, Basis: durchschnittlicher Personalbestand).",
+      "vars": { "anf": 236, "end": 244, "abg": 12 },
+      "calc": "r2(abg / ((anf+end)/2) * 100)",
+      "einheit": "%",
+      "loesung": 5,
+      "erklaerung": "Ø Personalbestand = ({{anf}} + {{end}}) ÷ 2 = {{(anf+end)/2}}\nFluktuationsrate = {{abg}} ÷ {{(anf+end)/2}} × 100 = **{{r2(abg / ((anf+end)/2) * 100)|%}}**"
+    },
+    {
+      "id": "pp-12", "typ": "reihenfolge",
+      "frage": "Bringen Sie den Prozess der Personalbeschaffung in eine sinnvolle Reihenfolge.",
+      "elemente": ["Personalbedarf ermitteln", "Anforderungsprofil erstellen", "Stelle ausschreiben", "Bewerbungen sichten und vorauswählen", "Vorstellungsgespräche führen", "Einstellung (Zustimmung Betriebsrat) und Arbeitsvertrag", "Einarbeitung (Onboarding)"],
+      "erklaerung": "Bedarf → Anforderungsprofil (Stellenbeschreibung) → Ausschreibung (intern/extern) → Vorauswahl → Auswahlgespräche/Tests → Entscheidung, Betriebsrat (§ 99 BetrVG), Vertrag → Einarbeitung."
+    },
+    {
+      "id": "pp-13", "typ": "einfach",
+      "frage": "Was beschreibt eine **Stellenbeschreibung**?",
+      "optionen": ["Aufgaben, Kompetenzen, Verantwortung und Einordnung einer Stelle in die Organisation", "Die persönlichen Eigenschaften des aktuellen Stelleninhabers", "Das Gehalt aller Mitarbeitenden einer Abteilung", "Den Text einer externen Stellenanzeige"],
+      "loesung": 0,
+      "erklaerung": "Die Stellenbeschreibung ist **personenunabhängig** (Stellenbezeichnung, Ziele, Aufgaben, Befugnisse, Über-/Unterstellung, Vertretung). Das **Anforderungsprofil** leitet daraus die nötigen Qualifikationen ab."
+    },
+    {
+      "id": "pp-14", "typ": "mehrfach",
+      "frage": "Welche Maßnahmen sind typische Instrumente des **Employer Brandings** bzw. der Personalbindung?",
+      "optionen": ["Flexible Arbeitszeitmodelle und mobiles Arbeiten", "Betriebliche Altersvorsorge und Jobrad", "Karriereseite mit authentischen Mitarbeiterberichten", "Ausschließlich befristete Arbeitsverträge", "Verzicht auf Weiterbildung"],
+      "loesung": [0, 1, 2],
+      "erklaerung": "Employer Branding = Positionierung als attraktiver Arbeitgeber, wichtig bei Fachkräftemangel. Bindung durch Entwicklungsmöglichkeiten, Vereinbarkeit von Familie und Beruf, Zusatzleistungen und gutes Betriebsklima."
+    },
+    {
+      "id": "pp-15", "typ": "zahl",
+      "frage": "Eine externe Stellenbesetzung verursacht folgende Kosten: Anzeigen {{anz|€}}, Personalberater {{berater|€}}, Arbeitszeit für Auswahl {{zeit}} Std. à {{satz|€}}, Einarbeitung {{einarb|€}}.\n\nWie hoch sind die **Beschaffungskosten insgesamt**?",
+      "vars": { "anz": 1850, "berater": 9600, "zeit": 26, "satz": 58, "einarb": 4200 },
+      "calc": "anz + berater + zeit*satz + einarb",
+      "einheit": "€",
+      "loesung": 17158,
+      "erklaerung": "Anzeigen {{anz|€}} + Berater {{berater|€}} + Auswahl {{zeit}} × {{satz|€}} = {{zeit*satz|€}} + Einarbeitung {{einarb|€}} = **{{anz + berater + zeit*satz + einarb|€}}**\nSolche Zahlen zeigen, warum niedrige Fluktuation wirtschaftlich wichtig ist."
+    }
+  ],
+  "karten": [
+    { "id": "pp-k01", "vorne": "Nettopersonalbedarf – Schema", "hinten": "Bruttopersonalbedarf\n− Personalbestand\n+ Abgänge\n− Zugänge\n= Nettopersonalbedarf (positiv → Beschaffung, negativ → Freisetzung)" },
+    { "id": "pp-k02", "vorne": "Quantitativer, qualitativer, zeitlicher, örtlicher Personalbedarf", "hinten": "Wie viele? – Welche Qualifikation? – Ab wann, wie lange? – Wo (Standort, Abteilung)?" },
+    { "id": "pp-k03", "vorne": "Interne vs. externe Personalbeschaffung", "hinten": "**Intern**: Ausschreibung, Versetzung, Mehrarbeit, Übernahme Azubis – günstig, bekannt, motivierend; aber kleine Auswahl, Betriebsblindheit.\n**Extern**: Anzeigen, Jobportale, Agentur für Arbeit, Personalberater, Social Media, Hochschulen – große Auswahl, neue Impulse; aber teuer, Risiko." },
+    { "id": "pp-k04", "vorne": "Merkmale des AGG (§ 1)", "hinten": "Rasse/ethnische Herkunft, Geschlecht, Religion/Weltanschauung, Behinderung, Alter, sexuelle Identität. Bei Verstoß: Entschädigung bis zu 3 Monatsgehältern (bei Nichteinstellung, wenn sonst nicht eingestellt), Geltendmachung innerhalb 2 Monaten." },
+    { "id": "pp-k05", "vorne": "Zeugnissprache – Notenskala", "hinten": "stets zur vollsten Zufriedenheit → 1\nstets zur vollen Zufriedenheit → 2\nzur vollen Zufriedenheit → 3\nzur Zufriedenheit → 4\nim Großen und Ganzen zur Zufriedenheit → 5" },
+    { "id": "pp-k06", "vorne": "Einfaches vs. qualifiziertes Zeugnis", "hinten": "**Einfach**: Personalien, Art und Dauer der Tätigkeit.\n**Qualifiziert** (auf Wunsch): zusätzlich Beurteilung von Leistung und Verhalten.\nGrundsätze: Wahrheit, Wohlwollen, Vollständigkeit, Klarheit." },
+    { "id": "pp-k07", "vorne": "On-, near-, off-the-job", "hinten": "On: am Arbeitsplatz (Unterweisung, Job-Rotation, -Enlargement, -Enrichment)\nNear: arbeitsnah (Projektgruppen, Qualitätszirkel)\nOff: außerhalb (Seminare, E-Learning, Studium)" },
+    { "id": "pp-k08", "vorne": "Job-Enlargement vs. Job-Enrichment", "hinten": "**Enlargement**: horizontale Erweiterung – mehr gleichartige Aufgaben\n**Enrichment**: vertikale Erweiterung – mehr Verantwortung, Planungs- und Kontrollaufgaben" },
+    { "id": "pp-k09", "vorne": "Fluktuationsrate (BDA)", "hinten": "Fluktuationsrate = arbeitnehmerseitige Abgänge ÷ Ø Personalbestand × 100\nØ Bestand = (Anfangsbestand + Endbestand) ÷ 2" },
+    { "id": "pp-k10", "vorne": "Zulässige vs. unzulässige Fragen im Vorstellungsgespräch", "hinten": "**Zulässig**: Qualifikation, Berufserfahrung, Wettbewerbsverbot, einschlägige Vorstrafen (stellenbezogen).\n**Unzulässig**: Schwangerschaft, Familienplanung, Religion, Partei, Gewerkschaft, allgemeine Krankheiten → Recht zur Lüge." },
+    { "id": "pp-k11", "vorne": "Mitbestimmung des Betriebsrats bei personellen Einzelmaßnahmen", "hinten": "§ 99 BetrVG (> 20 wahlberechtigte AN): Einstellung, Eingruppierung, Umgruppierung, Versetzung – Zustimmungsverweigerung innerhalb 1 Woche aus Gründen des § 99 Abs. 2.\n§ 93: innerbetriebliche Ausschreibung verlangen\n§ 102: Anhörung vor jeder Kündigung" }
+  ]
+}

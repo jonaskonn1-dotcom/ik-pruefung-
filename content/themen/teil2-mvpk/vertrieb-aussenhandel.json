@@ -1,0 +1,140 @@
+{
+  "id": "vertrieb-aussenhandel",
+  "titel": "Vertrieb: Außenhandel, Incoterms, Zahlungsbedingungen, CRM",
+  "gruppe": "Vertrieb",
+  "bereich": { "ao2024": "mvpk", "vo2002": "gp" },
+  "beschreibung": "Incoterms® 2020, Risiken im Außenhandel, Vorauszahlung, Akkreditiv, Dokumenteninkasso, Exportkreditversicherung, Wechselkurse, CRM und Kundenanalyse.",
+  "fragen": [
+    {
+      "id": "ah-01", "typ": "einfach",
+      "frage": "Die Westpfalz Metallwerk GmbH liefert Gehäuse an Nordic Switchgear AB nach Schweden „**FCA Kaiserslautern, Werk WPM** (Incoterms® 2020)“. Wann geht die Gefahr auf den Käufer über?",
+      "optionen": ["Mit der Übergabe der verladenen Ware an den vom Käufer benannten Frachtführer am Werk", "Mit Ankunft der Ware in Schweden", "Mit Bereitstellung der unverladenen Ware im Werk", "Mit Verladung an Bord eines Schiffes"],
+      "loesung": 0,
+      "erklaerung": "**FCA** (Free Carrier): Lieferung an den vom Käufer benannten Frachtführer am benannten Ort. Liegt der Ort beim Verkäufer, muss dieser die Ware **verladen**. Bei **EXW** (ab Werk) muss nur bereitgestellt werden – ohne Verladung."
+    },
+    {
+      "id": "ah-02", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Incoterms® 2020 der passenden Beschreibung zu.",
+      "paare": [
+        ["EXW", "Minimale Pflichten des Verkäufers: Ware im Werk bereitstellen"],
+        ["FOB", "Gefahrübergang an Bord des Schiffes im Verschiffungshafen"],
+        ["CIF", "Verkäufer zahlt Fracht und Seeversicherung bis Bestimmungshafen, Gefahr geht im Verschiffungshafen über"],
+        ["DDP", "Maximale Pflichten des Verkäufers inkl. Einfuhrverzollung"]
+      ],
+      "erklaerung": "E-Klausel: Abholung; F-Klauseln: Haupttransport zahlt Käufer; C-Klauseln: Verkäufer zahlt Haupttransport, Gefahr geht aber früh über (**Zweipunktklauseln**); D-Klauseln: Ankunftsklauseln, Gefahr am Bestimmungsort."
+    },
+    {
+      "id": "ah-03", "typ": "mehrfach",
+      "frage": "Welche Incoterms® 2020 dürfen nur für den **See- und Binnenschiffstransport** verwendet werden?",
+      "optionen": ["FAS", "FOB", "CFR", "CIF", "FCA", "DAP"],
+      "loesung": [0, 1, 2, 3],
+      "erklaerung": "Nur Seefracht: **FAS, FOB, CFR, CIF**. Alle anderen (EXW, FCA, CPT, CIP, DAP, DPU, DDP) gelten für jede Transportart, auch multimodal und Container."
+    },
+    {
+      "id": "ah-04", "typ": "einfach",
+      "frage": "Welcher Unterschied besteht zwischen **CIF** und **CIP** bei der Versicherung (Incoterms® 2020)?",
+      "optionen": ["Bei CIP muss der Verkäufer eine umfassende Deckung (Klausel A der ICC) abschließen, bei CIF reicht eine Mindestdeckung (Klausel C).", "Bei CIF muss gar nicht versichert werden.", "Bei CIP versichert der Käufer, bei CIF der Verkäufer.", "Es gibt keinen Unterschied."],
+      "loesung": 0,
+      "erklaerung": "Incoterms® 2020: **CIP** → Versicherung nach Institute Cargo Clauses (A) (All Risks), **CIF** → nur (C) (Mindestdeckung), jeweils 110 % des Warenwerts."
+    },
+    {
+      "id": "ah-05", "typ": "reihenfolge",
+      "frage": "Ordnen Sie die Zahlungsbedingungen nach dem **Risiko für den Exporteur** – vom geringsten zum höchsten Risiko.",
+      "elemente": ["Vorauszahlung", "Bestätigtes unwiderrufliches Dokumentenakkreditiv", "Dokumente gegen Zahlung (D/P)", "Dokumente gegen Akzept (D/A)", "Zahlung auf offene Rechnung (Zahlungsziel)"],
+      "erklaerung": "Vorauszahlung: kein Risiko für den Exporteur. Akkreditiv: Zahlungsversprechen der Bank. D/P: Käufer erhält Dokumente nur gegen Zahlung, kann aber die Annahme verweigern. D/A: Käufer akzeptiert einen Wechsel – Zahlung später unsicher. Offene Rechnung: volles Vertrauen in den Käufer."
+    },
+    {
+      "id": "ah-06", "typ": "einfach",
+      "frage": "Was garantiert ein **unwiderrufliches Dokumentenakkreditiv**?",
+      "optionen": ["Die Bank des Importeurs zahlt, sobald der Exporteur akkreditivgerechte Dokumente fristgerecht vorlegt.", "Die Ware ist mangelfrei.", "Der Importeur zahlt erst nach Prüfung der Ware im Lager.", "Der Wechselkurs bleibt bis zur Zahlung gleich."],
+      "loesung": 0,
+      "erklaerung": "Beim Akkreditiv verpflichtet sich die Bank des Importeurs (eröffnende Bank), gegen Vorlage der vereinbarten **Dokumente** (z. B. Konnossement, Handelsrechnung, Ursprungszeugnis) zu zahlen. Banken prüfen nur Dokumente, nicht die Ware. Ein **bestätigtes** Akkreditiv sichert zusätzlich über eine Bank im Exportland ab (Länderrisiko)."
+    },
+    {
+      "id": "ah-07", "typ": "zahl",
+      "frage": "Nordic Switchgear AB bestellt Gehäuse für {{sek}} SEK. Die Bank nennt folgenden Kurs: 1 EUR = {{kurs}} SEK (Briefkurs – die Bank kauft die SEK an und verkauft Euro).\n\nWelchen Betrag in Euro erhält die Westpfalz Metallwerk GmbH?",
+      "vars": { "sek": 540000, "kurs": 11.25 },
+      "calc": "r2(sek / kurs)",
+      "einheit": "€",
+      "loesung": 48000,
+      "erklaerung": "Mengennotierung: 1 EUR = {{kurs}} SEK\nEUR = SEK ÷ Kurs = {{sek}} ÷ {{kurs}} = **{{r2(sek/kurs)|€}}**\nRisiko: Steigt der Euro bis zur Zahlung (z. B. auf 11,50 SEK), erhält der Exporteur weniger Euro → Absicherung z. B. durch **Devisentermingeschäft** oder Fakturierung in Euro."
+    },
+    {
+      "id": "ah-08", "typ": "mehrfach",
+      "frage": "Welche Maßnahmen schützen einen Exporteur vor **Zahlungs- und Länderrisiken**?",
+      "optionen": ["Exportkreditgarantien des Bundes (Hermesdeckungen)", "Private Warenkreditversicherung", "Bestätigtes Akkreditiv", "Lieferung auf offene Rechnung mit 90 Tagen Ziel", "Verzicht auf eine Bonitätsprüfung des Kunden"],
+      "loesung": [0, 1, 2],
+      "erklaerung": "Absicherung: staatliche Exportkreditgarantien (im Auftrag des Bundes), private Kreditversicherer, Akkreditive, Vorauszahlung, Forfaitierung, Bonitätsauskünfte. Lange Ziele ohne Absicherung erhöhen das Risiko."
+    },
+    {
+      "id": "ah-09", "typ": "einfach",
+      "frage": "Die Westpfalz Metallwerk GmbH liefert Gehäuse an einen Unternehmer in Schweden (EU, gültige USt-IdNr.). Wie ist die Lieferung **umsatzsteuerlich** zu behandeln?",
+      "optionen": ["Steuerfreie innergemeinschaftliche Lieferung; der Erwerber versteuert in Schweden", "Deutsche Umsatzsteuer 19 % ist zu berechnen", "Es handelt sich um eine Ausfuhrlieferung in ein Drittland", "Umsatzsteuer wird zwischen Deutschland und Schweden halbiert"],
+      "loesung": 0,
+      "erklaerung": "Lieferungen an Unternehmer in anderen EU-Staaten mit gültiger USt-IdNr. sind **innergemeinschaftliche Lieferungen** (steuerfrei mit Vorsteuerabzug). Der Erwerber versteuert den innergemeinschaftlichen Erwerb. Pflicht: Zusammenfassende Meldung. Ausfuhrlieferungen gibt es nur in **Drittländer** (z. B. Schweiz, USA)."
+    },
+    {
+      "id": "ah-10", "typ": "einfach",
+      "frage": "Welches Dokument ist ein **Warenwertpapier** im Seeverkehr, das das Eigentum an der Ware verkörpert?",
+      "optionen": ["Konnossement (Bill of Lading)", "Handelsrechnung (Commercial Invoice)", "Packliste", "Frachtbrief im Lkw-Verkehr (CMR)"],
+      "loesung": 0,
+      "erklaerung": "Das **Konnossement** ist Empfangsbestätigung, Beförderungsvertrag und Traditionspapier: Wer es besitzt, kann die Ware herausverlangen. Deshalb ist es zentral beim Akkreditiv und Dokumenteninkasso."
+    },
+    {
+      "id": "ah-11", "typ": "einfach",
+      "frage": "Welche Hauptaufgabe hat ein **CRM-System** (Customer-Relationship-Management) im Vertrieb?",
+      "optionen": ["Kundendaten, Kontakte und Verkaufschancen zentral erfassen, um Kunden gezielt zu betreuen und langfristig zu binden", "Die Lohnabrechnung der Außendienstmitarbeiter erstellen", "Die Lagerbestände automatisch nachbestellen", "Die Finanzbuchhaltung ersetzen"],
+      "loesung": 0,
+      "erklaerung": "CRM bündelt alle Kundeninformationen (Stammdaten, Kontakthistorie, Angebote, Reklamationen), unterstützt Vertriebsplanung (Pipeline) und Kundenbindung. Datenschutz beachten: Zweckbindung, Löschfristen, Rechtsgrundlage (DSGVO)."
+    },
+    {
+      "id": "ah-12", "typ": "zahl",
+      "frage": "Eine Kundenerfolgsrechnung für die Elektrobau Neustadt GmbH zeigt:\n- Bruttoumsatz (netto ohne USt) {{umsatz|€}}\n- Erlösschmälerungen (Rabatte, Boni, Skonti) {{schmal|€}}\n- variable Kosten der gelieferten Produkte {{kv|€}}\n- kundenspezifische Kosten (Besuche, Sonderverpackung, Service) {{kk|€}}\n\nWie hoch ist der **Kundendeckungsbeitrag II**?",
+      "vars": { "umsatz": 420000, "schmal": 31500, "kv": 252000, "kk": 18400 },
+      "calc": "umsatz - schmal - kv - kk",
+      "einheit": "€",
+      "loesung": 118100,
+      "erklaerung": "Nettoerlös = {{umsatz|€}} − {{schmal|€}} = {{umsatz-schmal|€}}\n− variable Kosten {{kv|€}} = Kunden-DB I {{umsatz-schmal-kv|€}}\n− kundenspezifische Kosten {{kk|€}} = **Kunden-DB II {{umsatz-schmal-kv-kk|€}}**"
+    },
+    {
+      "id": "ah-13", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Begriffe der Kundenanalyse zu.",
+      "paare": [
+        ["A-Kunden", "wenige Kunden mit hohem Umsatzanteil, intensive Betreuung (Key Account)"],
+        ["C-Kunden", "viele Kunden mit geringem Umsatzanteil, standardisierte Betreuung (z. B. Onlineshop)"],
+        ["Customer Lifetime Value", "Wert eines Kunden über die gesamte Geschäftsbeziehung"],
+        ["Churn Rate", "Anteil der Kunden, die in einem Zeitraum abwandern"]
+      ],
+      "erklaerung": "Die ABC-Kundenanalyse verteilt Vertriebsressourcen nach Kundenbedeutung. CLV und Churn Rate sind CRM-Kennzahlen für Kundenwert und Kundenbindung."
+    },
+    {
+      "id": "ah-14", "typ": "einfach",
+      "frage": "Beim **Dokumenteninkasso „Dokumente gegen Zahlung“ (D/P)** …",
+      "optionen": ["… händigt die Bank des Importeurs die Dokumente nur gegen Zahlung des Rechnungsbetrags aus.", "… zahlt die Bank unabhängig davon, ob der Importeur die Dokumente aufnimmt.", "… erhält der Importeur die Ware vor der Zahlung.", "… übernimmt die Bank das Risiko der Nichtabnahme."],
+      "loesung": 0,
+      "erklaerung": "D/P: Ware gegen Geld über Banken als Treuhänder. **Risiko**: Der Importeur kann die Aufnahme der Dokumente verweigern – dann liegt die Ware im Ausland (Rücktransport, Notverkauf). Die Banken geben **kein** Zahlungsversprechen ab (anders als beim Akkreditiv)."
+    },
+    {
+      "id": "ah-15", "typ": "zahl",
+      "frage": "Ein Schweizer Kunde soll ein Angebot in CHF erhalten. Der Angebotspreis beträgt {{eur|€}}. Mittelkurs: 1 EUR = {{kurs}} CHF.\n\nWie viel CHF muss die Westpfalz Metallwerk GmbH anbieten, um den Euro-Betrag zu erzielen (Umrechnung zum gegebenen Kurs)?",
+      "vars": { "eur": 24800, "kurs": 0.94 },
+      "calc": "r2(eur * kurs)",
+      "einheit": "CHF",
+      "loesung": 23312,
+      "erklaerung": "Bei der Mengennotierung gilt: Fremdwährung = Euro × Kurs = {{eur}} × {{kurs}} = **{{r2(eur*kurs)}} CHF**\n(Die Schweiz ist Drittland: Ausfuhrlieferung, Ausfuhranmeldung über ATLAS, steuerfrei mit Ausfuhrnachweis.)"
+    }
+  ],
+  "karten": [
+    { "id": "ah-k01", "vorne": "Incoterms® 2020 – die 11 Klauseln", "hinten": "Alle Transportarten: EXW, FCA, CPT, CIP, DAP, DPU, DDP\nNur See/Binnenschiff: FAS, FOB, CFR, CIF" },
+    { "id": "ah-k02", "vorne": "Was regeln Incoterms – und was nicht?", "hinten": "Regeln: Lieferort, Gefahrübergang, Kostenübergang, Verladung, Versicherung, Zollformalitäten.\nNicht: Eigentumsübergang, Zahlungsbedingungen, Rechtsfolgen von Vertragsverletzungen." },
+    { "id": "ah-k03", "vorne": "C-Klauseln: Zweipunktklauseln", "hinten": "Kostenübergang (Bestimmungsort) und Gefahrübergang (Übergabe an den ersten Frachtführer bzw. an Bord im Verschiffungshafen) fallen auseinander. CIF/CIP: Verkäufer muss versichern (CIF: Klausel C, CIP: Klausel A)." },
+    { "id": "ah-k04", "vorne": "DAP – DPU – DDP", "hinten": "DAP: geliefert benannter Ort, unentladen\nDPU: geliefert benannter Ort, entladen\nDDP: geliefert, verzollt (inkl. Einfuhrabgaben) – maximale Verkäuferpflichten" },
+    { "id": "ah-k05", "vorne": "Risiken im Außenhandel", "hinten": "Zahlungs-/Delkredererisiko, Länderrisiko (politisch, Transferverbot), Währungsrisiko, Transportrisiko, Rechtsrisiko (fremdes Recht), Kultur-/Kommunikationsrisiko" },
+    { "id": "ah-k06", "vorne": "Dokumentenakkreditiv – Ablauf", "hinten": "1. Kaufvertrag mit Akkreditivklausel\n2. Importeur beauftragt seine Bank\n3. Bank eröffnet Akkreditiv, avisiert über Bank des Exporteurs\n4. Exporteur versendet Ware, reicht Dokumente ein\n5. Bank prüft Dokumente und zahlt\n6. Importeur zahlt seiner Bank, erhält Dokumente und damit die Ware" },
+    { "id": "ah-k07", "vorne": "Devisenkurs: Mengennotierung", "hinten": "1 EUR = x Fremdwährung\nFremdwährung → Euro: Betrag ÷ Kurs\nEuro → Fremdwährung: Betrag × Kurs\nGeldkurs: Bank kauft Euro / verkauft Fremdwährung (z. B. Importeur)\nBriefkurs: Bank verkauft Euro / kauft Fremdwährung (z. B. Exporteur) – der Briefkurs ist der höhere Wert" },
+    { "id": "ah-k08", "vorne": "Innergemeinschaftliche Lieferung vs. Ausfuhrlieferung", "hinten": "**EU-Land**, Unternehmer mit USt-IdNr.: innergemeinschaftliche Lieferung, steuerfrei, Zusammenfassende Meldung, Gelangensbestätigung.\n**Drittland**: Ausfuhrlieferung, steuerfrei, Ausfuhranmeldung (ATLAS), Ausgangsvermerk als Nachweis." },
+    { "id": "ah-k09", "vorne": "Wichtige Dokumente im Export", "hinten": "Handelsrechnung, Packliste, Konnossement (See) / Luftfrachtbrief / CMR-Frachtbrief, Ursprungszeugnis (IHK), Warenverkehrsbescheinigung EUR.1 (Präferenzursprung), Versicherungspolice, Ausfuhrbegleitdokument" },
+    { "id": "ah-k10", "vorne": "Ziele und Bausteine von CRM", "hinten": "Ziele: Kundenzufriedenheit, Kundenbindung, Cross-/Up-Selling, profitable Kunden erkennen.\nBausteine: operatives CRM (Kontakte, Angebote), analytisches CRM (Auswertungen, Kunden-DB, ABC), kommunikatives CRM (Kanäle: Telefon, E-Mail, Portal)." },
+    { "id": "ah-k11", "vorne": "Kundenerfolgsrechnung", "hinten": "Bruttoerlöse − Erlösschmälerungen = Nettoerlöse\n− variable Kosten = Kunden-DB I\n− kundenspezifische Kosten = Kunden-DB II" }
+  ]
+}

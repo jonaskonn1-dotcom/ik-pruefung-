@@ -1,0 +1,143 @@
+{
+  "id": "vertrieb-kaufvertrag",
+  "titel": "Vertrieb: Angebot, Kaufvertrag, Leistungsstörungen, Mahnwesen",
+  "gruppe": "Vertrieb",
+  "bereich": { "ao2024": "mvpk", "vo2002": "gp" },
+  "beschreibung": "Anfrage, Angebot, Bindung, Kaufvertrag, Lieferverzug, Mangelhafte Lieferung, Annahme- und Zahlungsverzug, Mahnverfahren, Verjährung.",
+  "fragen": [
+    {
+      "id": "vk-01", "typ": "einfach",
+      "frage": "Die Westpfalz Metallwerk GmbH sendet der Elektrobau Neustadt GmbH per E-Mail ein Angebot ohne Einschränkung. Wie lange ist sie daran gebunden?",
+      "optionen": ["So lange, wie unter regelmäßigen Umständen mit einer Antwort zu rechnen ist (ca. Übermittlungszeit + Überlegungsfrist)", "Nur bis zum Ende des Arbeitstages", "Unbegrenzt, bis das Angebot widerrufen wird", "Gar nicht, Angebote per E-Mail sind unverbindlich"],
+      "loesung": 0,
+      "erklaerung": "Angebote unter Abwesenden sind bindend, solange mit einer Antwort unter regelmäßigen Umständen gerechnet werden kann (§ 147 Abs. 2 BGB). Unter Anwesenden (auch Telefon) nur „sofort“. Einschränkungen sind durch **Freizeichnungsklauseln** möglich („freibleibend“, „solange Vorrat reicht“)."
+    },
+    {
+      "id": "vk-02", "typ": "reihenfolge",
+      "frage": "Bringen Sie den typischen Ablauf eines Verkaufsgeschäfts in die richtige Reihenfolge.",
+      "elemente": ["Anfrage des Kunden", "Angebot des Verkäufers", "Bestellung des Kunden", "Auftragsbestätigung", "Lieferung mit Lieferschein", "Rechnung und Zahlungseingang"],
+      "erklaerung": "Anfrage (unverbindlich) → Angebot (Antrag) → Bestellung (Annahme, Kaufvertrag kommt zustande) → Auftragsbestätigung (Beweis/Klarstellung) → Lieferung → Rechnung/Zahlung (Erfüllung)."
+    },
+    {
+      "id": "vk-03", "typ": "einfach",
+      "frage": "Ein Kunde bestellt aufgrund eines **freibleibenden** Angebots der Westpfalz Metallwerk GmbH. Wann kommt der Kaufvertrag zustande?",
+      "optionen": ["Erst mit der Auftragsbestätigung der Westpfalz Metallwerk GmbH", "Schon mit der Bestellung des Kunden", "Erst mit der Lieferung der Ware", "Erst mit der Bezahlung"],
+      "loesung": 0,
+      "erklaerung": "Ein freibleibendes Angebot ist **kein** bindender Antrag. Die Bestellung des Kunden ist dann der Antrag, die Auftragsbestätigung die **Annahme** → erst jetzt liegen zwei übereinstimmende Willenserklärungen vor."
+    },
+    {
+      "id": "vk-04", "typ": "mehrfach",
+      "frage": "Die Westpfalz Metallwerk GmbH liefert vereinbart „bis 15. März“ nicht. Welche Voraussetzungen müssen für einen **Lieferungsverzug** vorliegen? (Mehrere Antworten)",
+      "optionen": ["Fälligkeit der Lieferung", "Nichtleistung trotz Möglichkeit der Leistung", "Verschulden des Lieferers (für Schadensersatz)", "Eine Mahnung ist hier zwingend erforderlich", "Der Kunde muss bereits bezahlt haben"],
+      "loesung": [0, 1, 2],
+      "erklaerung": "Lieferverzug: Fälligkeit + Mahnung + (für Schadensersatz) Verschulden. Bei **kalendermäßig bestimmtem** Termin („bis 15. März“) ist die Mahnung **entbehrlich** (§ 286 Abs. 2 BGB)."
+    },
+    {
+      "id": "vk-05", "typ": "einfach",
+      "frage": "Die Saar-Stahlhandel KG liefert trotz Mahnung nicht. Die Westpfalz Metallwerk GmbH muss Edelstahlblech teurer bei einem anderen Lieferanten kaufen. Welches Recht macht sie geltend, nachdem eine angemessene **Nachfrist** erfolglos abgelaufen ist?",
+      "optionen": ["Rücktritt vom Vertrag und Schadensersatz statt der Leistung (Deckungskauf-Mehrkosten)", "Nur Minderung des Kaufpreises", "Nacherfüllung durch Ersatzlieferung", "Selbsthilfeverkauf"],
+      "loesung": 0,
+      "erklaerung": "Nach erfolgloser Nachfrist: **Rücktritt** und/oder **Schadensersatz statt der Leistung** (z. B. Mehrkosten eines Deckungskaufs). Ohne Nachfrist: Bestehen auf Lieferung + Ersatz des Verzögerungsschadens. Minderung/Nacherfüllung gehören zur Mängelhaftung, Selbsthilfeverkauf zum Annahmeverzug."
+    },
+    {
+      "id": "vk-06", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Mangelarten zu.",
+      "paare": [
+        ["Gehäuse sind verkratzt", "Mangel in der Beschaffenheit (Sachmangel)"],
+        ["Statt 500 werden 450 Halterungen geliefert", "Zuwenig-/Mankolieferung"],
+        ["Statt Flansch F-80 wird F-60 geliefert", "Falschlieferung (Aliud)"],
+        ["Montageanleitung fehlt und Kunde montiert falsch", "Mangelhafte Montageanleitung"]
+      ],
+      "erklaerung": "§ 434 BGB: Sachmangel bei Abweichung von subjektiven/objektiven Anforderungen, mangelhafter Montage/Montageanleitung; § 434 Abs. 5: Falsch- und Zuweniglieferung stehen einem Sachmangel gleich."
+    },
+    {
+      "id": "vk-07", "typ": "reihenfolge",
+      "frage": "Ein Kunde rügt mangelhafte Gehäuse. In welcher Reihenfolge kann er seine Rechte grundsätzlich geltend machen?",
+      "elemente": ["Mängelrüge (beim Handelskauf unverzüglich)", "Nacherfüllung verlangen (Nachbesserung oder Neulieferung)", "Angemessene Frist zur Nacherfüllung setzen", "Nach Fristablauf: Rücktritt oder Minderung, ggf. Schadensersatz"],
+      "erklaerung": "**Vorrang der Nacherfüllung**: Der Käufer wählt Nachbesserung oder Ersatzlieferung (§ 439 BGB). Erst wenn sie fehlschlägt, verweigert wird oder die Frist abläuft, sind Rücktritt, Minderung und Schadensersatz möglich."
+    },
+    {
+      "id": "vk-08", "typ": "einfach",
+      "frage": "Die Anlagenbau Ludwigshafen AG entdeckt bei der Wareneingangsprüfung einen offenen Mangel, rügt ihn aber erst drei Wochen später. Was gilt beim **zweiseitigen Handelskauf**?",
+      "optionen": ["Die Ware gilt als genehmigt, die Mängelrechte sind verloren (§ 377 HGB).", "Die Rüge ist rechtzeitig, da die Gewährleistung zwei Jahre beträgt.", "Der Käufer kann nur noch mindern.", "Die Frist beginnt erst mit Zahlung der Rechnung."],
+      "loesung": 0,
+      "erklaerung": "Beim Handelskauf (beide Kaufleute) muss der Käufer **unverzüglich untersuchen und rügen**, versteckte Mängel unverzüglich nach Entdeckung (§ 377 HGB). Sonst gilt die Ware als genehmigt."
+    },
+    {
+      "id": "vk-09", "typ": "mehrfach",
+      "frage": "Ein Kunde nimmt bestellte Ware nicht an (**Annahmeverzug**). Welche Rechte hat die Westpfalz Metallwerk GmbH?",
+      "optionen": ["Ware auf Kosten und Gefahr des Kunden einlagern (hinterlegen)", "Nach Androhung einen Selbsthilfeverkauf durchführen (§ 373 HGB)", "Auf Abnahme und Zahlung klagen", "Den Kaufpreis um 20 % mindern", "Nacherfüllung verlangen"],
+      "loesung": [0, 1, 2],
+      "erklaerung": "Bei Annahmeverzug: Hinterlegung/Einlagerung, Selbsthilfeverkauf (öffentliche Versteigerung bzw. bei Börsen-/Marktpreis freihändig) nach Androhung, Klage auf Abnahme, Rücktritt nach Fristsetzung. Die Haftung des Verkäufers beschränkt sich auf Vorsatz und grobe Fahrlässigkeit."
+    },
+    {
+      "id": "vk-10", "typ": "einfach",
+      "frage": "Die Rechnung an einen Unternehmenskunden ist am 10.04. fällig und ging am 05.04. zu. Es wurde kein Zahlungstermin nach dem Kalender vereinbart. Wann kommt der Kunde **spätestens ohne Mahnung** in Zahlungsverzug?",
+      "optionen": ["30 Tage nach Fälligkeit und Zugang der Rechnung", "Sofort am 11.04.", "Erst nach der dritten Mahnung", "Erst mit Zustellung eines Mahnbescheids"],
+      "loesung": 0,
+      "erklaerung": "§ 286 Abs. 3 BGB: Der Schuldner einer Entgeltforderung kommt spätestens **30 Tage nach Fälligkeit und Zugang** einer Rechnung in Verzug (bei Verbrauchern nur, wenn in der Rechnung darauf hingewiesen wurde). Mit Mahnung oder kalendermäßigem Termin früher."
+    },
+    {
+      "id": "vk-11", "typ": "zahl",
+      "frage": "Ein Unternehmenskunde zahlt eine Rechnung über {{betrag|€}} {{tage}} Tage zu spät. Der Basiszinssatz beträgt {{basis|%}}.\n\nWie hoch sind die **Verzugszinsen** (kaufmännische Zinsrechnung 30/360)? Die Pauschale von 40 € bleibt unberücksichtigt.",
+      "vars": { "betrag": 18600, "tage": 45, "basis": 1.27 },
+      "calc": "r2(zinsen(betrag, basis + 9, tage))",
+      "einheit": "€",
+      "loesung": 238.78,
+      "erklaerung": "Zinssatz unter Unternehmern: Basiszinssatz + 9 Prozentpunkte = {{basis+9|%}} (§ 288 Abs. 2 BGB)\nZinsen = {{betrag}} × {{basis+9}} × {{tage}} ÷ (100 × 360) = **{{r2(zinsen(betrag, basis + 9, tage))|€}}**\nHinweis: Der Basiszinssatz wird halbjährlich angepasst – in Aufgaben ist er vorgegeben (hier fiktiv)."
+    },
+    {
+      "id": "vk-12", "typ": "reihenfolge",
+      "frage": "Bringen Sie die Schritte des **gerichtlichen Mahnverfahrens** in die richtige Reihenfolge.",
+      "elemente": ["Antrag auf Erlass eines Mahnbescheids beim zentralen Mahngericht", "Zustellung des Mahnbescheids an den Schuldner", "Antrag auf Vollstreckungsbescheid (kein Widerspruch innerhalb von 2 Wochen)", "Zustellung des Vollstreckungsbescheids", "Zwangsvollstreckung (kein Einspruch innerhalb von 2 Wochen)"],
+      "erklaerung": "Mahnbescheid → (Widerspruch? → streitiges Verfahren) → Vollstreckungsbescheid → (Einspruch? → streitiges Verfahren) → vollstreckbarer Titel → Zwangsvollstreckung (Pfändung). Für Rheinland-Pfalz ist das zentrale Mahngericht beim AG Mayen zuständig."
+    },
+    {
+      "id": "vk-13", "typ": "einfach",
+      "frage": "Eine Kaufpreisforderung der Westpfalz Metallwerk GmbH entstand am 20.08.2026. Wann verjährt sie (regelmäßige Verjährung)?",
+      "optionen": ["Mit Ablauf des 31.12.2029", "Am 20.08.2028", "Am 20.08.2029", "Mit Ablauf des 31.12.2028"],
+      "loesung": 0,
+      "erklaerung": "Regelmäßige Verjährung **3 Jahre** (§ 195 BGB), Beginn mit **Schluss des Jahres**, in dem der Anspruch entstanden ist und der Gläubiger Kenntnis hat (§ 199 BGB): 31.12.2026 + 3 Jahre = **31.12.2029**."
+    },
+    {
+      "id": "vk-14", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Verjährungsfristen zu.",
+      "paare": [
+        ["Kaufpreisforderung aus einem Kaufvertrag", "3 Jahre ab Jahresende"],
+        ["Mängelansprüche bei beweglichen Sachen", "2 Jahre ab Ablieferung"],
+        ["Rechtskräftig festgestellter Anspruch (Urteil, Vollstreckungsbescheid)", "30 Jahre"],
+        ["Mängelansprüche bei Bauwerken", "5 Jahre"]
+      ],
+      "erklaerung": "§ 195 BGB (regelmäßig 3 Jahre), § 438 BGB (Mängel: 2 Jahre bewegliche Sachen, 5 Jahre Bauwerke), § 197 BGB (titulierte Ansprüche 30 Jahre)."
+    },
+    {
+      "id": "vk-15", "typ": "einfach",
+      "frage": "Welche Maßnahme führt zu einer **Hemmung** der Verjährung?",
+      "optionen": ["Zustellung eines gerichtlichen Mahnbescheids", "Versand einer außergerichtlichen Zahlungserinnerung", "Telefonische Mahnung", "Einbuchung der Forderung in der Debitorenbuchhaltung"],
+      "loesung": 0,
+      "erklaerung": "**Hemmung** (Zeitraum wird nicht mitgerechnet): Mahnbescheid, Klage, Verhandlungen (§§ 203, 204 BGB). **Neubeginn**: Anerkenntnis des Schuldners (z. B. Abschlagszahlung, Bitte um Stundung) oder Vollstreckungshandlung. Außergerichtliche Mahnungen hemmen nicht."
+    },
+    {
+      "id": "vk-16", "typ": "zahl",
+      "frage": "Ein Kunde erhält auf einen Auftrag über netto {{netto|€}} einen Rabatt von {{rb|%}} und bei Zahlung innerhalb von 10 Tagen {{s|%}} Skonto. Die Umsatzsteuer beträgt 19 %.\n\nWelchen **Betrag überweist** der Kunde bei Skontoabzug?",
+      "vars": { "netto": 12500, "rb": 5, "s": 2 },
+      "calc": "r2(r2(r2(netto*(1-rb/100))*1.19)*(1-s/100))",
+      "einheit": "€",
+      "loesung": 13848.63,
+      "erklaerung": "Nach Rabatt: {{netto|€}} − {{rb|%}} = {{r2(netto*(1-rb/100))|€}}\n+ 19 % USt = Rechnungsbetrag {{r2(r2(netto*(1-rb/100))*1.19)|€}}\n− {{s|%}} Skonto vom Bruttobetrag = **{{r2(r2(r2(netto*(1-rb/100))*1.19)*(1-s/100))|€}}**\n(Die Umsatzsteuer wird durch den Skonto anteilig berichtigt.)"
+    }
+  ],
+  "karten": [
+    { "id": "vk-k01", "vorne": "Wie kommt ein Kaufvertrag zustande?", "hinten": "Durch zwei übereinstimmende Willenserklärungen: **Antrag** und **Annahme**.\nVariante 1: verbindliches Angebot → Bestellung\nVariante 2: Bestellung ohne/abweichend vom Angebot → Auftragsbestätigung" },
+    { "id": "vk-k02", "vorne": "Freizeichnungsklauseln", "hinten": "„freibleibend“, „unverbindlich“, „ohne Obligo“ → Angebot ganz unverbindlich\n„solange Vorrat reicht“ → Menge unverbindlich\n„Preis freibleibend“ → Preis unverbindlich" },
+    { "id": "vk-k03", "vorne": "Lieferungsverzug: Voraussetzungen und Rechte", "hinten": "Voraussetzungen: Fälligkeit, Mahnung (entbehrlich bei Kalenderdatum, Fixgeschäft, Selbstinverzugsetzung), Verschulden für Schadensersatz.\nRechte ohne Nachfrist: Lieferung + Verzögerungsschaden\nNach Nachfrist: Rücktritt und/oder Schadensersatz statt Leistung" },
+    { "id": "vk-k04", "vorne": "Rechte bei mangelhafter Lieferung", "hinten": "1. Nacherfüllung (Käufer wählt Nachbesserung oder Neulieferung)\n2. Nach Fristablauf: Rücktritt (nicht bei unerheblichem Mangel), Minderung, Schadensersatz, Ersatz vergeblicher Aufwendungen" },
+    { "id": "vk-k05", "vorne": "Rügefristen", "hinten": "**Handelskauf** (§ 377 HGB): offene Mängel unverzüglich, versteckte unverzüglich nach Entdeckung, innerhalb der Gewährleistung.\n**Bürgerlicher Kauf**: innerhalb von 2 Jahren; bei Verbrauchsgüterkauf Beweislastumkehr 1 Jahr." },
+    { "id": "vk-k06", "vorne": "Annahmeverzug: Rechte des Verkäufers", "hinten": "Einlagerung/Hinterlegung auf Kosten des Käufers, Selbsthilfeverkauf nach Androhung (§ 373 HGB), Klage auf Abnahme, Rücktritt nach Fristsetzung. Haftung nur noch für Vorsatz und grobe Fahrlässigkeit." },
+    { "id": "vk-k07", "vorne": "Zahlungsverzug: Eintritt und Verzugszinsen", "hinten": "Eintritt: Mahnung, Kalenderdatum oder spätestens 30 Tage nach Fälligkeit und Rechnungszugang.\nZinsen: Basiszins + 5 %-Punkte (Verbraucher beteiligt) bzw. + 9 %-Punkte (nur Unternehmer) + 40 € Pauschale." },
+    { "id": "vk-k08", "vorne": "Gerichtliches Mahnverfahren – Fristen", "hinten": "Mahnbescheid → Widerspruch innerhalb 2 Wochen\nVollstreckungsbescheid (Antrag innerhalb 6 Monaten) → Einspruch innerhalb 2 Wochen\nDanach: Zwangsvollstreckung" },
+    { "id": "vk-k09", "vorne": "Verjährung: Hemmung vs. Neubeginn", "hinten": "**Hemmung**: Zeitraum wird nicht eingerechnet (Mahnbescheid, Klage, Verhandlungen)\n**Neubeginn**: Frist beginnt neu (Anerkenntnis: Teil-/Abschlagszahlung, Zinszahlung, Stundungsbitte; Vollstreckungshandlung)" },
+    { "id": "vk-k10", "vorne": "Verjährungsfristen", "hinten": "Regelmäßig 3 Jahre ab Jahresende (§ 195/199 BGB)\nMängel bewegliche Sachen: 2 Jahre ab Ablieferung\nBauwerke: 5 Jahre\nTitulierte Ansprüche: 30 Jahre" },
+    { "id": "vk-k11", "vorne": "Fixkauf (Handelskauf) – Besonderheit", "hinten": "Leistung soll zu einem genau bestimmten Zeitpunkt erfolgen („Lieferung am 15.03. fix“). Bei Nichteinhaltung: sofortiger Rücktritt ohne Nachfrist; Erfüllung nur, wenn sofort angezeigt (§ 376 HGB)." }
+  ]
+}

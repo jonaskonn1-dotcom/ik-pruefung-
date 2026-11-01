@@ -1,0 +1,153 @@
+{
+  "id": "marketing",
+  "titel": "Marketing: Marktforschung, Marketing-Mix, PLZ, Portfolio",
+  "gruppe": "Marketing",
+  "bereich": { "ao2024": "mvpk", "vo2002": "gp" },
+  "beschreibung": "Primär-/Sekundärforschung, Produktlebenszyklus, BCG-Portfolio, 4 P, Preispolitik, Online-Marketing, nachhaltiges Marketing.",
+  "fragen": [
+    {
+      "id": "mk-01", "typ": "einfach",
+      "frage": "Die Westpfalz Metallwerk GmbH lässt 300 Elektroinstallateure telefonisch zu ihren Anforderungen an Schaltschrankgehäuse befragen. Um welche Form der Marktforschung handelt es sich?",
+      "optionen": ["Primärforschung (Feldforschung)", "Sekundärforschung (Schreibtischforschung)", "Marktbeobachtung mit amtlicher Statistik", "Panelauswertung eines Branchenverbands"],
+      "loesung": 0,
+      "erklaerung": "Bei der **Primärforschung** werden Daten neu und speziell für den Zweck erhoben (Befragung, Beobachtung, Experiment, Panel). **Sekundärforschung** wertet vorhandene Daten aus (Statistiken, Verbandsberichte, interne Absatzzahlen)."
+    },
+    {
+      "id": "mk-02", "typ": "mehrfach",
+      "frage": "Welche Quellen gehören zur **Sekundärforschung**?",
+      "optionen": ["Absatzstatistik der eigenen Vertriebsabteilung", "Veröffentlichungen des Statistischen Bundesamts", "Geschäftsberichte von Wettbewerbern", "Testmarkt mit einem neuen Gehäuse in Rheinland-Pfalz", "Kundenbefragung auf der Hannover Messe"],
+      "loesung": [0, 1, 2],
+      "erklaerung": "Sekundärforschung nutzt **bereits vorhandene** interne oder externe Daten. Testmarkt und Messebefragung sind Primärforschung, weil Daten neu erhoben werden."
+    },
+    {
+      "id": "mk-03", "typ": "reihenfolge",
+      "frage": "Bringen Sie die Phasen des **Produktlebenszyklus** in die richtige Reihenfolge.",
+      "elemente": ["Einführung", "Wachstum", "Reife", "Sättigung", "Rückgang (Degeneration)"],
+      "erklaerung": "Einführung (hohe Kosten, meist Verlust) → Wachstum (Gewinnschwelle wird überschritten) → Reife (höchster Gewinn) → Sättigung (Umsatzmaximum, sinkende Gewinne) → Rückgang. Hinweis: Manche Lehrbücher fassen Reife und Sättigung zusammen."
+    },
+    {
+      "id": "mk-04", "typ": "einfach",
+      "frage": "Das Gehäuse G-200 hat einen hohen relativen Marktanteil in einem Markt mit geringem Wachstum. Wie wird es in der **BCG-Portfolio-Matrix** eingeordnet und welche Normstrategie gilt?",
+      "optionen": ["Cash Cow – Abschöpfen, Investitionen gering halten", "Star – Investieren und Marktanteil ausbauen", "Question Mark – Selektiv investieren oder aufgeben", "Poor Dog – Desinvestieren"],
+      "loesung": 0,
+      "erklaerung": "**Cash Cow**: hoher relativer Marktanteil, niedriges Marktwachstum → liefert die Mittel für Stars und Question Marks (Abschöpfungsstrategie)."
+    },
+    {
+      "id": "mk-05", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Felder der BCG-Matrix den Merkmalen zu.",
+      "paare": [
+        ["Question Mark", "niedriger rel. Marktanteil, hohes Marktwachstum"],
+        ["Star", "hoher rel. Marktanteil, hohes Marktwachstum"],
+        ["Cash Cow", "hoher rel. Marktanteil, niedriges Marktwachstum"],
+        ["Poor Dog", "niedriger rel. Marktanteil, niedriges Marktwachstum"]
+      ],
+      "erklaerung": "x-Achse: relativer Marktanteil, y-Achse: Marktwachstum. Typischer Weg eines erfolgreichen Produkts: Question Mark → Star → Cash Cow → Poor Dog."
+    },
+    {
+      "id": "mk-06", "typ": "zahl",
+      "frage": "Das Marktvolumen für Schaltschrankgehäuse in Deutschland beträgt {{mv}} Mio. €. Die Westpfalz Metallwerk GmbH setzt {{u}} Mio. € um, der größte Wettbewerber {{k}} Mio. €.\n\nBerechnen Sie den **relativen Marktanteil** der Westpfalz Metallwerk GmbH (auf zwei Nachkommastellen).",
+      "vars": { "mv": 80, "u": 6.4, "k": 9.6 },
+      "calc": "r2(u / k)",
+      "toleranz": 0.01,
+      "loesung": 0.67,
+      "erklaerung": "Relativer Marktanteil = eigener Marktanteil ÷ Marktanteil des stärksten Konkurrenten (= eigener Umsatz ÷ Umsatz Konkurrent)\n= {{u}} ÷ {{k}} = **{{r2(u/k)}}**\nAbsoluter Marktanteil zum Vergleich: {{u}} ÷ {{mv}} × 100 = {{u/mv*100|%}}. Ein Wert < 1 bedeutet: Man ist nicht Marktführer."
+    },
+    {
+      "id": "mk-07", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Maßnahmen den Instrumenten des **Marketing-Mix** zu.",
+      "paare": [
+        ["Pulverbeschichtung in Kundenwunschfarbe anbieten", "Produktpolitik"],
+        ["Mengenrabatt ab 100 Gehäusen", "Preis- und Konditionenpolitik"],
+        ["Belieferung über Elektrogroßhändler", "Distributionspolitik"],
+        ["LinkedIn-Kampagne für Planungsbüros", "Kommunikationspolitik"]
+      ],
+      "erklaerung": "Die 4 P: **Product** (Produkt-/Sortiment), **Price** (Preis/Konditionen), **Place** (Distribution/Absatzwege), **Promotion** (Kommunikation: Werbung, Verkaufsförderung, PR, Online)."
+    },
+    {
+      "id": "mk-08", "typ": "einfach",
+      "frage": "Die Westpfalz Metallwerk GmbH führt die neue Montagehalterung H-50 mit einem bewusst **niedrigen Einführungspreis** ein, um schnell Marktanteile zu gewinnen. Welche Preisstrategie liegt vor?",
+      "optionen": ["Penetrationsstrategie", "Abschöpfungsstrategie (Skimming)", "Prämienpreisstrategie", "Preisdifferenzierung"],
+      "loesung": 0,
+      "erklaerung": "**Penetration**: niedriger Einstiegspreis → schnelle Marktdurchdringung, später ggf. Preiserhöhung. **Skimming**: hoher Einstiegspreis bei Innovationen, später Senkung."
+    },
+    {
+      "id": "mk-09", "typ": "mehrfach",
+      "frage": "Welche Beispiele sind **Preisdifferenzierung**?",
+      "optionen": ["Exportkunden in Schweden zahlen einen anderen Preis als Inlandskunden", "Großhändler erhalten andere Preise als Endkunden", "Eilaufträge mit Lieferung in 48 Stunden kosten mehr", "Alle Kunden zahlen denselben Listenpreis", "Der Preis wird nach den Selbstkosten plus Gewinnzuschlag berechnet"],
+      "loesung": [0, 1, 2],
+      "erklaerung": "Preisdifferenzierung = gleiches Produkt zu unterschiedlichen Preisen, **räumlich** (Länder), **personell** (Kundengruppen), **zeitlich** (Lieferzeit, Saison) oder **mengenmäßig**. Kostenorientierte Preisbildung ist keine Differenzierung."
+    },
+    {
+      "id": "mk-10", "typ": "zahl",
+      "frage": "Für die Halterung H-50 wurde der Preis von {{p0|€}} auf {{p1|€}} gesenkt. Die Absatzmenge stieg von {{x0}} auf {{x1}} Stück pro Monat.\n\nBerechnen Sie die **Preiselastizität der Nachfrage** (auf zwei Nachkommastellen, mit Vorzeichen).",
+      "vars": { "p0": 16, "p1": 14.4, "x0": 5000, "x1": 6000 },
+      "calc": "r2(((x1-x0)/x0*100) / ((p1-p0)/p0*100))",
+      "loesung": -2,
+      "erklaerung": "Mengenänderung: ({{x1}} − {{x0}}) ÷ {{x0}} × 100 = {{(x1-x0)/x0*100|%}}\nPreisänderung: ({{p1}} − {{p0}}) ÷ {{p0}} × 100 = {{(p1-p0)/p0*100|%}}\nElastizität = {{(x1-x0)/x0*100}} ÷ ({{(p1-p0)/p0*100}}) = **{{r2(((x1-x0)/x0*100) / ((p1-p0)/p0*100))}}**\n|E| > 1 → **elastische** Nachfrage: Die Preissenkung erhöht den Umsatz ({{p0*x0|€}} → {{p1*x1|€}})."
+    },
+    {
+      "id": "mk-11", "typ": "zahl",
+      "frage": "Eine Google-Ads-Kampagne für das Gehäuse G-200 ergab {{imp}} Impressionen und {{klick}} Klicks. {{anfr}} Besucher haben anschließend eine Anfrage gestellt. Die Kampagne kostete {{kosten|€}}.\n\nWie hoch ist die **Conversion Rate** (Anfragen bezogen auf Klicks) in Prozent?",
+      "vars": { "imp": 120000, "klick": 1800, "anfr": 54, "kosten": 2700 },
+      "calc": "r2(anfr / klick * 100)",
+      "einheit": "%",
+      "loesung": 3,
+      "erklaerung": "Conversion Rate = Anfragen ÷ Klicks × 100 = {{anfr}} ÷ {{klick}} × 100 = **{{r2(anfr/klick*100)|%}}**\nWeitere Kennzahlen: CTR = {{klick}} ÷ {{imp}} × 100 = {{klick/imp*100|%}}; Cost per Click = {{kosten/klick|€}}; Kosten je Anfrage = {{kosten/anfr|€}}."
+    },
+    {
+      "id": "mk-12", "typ": "einfach",
+      "frage": "Welche Aussage zum **Online-Marketing** ist richtig?",
+      "optionen": ["SEO verbessert die unbezahlte Platzierung in Suchmaschinen, SEA sind bezahlte Suchanzeigen.", "SEA bezeichnet die Optimierung der Website-Inhalte für Suchmaschinen.", "Newsletter dürfen an Geschäftskunden immer ohne Einwilligung verschickt werden.", "Retargeting bedeutet, Neukunden über Plakatwerbung anzusprechen."],
+      "loesung": 0,
+      "erklaerung": "**SEO** (Search Engine Optimization) = organische Platzierung; **SEA** (Search Engine Advertising) = bezahlte Anzeigen, z. B. Google Ads. E-Mail-Werbung braucht grundsätzlich eine **Einwilligung** (UWG, DSGVO); Ausnahme: Bestandskunden unter engen Voraussetzungen (§ 7 Abs. 3 UWG)."
+    },
+    {
+      "id": "mk-13", "typ": "mehrfach",
+      "frage": "Die Westpfalz Metallwerk GmbH will ihr Marketing **nachhaltiger** gestalten. Welche Maßnahmen sind dafür geeignet – und **kein Greenwashing**?",
+      "optionen": ["Gehäuse aus nachweislich 80 % Recyclingstahl mit Zertifikat bewerben", "Mehrweg-Transportboxen für Großkunden einführen", "CO₂-Fußabdruck je Produkt nach anerkanntem Standard ausweisen", "Produkte ohne Nachweis als „klimaneutral“ bewerben", "Die Verpackung grün einfärben"],
+      "loesung": [0, 1, 2],
+      "erklaerung": "Nachhaltigkeitsaussagen müssen **belegbar** sein. Pauschale Umweltaussagen wie „klimaneutral“ ohne Nachweis sind irreführend (UWG; die EU-Richtlinie zur Stärkung der Verbraucher für den ökologischen Wandel verschärft dies zusätzlich). Grüne Farbe allein ist reines Greenwashing."
+    },
+    {
+      "id": "mk-14", "typ": "einfach",
+      "frage": "Ein Wettbewerber kopiert die Preise der Westpfalz Metallwerk GmbH jeweils mit 2 % Abschlag. Welche Form der Preisbildung wendet er an?",
+      "optionen": ["Konkurrenzorientierte Preisbildung", "Kostenorientierte Preisbildung", "Nachfrageorientierte Preisbildung", "Staatlich festgesetzte Preise"],
+      "loesung": 0,
+      "erklaerung": "**Konkurrenzorientiert**: Orientierung am Leitpreis der Mitbewerber. **Kostenorientiert**: Selbstkosten + Gewinn (Zuschlagskalkulation). **Nachfrageorientiert**: Was ist der Kunde bereit zu zahlen (Zielpreis, Target Costing)?"
+    },
+    {
+      "id": "mk-15", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Absatzwege richtig zu.",
+      "paare": [
+        ["Außendienstmitarbeiter verkauft direkt an Anlagenbauer", "direkter Absatz"],
+        ["Verkauf über den eigenen B2B-Onlineshop", "direkter Absatz (E-Commerce)"],
+        ["Verkauf über Elektrogroßhändler an Installateure", "indirekter Absatz"],
+        ["Handelsvertreter vermittelt Aufträge gegen Provision", "direkter Absatz mit Absatzmittler (Vertreter)"]
+      ],
+      "erklaerung": "**Direkt**: Hersteller → Kunde (auch über eigene Reisende, Onlineshop, Handelsvertreter, die nur vermitteln). **Indirekt**: Zwischenschaltung selbstständiger Händler, die Eigentum an der Ware erwerben (Groß-/Einzelhandel)."
+    },
+    {
+      "id": "mk-16", "typ": "zahl",
+      "frage": "Ein Reisender (angestellt) kostet {{fix|€}} Fixgehalt pro Monat plus {{pr|%}} Provision vom Umsatz. Ein Handelsvertreter erhält {{hv|%}} Provision vom Umsatz.\n\nBei welchem Monatsumsatz sind beide **gleich teuer**?",
+      "vars": { "fix": 4200, "pr": 2, "hv": 8 },
+      "calc": "fix / ((hv - pr) / 100)",
+      "einheit": "€",
+      "loesung": 70000,
+      "erklaerung": "Kosten Reisender = {{fix|€}} + {{pr/100}} × U\nKosten Vertreter = {{hv/100}} × U\nGleichsetzen: {{fix}} + {{pr/100}} U = {{hv/100}} U → U = {{fix}} ÷ {{(hv-pr)/100}} = **{{fix/((hv-pr)/100)|€}}**\nBei höherem Umsatz ist der **Reisende** günstiger, darunter der Handelsvertreter."
+    }
+  ],
+  "karten": [
+    { "id": "mk-k01", "vorne": "Primär- vs. Sekundärforschung", "hinten": "**Primär** (Feldforschung): neue Daten erheben – Befragung, Beobachtung, Experiment/Testmarkt, Panel. Teuer, aktuell, genau.\n**Sekundär** (Schreibtisch): vorhandene Daten auswerten – interne Statistiken, Verbände, Statistisches Bundesamt. Günstig, schnell, evtl. veraltet." },
+    { "id": "mk-k02", "vorne": "Die 4 P des Marketing-Mix", "hinten": "- Product – Produkt- und Sortimentspolitik\n- Price – Preis- und Konditionenpolitik\n- Place – Distributionspolitik\n- Promotion – Kommunikationspolitik" },
+    { "id": "mk-k03", "vorne": "Phasen des Produktlebenszyklus", "hinten": "Einführung → Wachstum → Reife → Sättigung → Rückgang\nGewinnmaximum meist in der Reifephase, Umsatzmaximum in der Sättigung. Relaunch kann den Zyklus verlängern." },
+    { "id": "mk-k04", "vorne": "BCG-Portfolio: Achsen und Normstrategien", "hinten": "x: relativer Marktanteil, y: Marktwachstum\n- Question Mark: investieren oder aufgeben\n- Star: investieren\n- Cash Cow: abschöpfen\n- Poor Dog: desinvestieren" },
+    { "id": "mk-k05", "vorne": "Penetrations- vs. Abschöpfungsstrategie", "hinten": "**Penetration**: niedriger Einführungspreis, schnelle Marktanteile, Abschreckung von Konkurrenz.\n**Skimming**: hoher Einführungspreis bei Innovationen, Abschöpfen der Zahlungsbereitschaft, später Preissenkung." },
+    { "id": "mk-k06", "vorne": "Arten der Preisdifferenzierung", "hinten": "räumlich (Inland/Export), zeitlich (Saison, Lieferzeit), personell (Kundengruppen), mengenmäßig (Rabattstaffel), sachlich (Produktvarianten)" },
+    { "id": "mk-k07", "vorne": "Instrumente der Kommunikationspolitik", "hinten": "Werbung, Verkaufsförderung (Sales Promotion), Öffentlichkeitsarbeit (PR), persönlicher Verkauf, Sponsoring, Messen, Online-/Social-Media-Marketing, Direktmarketing" },
+    { "id": "mk-k08", "vorne": "AIDA-Formel", "hinten": "Attention – Aufmerksamkeit\nInterest – Interesse\nDesire – Kaufwunsch\nAction – Kaufhandlung" },
+    { "id": "mk-k09", "vorne": "Online-Marketing-Kennzahlen", "hinten": "CTR = Klicks ÷ Impressionen × 100\nConversion Rate = Abschlüsse ÷ Besucher (Klicks) × 100\nCPC = Kosten ÷ Klicks\nCost per Order = Kosten ÷ Bestellungen" },
+    { "id": "mk-k10", "vorne": "Reisender vs. Handelsvertreter", "hinten": "**Reisender**: angestellt, weisungsgebunden, Fixum + Provision, nur für ein Unternehmen.\n**Handelsvertreter** (§ 84 HGB): selbstständig, nur Provision, oft mehrere Firmen. Kritischer Umsatz: Fixum ÷ (Provisionssatz HV − Provisionssatz Reisender)." },
+    { "id": "mk-k11", "vorne": "Marktpotenzial, Marktvolumen, Marktanteil", "hinten": "Marktpotenzial: maximal mögliche Absatzmenge\nMarktvolumen: tatsächlich abgesetzte Menge aller Anbieter\nMarktanteil = eigener Absatz ÷ Marktvolumen × 100" },
+    { "id": "mk-k12", "vorne": "Greenwashing – was ist das?", "hinten": "Umweltfreundliche Darstellung ohne belastbare Grundlage. Nachhaltigkeitsaussagen müssen konkret und belegbar sein (Zertifikate, Lebenszyklus-/CO₂-Bilanz), sonst wettbewerbswidrig (UWG)." }
+  ]
+}
