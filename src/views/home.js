@@ -84,7 +84,9 @@ export function homeView(el) {
     </section>
 
     <section aria-labelledby="h-bereiche">
-      <div class="section-head"><h2 id="h-bereiche">Fortschritt</h2><a href="#/mehr" class="small-link">${esc(profil.kurz)} ändern</a></div>
+      <div class="section-head"><h2 id="h-bereiche">Fortschritt</h2><a href="#/statistik" class="small-link">Statistik ›</a></div>
       <div class="areas">${bereiche}</div>
+      <a class="btn big" href="#/quiz?schwach=1" style="margin-top:.75rem">${icon.chart} Schwächste Themen üben</a>
+      <p class="small muted center">Prüfungsordnung: ${esc(profil.kurz)} · <a href="#/mehr">ändern</a></p>
     </section>`;
 }

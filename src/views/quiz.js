@@ -1,6 +1,7 @@
 import { data, aktivesProfil, themenImBereich, mixBereiche, config } from '../content.js';
 import { store, recordAnswer } from '../store.js';
 import { esc, icon, shuffle, note, header, plain } from '../ui.js';
+import { schwachFragen } from './extra/statistik.js';
 import { prepare, renderQuestion, renderFeedback, evaluate, hasAnswer, handleAction, keyToAction } from './question.js';
 
 /** Fragen für eine Sitzung zusammenstellen. */
@@ -9,6 +10,7 @@ export function selectQuestions(query) {
   const s = store.get();
   const n = Number(query.n) || s.settings.quizAnzahl || config.quiz.standardAnzahl;
   let pool;
+  if (query.schwach) return schwachFragen(n);
   if (query.ids) pool = query.ids.split(',').map((id) => db.fragen.get(id)).filter(Boolean);
   else if (query.modus === 'fehler') pool = Object.keys(s.fehler).map((id) => db.fragen.get(id)).filter(Boolean);
   else if (query.thema) pool = db.themenById.get(query.thema)?.fragen || [];
@@ -32,6 +34,7 @@ export function selectQuestions(query) {
 function titleFor(query) {
   const db = data();
   if (query.modus === 'fehler') return 'Fehlerkorb';
+  if (query.schwach) return 'Schwächste Themen';
   if (query.thema) return db.themenById.get(query.thema)?.titel || 'Quiz';
   if (query.bereich) return aktivesProfil().bereiche.find((b) => b.id === query.bereich)?.kurz || 'Quiz';
   return 'Gemischtes Quiz';

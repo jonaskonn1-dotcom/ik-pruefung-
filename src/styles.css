@@ -329,3 +329,8 @@ select:focus, input:focus, textarea:focus { border-color: var(--accent); outline
 .bad-t { color: var(--bad); } .mid-t { color: var(--warn); } .ok-t { color: var(--ok); }
 .review-item { padding: .5rem 0; }
 hr { border: 0; border-top: 1px solid var(--border); margin: 1rem 0; }
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin-bottom: .4rem; }
+@media (min-width: 700px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
+.stat { text-align: center; padding: .8rem; margin: 0; }
+.stat b { display: block; font-size: 1.5rem; }
+.stat span { font-size: .82rem; color: var(--muted); }
