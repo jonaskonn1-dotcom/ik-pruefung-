@@ -1,0 +1,141 @@
+{
+  "id": "wiso-tarif-mitbestimmung",
+  "titel": "Tarifvertrag, Arbeitskampf, Betriebsrat, Mitbestimmung",
+  "gruppe": "WiSo",
+  "bereich": { "ao2024": "wiso", "vo2002": "wiso" },
+  "beschreibung": "Tarifautonomie, Tarifvertragsarten, Friedenspflicht, Günstigkeitsprinzip, Arbeitskampf, Betriebsrat und JAV, Beteiligungsrechte, Betriebsvereinbarung, Unternehmensmitbestimmung, Arbeitsgerichtsbarkeit.",
+  "fragen": [
+    {
+      "id": "wt-01", "typ": "einfach",
+      "frage": "Welches Grundrecht bildet die Grundlage der **Tarifautonomie**?",
+      "optionen": ["Koalitionsfreiheit (Art. 9 Abs. 3 GG)", "Berufsfreiheit (Art. 12 GG)", "Eigentumsgarantie (Art. 14 GG)", "Gleichheitssatz (Art. 3 GG)"],
+      "loesung": 0,
+      "erklaerung": "Art. 9 Abs. 3 GG garantiert das Recht, Vereinigungen zur Wahrung der Arbeits- und Wirtschaftsbedingungen zu bilden. Daraus folgt die **Tarifautonomie**: Gewerkschaften und Arbeitgeberverbände handeln Tarifverträge ohne staatliche Einmischung aus."
+    },
+    {
+      "id": "wt-02", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Tarifvertragsarten zu.",
+      "paare": [
+        ["Regelt Arbeitszeit, Urlaub, Kündigungsfristen für mehrere Jahre", "Manteltarifvertrag"],
+        ["Legt die Höhe der Löhne und Gehälter je Entgeltgruppe fest", "Entgelttarifvertrag (Lohn-/Gehaltstarif)"],
+        ["Beschreibt Merkmale der Lohn- und Gehaltsgruppen", "Entgeltrahmentarifvertrag"],
+        ["Gilt nur zwischen einer Gewerkschaft und einem einzelnen Unternehmen", "Firmen-/Haustarifvertrag"]
+      ],
+      "erklaerung": "Manteltarif: allgemeine Arbeitsbedingungen, lange Laufzeit. Entgelttarif: kurze Laufzeit (1–2 Jahre). Rahmentarif: Eingruppierung (z. B. ERA in der Metall- und Elektroindustrie). Verbandstarif vs. Firmentarif."
+    },
+    {
+      "id": "wt-03", "typ": "mehrfach",
+      "frage": "Welche Aussagen zum **Tarifvertrag** sind richtig?",
+      "optionen": ["Während seiner Laufzeit herrscht Friedenspflicht – Streiks über geregelte Inhalte sind unzulässig.", "Abweichungen zugunsten der Arbeitnehmer sind erlaubt (Günstigkeitsprinzip).", "Er gilt unmittelbar für Mitglieder der Tarifparteien (Tarifbindung).", "Er gilt automatisch für alle Arbeitnehmer in Deutschland.", "Er darf schlechtere Bedingungen als Gesetze vorsehen, z. B. weniger Urlaub als das BUrlG."],
+      "loesung": [0, 1, 2],
+      "erklaerung": "Tarifverträge gelten für tarifgebundene Parteien (Gewerkschaftsmitglied + Mitglied im Arbeitgeberverband) – in der Praxis oft per Bezugnahme im Arbeitsvertrag für alle. Für alle Betriebe einer Branche nur bei **Allgemeinverbindlicherklärung** durch das BMAS. Gesetzliche Mindeststandards dürfen grundsätzlich nicht unterschritten werden."
+    },
+    {
+      "id": "wt-04", "typ": "reihenfolge",
+      "frage": "Bringen Sie den typischen Ablauf einer **Tarifauseinandersetzung** in die richtige Reihenfolge.",
+      "elemente": ["Kündigung des alten Tarifvertrags und Forderungen", "Tarifverhandlungen (ggf. Warnstreiks nach Ende der Friedenspflicht)", "Scheitern der Verhandlungen, ggf. Schlichtung", "Urabstimmung (mind. 75 % der Gewerkschaftsmitglieder für Streik)", "Streik, ggf. Aussperrung", "Neue Verhandlungen und Einigung", "Zweite Urabstimmung (mind. 25 % für Annahme) und neuer Tarifvertrag"],
+      "erklaerung": "Die Quoten (75 % / 25 %) sind in den Satzungen der Gewerkschaften geregelt (z. B. IG Metall). Warnstreiks sind nach Ablauf der Friedenspflicht auch ohne Urabstimmung möglich."
+    },
+    {
+      "id": "wt-05", "typ": "einfach",
+      "frage": "Unter welcher Voraussetzung kann in einem Betrieb ein **Betriebsrat** gewählt werden?",
+      "optionen": ["In der Regel mindestens 5 ständige wahlberechtigte Arbeitnehmer, von denen 3 wählbar sind", "Mindestens 20 Beschäftigte", "Nur wenn der Arbeitgeber zustimmt", "Nur in Kapitalgesellschaften"],
+      "loesung": 0,
+      "erklaerung": "§ 1 BetrVG. **Wahlberechtigt**: alle AN ab 16 Jahren (inkl. Azubis). **Wählbar**: wahlberechtigte AN ab 18 Jahren, die 6 Monate im Betrieb sind. Amtszeit 4 Jahre, regelmäßige Wahlen 1. März – 31. Mai (z. B. 2026, 2030)."
+    },
+    {
+      "id": "wt-06", "typ": "mehrfach",
+      "frage": "Welche Aussagen zur **Jugend- und Auszubildendenvertretung (JAV)** sind richtig?",
+      "optionen": ["Sie wird gewählt, wenn mindestens 5 Arbeitnehmer unter 18 Jahren oder Auszubildende unter 25 Jahren beschäftigt sind.", "Ihre Amtszeit beträgt 2 Jahre.", "Sie kann nur bestehen, wenn es einen Betriebsrat gibt.", "Sie verhandelt eigenständig Betriebsvereinbarungen mit dem Arbeitgeber.", "Ihre Mitglieder müssen mindestens 25 Jahre alt sein."],
+      "loesung": [0, 1, 2],
+      "erklaerung": "§§ 60 ff. BetrVG: JAV vertritt Jugendliche und Azubis **über den Betriebsrat** (Teilnahme an BR-Sitzungen, Stimmrecht bei Jugendthemen). Wählbar sind AN unter 25 Jahren. Wahlen alle 2 Jahre (1. Oktober – 30. November)."
+    },
+    {
+      "id": "wt-07", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Angelegenheiten der Stärke der Beteiligungsrechte des Betriebsrats zu.",
+      "paare": [
+        ["Beginn und Ende der täglichen Arbeitszeit, Pausenregelung", "Mitbestimmungsrecht (§ 87 BetrVG)"],
+        ["Einstellung eines neuen Mitarbeiters (> 20 AN)", "Zustimmungsverweigerungsrecht (§ 99 BetrVG)"],
+        ["Ordentliche Kündigung eines Mitarbeiters", "Anhörungsrecht (§ 102 BetrVG)"],
+        ["Wirtschaftliche Lage und Investitionspläne", "Informationsrecht (Wirtschaftsausschuss)"]
+      ],
+      "erklaerung": "Abstufung: Informationsrecht → Beratungsrecht → Anhörungsrecht → Widerspruchs-/Zustimmungsverweigerungsrecht → echtes Mitbestimmungsrecht (soziale Angelegenheiten § 87: ohne Einigung entscheidet die **Einigungsstelle**)."
+    },
+    {
+      "id": "wt-08", "typ": "einfach",
+      "frage": "Die Westpfalz Metallwerk GmbH möchte ein neues Zeiterfassungssystem per App einführen, mit dem auch Standortdaten erfasst werden können. Welches Recht hat der Betriebsrat?",
+      "optionen": ["Echtes Mitbestimmungsrecht – Einführung technischer Einrichtungen zur Überwachung (§ 87 Abs. 1 Nr. 6 BetrVG)", "Nur ein Informationsrecht", "Kein Recht, da es eine unternehmerische Entscheidung ist", "Nur ein Anhörungsrecht"],
+      "loesung": 0,
+      "erklaerung": "Technische Einrichtungen, die **geeignet** sind, Verhalten oder Leistung zu überwachen, sind mitbestimmungspflichtig. Ergebnis ist meist eine **Betriebsvereinbarung** (z. B. zu Zweck, Zugriffsrechten, Löschfristen – Bezug zum Datenschutz)."
+    },
+    {
+      "id": "wt-09", "typ": "einfach",
+      "frage": "Was ist eine **Betriebsvereinbarung**?",
+      "optionen": ["Ein schriftlicher Vertrag zwischen Arbeitgeber und Betriebsrat, der unmittelbar und zwingend für alle Beschäftigten des Betriebs gilt", "Ein Vertrag zwischen Gewerkschaft und Arbeitgeberverband", "Ein Arbeitsvertrag mit einem einzelnen Mitarbeiter", "Eine Weisung der Geschäftsführung"],
+      "loesung": 0,
+      "erklaerung": "§ 77 BetrVG. Rangfolge (vereinfacht): Gesetz → Tarifvertrag → Betriebsvereinbarung → Arbeitsvertrag → Weisung. Arbeitsentgelte, die üblicherweise tariflich geregelt sind, können nicht Gegenstand einer Betriebsvereinbarung sein (Tarifvorrang, § 77 Abs. 3), es sei denn, der TV lässt es zu."
+    },
+    {
+      "id": "wt-10", "typ": "zahl",
+      "frage": "Die Westpfalz Metallwerk GmbH beschäftigt {{an}} wahlberechtigte Arbeitnehmer. Nach § 9 BetrVG gilt: 101–200 AN → 7 Mitglieder, 201–400 AN → 9 Mitglieder, 401–700 AN → 11 Mitglieder.\n\nAus wie vielen Mitgliedern besteht der **Betriebsrat**?",
+      "vars": { "an": 240 },
+      "calc": "an > 700 ? 13 : an > 400 ? 11 : an > 200 ? 9 : an > 100 ? 7 : 5",
+      "einheit": "Mitglieder",
+      "toleranz": 0,
+      "loesung": 9,
+      "erklaerung": "{{an}} Arbeitnehmer → Stufe 201–400 → **{{an > 700 ? 13 : an > 400 ? 11 : an > 200 ? 9 : an > 100 ? 7 : 5}} Mitglieder**. Ab 200 AN ist mindestens ein Betriebsratsmitglied freizustellen (§ 38 BetrVG)."
+    },
+    {
+      "id": "wt-11", "typ": "zuordnung",
+      "frage": "Ordnen Sie die **Unternehmensmitbestimmung** im Aufsichtsrat zu.",
+      "paare": [
+        ["GmbH mit 400 Beschäftigten", "kein Aufsichtsrat vorgeschrieben (keine Mitbestimmung im AR)"],
+        ["GmbH mit 800 Beschäftigten", "Drittelbeteiligungsgesetz: 1/3 Arbeitnehmervertreter"],
+        ["AG mit 5.000 Beschäftigten", "Mitbestimmungsgesetz: paritätisch (Stichentscheid des AR-Vorsitzenden)"],
+        ["Bergbau-/Stahl-AG mit 1.500 Beschäftigten", "Montan-Mitbestimmung: volle Parität mit neutralem Mitglied"]
+      ],
+      "erklaerung": "DrittelbG: 500–2.000 AN; MitbestG 1976: mehr als 2.000 AN; Montan-MitbestG: Kohle/Stahl ab 1.000 AN. Die betriebliche Mitbestimmung (Betriebsrat) ist davon zu unterscheiden."
+    },
+    {
+      "id": "wt-12", "typ": "einfach",
+      "frage": "Ein Mitarbeiter will gegen seine Kündigung klagen. Welches Gericht ist in erster Instanz zuständig?",
+      "optionen": ["Arbeitsgericht (z. B. Arbeitsgericht Kaiserslautern)", "Amtsgericht", "Landgericht", "Sozialgericht"],
+      "loesung": 0,
+      "erklaerung": "Instanzen: Arbeitsgericht → Landesarbeitsgericht (Rheinland-Pfalz: Mainz) → Bundesarbeitsgericht (Erfurt). In der ersten Instanz trägt jede Partei ihre Anwaltskosten selbst; ein **Gütetermin** steht am Anfang. Streit um Sozialversicherungsleistungen → Sozialgericht."
+    },
+    {
+      "id": "wt-13", "typ": "mehrfach",
+      "frage": "Welche Aussagen zu **Betriebsratsmitgliedern** sind richtig?",
+      "optionen": ["Sie üben ihr Amt unentgeltlich als Ehrenamt aus.", "Sie genießen besonderen Kündigungsschutz (ordentliche Kündigung grundsätzlich ausgeschlossen).", "Sie dürfen wegen ihrer Tätigkeit weder benachteiligt noch begünstigt werden.", "Sie erhalten für die Amtszeit ein zusätzliches Gehalt vom Arbeitgeber.", "Sie dürfen Streiks im Betrieb ausrufen."],
+      "loesung": [0, 1, 2],
+      "erklaerung": "§§ 37, 78, 103 BetrVG, § 15 KSchG. Der Betriebsrat ist zur **vertrauensvollen Zusammenarbeit** verpflichtet und darf keine Arbeitskämpfe führen (§ 74 BetrVG) – das ist Sache der Gewerkschaften."
+    },
+    {
+      "id": "wt-14", "typ": "einfach",
+      "frage": "Was versteht man unter **Aussperrung**?",
+      "optionen": ["Arbeitgeber schließen arbeitswillige und streikende Arbeitnehmer von der Arbeit aus, ohne Lohn zu zahlen.", "Gewerkschaften verhindern, dass Arbeitswillige den Betrieb betreten.", "Der Betriebsrat sperrt die Lohnzahlung.", "Der Staat verbietet einen Streik."],
+      "loesung": 0,
+      "erklaerung": "Aussperrung ist das Kampfmittel der Arbeitgeberseite (verhältnismäßig, als Abwehr). Während Streik und Aussperrung ruhen die Arbeitsverhältnisse; Gewerkschaftsmitglieder erhalten **Streikgeld** von der Gewerkschaft, kein Arbeitslosengeld."
+    },
+    {
+      "id": "wt-15", "typ": "einfach",
+      "frage": "Die Westpfalz Metallwerk GmbH ist Mitglied im Arbeitgeberverband. Ein Mitarbeiter ist **nicht** Gewerkschaftsmitglied, sein Arbeitsvertrag verweist aber auf „die jeweils geltenden Tarifverträge der Metall- und Elektroindustrie Rheinland-Pfalz“. Was gilt?",
+      "optionen": ["Die Tarifverträge gelten für ihn kraft arbeitsvertraglicher Bezugnahme.", "Die Tarifverträge gelten für ihn nicht, da er nicht Gewerkschaftsmitglied ist.", "Die Tarifverträge gelten nur, wenn der Betriebsrat zustimmt.", "Für ihn gilt ausschließlich der Mindestlohn."],
+      "loesung": 0,
+      "erklaerung": "Kraft Gesetzes (§ 3 TVG) gilt ein Tarifvertrag nur bei beiderseitiger Tarifbindung. Arbeitgeber wenden ihn aber meist über eine **Bezugnahmeklausel** auf alle an, um keinen Anreiz zum Gewerkschaftseintritt zu schaffen und einheitliche Bedingungen zu haben."
+    }
+  ],
+  "karten": [
+    { "id": "wt-k01", "vorne": "Tarifvertragsparteien und Tarifautonomie", "hinten": "Gewerkschaften (z. B. IG Metall, ver.di) und Arbeitgeberverbände bzw. einzelne Arbeitgeber. Tarifautonomie: Art. 9 Abs. 3 GG – Aushandlung ohne Staat." },
+    { "id": "wt-k02", "vorne": "Funktionen des Tarifvertrags", "hinten": "Schutzfunktion (Mindestbedingungen), Ordnungsfunktion (einheitliche Bedingungen, Kalkulationssicherheit), Friedensfunktion (Friedenspflicht während der Laufzeit)" },
+    { "id": "wt-k03", "vorne": "Günstigkeitsprinzip", "hinten": "Von höherrangigen Regelungen (Gesetz, Tarifvertrag) darf nur zugunsten des Arbeitnehmers abgewichen werden." },
+    { "id": "wt-k04", "vorne": "Allgemeinverbindlicherklärung", "hinten": "Das BMAS kann einen Tarifvertrag auf Antrag einer Tarifvertragspartei für alle Arbeitgeber und Arbeitnehmer der Branche verbindlich erklären (§ 5 TVG), wenn dies im öffentlichen Interesse geboten erscheint." },
+    { "id": "wt-k05", "vorne": "Betriebsrat – Wahl und Größe", "hinten": "ab 5 ständigen wahlberechtigten AN (3 wählbar)\nWahlberechtigt ab 16, wählbar ab 18 und 6 Monaten Betriebszugehörigkeit\nAmtszeit 4 Jahre; Größe nach § 9 BetrVG (z. B. 201–400 AN → 9)" },
+    { "id": "wt-k06", "vorne": "Mitbestimmung in sozialen Angelegenheiten (§ 87 BetrVG) – Beispiele", "hinten": "Ordnung im Betrieb, Beginn/Ende der Arbeitszeit, Pausen, Überstunden/Kurzarbeit, Urlaubsgrundsätze, technische Überwachungseinrichtungen, Unfallverhütung, Entlohnungsgrundsätze, Akkord-/Prämiensätze, mobile Arbeit (Ausgestaltung)" },
+    { "id": "wt-k07", "vorne": "Stufen der Beteiligungsrechte", "hinten": "Information → Beratung → Anhörung → Widerspruch/Zustimmungsverweigerung → echte Mitbestimmung (Einigungsstelle entscheidet bei Streit)" },
+    { "id": "wt-k08", "vorne": "Jugend- und Auszubildendenvertretung", "hinten": "ab 5 AN unter 18 bzw. Azubis unter 25; wählbar unter 25 Jahren; Amtszeit 2 Jahre; handelt über den Betriebsrat; Jugend- und Auszubildendenversammlung" },
+    { "id": "wt-k09", "vorne": "Unternehmensmitbestimmung", "hinten": "DrittelbG: 500–2.000 AN → 1/3 AN-Vertreter im AR\nMitbestG: > 2.000 AN → Parität, Stichentscheid AR-Vorsitz (Anteilseigner)\nMontan: Kohle/Stahl > 1.000 AN, volle Parität + neutrales Mitglied" },
+    { "id": "wt-k10", "vorne": "Arbeitsgerichtsbarkeit", "hinten": "Arbeitsgericht → Landesarbeitsgericht → Bundesarbeitsgericht (Erfurt). Güteverhandlung am Anfang. 1. Instanz: jede Partei trägt eigene Anwaltskosten. Kündigungsschutzklage: 3 Wochen." },
+    { "id": "wt-k11", "vorne": "Rangfolge arbeitsrechtlicher Regelungen", "hinten": "EU-Recht/Grundgesetz → Gesetze/Verordnungen → Tarifvertrag → Betriebsvereinbarung → Arbeitsvertrag → Weisungsrecht des Arbeitgebers (mit Günstigkeitsprinzip)" }
+  ]
+}

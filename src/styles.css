@@ -294,3 +294,7 @@ select:focus, input:focus, textarea:focus { border-color: var(--accent); outline
 .streak { color: var(--ok); letter-spacing: .1em; margin-left: .3rem; font-size: .8rem; }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+.check { display: flex; align-items: center; gap: .6rem; min-height: 44px; font-size: .95rem; }
+.check input { width: 22px; height: 22px; accent-color: var(--accent); }
+.tbl th.num { text-align: right; white-space: nowrap; }
+@media (min-width: 700px) { .calc-form { display: grid; grid-template-columns: 1fr 1fr; column-gap: 1rem; } .calc-form .field { margin: .4rem 0; } }

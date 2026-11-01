@@ -1,0 +1,147 @@
+{
+  "id": "wiso-nachhaltigkeit-datenschutz",
+  "titel": "Nachhaltigkeit, Umweltschutz, Datenschutz, digitalisierte Arbeitswelt",
+  "gruppe": "WiSo",
+  "bereich": { "ao2024": "wiso", "vo2002": "wiso" },
+  "beschreibung": "Drei-Säulen-Modell, Kreislaufwirtschaft, Umweltmanagement, CO₂-Bilanz, Lieferketten, DSGVO-Grundsätze und Betroffenenrechte, Datensicherheit, E-Rechnung, mobiles Arbeiten, KI am Arbeitsplatz.",
+  "fragen": [
+    {
+      "id": "wn-01", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Maßnahmen der Westpfalz Metallwerk GmbH den **Dimensionen der Nachhaltigkeit** zu.",
+      "paare": [
+        ["Photovoltaikanlage auf dem Hallendach, Abwärmenutzung der Lackieranlage", "ökologisch"],
+        ["Faire Bezahlung nach Tarif, Gesundheitsmanagement, Ausbildungsplätze", "sozial"],
+        ["Langfristig profitable Produkte, Kostensenkung durch geringeren Energieverbrauch", "ökonomisch"]
+      ],
+      "erklaerung": "Drei-Säulen-Modell (Triple Bottom Line): Ökologie, Ökonomie, Soziales. Nachhaltig ist, was die Bedürfnisse der heutigen Generation befriedigt, ohne künftigen Generationen die Möglichkeit dazu zu nehmen (Brundtland-Bericht 1987)."
+    },
+    {
+      "id": "wn-02", "typ": "reihenfolge",
+      "frage": "Bringen Sie die **Abfallhierarchie** nach dem Kreislaufwirtschaftsgesetz in die richtige Rangfolge (höchste Priorität zuerst).",
+      "elemente": ["Vermeidung", "Vorbereitung zur Wiederverwendung", "Recycling", "Sonstige Verwertung (z. B. energetische Verwertung)", "Beseitigung"],
+      "erklaerung": "§ 6 KrWG. Beispiel WPM: Blechverschnitt durch optimierte Schachtelung vermeiden → Mehrwegbehälter wiederverwenden → Stahlschrott recyceln → nicht verwertbare Reste thermisch verwerten → nur der Rest wird beseitigt."
+    },
+    {
+      "id": "wn-03", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Emissionen der Westpfalz Metallwerk GmbH den **Scopes** des Greenhouse Gas Protocol zu.",
+      "paare": [
+        ["Erdgas für die eigene Härterei, Diesel der eigenen Gabelstapler", "Scope 1 – direkte Emissionen"],
+        ["Eingekaufter Strom und Fernwärme", "Scope 2 – indirekte Emissionen aus Energiebezug"],
+        ["Herstellung des eingekauften Edelstahls, Transporte durch Speditionen", "Scope 3 – sonstige indirekte Emissionen in der Wertschöpfungskette"]
+      ],
+      "erklaerung": "In der Metallindustrie ist Scope 3 (vor allem Stahlproduktion) meist der größte Anteil. Hebel: Recyclingstahl, Grünstrom (Scope 2), Elektrostapler (Scope 1)."
+    },
+    {
+      "id": "wn-04", "typ": "einfach",
+      "frage": "Die Westpfalz Metallwerk GmbH möchte ein zertifizierbares **Umweltmanagementsystem** einführen. Welche Norm ist dafür einschlägig?",
+      "optionen": ["DIN EN ISO 14001 (alternativ EMAS)", "DIN EN ISO 9001", "ISO/IEC 27001", "DIN EN ISO 45001"],
+      "loesung": 0,
+      "erklaerung": "ISO 14001 / EMAS: Umweltmanagement. ISO 9001: Qualitätsmanagement. ISO 27001: Informationssicherheit. ISO 45001: Arbeitsschutzmanagement. ISO 50001: Energiemanagement. Alle folgen dem PDCA-Zyklus (Plan–Do–Check–Act)."
+    },
+    {
+      "id": "wn-05", "typ": "mehrfach",
+      "frage": "Welche Maßnahmen tragen zu **nachhaltiger Beschaffung und Logistik** bei?",
+      "optionen": ["Lieferantenbewertung auch nach Umwelt- und Sozialkriterien (z. B. Code of Conduct)", "Bündelung von Transporten und bessere Auslastung der Lkw", "Regionale Lieferanten bei vergleichbaren Konditionen bevorzugen", "Möglichst viele Einzelbestellungen per Expressversand", "Ausschließlich den billigsten Anbieter wählen, unabhängig von Arbeitsbedingungen"],
+      "loesung": [0, 1, 2],
+      "erklaerung": "Nachhaltige Beschaffung berücksichtigt Lebenszykluskosten, CO₂, Menschenrechte in der Lieferkette (Sorgfaltspflichten nach Lieferkettengesetz bzw. EU-Recht für große Unternehmen; als Zulieferer ist WPM indirekt betroffen)."
+    },
+    {
+      "id": "wn-06", "typ": "mehrfach",
+      "frage": "Welche **Grundsätze** für die Verarbeitung personenbezogener Daten nennt die DSGVO (Art. 5)?",
+      "optionen": ["Rechtmäßigkeit, Verarbeitung nach Treu und Glauben, Transparenz", "Zweckbindung", "Datenminimierung", "Speicherbegrenzung", "Möglichst umfassende Datensammlung auf Vorrat", "Weitergabe an Dritte ohne Einschränkung"],
+      "loesung": [0, 1, 2, 3],
+      "erklaerung": "Art. 5 DSGVO: Rechtmäßigkeit/Transparenz, Zweckbindung, Datenminimierung, Richtigkeit, Speicherbegrenzung, Integrität und Vertraulichkeit, Rechenschaftspflicht."
+    },
+    {
+      "id": "wn-07", "typ": "einfach",
+      "frage": "Ein Kunde der Westpfalz Metallwerk GmbH will wissen, welche Daten über ihn im CRM gespeichert sind. Welches Recht macht er geltend?",
+      "optionen": ["Auskunftsrecht (Art. 15 DSGVO)", "Recht auf Datenübertragbarkeit (Art. 20)", "Widerspruchsrecht (Art. 21)", "Recht auf Löschung (Art. 17)"],
+      "loesung": 0,
+      "erklaerung": "Betroffenenrechte: Auskunft, Berichtigung, Löschung („Recht auf Vergessenwerden“), Einschränkung, Datenübertragbarkeit, Widerspruch. Antwortfrist grundsätzlich **1 Monat**."
+    },
+    {
+      "id": "wn-08", "typ": "einfach",
+      "frage": "Ein Laptop mit unverschlüsselten Kundendaten wird gestohlen. Innerhalb welcher Frist muss die Westpfalz Metallwerk GmbH die **Datenschutzverletzung** der Aufsichtsbehörde melden (sofern ein Risiko für Betroffene besteht)?",
+      "optionen": ["Innerhalb von 72 Stunden nach Bekanntwerden", "Innerhalb von 2 Wochen", "Innerhalb eines Monats", "Gar nicht, nur die Polizei ist zu informieren"],
+      "loesung": 0,
+      "erklaerung": "Art. 33 DSGVO: Meldung an die Aufsichtsbehörde (in Rheinland-Pfalz: Landesbeauftragter für Datenschutz und Informationsfreiheit, LfDI) **unverzüglich, möglichst binnen 72 Stunden**. Bei hohem Risiko auch Benachrichtigung der Betroffenen (Art. 34)."
+    },
+    {
+      "id": "wn-09", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Maßnahmen zu: **Datenschutz** oder **Datensicherheit** (technisch-organisatorische Maßnahme)?",
+      "paare": [
+        ["Einwilligung vor dem Newsletter-Versand einholen", "Datenschutz (Rechtmäßigkeit der Verarbeitung)"],
+        ["Tägliches Backup auf getrenntem Speicher", "Datensicherheit (Verfügbarkeit)"],
+        ["Festplattenverschlüsselung und Zwei-Faktor-Anmeldung", "Datensicherheit (Vertraulichkeit)"],
+        ["Bewerbungsunterlagen nach Abschluss des Verfahrens fristgerecht löschen", "Datenschutz (Speicherbegrenzung)"]
+      ],
+      "erklaerung": "**Datenschutz** schützt Personen vor missbräuchlicher Verarbeitung ihrer Daten. **Datensicherheit** schützt alle Daten (auch nicht personenbezogene) vor Verlust, Manipulation und unbefugtem Zugriff (Schutzziele: Vertraulichkeit, Integrität, Verfügbarkeit)."
+    },
+    {
+      "id": "wn-10", "typ": "einfach",
+      "frage": "Ab wann muss ein Unternehmen nach BDSG in der Regel einen **Datenschutzbeauftragten** benennen?",
+      "optionen": ["Wenn in der Regel mindestens 20 Personen ständig mit der automatisierten Verarbeitung personenbezogener Daten beschäftigt sind", "Ab 5 Beschäftigten", "Ab 250 Beschäftigten", "Nur bei börsennotierten Unternehmen"],
+      "loesung": 0,
+      "erklaerung": "§ 38 BDSG: ab 20 Personen (unabhängig davon bei besonders risikoreicher Verarbeitung). Der DSB kann intern oder extern sein, berät und überwacht, ist weisungsfrei und hat Kündigungsschutz."
+    },
+    {
+      "id": "wn-11", "typ": "einfach",
+      "frage": "Die Westpfalz Metallwerk GmbH lässt ihre Lohnabrechnung von einem externen Dienstleister durchführen. Was muss nach DSGVO abgeschlossen werden?",
+      "optionen": ["Ein Vertrag zur Auftragsverarbeitung (Art. 28 DSGVO)", "Eine Einwilligung jedes Mitarbeiters", "Nichts, da Lohndaten keine personenbezogenen Daten sind", "Eine Genehmigung der IHK"],
+      "loesung": 0,
+      "erklaerung": "Bei Auftragsverarbeitung (Dienstleister verarbeitet weisungsgebunden) ist ein **AV-Vertrag** nötig. Verantwortlich bleibt der Auftraggeber. Bußgelder bei Verstößen: bis 20 Mio. € oder 4 % des weltweiten Jahresumsatzes."
+    },
+    {
+      "id": "wn-12", "typ": "einfach",
+      "frage": "Welche Aussage zur **E-Rechnung** im B2B-Bereich ist nach aktuellem Stand richtig?",
+      "optionen": ["Seit 2025 müssen Unternehmen E-Rechnungen empfangen können; die Pflicht zum Versand wird bis 2028 stufenweise eingeführt.", "Eine per E-Mail versendete PDF-Datei ist eine E-Rechnung im Sinne des Gesetzes.", "E-Rechnungen sind nur im Verkehr mit Behörden vorgeschrieben.", "Die E-Rechnung wurde wieder abgeschafft."],
+      "loesung": 0,
+      "erklaerung": "Wachstumschancengesetz: Seit 01.01.2025 Empfangspflicht; Ausstellungspflicht ab 2027 für Unternehmen mit > 800.000 € Vorjahresumsatz, ab 2028 für alle. Zulässig sind strukturierte Formate nach EN 16931 (**XRechnung**, **ZUGFeRD** ab 2.0.1) – ein reines PDF ist nur „sonstige Rechnung“. Stand 2026 – prüfen.",
+      "stand2026": true
+    },
+    {
+      "id": "wn-13", "typ": "mehrfach",
+      "frage": "Welche Vorteile bieten **digitale Geschäftsprozesse** (z. B. E-Rechnung, digitale Freigabe-Workflows) der Westpfalz Metallwerk GmbH?",
+      "optionen": ["Schnellere Durchlaufzeiten und weniger Erfassungsfehler", "Automatische Weiterverarbeitung in ERP und Buchhaltung", "Bessere Nachvollziehbarkeit (Revisionssicherheit nach GoBD)", "Wegfall jeglicher Aufbewahrungspflichten", "Keine Notwendigkeit mehr für IT-Sicherheit"],
+      "loesung": [0, 1, 2],
+      "erklaerung": "Digitalisierung spart Zeit und Kosten, erfordert aber Investitionen, Schulung, IT-Sicherheit und Datenschutz. Aufbewahrungspflichten (z. B. 8 Jahre für Buchungsbelege, 10 Jahre für Bücher/Jahresabschlüsse) gelten weiter – digital und unveränderbar (GoBD).",
+      "stand2026": true
+    },
+    {
+      "id": "wn-14", "typ": "mehrfach",
+      "frage": "Ein Mitarbeiter arbeitet zwei Tage pro Woche **mobil von zu Hause**. Welche Aussagen sind richtig?",
+      "optionen": ["Das Arbeitszeitgesetz (Höchstarbeitszeit, Ruhezeiten) gilt auch im Homeoffice.", "Datenschutz und IT-Sicherheit müssen auch zu Hause gewährleistet sein (z. B. VPN, Bildschirmsperre).", "Bei der Ausgestaltung mobiler Arbeit hat der Betriebsrat ein Mitbestimmungsrecht.", "Es besteht ein gesetzlicher Anspruch auf Homeoffice für alle Beschäftigten.", "Im Homeoffice besteht grundsätzlich kein Unfallversicherungsschutz."],
+      "loesung": [0, 1, 2],
+      "erklaerung": "§ 87 Abs. 1 Nr. 14 BetrVG: Mitbestimmung bei der Ausgestaltung mobiler Arbeit. Einen allgemeinen gesetzlichen Anspruch gibt es nicht. Unfallversicherungsschutz besteht auch im Homeoffice bei betrieblichen Tätigkeiten (seit 2021 ausdrücklich geregelt)."
+    },
+    {
+      "id": "wn-15", "typ": "einfach",
+      "frage": "Ein Sachbearbeiter möchte Kundendaten in ein öffentliches KI-Chat-Tool kopieren, um eine Antwort-Mail formulieren zu lassen. Wie ist das zu beurteilen?",
+      "optionen": ["Kritisch: Personenbezogene Daten und Geschäftsgeheimnisse dürfen nur in freigegebene Tools mit geeigneter Rechtsgrundlage und vertraglicher Absicherung eingegeben werden.", "Unproblematisch, da KI-Tools keine Daten speichern.", "Erlaubt, wenn die E-Mail anschließend gelöscht wird.", "Nur verboten, wenn der Kunde im Ausland sitzt."],
+      "loesung": 0,
+      "erklaerung": "KI am Arbeitsplatz: Unternehmensrichtlinien beachten, Daten anonymisieren, nur freigegebene Tools (AV-Vertrag, Datenverarbeitung in der EU bzw. geeignete Garantien). Die EU-KI-Verordnung (AI Act) verpflichtet Unternehmen u. a. zu KI-Kompetenz der Beschäftigten. Ergebnisse immer prüfen."
+    },
+    {
+      "id": "wn-16", "typ": "zahl",
+      "frage": "Die Westpfalz Metallwerk GmbH verbraucht {{kwh}} kWh Strom pro Jahr. Durch LED-Beleuchtung und Druckluft-Leckageortung sinkt der Verbrauch um {{spar|%}}. Strompreis {{preis}} €/kWh, Emissionsfaktor {{ef}} kg CO₂/kWh.\n\nWie viele **Tonnen CO₂** werden pro Jahr eingespart (zwei Nachkommastellen)?",
+      "vars": { "kwh": 2400000, "spar": 12, "preis": 0.21, "ef": 0.38 },
+      "calc": "r2(kwh*spar/100*ef/1000)",
+      "einheit": "t",
+      "loesung": 109.44,
+      "erklaerung": "Einsparung = {{kwh}} × {{spar|%}} = {{kwh*spar/100|n0}} kWh\nCO₂ = {{kwh*spar/100|n0}} × {{ef}} kg = {{kwh*spar/100*ef|n0}} kg = **{{r2(kwh*spar/100*ef/1000)}} t**\nKostenersparnis: {{kwh*spar/100*preis|€}} pro Jahr – Ökologie und Ökonomie gehen hier zusammen. (Faktoren fiktiv.)"
+    }
+  ],
+  "karten": [
+    { "id": "wn-k01", "vorne": "Drei Dimensionen der Nachhaltigkeit", "hinten": "Ökologisch (Ressourcen, Klima, Umwelt)\nÖkonomisch (dauerhafte Wirtschaftlichkeit)\nSozial (faire Arbeit, Gesundheit, Gesellschaft)" },
+    { "id": "wn-k02", "vorne": "Abfallhierarchie (§ 6 KrWG)", "hinten": "1. Vermeidung\n2. Vorbereitung zur Wiederverwendung\n3. Recycling\n4. sonstige (energetische) Verwertung\n5. Beseitigung" },
+    { "id": "wn-k03", "vorne": "Scope 1, 2, 3", "hinten": "Scope 1: direkte Emissionen (eigene Anlagen, Fahrzeuge)\nScope 2: eingekaufte Energie (Strom, Wärme)\nScope 3: vor- und nachgelagerte Kette (Material, Transporte, Produktnutzung)" },
+    { "id": "wn-k04", "vorne": "Managementsystem-Normen", "hinten": "ISO 9001 Qualität · ISO 14001/EMAS Umwelt · ISO 50001 Energie · ISO 45001 Arbeitsschutz · ISO/IEC 27001 Informationssicherheit" },
+    { "id": "wn-k05", "vorne": "DSGVO-Grundsätze (Art. 5)", "hinten": "Rechtmäßigkeit, Treu und Glauben, Transparenz · Zweckbindung · Datenminimierung · Richtigkeit · Speicherbegrenzung · Integrität und Vertraulichkeit · Rechenschaftspflicht" },
+    { "id": "wn-k06", "vorne": "Rechtsgrundlagen der Verarbeitung (Art. 6 DSGVO)", "hinten": "Einwilligung, Vertragserfüllung, rechtliche Verpflichtung, lebenswichtige Interessen, öffentliche Aufgabe, berechtigtes Interesse (Abwägung)" },
+    { "id": "wn-k07", "vorne": "Betroffenenrechte", "hinten": "Auskunft (Art. 15), Berichtigung (16), Löschung (17), Einschränkung (18), Datenübertragbarkeit (20), Widerspruch (21). Frist: grundsätzlich 1 Monat." },
+    { "id": "wn-k08", "vorne": "Datenpanne – was tun?", "hinten": "Meldung an die Aufsichtsbehörde binnen 72 Stunden (Art. 33), bei hohem Risiko Benachrichtigung der Betroffenen (Art. 34), Dokumentation. Bußgeld bis 20 Mio. € bzw. 4 % des weltweiten Umsatzes." },
+    { "id": "wn-k09", "vorne": "Schutzziele der Informationssicherheit", "hinten": "Vertraulichkeit (nur Befugte), Integrität (unverändert, korrekt), Verfügbarkeit (zugreifbar, wenn nötig). Maßnahmen: Zugriffsrechte, Verschlüsselung, Backups, Updates, Schulungen gegen Phishing." },
+    { "id": "wn-k10", "vorne": "E-Rechnung B2B – Zeitplan", "hinten": "ab 2025: Empfangspflicht für alle Unternehmen\nab 2027: Versandpflicht bei Vorjahresumsatz > 800.000 €\nab 2028: Versandpflicht für alle\nFormate: XRechnung, ZUGFeRD (EN 16931)", "stand2026": true },
+    { "id": "wn-k11", "vorne": "Lieferketten-Sorgfaltspflichten", "hinten": "Große Unternehmen müssen Menschenrechts- und Umweltrisiken in ihrer Lieferkette analysieren, vorbeugen und abhelfen (LkSG; EU-Richtlinie CSDDD mit späterer Umsetzung). Zulieferer wie WPM werden über Verhaltenskodizes eingebunden. Stand 2026 – prüfen.", "stand2026": true }
+  ]
+}

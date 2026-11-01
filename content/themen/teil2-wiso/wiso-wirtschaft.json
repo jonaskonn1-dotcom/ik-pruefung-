@@ -1,0 +1,151 @@
+{
+  "id": "wiso-wirtschaft",
+  "titel": "Wirtschaftsordnung, Markt und Preisbildung, Konjunktur, Wirtschaftspolitik",
+  "gruppe": "WiSo",
+  "bereich": { "ao2024": "wiso", "vo2002": "wiso" },
+  "beschreibung": "Soziale Marktwirtschaft, Wettbewerbsrecht, Marktformen, Gleichgewichtspreis, Konjunkturphasen und -indikatoren, Stabilitätsgesetz, Fiskal- und Geldpolitik, Inflation, Kaufkraft, Wirtschaftskreislauf, BIP.",
+  "fragen": [
+    {
+      "id": "ww-01", "typ": "mehrfach",
+      "frage": "Welche Merkmale kennzeichnen die **soziale Marktwirtschaft** in Deutschland?",
+      "optionen": ["Privateigentum an Produktionsmitteln", "Preisbildung grundsätzlich über Angebot und Nachfrage", "Staatliche Eingriffe zum sozialen Ausgleich (z. B. Sozialversicherung, Kündigungsschutz)", "Schutz des Wettbewerbs durch das Kartellrecht", "Zentrale staatliche Planung der Produktionsmengen"],
+      "loesung": [0, 1, 2, 3],
+      "erklaerung": "Soziale Marktwirtschaft = freie Marktwirtschaft + sozialer Ausgleich + Wettbewerbsschutz (Bundeskartellamt, GWB). Zentrale Planung ist Merkmal der **Zentralverwaltungswirtschaft**."
+    },
+    {
+      "id": "ww-02", "typ": "zuordnung",
+      "frage": "Ordnen Sie die **Marktformen** zu (Anbieterseite).",
+      "paare": [
+        ["Viele Anbieter, viele Nachfrager – z. B. Bäckereien in einer Großstadt", "Polypol"],
+        ["Wenige große Anbieter – z. B. Mineralölkonzerne", "Angebotsoligopol"],
+        ["Ein Anbieter – z. B. Netzbetreiber in einem Gebiet", "Angebotsmonopol"]
+      ],
+      "erklaerung": "Je weniger Anbieter, desto größer die Marktmacht und Preissetzungsmöglichkeiten. Oligopolisten reagieren aufeinander (Preisführerschaft, Gefahr von Absprachen → verboten nach GWB)."
+    },
+    {
+      "id": "ww-03", "typ": "zahl",
+      "frage": "Auf dem Markt für Edelstahlbleche gelten (vereinfacht) folgende Funktionen:\nNachfrage: x = {{a}} − {{b}} · p\nAngebot: x = {{c}} + {{d}} · p\n(p in €/kg, x in Tonnen)\n\nBerechnen Sie den **Gleichgewichtspreis**.",
+      "vars": { "a": 1200, "b": 150, "c": 200, "d": 100 },
+      "calc": "(a - c)/(b + d)",
+      "einheit": "€/kg",
+      "loesung": 4,
+      "erklaerung": "Gleichgewicht: Angebot = Nachfrage\n{{a}} − {{b}}p = {{c}} + {{d}}p → {{a-c}} = {{b+d}}p → p = **{{(a-c)/(b+d)}} €/kg**\nGleichgewichtsmenge: x = {{c}} + {{d}} × {{(a-c)/(b+d)}} = {{c + d*(a-c)/(b+d)}} t"
+    },
+    {
+      "id": "ww-04", "typ": "einfach",
+      "frage": "Der Staat legt für ein Gut einen **Höchstpreis** unterhalb des Gleichgewichtspreises fest. Was ist die Folge?",
+      "optionen": ["Nachfrageüberhang – es entstehen Knappheit, Wartelisten und ggf. Schwarzmärkte.", "Angebotsüberhang – es bleiben Waren übrig.", "Der Markt bleibt im Gleichgewicht.", "Die angebotene Menge steigt."],
+      "loesung": 0,
+      "erklaerung": "Höchstpreis (Schutz der Verbraucher, z. B. Mietpreisbremse) unter p* → Nachfrage > Angebot. **Mindestpreis** (Schutz der Anbieter, z. B. Mindestlohn) über p* → Angebotsüberhang."
+    },
+    {
+      "id": "ww-05", "typ": "reihenfolge",
+      "frage": "Bringen Sie die **Konjunkturphasen** beginnend mit dem Tiefpunkt in die richtige Reihenfolge.",
+      "elemente": ["Depression (Tiefstand)", "Aufschwung (Expansion)", "Hochkonjunktur (Boom)", "Abschwung (Rezession)"],
+      "erklaerung": "Merkmale Boom: hohe Auslastung, steigende Preise und Löhne, niedrige Arbeitslosigkeit. Abschwung: sinkende Auftragseingänge, Investitionen gehen zurück. Depression: hohe Arbeitslosigkeit, pessimistische Erwartungen. Eine Rezession liegt technisch vor, wenn das reale BIP zwei Quartale in Folge sinkt."
+    },
+    {
+      "id": "ww-06", "typ": "zuordnung",
+      "frage": "Ordnen Sie die **Konjunkturindikatoren** zu.",
+      "paare": [
+        ["Auftragseingänge der Industrie, ifo-Geschäftsklima", "Frühindikator"],
+        ["Bruttoinlandsprodukt, Kapazitätsauslastung", "Präsenzindikator"],
+        ["Arbeitslosenquote, Verbraucherpreise", "Spätindikator"]
+      ],
+      "erklaerung": "Frühindikatoren zeigen künftige Entwicklungen an (Erwartungen, Aufträge). Spätindikatoren reagieren verzögert (Unternehmen stellen erst ein, wenn der Aufschwung gesichert ist)."
+    },
+    {
+      "id": "ww-07", "typ": "mehrfach",
+      "frage": "Welche Ziele nennt das **Stabilitäts- und Wachstumsgesetz** (1967) – das „magische Viereck“?",
+      "optionen": ["Stabilität des Preisniveaus", "Hoher Beschäftigungsstand", "Außenwirtschaftliches Gleichgewicht", "Stetiges und angemessenes Wirtschaftswachstum", "Gerechte Einkommensverteilung", "Schutz der Umwelt"],
+      "loesung": [0, 1, 2, 3],
+      "erklaerung": "Magisches **Viereck** (StabG). Erweitert zum **Sechseck** um gerechte Einkommens- und Vermögensverteilung sowie Umweltschutz. „Magisch“, weil Zielkonflikte bestehen (z. B. Wachstum ↔ Umweltschutz, Vollbeschäftigung ↔ Preisstabilität)."
+    },
+    {
+      "id": "ww-08", "typ": "einfach",
+      "frage": "Die Wirtschaft befindet sich im Abschwung. Welche Maßnahme entspricht einer **antizyklischen Fiskalpolitik**?",
+      "optionen": ["Der Staat erhöht seine Investitionen und senkt Steuern (ggf. durch Kreditaufnahme).", "Der Staat erhöht Steuern und kürzt Ausgaben.", "Die EZB erhöht den Leitzins.", "Der Staat bildet eine Konjunkturausgleichsrücklage."],
+      "loesung": 0,
+      "erklaerung": "Antizyklisch (Keynes): im Abschwung Nachfrage stärken (mehr Ausgaben, weniger Steuern, Abschreibungserleichterungen), im Boom dämpfen (Rücklagen bilden, Ausgaben kürzen). Problem: Zeitverzögerungen, Schuldenbremse. Leitzinsen gehören zur **Geldpolitik** der EZB."
+    },
+    {
+      "id": "ww-09", "typ": "einfach",
+      "frage": "Die Inflationsrate im Euroraum liegt deutlich über 2 %. Welche Maßnahme ergreift die **Europäische Zentralbank** typischerweise?",
+      "optionen": ["Sie erhöht die Leitzinsen, um Kredite zu verteuern und die Nachfrage zu dämpfen.", "Sie senkt die Leitzinsen.", "Sie erhöht die Einkommensteuer.", "Sie legt Höchstpreise fest."],
+      "loesung": 0,
+      "erklaerung": "Vorrangiges Ziel der EZB: **Preisniveaustabilität** (mittelfristig 2 % Inflation, symmetrisch). Instrumente: Leitzinsen (Hauptrefinanzierungssatz, Einlagesatz), Offenmarktgeschäfte, Mindestreserve. Die EZB ist unabhängig; Steuern sind Sache der Staaten."
+    },
+    {
+      "id": "ww-10", "typ": "zahl",
+      "frage": "Der Verbraucherpreisindex (2020 = 100) stieg von {{v0}} im Vorjahr auf {{v1}}.\n\nWie hoch ist die **Inflationsrate** (zwei Nachkommastellen)?",
+      "vars": { "v0": 121.9, "v1": 124.6 },
+      "calc": "r2((v1 - v0)/v0*100)",
+      "einheit": "%",
+      "loesung": 2.21,
+      "erklaerung": "Inflationsrate = (VPI neu − VPI alt) ÷ VPI alt × 100 = ({{v1}} − {{v0}}) ÷ {{v0}} × 100 = **{{r2((v1 - v0)/v0*100)|%}}**\n(Indexwerte fiktiv.)"
+    },
+    {
+      "id": "ww-11", "typ": "zahl",
+      "frage": "Ein Tarifvertrag erhöht die Gehälter um {{lohn|%}}. Die Inflationsrate beträgt im selben Zeitraum {{inf|%}}.\n\nUm wie viel Prozent steigt der **Reallohn** (genaue Berechnung, zwei Nachkommastellen)?",
+      "vars": { "lohn": 4.8, "inf": 2.2 },
+      "calc": "r2(((1+lohn/100)/(1+inf/100) - 1)*100)",
+      "einheit": "%",
+      "loesung": 2.54,
+      "erklaerung": "Reallohnindex = (1 + {{lohn/100}}) ÷ (1 + {{inf/100}}) = {{r((1+lohn/100)/(1+inf/100), 4)}}\nReallohnsteigerung = **{{r2(((1+lohn/100)/(1+inf/100) - 1)*100)|%}}** (Näherung: {{lohn|%}} − {{inf|%}} = {{lohn-inf|%}})."
+    },
+    {
+      "id": "ww-12", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Ströme im **erweiterten Wirtschaftskreislauf** zu.",
+      "paare": [
+        ["Haushalte erhalten Löhne von Unternehmen", "Einkommen (Geldstrom)"],
+        ["Haushalte zahlen Einkommensteuer an den Staat", "Steuern/Abgaben"],
+        ["Unternehmen exportieren Gehäuse nach Schweden", "Güterstrom ins Ausland (Ausland zahlt)"],
+        ["Haushalte legen Geld bei Banken an", "Sparen (Vermögensbildung)"]
+      ],
+      "erklaerung": "Sektoren: Haushalte, Unternehmen, Staat, Banken (Vermögensänderung), Ausland. Geldströme fließen entgegengesetzt zu Güterströmen."
+    },
+    {
+      "id": "ww-13", "typ": "einfach",
+      "frage": "Mehrere Hersteller von Schaltschrankgehäusen sprechen ihre Preise heimlich ab. Wer kann dagegen vorgehen?",
+      "optionen": ["Das Bundeskartellamt (Bußgelder nach dem GWB)", "Die IHK", "Die Bundesagentur für Arbeit", "Der Betriebsrat"],
+      "loesung": 0,
+      "erklaerung": "Preisabsprachen (Kartelle) sind nach dem Gesetz gegen Wettbewerbsbeschränkungen (GWB) und EU-Recht verboten. Das Bundeskartellamt verhängt Bußgelder bis 10 % des Konzernumsatzes; außerdem Fusionskontrolle und Missbrauchsaufsicht über marktbeherrschende Unternehmen."
+    },
+    {
+      "id": "ww-14", "typ": "einfach",
+      "frage": "Was misst das **Bruttoinlandsprodukt (BIP)**?",
+      "optionen": ["Den Wert aller im Inland in einem Jahr produzierten Waren und Dienstleistungen (abzüglich Vorleistungen)", "Das Vermögen aller Einwohner", "Die Summe aller Steuereinnahmen", "Den Wert aller Exporte"],
+      "loesung": 0,
+      "erklaerung": "BIP = Maß der Wirtschaftsleistung (Inlandskonzept). **Nominales** BIP zu aktuellen Preisen, **reales** BIP preisbereinigt → Wirtschaftswachstum. Kritik: Hausarbeit, Ehrenamt, Umweltschäden werden nicht (richtig) erfasst."
+    },
+    {
+      "id": "ww-15", "typ": "zahl",
+      "frage": "Ein Kunde kauft Gehäuse für {{netto|€}} netto. Die Preise steigen um {{inf|%}}. Wie viel ist die **Kaufkraft** von 100 € danach noch wert (in heutigen Euro, zwei Nachkommastellen)?",
+      "vars": { "netto": 1000, "inf": 2.5 },
+      "calc": "r2(100/(1+inf/100))",
+      "einheit": "€",
+      "loesung": 97.56,
+      "erklaerung": "Kaufkraft = 100 € ÷ (1 + {{inf/100}}) = **{{r2(100/(1+inf/100))|€}}** – für 100 € erhält man nur noch Waren im heutigen Wert von {{r2(100/(1+inf/100))|€}}. Die Inflation entwertet Geldvermögen und Forderungen."
+    },
+    {
+      "id": "ww-16", "typ": "mehrfach",
+      "frage": "Welche Faktoren führen bei einem Gut zu einer **Rechtsverschiebung der Nachfragekurve** (mehr Nachfrage bei jedem Preis)?",
+      "optionen": ["Steigende Einkommen der Käufer (normales Gut)", "Preisanstieg eines Substitutionsguts", "Positive Zukunftserwartungen bzw. Modetrend", "Preissenkung des Gutes selbst", "Steigende Produktionskosten der Anbieter"],
+      "loesung": [0, 1, 2],
+      "erklaerung": "Eine Preisänderung des Gutes selbst bewirkt eine **Bewegung auf** der Kurve, keine Verschiebung. Produktionskosten verschieben die **Angebotskurve** (nach links)."
+    }
+  ],
+  "karten": [
+    { "id": "ww-k01", "vorne": "Wirtschaftsordnungen", "hinten": "Freie Marktwirtschaft: Privateigentum, Markt, kaum Staat\nZentralverwaltungswirtschaft: Staatseigentum, zentraler Plan\nSoziale Marktwirtschaft: Markt + sozialer Ausgleich + Wettbewerbsschutz" },
+    { "id": "ww-k02", "vorne": "Preisbildung im Polypol", "hinten": "Angebot = Nachfrage → Gleichgewichtspreis (markträumend)\nPreis über p*: Angebotsüberhang → Preis sinkt\nPreis unter p*: Nachfrageüberhang → Preis steigt" },
+    { "id": "ww-k03", "vorne": "Höchst- und Mindestpreise", "hinten": "Höchstpreis (unter p*): Verbraucherschutz → Nachfrageüberhang, Schwarzmarkt\nMindestpreis (über p*): Anbieterschutz → Angebotsüberhang (z. B. Mindestlohn: mögliches Arbeitsangebot > Nachfrage)" },
+    { "id": "ww-k04", "vorne": "Konjunkturphasen", "hinten": "Aufschwung → Boom → Abschwung (Rezession) → Depression → Aufschwung\nRezession: reales BIP sinkt zwei Quartale in Folge" },
+    { "id": "ww-k05", "vorne": "Konjunkturindikatoren", "hinten": "Früh: Auftragseingänge, ifo-Geschäftsklima, Baugenehmigungen\nPräsenz: BIP, Kapazitätsauslastung, Umsätze\nSpät: Arbeitslosenquote, Preise, Löhne" },
+    { "id": "ww-k06", "vorne": "Magisches Viereck / Sechseck", "hinten": "Preisniveaustabilität, hoher Beschäftigungsstand, außenwirtschaftliches Gleichgewicht, angemessenes Wachstum (StabG 1967)\n+ gerechte Einkommensverteilung, Umweltschutz" },
+    { "id": "ww-k07", "vorne": "Fiskalpolitik vs. Geldpolitik", "hinten": "Fiskalpolitik: Staat (Bund, Länder) – Ausgaben, Steuern, antizyklisch\nGeldpolitik: EZB – Leitzinsen, Offenmarktgeschäfte, Mindestreserve; Ziel Preisstabilität (2 %)" },
+    { "id": "ww-k08", "vorne": "Inflation – Ursachen und Folgen", "hinten": "Ursachen: Nachfragesog, Kostendruck (Energie, Löhne), Geldmengenausweitung, importierte Inflation\nFolgen: Kaufkraftverlust, Flucht in Sachwerte, Benachteiligung von Sparern und Gläubigern" },
+    { "id": "ww-k09", "vorne": "Reallohn und Kaufkraft", "hinten": "Reallohn = Nominallohn ÷ Preisindex\nReallohnänderung ≈ Lohnsteigerung − Inflationsrate\nKaufkraft = 100 ÷ (1 + Inflationsrate)" },
+    { "id": "ww-k10", "vorne": "Wettbewerbsrecht (GWB)", "hinten": "Kartellverbot (Preis-, Gebiets-, Quotenabsprachen), Missbrauchsaufsicht über marktbeherrschende Unternehmen, Fusionskontrolle. Behörde: Bundeskartellamt (Bonn), EU-Kommission bei grenzüberschreitenden Fällen." },
+    { "id": "ww-k11", "vorne": "Marktformen nach Anzahl der Anbieter", "hinten": "Polypol (viele), Oligopol (wenige), Monopol (einer). Je weniger Anbieter, desto größer die Preissetzungsmacht." }
+  ]
+}

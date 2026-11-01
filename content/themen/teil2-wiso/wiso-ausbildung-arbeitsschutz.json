@@ -1,0 +1,141 @@
+{
+  "id": "wiso-ausbildung-arbeitsschutz",
+  "titel": "Ausbildung (BBiG), Jugendarbeitsschutz, Arbeitszeit, Urlaub",
+  "gruppe": "WiSo",
+  "bereich": { "ao2024": "wiso", "vo2002": "wiso" },
+  "beschreibung": "Berufsausbildungsvertrag, Pflichten, Probezeit, Kündigung, Ende der Ausbildung, Prüfungen, JArbSchG, ArbZG, BUrlG, Arbeitsschutz.",
+  "fragen": [
+    {
+      "id": "wa-01", "typ": "einfach",
+      "frage": "Lukas Weber hat seinen Ausbildungsvertrag bei der Westpfalz Metallwerk GmbH unterschrieben. Wie lange darf die **Probezeit** höchstens dauern?",
+      "optionen": ["4 Monate (mindestens 1 Monat)", "6 Monate", "3 Monate", "12 Monate"],
+      "loesung": 0,
+      "erklaerung": "§ 20 BBiG: Probezeit **mindestens 1, höchstens 4 Monate**. Während der Probezeit können beide Seiten jederzeit **ohne Kündigungsfrist** schriftlich kündigen."
+    },
+    {
+      "id": "wa-02", "typ": "mehrfach",
+      "frage": "Welche Kündigungsmöglichkeiten hat ein Auszubildender **nach der Probezeit**? (§ 22 BBiG)",
+      "optionen": ["Fristlos aus wichtigem Grund", "Mit einer Frist von 4 Wochen, wenn er die Berufsausbildung aufgeben oder sich für einen anderen Beruf ausbilden lassen will", "Mit einer Frist von 2 Wochen ohne Angabe von Gründen", "Mündlich, wenn der Ausbilder zustimmt"],
+      "loesung": [0, 1],
+      "erklaerung": "Nach der Probezeit: Ausbildender nur fristlos aus wichtigem Grund; Auszubildender zusätzlich mit 4 Wochen Frist bei Berufsaufgabe/-wechsel. Immer **schriftlich**, nach der Probezeit **unter Angabe der Gründe**. Die Kündigung aus wichtigem Grund muss innerhalb von 2 Wochen nach Kenntnis erfolgen."
+    },
+    {
+      "id": "wa-03", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Pflichten aus dem Ausbildungsverhältnis zu.",
+      "paare": [
+        ["Ausbildungsmittel (z. B. Fachliteratur, Werkzeug) kostenlos zur Verfügung stellen", "Pflicht des Ausbildenden"],
+        ["Für den Besuch der Berufsschule freistellen", "Pflicht des Ausbildenden"],
+        ["Ausbildungsnachweis (Berichtsheft) ordnungsgemäß führen", "Pflicht des Auszubildenden"],
+        ["Weisungen des Ausbilders befolgen und Betriebsgeheimnisse wahren", "Pflicht des Auszubildenden"]
+      ],
+      "erklaerung": "Ausbildender (§§ 14–19 BBiG): ausbilden, Ausbildungsmittel, Freistellung Berufsschule/Prüfungen, Vergütung, Zeugnis, nur ausbildungsbezogene Tätigkeiten. Auszubildender (§ 13): Lernpflicht, Berufsschule, Weisungen, Betriebsordnung, Sorgfalt, Schweigepflicht, Ausbildungsnachweis."
+    },
+    {
+      "id": "wa-04", "typ": "einfach",
+      "frage": "Lukas besteht die Abschlussprüfung Teil 2 am 20. Januar 2027 (Bekanntgabe des Ergebnisses durch den Prüfungsausschuss). Laut Vertrag würde die Ausbildung am 31. Juli 2027 enden. Wann endet das Ausbildungsverhältnis?",
+      "optionen": ["Mit der Bekanntgabe des Ergebnisses am 20. Januar 2027", "Am 31. Juli 2027", "Am 31. Januar 2027", "Mit Aushändigung des IHK-Zeugnisses einige Wochen später"],
+      "loesung": 0,
+      "erklaerung": "§ 21 Abs. 2 BBiG: Besteht der Auszubildende **vor Ablauf** der Ausbildungszeit die Abschlussprüfung, endet das Ausbildungsverhältnis mit **Bekanntgabe des Ergebnisses** durch den Prüfungsausschuss. Beschäftigt der Betrieb ihn danach ohne ausdrückliche Vereinbarung weiter, gilt ein **unbefristetes** Arbeitsverhältnis als begründet (§ 24 BBiG)."
+    },
+    {
+      "id": "wa-05", "typ": "einfach",
+      "frage": "Ein Auszubildender fällt in der Abschlussprüfung durch. Was gilt?",
+      "optionen": ["Auf sein Verlangen verlängert sich das Ausbildungsverhältnis bis zur nächstmöglichen Wiederholungsprüfung, höchstens um ein Jahr.", "Das Ausbildungsverhältnis verlängert sich automatisch um zwei Jahre.", "Er darf die Prüfung nicht wiederholen.", "Der Betrieb muss ihn als Fachkraft übernehmen."],
+      "loesung": 0,
+      "erklaerung": "§ 21 Abs. 3 BBiG: Verlängerung **auf Verlangen** des Auszubildenden bis zur nächsten Wiederholungsprüfung, höchstens 1 Jahr. Die Abschlussprüfung kann zweimal wiederholt werden (§ 37 BBiG)."
+    },
+    {
+      "id": "wa-06", "typ": "mehrfach",
+      "frage": "Welche Aussagen zur **vorzeitigen Zulassung** zur Abschlussprüfung (§ 45 BBiG) sind richtig?",
+      "optionen": ["Sie ist möglich, wenn die Leistungen dies rechtfertigen.", "Ausbildender und Berufsschule werden vor der Entscheidung angehört.", "Die IHK entscheidet über die Zulassung.", "Sie ist nur möglich, wenn die Ausbildungszeit bereits vollständig abgelaufen ist.", "Der Ausbildungsvertrag wird dadurch automatisch um ein Jahr verlängert."],
+      "loesung": [0, 1, 2],
+      "erklaerung": "Vorzeitige Zulassung: Leistungen müssen es rechtfertigen (i. d. R. gute Noten in Betrieb und Berufsschule); Ausbildender und Berufsschule werden angehört; die zuständige Stelle (IHK) entscheidet. Davon zu unterscheiden ist die **Verkürzung** der Ausbildungszeit auf Antrag (§ 8 BBiG)."
+    },
+    {
+      "id": "wa-07", "typ": "einfach",
+      "frage": "Die 17-jährige Auszubildende Mia hat dienstags 6 Unterrichtsstunden à 45 Minuten Berufsschule (Beginn 8:00 Uhr). Darf sie danach noch im Betrieb arbeiten?",
+      "optionen": ["Nein – an einem Berufsschultag mit mehr als 5 Unterrichtsstunden à 45 Min. darf sie einmal pro Woche nicht mehr beschäftigt werden.", "Ja, bis zu 4 Stunden.", "Ja, unbegrenzt, da sie über 16 ist.", "Nur mit Zustimmung der Eltern."],
+      "loesung": 0,
+      "erklaerung": "§ 9 JArbSchG: Jugendliche dürfen an **einem** Berufsschultag pro Woche mit mehr als 5 Unterrichtsstunden (à 45 Min.) nicht beschäftigt werden; dieser Tag wird mit **8 Stunden** auf die Arbeitszeit angerechnet. Vor einem vor 9 Uhr beginnenden Unterricht ist Beschäftigung ebenfalls verboten."
+    },
+    {
+      "id": "wa-08", "typ": "zahl",
+      "frage": "Die 16-jährige Auszubildende Sophie arbeitet {{std}} Stunden am Tag. Wie viele **Minuten Ruhepause** stehen ihr nach dem Jugendarbeitsschutzgesetz mindestens zu?",
+      "vars": { "std": 8 },
+      "calc": "std > 6 ? 60 : std > 4.5 ? 30 : 0",
+      "einheit": "Minuten",
+      "toleranz": 0,
+      "loesung": 60,
+      "erklaerung": "§ 11 JArbSchG: mehr als 4,5 bis 6 Stunden → **30 Minuten**; mehr als 6 Stunden → **60 Minuten**. Pausen gelten nur ab 15 Minuten Dauer. (Erwachsene nach ArbZG: > 6 Std. 30 Min., > 9 Std. 45 Min.)"
+    },
+    {
+      "id": "wa-09", "typ": "zuordnung",
+      "frage": "Ordnen Sie den **Mindesturlaub nach JArbSchG** dem Alter zu Beginn des Kalenderjahres zu.",
+      "paare": [
+        ["noch nicht 16 Jahre", "30 Werktage"],
+        ["noch nicht 17 Jahre", "27 Werktage"],
+        ["noch nicht 18 Jahre", "25 Werktage"],
+        ["Erwachsene (BUrlG)", "24 Werktage"]
+      ],
+      "erklaerung": "§ 19 JArbSchG, § 3 BUrlG. Werktage = Montag bis Samstag. Bei einer 5-Tage-Woche entsprechen 24 Werktage 20 Arbeitstagen. Tarifverträge sehen oft 30 Arbeitstage vor."
+    },
+    {
+      "id": "wa-10", "typ": "mehrfach",
+      "frage": "Welche Regeln gelten für **Jugendliche** nach dem JArbSchG?",
+      "optionen": ["Höchstens 8 Stunden täglich und 40 Stunden wöchentlich", "Fünf-Tage-Woche", "Nachtruhe grundsätzlich von 20 bis 6 Uhr", "Mindestens 12 Stunden ununterbrochene Freizeit nach Arbeitsende", "Akkordarbeit ist ausdrücklich erlaubt"],
+      "loesung": [0, 1, 2, 3],
+      "erklaerung": "§§ 8, 13–15 JArbSchG. Akkord- und tempoabhängige Arbeit ist für Jugendliche grundsätzlich **verboten** (§ 23). Zusätzlich: ärztliche Erstuntersuchung vor Beginn, Nachuntersuchung nach einem Jahr."
+    },
+    {
+      "id": "wa-11", "typ": "zahl",
+      "frage": "Ein erwachsener Mitarbeiter in der Fertigung arbeitet {{std}} Stunden an einem Tag. Wie viele **Minuten Pause** stehen ihm nach dem Arbeitszeitgesetz mindestens zu?",
+      "vars": { "std": 9.5 },
+      "calc": "std > 9 ? 45 : std > 6 ? 30 : 0",
+      "einheit": "Minuten",
+      "toleranz": 0,
+      "loesung": 45,
+      "erklaerung": "§ 4 ArbZG: mehr als 6 bis 9 Stunden → 30 Minuten; mehr als 9 Stunden → **45 Minuten**. Die werktägliche Arbeitszeit darf 8 Stunden nicht überschreiten, kann aber auf **10 Stunden** verlängert werden, wenn innerhalb von 6 Monaten/24 Wochen im Durchschnitt 8 Stunden nicht überschritten werden. Ruhezeit: 11 Stunden."
+    },
+    {
+      "id": "wa-12", "typ": "einfach",
+      "frage": "Wer ist für die **Überwachung** der Berufsausbildung im Betrieb und die Abnahme der Prüfungen bei Industriekaufleuten zuständig?",
+      "optionen": ["Die Industrie- und Handelskammer (zuständige Stelle)", "Die Berufsschule", "Die Agentur für Arbeit", "Der Betriebsrat"],
+      "loesung": 0,
+      "erklaerung": "Die **IHK** als zuständige Stelle (hier IHK Pfalz) führt das Verzeichnis der Ausbildungsverhältnisse, berät durch Ausbildungsberater, überwacht die Eignung von Betrieb und Ausbilder und nimmt Prüfungen ab. Die Aufgaben erstellt bundeseinheitlich die AkA."
+    },
+    {
+      "id": "wa-13", "typ": "mehrfach",
+      "frage": "Was muss der **Berufsausbildungsvertrag** (Niederschrift nach § 11 BBiG) mindestens enthalten?",
+      "optionen": ["Art, Gliederung und Ziel der Ausbildung", "Beginn und Dauer der Ausbildung", "Dauer der Probezeit", "Höhe der Vergütung", "Dauer des Urlaubs", "Die Noten des Schulabschlusses"],
+      "loesung": [0, 1, 2, 3, 4],
+      "erklaerung": "Mindestinhalte u. a.: Art/Ziel/Gliederung, Beginn und Dauer, Ausbildungsmaßnahmen außerhalb der Ausbildungsstätte, tägliche Ausbildungszeit, Probezeit, Vergütung, Urlaub, Kündigungsvoraussetzungen, Hinweis auf Tarifverträge/Betriebsvereinbarungen, Form des Ausbildungsnachweises. Schulnoten gehören nicht dazu."
+    },
+    {
+      "id": "wa-14", "typ": "einfach",
+      "frage": "Welche Aussage zum **Arbeitsschutz** im Betrieb ist richtig?",
+      "optionen": ["Der Arbeitgeber muss eine Gefährdungsbeurteilung erstellen und Beschäftigte regelmäßig unterweisen.", "Persönliche Schutzausrüstung müssen Beschäftigte selbst bezahlen.", "Arbeitsunfälle meldet der Arbeitnehmer direkt der Krankenkasse.", "Sicherheitsunterweisungen sind nur bei Neueinstellung nötig."],
+      "loesung": 0,
+      "erklaerung": "ArbSchG: Gefährdungsbeurteilung (§ 5), Unterweisung bei Einstellung und regelmäßig – mindestens jährlich, bei Jugendlichen halbjährlich (§ 29 JArbSchG). Schutzausrüstung zahlt der Arbeitgeber. Arbeitsunfälle mit mehr als 3 Tagen Arbeitsunfähigkeit meldet der AG der **Berufsgenossenschaft**."
+    },
+    {
+      "id": "wa-15", "typ": "einfach",
+      "frage": "Eine Auszubildende wird regelmäßig zum Kaffeekochen und Kopieren für die ganze Abteilung eingesetzt, ohne dass dies dem Ausbildungszweck dient. Wogegen verstößt der Betrieb?",
+      "optionen": ["Gegen die Pflicht, nur Aufgaben zu übertragen, die dem Ausbildungszweck dienen (§ 14 Abs. 3 BBiG)", "Gegen das Arbeitszeitgesetz", "Gegen das Kündigungsschutzgesetz", "Gegen keine Vorschrift"],
+      "loesung": 0,
+      "erklaerung": "Ausbildungsfremde Tätigkeiten sind unzulässig. Ansprechpartner: Ausbilder, Betriebsrat/JAV, Ausbildungsberater der IHK."
+    }
+  ],
+  "karten": [
+    { "id": "wa-k01", "vorne": "Probezeit und Kündigung im Ausbildungsverhältnis", "hinten": "Probezeit 1–4 Monate: beide Seiten jederzeit fristlos, schriftlich.\nDanach: Ausbildender nur fristlos aus wichtigem Grund; Azubi auch mit 4 Wochen Frist bei Berufsaufgabe/-wechsel. Schriftlich mit Gründen." },
+    { "id": "wa-k02", "vorne": "Ende des Ausbildungsverhältnisses", "hinten": "Mit Ablauf der Ausbildungszeit oder bei vorher bestandener Prüfung mit Bekanntgabe des Ergebnisses. Bei Nichtbestehen auf Verlangen Verlängerung bis zur Wiederholungsprüfung (max. 1 Jahr). Weiterarbeit ohne Vereinbarung → unbefristetes Arbeitsverhältnis." },
+    { "id": "wa-k03", "vorne": "Pflichten des Ausbildenden (Auswahl)", "hinten": "Ausbildungsziel vermitteln, Ausbilder bestellen, Ausbildungsmittel kostenlos, Freistellung für Berufsschule und Prüfungen, angemessene Vergütung, Zeugnis, nur ausbildungsbezogene Aufgaben, Ausbildungsnachweis kontrollieren" },
+    { "id": "wa-k04", "vorne": "Pflichten des Auszubildenden (Auswahl)", "hinten": "Lernpflicht, Berufsschulpflicht, Weisungen befolgen, Betriebsordnung beachten, Werkzeuge pfleglich behandeln, Stillschweigen über Betriebsgeheimnisse, Ausbildungsnachweis führen" },
+    { "id": "wa-k05", "vorne": "JArbSchG – Arbeitszeit und Pausen", "hinten": "max. 8 Std./Tag, 40 Std./Woche, 5-Tage-Woche\nPausen: > 4,5 Std. → 30 Min., > 6 Std. → 60 Min.\nFreizeit 12 Std., Nachtruhe 20–6 Uhr" },
+    { "id": "wa-k06", "vorne": "JArbSchG – Berufsschule", "hinten": "Keine Beschäftigung vor Unterricht, der vor 9 Uhr beginnt.\nEinmal pro Woche: Berufsschultag > 5 Unterrichtsstunden à 45 Min. → keine Beschäftigung, Anrechnung 8 Std.\nBlockunterricht ≥ 25 Std. an 5 Tagen → Anrechnung 40 Std." },
+    { "id": "wa-k07", "vorne": "Urlaub nach JArbSchG und BUrlG", "hinten": "< 16 J.: 30 Werktage\n< 17 J.: 27 Werktage\n< 18 J.: 25 Werktage\nErwachsene: 24 Werktage (= 20 Arbeitstage bei 5-Tage-Woche)" },
+    { "id": "wa-k08", "vorne": "Arbeitszeitgesetz (Erwachsene)", "hinten": "8 Std./Werktag, bis 10 Std. bei Ausgleich auf Ø 8 Std. in 6 Monaten\nPausen: > 6 Std. 30 Min., > 9 Std. 45 Min.\nRuhezeit 11 Std., Sonn- und Feiertagsruhe" },
+    { "id": "wa-k09", "vorne": "Duales System – Lernorte und Zuständigkeiten", "hinten": "Betrieb (Ausbildungsrahmenplan, BBiG, Ausbildungsordnung) und Berufsschule (Rahmenlehrplan, Schulgesetz der Länder). Zuständige Stelle: IHK (Überwachung, Prüfungen). Prüfungsaufgaben: AkA." },
+    { "id": "wa-k10", "vorne": "Gesundheitliche Betreuung Jugendlicher", "hinten": "Erstuntersuchung innerhalb der letzten 14 Monate vor Beschäftigungsbeginn, Nachuntersuchung nach einem Jahr (§§ 32, 33 JArbSchG)." },
+    { "id": "wa-k11", "vorne": "Verkürzung vs. vorzeitige Zulassung", "hinten": "**Verkürzung** (§ 8 BBiG): Ausbildungszeit wird auf gemeinsamen Antrag gekürzt (z. B. Abitur, gute Leistungen).\n**Vorzeitige Zulassung** (§ 45 BBiG): Prüfung vor Ende der Ausbildungszeit bei guten Leistungen, nach Anhörung von Betrieb und Berufsschule." }
+  ]
+}

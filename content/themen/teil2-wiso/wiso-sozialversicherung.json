@@ -1,0 +1,144 @@
+{
+  "id": "wiso-sozialversicherung",
+  "titel": "Sozialversicherung und soziale Sicherung",
+  "gruppe": "WiSo",
+  "bereich": { "ao2024": "wiso", "vo2002": "wiso" },
+  "beschreibung": "Fünf Zweige, Träger, Leistungen, Finanzierung, Beitragssätze und Grenzen 2026, Versicherungspflicht, Arbeitsunfall, Generationenvertrag, private Vorsorge.",
+  "fragen": [
+    {
+      "id": "ws-01", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Zweige der Sozialversicherung ihren **Trägern** zu.",
+      "paare": [
+        ["Krankenversicherung", "Krankenkassen (z. B. AOK, Ersatzkassen)"],
+        ["Rentenversicherung", "Deutsche Rentenversicherung"],
+        ["Arbeitslosenversicherung", "Bundesagentur für Arbeit"],
+        ["Unfallversicherung", "Berufsgenossenschaften"]
+      ],
+      "erklaerung": "Fünf Säulen: KV, PV (Pflegekassen bei den Krankenkassen), RV, AV, UV. Die Beiträge (außer UV) werden als Gesamtsozialversicherungsbeitrag an die Krankenkasse als **Einzugsstelle** gezahlt."
+    },
+    {
+      "id": "ws-02", "typ": "einfach",
+      "frage": "Lukas Weber verunglückt mit dem Fahrrad auf dem direkten Weg von der Berufsschule zum Betrieb. Welche Versicherung ist zuständig?",
+      "optionen": ["Gesetzliche Unfallversicherung (Wegeunfall)", "Krankenversicherung", "Private Haftpflichtversicherung", "Rentenversicherung"],
+      "loesung": 0,
+      "erklaerung": "Die gesetzliche UV deckt **Arbeitsunfälle, Wegeunfälle** (direkter Weg zur/von der Arbeit oder Berufsschule) und **Berufskrankheiten**. Beim Durchgangsarzt (D-Arzt) behandeln lassen; Leistungen: Heilbehandlung, Verletztengeld, Reha, Verletztenrente."
+    },
+    {
+      "id": "ws-03", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Leistungen dem Versicherungszweig zu.",
+      "paare": [
+        ["Krankengeld ab der 7. Woche Arbeitsunfähigkeit", "Krankenversicherung"],
+        ["Arbeitslosengeld und Weiterbildungsförderung", "Arbeitslosenversicherung"],
+        ["Erwerbsminderungsrente und medizinische Reha zur Erhaltung der Erwerbsfähigkeit", "Rentenversicherung"],
+        ["Pflegegeld bei festgestelltem Pflegegrad", "Pflegeversicherung"]
+      ],
+      "erklaerung": "Die ersten 6 Wochen Krankheit: **Entgeltfortzahlung** durch den Arbeitgeber (EFZG). Danach Krankengeld (70 % des Bruttos, max. 90 % des Nettos). Reha: RV, wenn es um Erwerbsfähigkeit geht."
+    },
+    {
+      "id": "ws-04", "typ": "zahl",
+      "frage": "Wie hoch ist 2026 der **gesamte Beitragssatz** zur Kranken-, Pflege-, Renten- und Arbeitslosenversicherung für einen Arbeitnehmer mit Kind, wenn die Krankenkasse einen Zusatzbeitrag von {{zb|%}} erhebt (AG + AN zusammen)?",
+      "vars": { "zb": 2.9 },
+      "calc": "r2(W.kvAllgemein + zb + W.pv + W.rv + W.av)",
+      "einheit": "%",
+      "loesung": 42.3,
+      "erklaerung": "KV {{W.kvAllgemein|%}} + Zusatz {{zb|%}} + PV {{W.pv|%}} + RV {{W.rv|%}} + AV {{W.av|%}} = **{{r2(W.kvAllgemein + zb + W.pv + W.rv + W.av)|%}}** – davon trägt der Arbeitnehmer etwa die Hälfte."
+    },
+    {
+      "id": "ws-05", "typ": "einfach",
+      "frage": "Was versteht man unter dem **Generationenvertrag** in der gesetzlichen Rentenversicherung?",
+      "optionen": ["Die heutigen Beitragszahler finanzieren die Renten der heutigen Rentner (Umlageverfahren).", "Jeder spart seine eigene Rente auf einem persönlichen Konto an (Kapitaldeckungsverfahren).", "Rentner zahlen Beiträge für die Ausbildung junger Menschen.", "Der Staat zahlt die Renten vollständig aus Steuern."],
+      "loesung": 0,
+      "erklaerung": "**Umlageverfahren**: Einnahmen eines Jahres werden für die laufenden Renten verwendet, ergänzt durch einen Bundeszuschuss aus Steuern. Problem: demografischer Wandel – weniger Beitragszahler je Rentner. Deshalb Ergänzung durch betriebliche (bAV) und private Vorsorge (3-Säulen-Modell)."
+    },
+    {
+      "id": "ws-06", "typ": "mehrfach",
+      "frage": "Welche **Prinzipien** gelten in der gesetzlichen Sozialversicherung?",
+      "optionen": ["Solidaritätsprinzip – Beiträge nach Einkommen, Leistungen in der KV nach Bedarf", "Versicherungspflicht für Arbeitnehmer", "Selbstverwaltung durch Vertreter von Versicherten und Arbeitgebern", "Beiträge nach individuellem Krankheitsrisiko (Alter, Vorerkrankungen)", "Freie Wahl, ob man sich versichert"],
+      "loesung": [0, 1, 2],
+      "erklaerung": "Gesetzlich: Solidarprinzip, Versicherungspflicht, Selbstverwaltung (Sozialwahlen), Umlageverfahren. Risikoabhängige Beiträge (Äquivalenzprinzip) gelten in der **privaten** Krankenversicherung."
+    },
+    {
+      "id": "ws-07", "typ": "einfach",
+      "frage": "Ein Mitarbeiter verdient dauerhaft {{x|€}} brutto im Monat. Was gilt für seine Krankenversicherung (2026)?",
+      "vars": { "x": 6800 },
+      "optionen": ["Er liegt über der Versicherungspflichtgrenze und kann in die private Krankenversicherung wechseln oder freiwillig gesetzlich versichert bleiben.", "Er muss gesetzlich pflichtversichert bleiben.", "Er ist in keiner Krankenversicherung versichert.", "Er zahlt KV-Beiträge auf das volle Gehalt ohne Obergrenze."],
+      "loesung": 0,
+      "erklaerung": "Versicherungspflichtgrenze (JAEG) 2026: {{W.jaegMonat|€}}/Monat bzw. {{W.jaegJahr|€}}/Jahr. Darüber Wahlfreiheit. Beiträge in der GKV nur bis zur **Beitragsbemessungsgrenze** {{W.bbgKvMonat|€}}."
+    },
+    {
+      "id": "ws-08", "typ": "zahl",
+      "frage": "Wie hoch ist der **Arbeitnehmeranteil zur Arbeitslosenversicherung** 2026 bei einem Monatsgehalt von {{brutto|€}}?",
+      "vars": { "brutto": 3150 },
+      "calc": "svAN(brutto).av",
+      "einheit": "€",
+      "loesung": 40.95,
+      "erklaerung": "AV gesamt {{W.av|%}}, je zur Hälfte → AN {{W.av/2|%}}\n{{brutto|€}} × {{W.av/2|%}} = **{{svAN(brutto).av|€}}**"
+    },
+    {
+      "id": "ws-09", "typ": "einfach",
+      "frage": "Wie lange zahlt der **Arbeitgeber** bei Arbeitsunfähigkeit durch Krankheit das Entgelt weiter?",
+      "optionen": ["Bis zu 6 Wochen je Erkrankung (Entgeltfortzahlungsgesetz)", "Bis zu 3 Tage", "Bis zu 78 Wochen", "Gar nicht, die Krankenkasse zahlt ab dem 1. Tag"],
+      "loesung": 0,
+      "erklaerung": "EFZG: Anspruch nach 4 Wochen Beschäftigung, bis zu **6 Wochen** je Krankheit, 100 % des Entgelts. Arbeitsunfähigkeit muss unverzüglich gemeldet werden; die Krankenkassen übermitteln die eAU elektronisch an den Arbeitgeber. Kleinbetriebe (≤ 30 AN) erhalten Erstattungen über die **Umlage U1**."
+    },
+    {
+      "id": "ws-10", "typ": "mehrfach",
+      "frage": "Welche Personengruppen sind **versicherungspflichtig** in der gesetzlichen Renten- und Arbeitslosenversicherung?",
+      "optionen": ["Auszubildende", "Angestellte mit 4.200 € Monatsgehalt", "Arbeiter in der Fertigung", "Beamte", "Selbstständige Handwerksmeister nach 18 Pflichtbeitragsjahren"],
+      "loesung": [0, 1, 2],
+      "erklaerung": "Alle Beschäftigten gegen Entgelt (inkl. Azubis) sind RV- und AV-pflichtig – es gibt **keine** Versicherungspflichtgrenze wie in der KV, nur die Beitragsbemessungsgrenze. Beamte haben eigene Versorgung. Für Azubis mit Vergütung bis 325 € trägt der AG die Beiträge allein (Geringverdienergrenze)."
+    },
+    {
+      "id": "ws-11", "typ": "zahl",
+      "frage": "Ein kinderloser Angestellter (29 Jahre) verdient {{brutto|€}}. Wie viel zahlt er **mehr** an Pflegeversicherung als ein Kollege mit einem Kind und gleichem Gehalt?",
+      "vars": { "brutto": 3500 },
+      "calc": "r2(svAN(brutto, { kinderlos: true }).pv - svAN(brutto, { kinder: 1 }).pv)",
+      "einheit": "€",
+      "loesung": 21,
+      "erklaerung": "Kinderlosenzuschlag {{W.pvKinderlosZuschlag|%}} × {{brutto|€}} = **{{r2(svAN(brutto, { kinderlos: true }).pv - svAN(brutto, { kinder: 1 }).pv)|€}}** pro Monat (AN-Anteil {{svAN(brutto, { kinderlos: true }).pv|€}} statt {{svAN(brutto, { kinder: 1 }).pv|€}})."
+    },
+    {
+      "id": "ws-12", "typ": "einfach",
+      "frage": "Welche Voraussetzung muss u. a. erfüllt sein, damit ein Arbeitsloser **Arbeitslosengeld I** erhält?",
+      "optionen": ["Anwartschaftszeit: mindestens 12 Monate versicherungspflichtige Beschäftigung in den letzten 30 Monaten", "Er muss mindestens 10 Jahre gearbeitet haben.", "Er muss ein Vermögen unter 5.000 € haben.", "Er muss selbst gekündigt haben."],
+      "loesung": 0,
+      "erklaerung": "ALG I: arbeitslos, persönlich arbeitslos gemeldet, Anwartschaftszeit erfüllt, der Vermittlung verfügbar. Höhe 60 % (mit Kind 67 %) des pauschalierten Nettoentgelts. Eigenkündigung ohne wichtigen Grund → Sperrzeit. Bedürftigkeitsabhängig ist erst die Grundsicherung (Bürgergeld bzw. Nachfolgeregelung)."
+    },
+    {
+      "id": "ws-13", "typ": "zuordnung",
+      "frage": "Ordnen Sie die **drei Säulen der Altersvorsorge** zu.",
+      "paare": [
+        ["Gesetzliche Rentenversicherung", "1. Säule – staatliche Vorsorge"],
+        ["Entgeltumwandlung in eine Direktversicherung des Arbeitgebers", "2. Säule – betriebliche Altersversorgung"],
+        ["Private Rentenversicherung oder ETF-Sparplan", "3. Säule – private Vorsorge"]
+      ],
+      "erklaerung": "Wegen sinkendem Rentenniveau gewinnen bAV und private Vorsorge an Bedeutung. Arbeitnehmer haben einen Anspruch auf Entgeltumwandlung (§ 1a BetrAVG); der AG muss 15 % Zuschuss leisten, soweit er SV-Beiträge spart."
+    },
+    {
+      "id": "ws-14", "typ": "einfach",
+      "frage": "Wer trägt die Beiträge zur **gesetzlichen Unfallversicherung** und wonach richtet sich die Höhe?",
+      "optionen": ["Der Arbeitgeber allein; Höhe nach Lohnsumme und Gefahrklasse des Betriebs", "Arbeitgeber und Arbeitnehmer je zur Hälfte nach Einkommen", "Der Arbeitnehmer allein nach seinem Unfallrisiko", "Der Staat aus Steuermitteln"],
+      "loesung": 0,
+      "erklaerung": "Die UV ersetzt die Haftung des Arbeitgebers (Haftungsablösung): Der Arbeitnehmer kann den Arbeitgeber bei Arbeitsunfällen grundsätzlich nicht privat verklagen; dafür zahlt der AG die Beiträge an die Berufsgenossenschaft allein."
+    },
+    {
+      "id": "ws-15", "typ": "einfach",
+      "frage": "Was ist die **Beitragsbemessungsgrenze**?",
+      "optionen": ["Das Einkommen, bis zu dem Beiträge erhoben werden; darüber liegendes Einkommen ist beitragsfrei.", "Das Einkommen, ab dem man in die private KV wechseln darf.", "Die Grenze für Minijobs.", "Der Höchstbetrag der Rente."],
+      "loesung": 0,
+      "erklaerung": "2026: KV/PV {{W.bbgKvMonat|€}}, RV/AV {{W.bbgRvMonat|€}} pro Monat. Nicht verwechseln mit der **Versicherungspflichtgrenze** (KV-Wahlfreiheit, {{W.jaegMonat|€}}) oder der **Geringfügigkeitsgrenze** ({{W.minijobGrenze|€}})."
+    }
+  ],
+  "karten": [
+    { "id": "ws-k01", "vorne": "Die 5 Zweige der Sozialversicherung und ihre Träger", "hinten": "KV – Krankenkassen\nPV – Pflegekassen\nRV – Deutsche Rentenversicherung\nAV – Bundesagentur für Arbeit\nUV – Berufsgenossenschaften (Unfallkassen)" },
+    { "id": "ws-k02", "vorne": "Beitragssätze 2026", "hinten": "KV 14,6 % + Zusatzbeitrag (Ø 2,9 %)\nPV 3,6 % (+0,6 % kinderlos, AN)\nRV 18,6 %\nAV 2,6 %\nUV: AG allein (Gefahrklasse)", "stand2026": true },
+    { "id": "ws-k03", "vorne": "Grenzen 2026 (Monat)", "hinten": "BBG KV/PV 5.812,50 €\nBBG RV/AV 8.450 €\nVersicherungspflichtgrenze KV 6.450 €\nMinijob 603 €\nÜbergangsbereich bis 2.000 €", "stand2026": true },
+    { "id": "ws-k04", "vorne": "Leistungen der Unfallversicherung", "hinten": "Prävention, Heilbehandlung (D-Arzt), Verletztengeld, Reha und Umschulung, Verletztenrente, Hinterbliebenenrente. Versichert: Arbeitsunfall, Wegeunfall, Berufskrankheit." },
+    { "id": "ws-k05", "vorne": "Entgeltfortzahlung und Krankengeld", "hinten": "Wochen 1–6: AG zahlt 100 % (EFZG)\nAb Woche 7: Krankengeld der KV (70 % brutto, max. 90 % netto), max. 78 Wochen in 3 Jahren für dieselbe Krankheit" },
+    { "id": "ws-k06", "vorne": "Prinzipien der Sozialversicherung", "hinten": "Versicherungspflicht, Solidaritätsprinzip, Umlageverfahren, Selbstverwaltung, paritätische Finanzierung (mit Ausnahmen)" },
+    { "id": "ws-k07", "vorne": "Umlagen U1, U2, U3", "hinten": "U1: Erstattung Entgeltfortzahlung bei Krankheit (Betriebe ≤ 30 AN)\nU2: Erstattung Mutterschaftsleistungen (alle Betriebe)\nU3: Insolvenzgeldumlage 0,15 % (AG)", "stand2026": true },
+    { "id": "ws-k08", "vorne": "Arbeitslosengeld I – Voraussetzungen", "hinten": "Arbeitslosigkeit, Arbeitslosmeldung (spätestens 3 Monate vor Ende bzw. innerhalb 3 Tagen nach Kenntnis arbeitsuchend melden), Anwartschaftszeit 12 Monate in 30 Monaten, Verfügbarkeit" },
+    { "id": "ws-k09", "vorne": "Drei-Säulen-Modell der Altersvorsorge", "hinten": "1. gesetzliche Rente (Umlage)\n2. betriebliche Altersversorgung (Entgeltumwandlung, AG-Zuschuss 15 %)\n3. private Vorsorge (Rentenversicherung, Fonds, Immobilie)" },
+    { "id": "ws-k10", "vorne": "Sozialgerichtsbarkeit", "hinten": "Streit mit SV-Trägern (z. B. abgelehnte Reha, Rente): erst Widerspruch beim Träger, dann Sozialgericht → Landessozialgericht → Bundessozialgericht (Kassel). Verfahren für Versicherte gerichtskostenfrei." }
+  ]
+}

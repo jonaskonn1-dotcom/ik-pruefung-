@@ -1,0 +1,145 @@
+{
+  "id": "wiso-rechtsformen-vollmachten",
+  "titel": "Kaufmann, Handelsregister, Rechtsformen, Vollmachten",
+  "gruppe": "WiSo",
+  "bereich": { "ao2024": "wiso", "vo2002": "wiso" },
+  "beschreibung": "Kaufmannseigenschaft, Firma, Handelsregister, Einzelunternehmen, OHG, KG, GmbH, UG, AG, GmbH & Co. KG, Prokura, Handlungsvollmacht, Rechts- und Geschäftsfähigkeit.",
+  "fragen": [
+    {
+      "id": "wr-01", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Kaufmannsarten zu.",
+      "paare": [
+        ["Betreibt ein Handelsgewerbe, das einen kaufmännisch eingerichteten Geschäftsbetrieb erfordert", "Istkaufmann (§ 1 HGB)"],
+        ["Kleingewerbetreibender, der sich freiwillig ins Handelsregister eintragen lässt", "Kannkaufmann (§ 2 HGB)"],
+        ["Westpfalz Metallwerk GmbH", "Formkaufmann (§ 6 HGB)"],
+        ["Land- und forstwirtschaftlicher Betrieb mit Eintragung", "Kannkaufmann (§ 3 HGB)"]
+      ],
+      "erklaerung": "Istkaufmann: Eintragung **deklaratorisch** (rechtsbekundend). Kannkaufmann: Eintragung **konstitutiv** (rechtsbegründend). Formkaufmann: Kapitalgesellschaften und Genossenschaften sind kraft Rechtsform Kaufleute (Eintragung konstitutiv)."
+    },
+    {
+      "id": "wr-02", "typ": "einfach",
+      "frage": "In welcher Abteilung des Handelsregisters ist die Westpfalz Metallwerk GmbH eingetragen?",
+      "optionen": ["Abteilung B", "Abteilung A", "Genossenschaftsregister", "Vereinsregister"],
+      "loesung": 0,
+      "erklaerung": "**Abteilung A**: Einzelkaufleute (e. K.) und Personengesellschaften (OHG, KG). **Abteilung B**: Kapitalgesellschaften (GmbH, UG, AG). Das Handelsregister wird elektronisch beim Amtsgericht geführt (für Kaiserslautern: Amtsgericht Kaiserslautern) und ist öffentlich einsehbar."
+    },
+    {
+      "id": "wr-03", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Firmenarten zu.",
+      "paare": [
+        ["Hartmann Metalltechnik e. K.", "Personenfirma"],
+        ["Westpfalz Metallwerk GmbH", "Sachfirma (Gegenstand des Unternehmens)"],
+        ["Zentrix GmbH", "Fantasiefirma"],
+        ["Hartmann & Becker Edelstahl OHG", "Mischfirma"]
+      ],
+      "erklaerung": "Firma = Name des Kaufmanns im Handelsverkehr (§ 17 HGB). Grundsätze: Firmenwahrheit/-klarheit, Firmenausschließlichkeit (Unterscheidbarkeit am Ort), Firmenbeständigkeit, Firmenöffentlichkeit, **Rechtsformzusatz** ist Pflicht."
+    },
+    {
+      "id": "wr-04", "typ": "mehrfach",
+      "frage": "Welche Aussagen zur **GmbH** sind richtig?",
+      "optionen": ["Das Mindeststammkapital beträgt 25.000 €.", "Gesellschafter haften grundsätzlich nur mit ihrer Einlage; die Gesellschaft haftet mit ihrem Gesellschaftsvermögen.", "Organe sind Geschäftsführung und Gesellschafterversammlung (ggf. Aufsichtsrat).", "Der Gesellschaftsvertrag bedarf der notariellen Beurkundung.", "Jeder Gesellschafter haftet unbeschränkt mit seinem Privatvermögen."],
+      "loesung": [0, 1, 2, 3],
+      "erklaerung": "GmbH: juristische Person, Formkaufmann, Stammkapital mind. 25.000 € (bei Anmeldung mind. 12.500 € eingezahlt), notarieller Vertrag, Eintragung konstitutiv. Aufsichtsrat Pflicht ab 500 AN (DrittelbG)."
+    },
+    {
+      "id": "wr-05", "typ": "einfach",
+      "frage": "Wie haften die Gesellschafter einer **OHG** für Verbindlichkeiten der Gesellschaft?",
+      "optionen": ["Unbeschränkt, unmittelbar und gesamtschuldnerisch (solidarisch)", "Nur bis zur Höhe ihrer Einlage", "Nur mit dem Gesellschaftsvermögen", "Nur der geschäftsführende Gesellschafter haftet"],
+      "loesung": 0,
+      "erklaerung": "§ 126 HGB (seit MoPeG 2024): Gesellschafter haften **unbeschränkt** (auch privat), **unmittelbar** (Gläubiger kann direkt sie in Anspruch nehmen) und **gesamtschuldnerisch** (jeder für die gesamte Schuld). Ausgleich im Innenverhältnis."
+    },
+    {
+      "id": "wr-06", "typ": "einfach",
+      "frage": "In einer **KG** haftet die Kommanditistin Frau Schulz mit einer Einlage von 50.000 €, die voll eingezahlt ist. Wie haftet sie?",
+      "optionen": ["Nur mit ihrer Einlage, darüber hinaus nicht persönlich", "Unbeschränkt mit ihrem Privatvermögen", "Bis zum Doppelten ihrer Einlage", "Gar nicht"],
+      "loesung": 0,
+      "erklaerung": "**Komplementär** (Vollhafter): unbeschränkt, leitet die Gesellschaft. **Kommanditist** (Teilhafter): haftet nur bis zur Höhe der im Handelsregister eingetragenen Einlage; ist diese geleistet, haftet er nicht mehr persönlich. Kommanditisten sind von der Geschäftsführung ausgeschlossen (Widerspruchsrecht bei außergewöhnlichen Geschäften, Kontrollrecht)."
+    },
+    {
+      "id": "wr-07", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Organe der **Aktiengesellschaft** ihren Aufgaben zu.",
+      "paare": [
+        ["Vorstand", "Leitung der Gesellschaft in eigener Verantwortung, Vertretung nach außen"],
+        ["Aufsichtsrat", "Bestellung und Überwachung des Vorstands"],
+        ["Hauptversammlung", "Beschluss über Gewinnverwendung, Wahl der Anteilseignervertreter im AR, Satzungsänderungen"]
+      ],
+      "erklaerung": "AG: Grundkapital mind. **50.000 €**, Aktionäre haften nicht persönlich (Risiko nur Wertverlust der Aktien). Börsennotierung möglich → leichter Zugang zu Eigenkapital."
+    },
+    {
+      "id": "wr-08", "typ": "einfach",
+      "frage": "Ein Gründer möchte mit nur 1.000 € Kapital eine Kapitalgesellschaft gründen. Welche Rechtsform kommt in Frage?",
+      "optionen": ["Unternehmergesellschaft (haftungsbeschränkt)", "GmbH", "Aktiengesellschaft", "Kommanditgesellschaft"],
+      "loesung": 0,
+      "erklaerung": "UG (haftungsbeschränkt): Variante der GmbH ab 1 € Stammkapital. Pflicht: 25 % des Jahresüberschusses in eine **gesetzliche Rücklage**, bis 25.000 € erreicht sind – dann Umfirmierung zur GmbH möglich. Gründung mit Musterprotokoll möglich."
+    },
+    {
+      "id": "wr-09", "typ": "einfach",
+      "frage": "Was ist das Besondere an einer **GmbH & Co. KG**?",
+      "optionen": ["Komplementärin ist eine GmbH, sodass keine natürliche Person unbeschränkt haftet.", "Die Kommanditisten haften unbeschränkt.", "Sie ist eine Kapitalgesellschaft und in Abteilung B eingetragen.", "Sie braucht kein Stammkapital."],
+      "loesung": 0,
+      "erklaerung": "Die GmbH ist Vollhafterin (haftet unbeschränkt, aber nur mit ihrem eigenen Vermögen). Die Gesellschafter der GmbH sind meist zugleich Kommanditisten. Die GmbH & Co. KG ist eine **Personengesellschaft** (Abteilung A) mit Haftungsbegrenzung."
+    },
+    {
+      "id": "wr-10", "typ": "mehrfach",
+      "frage": "Michael Becker hat **Einzelprokura**. Welche Geschäfte darf er **ohne besondere Befugnis** vornehmen?",
+      "optionen": ["Einen Kredit über 500.000 € aufnehmen", "Einen Prozess für die GmbH führen", "Mitarbeiter einstellen und entlassen", "Ein Betriebsgrundstück kaufen", "Ein Betriebsgrundstück verkaufen", "Die Bilanz unterschreiben"],
+      "loesung": [0, 1, 2, 3],
+      "erklaerung": "Prokura (§ 49 HGB): alle gerichtlichen und außergerichtlichen Geschäfte, die der Betrieb **irgendeines** Handelsgewerbes mit sich bringt – auch Grundstücke **kaufen**. Ohne besondere Befugnis **nicht**: Grundstücke veräußern/belasten. Gar nicht: Bilanz und Steuererklärungen unterschreiben, Insolvenz anmelden, Prokura erteilen, Handelsregistereintragungen des Inhabers, Geschäft verkaufen/auflösen, Gesellschafter aufnehmen."
+    },
+    {
+      "id": "wr-11", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Vollmachten zu.",
+      "paare": [
+        ["Jana Schulz darf alle gewöhnlichen Geschäfte der Westpfalz Metallwerk GmbH abschließen; Zeichnung „i. V.“", "allgemeine Handlungsvollmacht"],
+        ["Der Einkäufer darf laufend Material bestellen", "Artvollmacht"],
+        ["Ein Azubi soll einmalig ein Einschreiben bei der Post abholen", "Einzel(handlungs)vollmacht"],
+        ["Michael Becker darf mit Herrn Wagner nur gemeinsam vertreten; Zeichnung „ppa.“", "Gesamtprokura"]
+      ],
+      "erklaerung": "Handlungsvollmacht (§ 54 HGB): gewöhnliche Geschäfte des **jeweiligen** Handelsgewerbes, formlos erteilbar, keine Eintragung. Prokura: nur vom Kaufmann persönlich, ausdrücklich, Eintragung ins Handelsregister (deklaratorisch)."
+    },
+    {
+      "id": "wr-12", "typ": "einfach",
+      "frage": "Einem allgemeinen Handlungsbevollmächtigten ist im Innenverhältnis untersagt, Bestellungen über 10.000 € abzuschließen. Er bestellt trotzdem für 15.000 € bei einem gutgläubigen Lieferanten. Ist der Kaufvertrag wirksam?",
+      "optionen": ["Ja, Beschränkungen der Handlungsvollmacht muss ein Dritter nur gegen sich gelten lassen, wenn er sie kannte oder kennen musste.", "Nein, der Vertrag ist nichtig.", "Nur, wenn der Prokurist zustimmt.", "Nur bis 10.000 €."],
+      "loesung": 0,
+      "erklaerung": "§ 54 Abs. 3 HGB: Interne Beschränkungen wirken gegenüber Gutgläubigen nicht. Der Bevollmächtigte kann aber im Innenverhältnis schadensersatzpflichtig werden. Bei der Prokura ist eine Beschränkung im Außenverhältnis **grundsätzlich unwirksam** (§ 50 HGB)."
+    },
+    {
+      "id": "wr-13", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Stufen der **Geschäftsfähigkeit** zu.",
+      "paare": [
+        ["Kind unter 7 Jahren", "geschäftsunfähig – Willenserklärungen nichtig"],
+        ["Jugendlicher mit 15 Jahren", "beschränkt geschäftsfähig – Zustimmung der Eltern nötig (Ausnahme Taschengeld)"],
+        ["Auszubildende mit 19 Jahren", "voll geschäftsfähig"]
+      ],
+      "erklaerung": "§§ 104 ff. BGB. Beschränkt Geschäftsfähige (7–17 Jahre): schwebend unwirksame Verträge bis zur Genehmigung; wirksam ohne Zustimmung: Taschengeldparagraf (§ 110), lediglich rechtlicher Vorteil, im Rahmen eines erlaubten Arbeitsverhältnisses (§ 113)."
+    },
+    {
+      "id": "wr-14", "typ": "mehrfach",
+      "frage": "Welche Merkmale sprechen für die Gründung einer **Kapitalgesellschaft** statt eines Einzelunternehmens?",
+      "optionen": ["Begrenzung der Haftung auf das Gesellschaftsvermögen", "Leichtere Aufnahme von Kapitalgebern über Geschäftsanteile oder Aktien", "Unternehmensfortbestand unabhängig von einzelnen Personen", "Geringere Gründungs- und Verwaltungskosten", "Keine Pflicht zur Veröffentlichung des Jahresabschlusses"],
+      "loesung": [0, 1, 2],
+      "erklaerung": "Kapitalgesellschaften haben höhere Formalitäten (Notar, Mindestkapital, Offenlegungspflicht im Unternehmensregister, ggf. Prüfungspflicht) – dafür Haftungsbeschränkung und bessere Kapitalbeschaffung."
+    },
+    {
+      "id": "wr-15", "typ": "einfach",
+      "frage": "Wie wird der Gewinn einer **OHG** verteilt, wenn der Gesellschaftsvertrag nichts regelt (Rechtslage seit dem MoPeG 2024)?",
+      "optionen": ["Nach den vereinbarten Beteiligungsverhältnissen, hilfsweise nach dem Verhältnis der vereinbarten Werte der Beiträge", "4 % auf die Kapitalanteile, Rest nach Köpfen", "Nur nach Köpfen", "Ausschließlich an den geschäftsführenden Gesellschafter"],
+      "loesung": 0,
+      "erklaerung": "Das Gesetz zur Modernisierung des Personengesellschaftsrechts (MoPeG, in Kraft seit 01.01.2024) hat die alte Regel „4 % Vorabverzinsung, Rest nach Köpfen“ abgeschafft (§ 120 HGB i. V. m. § 709 Abs. 3 BGB). In der Praxis regelt der Gesellschaftsvertrag die Verteilung. Ältere Lehrbücher enthalten noch die 4-%-Regel!"
+    }
+  ],
+  "karten": [
+    { "id": "wr-k01", "vorne": "Kaufmannsarten", "hinten": "Istkaufmann § 1 HGB (Eintragung deklaratorisch)\nKannkaufmann §§ 2, 3 HGB (Eintragung konstitutiv)\nFormkaufmann § 6 HGB (GmbH, AG, eG)" },
+    { "id": "wr-k02", "vorne": "Handelsregister", "hinten": "Elektronisch beim Amtsgericht, öffentlich.\nAbteilung A: e. K., OHG, KG\nAbteilung B: GmbH, UG, AG\nInhalt: Firma, Sitz, Rechtsform, Inhaber/Geschäftsführer, Prokura, Kapital" },
+    { "id": "wr-k03", "vorne": "Firmengrundsätze", "hinten": "Firmenwahrheit und -klarheit, Firmenausschließlichkeit, Firmenbeständigkeit, Firmenöffentlichkeit, Rechtsformzusatz" },
+    { "id": "wr-k04", "vorne": "OHG – Haftung und Geschäftsführung", "hinten": "Haftung: unbeschränkt, unmittelbar, gesamtschuldnerisch\nGeschäftsführung: alle Gesellschafter (Einzelgeschäftsführung bei gewöhnlichen Geschäften)\nGewinnverteilung seit MoPeG: nach Beteiligungsverhältnis" },
+    { "id": "wr-k05", "vorne": "KG – Komplementär und Kommanditist", "hinten": "Komplementär: unbeschränkte Haftung, Geschäftsführung, Vertretung\nKommanditist: Haftung bis zur Einlage, keine Geschäftsführung, Kontrollrecht (Abschrift Jahresabschluss), Widerspruchsrecht bei außergewöhnlichen Geschäften" },
+    { "id": "wr-k06", "vorne": "GmbH und UG – Eckdaten", "hinten": "GmbH: Stammkapital 25.000 € (mind. 12.500 € bei Anmeldung), notarieller Vertrag, Organe: GF, Gesellschafterversammlung, ggf. AR\nUG: ab 1 €, 25 % Rücklage vom Jahresüberschuss bis 25.000 €" },
+    { "id": "wr-k07", "vorne": "AG – Eckdaten", "hinten": "Grundkapital mind. 50.000 €, Organe: Vorstand (Leitung), Aufsichtsrat (Kontrolle), Hauptversammlung (Aktionäre). Aktionäre haften nicht persönlich." },
+    { "id": "wr-k08", "vorne": "Prokura – was ist nicht erlaubt?", "hinten": "Ohne besondere Befugnis: Grundstücke veräußern oder belasten.\nNie: Bilanz/Steuererklärung unterschreiben, Insolvenz beantragen, Prokura erteilen, Geschäft verkaufen/einstellen, Gesellschafter aufnehmen, Eintragungen ins HR für den Inhaber anmelden." },
+    { "id": "wr-k09", "vorne": "Arten der Prokura und Handlungsvollmacht", "hinten": "Prokura: Einzel-, Gesamt-, Filialprokura – Zeichnung „ppa.“\nHandlungsvollmacht: allgemeine („i. V.“), Art-, Einzelvollmacht („i. A.“)" },
+    { "id": "wr-k10", "vorne": "Erteilung und Erlöschen der Prokura", "hinten": "Erteilung: nur durch Kaufmann/gesetzliche Vertreter persönlich, ausdrücklich, Eintragung ins HR (deklaratorisch).\nErlöschen: Widerruf (jederzeit), Beendigung des Arbeitsverhältnisses, Geschäftsaufgabe/Verkauf – Löschung im HR." },
+    { "id": "wr-k11", "vorne": "Rechtsfähigkeit vs. Geschäftsfähigkeit", "hinten": "Rechtsfähigkeit: Träger von Rechten und Pflichten sein (natürliche Personen ab Geburt, juristische Personen ab Eintragung).\nGeschäftsfähigkeit: wirksam Rechtsgeschäfte abschließen (< 7 unfähig, 7–17 beschränkt, ab 18 voll)." }
+  ]
+}

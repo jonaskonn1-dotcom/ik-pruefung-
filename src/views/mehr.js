@@ -14,7 +14,7 @@ export function mehrView(el) {
 
   el.innerHTML = `
     ${header('Mehr')}
-    ${mehrLinks.length ? `<nav class="menu" aria-label="Weitere Funktionen">${mehrLinks.map((l) => `<a href="${l.href}" class="menu-item">${l.icon || ''}<span><b>${esc(l.label)}</b><small>${esc(l.text || '')}</small></span></a>`).join('')}</nav>` : ''}
+    ${mehrLinks.length ? `<nav class="menu" aria-label="Weitere Funktionen">${[...mehrLinks].sort((a, b) => (a.order || 0) - (b.order || 0)).map((l) => `<a href="${l.href}" class="menu-item">${l.icon || ''}<span><b>${esc(l.label)}</b><small>${esc(l.text || '')}</small></span></a>`).join('')}</nav>` : ''}
 
     <section class="card">
       <h2 class="h-small">Prüfungsordnung</h2>
