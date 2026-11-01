@@ -150,6 +150,43 @@
       "einheit": "%",
       "loesung": 77.97,
       "erklaerung": "{{ja}} ÷ {{mitgl}} × 100 = **{{r2(ja/mitgl*100)|%}}** → {{ja/mitgl >= 0.75 ? 'die 75-%-Hürde ist erreicht, Streik möglich' : 'unter 75 % – kein Streik'}}."
+    },
+    {
+      "id": "wt-o01",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** die Begriffe **Tarifautonomie** und **Friedenspflicht**.",
+      "kriterien": [
+        "Tarifautonomie: Gewerkschaften und Arbeitgeber(verbände) regeln Arbeitsbedingungen ohne staatliche Einmischung",
+        "Grundlage: Koalitionsfreiheit Art. 9 Abs. 3 GG",
+        "Friedenspflicht: während der Laufzeit eines Tarifvertrags keine Arbeitskämpfe über die darin geregelten Inhalte",
+        "Zweck: Planungssicherheit, Ordnungs- und Friedensfunktion"
+      ]
+    },
+    {
+      "id": "wt-o02",
+      "typ": "offen",
+      "punkte": 4,
+      "mindestens": 3,
+      "frage": "**Nennen Sie** drei Angelegenheiten, in denen der Betriebsrat ein echtes **Mitbestimmungsrecht** hat, und **erläutern Sie**, was bei fehlender Einigung geschieht.",
+      "kriterien": [
+        "Beginn/Ende der täglichen Arbeitszeit, Pausen, Überstunden/Kurzarbeit",
+        "Urlaubsgrundsätze/Urlaubsplan, Ordnung im Betrieb",
+        "Einführung technischer Überwachungseinrichtungen, Entlohnungsgrundsätze, Ausgestaltung mobiler Arbeit",
+        "Ohne Einigung entscheidet die Einigungsstelle verbindlich"
+      ]
+    },
+    {
+      "id": "wt-o03",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Unterscheiden Sie** Tarifvertrag und Betriebsvereinbarung nach Vertragspartnern und Geltungsbereich.",
+      "kriterien": [
+        "Tarifvertrag: Gewerkschaft und Arbeitgeberverband bzw. einzelner Arbeitgeber",
+        "Gilt für tarifgebundene Mitglieder einer Branche/Region (ggf. allgemeinverbindlich oder per Bezugnahme)",
+        "Betriebsvereinbarung: Arbeitgeber und Betriebsrat",
+        "Gilt unmittelbar für alle Beschäftigten des Betriebs; Tarifvorrang bei Entgelten (§ 77 Abs. 3 BetrVG)"
+      ]
     }
   ],
   "karten": [

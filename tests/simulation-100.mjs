@@ -18,10 +18,15 @@ for (const ber of ['mvpk', 'wiso']) {
     if (q.typ === 'zuordnung') st.sel = Object.fromEntries(q.paare.map((pp, i) => [i, pp[1]]));
     if (q.typ === 'reihenfolge') st.order = q.elemente.map((_, i) => i);
     if (q.typ === 'zahl') st.value = String(q.loesung).replace('.', ',');
+    if (q.typ === 'offen') st.value = 'Antwort';
   }
   await p.evaluate((l) => { const s = JSON.parse(localStorage.getItem('ik-lernstand-v1')); s.simLauf = l; localStorage.setItem('ik-lernstand-v1', JSON.stringify(s)); }, lauf);
   await p.reload(); await p.waitForSelector('.sim-timer');
-  await p.click('#submit2'); await p.waitForSelector('.result');
+  await p.click('#submit2');
+  // Selbstbewertung der offenen Aufgaben: alle „voll“
+  let offen = 0;
+  while (!(await p.$('.result'))) { await p.waitForSelector('[data-act=rate][data-v=voll], .result'); if (await p.$('.result')) break; await p.click('[data-act=rate][data-v=voll]'); offen++; await p.waitForTimeout(50); }
+  console.log(ber, 'offene Aufgaben selbst bewertet:', offen);
   console.log(ber, (await p.textContent('.result-sub')).trim(), 'Fragen:', lauf.states.length, 'Themen:', new Set(lauf.states.map(s => Q.get(s.id) && s.id.split('-')[0])).size);
 }
 console.log('errors', errs); await b.close();

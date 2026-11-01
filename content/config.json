@@ -4,7 +4,8 @@
   "pruefungsordnung": "ao2024",
   "termine": {
     "schriftlich": { "von": "2026-11-24", "bis": "2026-11-25", "label": "Schriftliche Prüfung Teil 2" },
-    "muendlich":   { "von": "2027-01-04", "bis": "2027-01-29", "label": "Fachaufgabe im Einsatzgebiet" }
+    "muendlich":   { "von": "2027-01-04", "bis": "2027-01-29", "label": "Fachaufgabe im Einsatzgebiet" },
+    "dokumentation": { "von": "2026-11-24", "label": "Abgabe Dokumentation Fachaufgabe", "hinweis": "am Tag der schriftlichen Prüfung – laut IHK Pfalz, Seite Prüfungstermine" }
   },
   "quiz": {
     "standardAnzahl": 10,

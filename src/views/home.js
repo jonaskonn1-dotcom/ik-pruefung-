@@ -65,6 +65,9 @@ export function homeView(el) {
       ${countdown(termine.schriftlich.label, termine.schriftlich.von, termine.schriftlich.bis)}
       ${countdown(termine.muendlich.label, termine.muendlich.von, termine.muendlich.bis)}
       </div>
+      ${termine.dokumentation ? (() => { const d = daysUntil(termine.dokumentation.von); return `<a class="doc-hint" href="#/fachaufgabe">
+        <span class="doc-num">${d > 1 ? d + ' Tage' : d === 1 ? 'morgen' : d === 0 ? 'heute' : '✓'}</span>
+        <span><b>${esc(termine.dokumentation.label)}: ${fmtDate(termine.dokumentation.von, { day: '2-digit', month: '2-digit', year: 'numeric' })}</b><br><small>${esc(termine.dokumentation.hinweis || '')}</small></span></a>`; })() : ''}
     </header>
 
     <section class="quick" aria-label="Schnellstart">

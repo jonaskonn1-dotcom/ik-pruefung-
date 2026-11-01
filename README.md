@@ -16,9 +16,9 @@ Statische Website ohne Backend und ohne Login, als PWA auf dem Handy installierb
 | Bereich | Was es kann |
 |---|---|
 | **Start** | Countdown zur schriftlichen Prüfung und zur Fachaufgabe, Fortschritt je Prüfungsbereich, Tagesstatistik |
-| **Quiz** | AkA-Aufgabentypen: Einfach-/Mehrfachauswahl, Zuordnung, Reihenfolge, Rechenaufgaben mit Toleranz; Lösungsweg nach jeder Antwort; Tasten 1–9 und Enter am PC |
-| **Gemischtes Quiz** | standardmäßig nur MVPK + WiSo; Teil 1 per Schalter zuschaltbar |
-| **Prüfungssimulation** | echtes Zeitlimit (MVPK 150 Min., WiSo 60 Min., Teil 1 90 Min.; Kurzvariante mit halber Zeit), keine Lösungen während der Bearbeitung, IHK-Notenschlüssel, Auswertung nach Thema, läuft nach Neuladen weiter |
+| **Quiz** | AkA-Aufgabentypen: Einfach-/Mehrfachauswahl, Zuordnung, Reihenfolge, Rechenaufgaben mit Toleranz, offene Aufgaben mit Musterlösung und Selbstbewertung; Lösungsweg nach jeder Antwort; Tasten 1–9 und Enter am PC |
+| **Gemischtes Quiz** | standardmäßig nur MVPK + WiSo (MVPK ca. 60 % offene Aufgaben); Teil 1 per Schalter zuschaltbar |
+| **Prüfungssimulation** | echtes Zeitlimit (MVPK 150 Min., WiSo 60 Min., Teil 1 90 Min.; Kurzvariante mit halber Zeit), keine Lösungen während der Bearbeitung, MVPK mit ca. 60 % offenen Aufgaben (Selbstbewertung nach der Abgabe), IHK-Notenschlüssel, Auswertung nach Thema, läuft nach Neuladen weiter |
 | **Lernkarten** | Leitner-System mit 5 Fächern (Wiederholung nach 1/3/7/16/35 Tagen) |
 | **Fehlerkorb** | falsche Antworten werden gesammelt, nach 2× richtig in Folge entfernt |
 | **Statistik** | Schwachstellen nach Thema, „Schwächste Themen üben“, Simulationsverlauf |
@@ -173,6 +173,25 @@ Gemeinsame Felder: `id`, `typ`, `frage`, `erklaerung`, optional `vars`, `stand20
 ```json
 { "id": "mk-03", "typ": "reihenfolge", "frage": "…", "elemente": ["Einführung", "Wachstum", "Reife"], "erklaerung": "…" }
 ```
+
+**Offene Aufgabe** („Erläutern Sie …“, „Nennen Sie drei …“) – Antwort im Textfeld, danach Musterlösung
+mit Bewertungspunkten und Selbstbewertung (Voll = richtig, Teilweise = 50 %, Nicht = 0; Teilweise/Nicht kommen in den Fehlerkorb):
+
+```json
+{
+  "id": "pk-o05", "typ": "offen", "punkte": 4, "mindestens": 3,
+  "frage": "**Erläutern Sie** die Voraussetzungen einer sachgrundlosen Befristung.",
+  "kriterien": ["Höchstdauer 2 Jahre", "höchstens dreimal verlängerbar", "keine Vorbeschäftigung", "Schriftform"],
+  "musterloesung": "optionaler Einleitungstext"
+}
+```
+
+- `kriterien`: Stichpunkte, die in der Antwort vorkommen müssen (werden zum Abhaken angezeigt).
+- `mindestens`: wie viele Punkte für „voll“ genügen (z. B. „Nennen Sie drei …“ bei fünf möglichen Antworten); ohne Angabe alle.
+- `punkte`: Umfang der Aufgabe; in der Simulation zählt eine offene Aufgabe `punkte ÷ 2` (2–6, Standard 3).
+- Mindestens **8 offene Aufgaben je MVPK-Thema** und **3 je WiSo-Thema** (wird getestet).
+- Gemischtes Quiz und MVPK-Simulation enthalten ca. **60 % offene Aufgaben** (`simAnteilOffen` in `content/pruefung/ao2024.json`).
+  Die WiSo-Simulation bleibt wie die echte Prüfung gebunden; im gemischten Quiz erscheinen WiSo-Aufgaben anteilig.
 
 **Rechenaufgabe** – mit Variablen, Rechenweg `calc` und `loesung`:
 

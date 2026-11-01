@@ -171,6 +171,109 @@
         ]
       ],
       "erklaerung": "Produktpolitik: Innovation (neu), Variation (Veränderung bestehender Produkte), Differenzierung (zusätzliche Varianten), Diversifikation (neue Produkte/Märkte), Elimination (Herausnahme)."
+    },
+    {
+      "id": "mk-o01",
+      "typ": "offen",
+      "punkte": 6,
+      "mindestens": 3,
+      "frage": "Die Westpfalz Metallwerk GmbH plant, Schaltschrankgehäuse künftig auch in Skandinavien anzubieten. **Nennen Sie drei Informationen**, die vorher durch Marktforschung beschafft werden sollten, und **begründen Sie** jeweils kurz deren Bedeutung.",
+      "kriterien": [
+        "Marktvolumen/Marktpotenzial – zeigt, ob sich der Markteintritt lohnt",
+        "Wettbewerber, ihre Preise und Marktanteile – Grundlage für Preis- und Positionierungsentscheidung",
+        "Kundenanforderungen/Normen (z. B. Schutzarten, Zertifizierungen) – Produkt muss angepasst werden",
+        "Vertriebswege/Händlerstrukturen im Zielland – bestimmt Distributionspolitik",
+        "Rechtliche/zollrechtliche Rahmenbedingungen, Wechselkurs – beeinflusst Kosten und Risiko"
+      ]
+    },
+    {
+      "id": "mk-o02",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** den Unterschied zwischen Primär- und Sekundärforschung und **nennen Sie** je einen Vor- und einen Nachteil der Primärforschung.",
+      "kriterien": [
+        "Primärforschung: Erhebung neuer Daten speziell für den Zweck (Befragung, Beobachtung, Test)",
+        "Sekundärforschung: Auswertung bereits vorhandener interner/externer Daten",
+        "Vorteil Primär: aktuell, genau auf die Fragestellung zugeschnitten, exklusiv",
+        "Nachteil Primär: teuer und zeitaufwendig"
+      ]
+    },
+    {
+      "id": "mk-o03",
+      "typ": "offen",
+      "punkte": 6,
+      "frage": "Die Montagehalterung H-50 befindet sich in der **Sättigungsphase** des Produktlebenszyklus. **Beschreiben Sie** zwei typische Merkmale dieser Phase und **schlagen Sie** zwei geeignete Marketingmaßnahmen **vor**.",
+      "kriterien": [
+        "Merkmal: Umsatz erreicht Maximum bzw. stagniert, Marktwachstum gering",
+        "Merkmal: Gewinne sinken durch Preiswettbewerb, viele Konkurrenten/Nachahmer",
+        "Maßnahme: Produktvariation/Relaunch (z. B. neue Ausführung, Material, Farbe)",
+        "Maßnahme: Kosten senken/Preis- und Konditionenpolitik, Erschließung neuer Märkte/Zielgruppen, Kundenbindung"
+      ]
+    },
+    {
+      "id": "mk-o04",
+      "typ": "offen",
+      "punkte": 6,
+      "frage": "Für die Einführung des neuen Aluminiumgehäuses G-300 wird über die Preisstrategie diskutiert. **Vergleichen Sie** Penetrations- und Abschöpfungsstrategie und **empfehlen Sie** begründet eine Strategie für ein innovatives Produkt mit Patentschutz.",
+      "kriterien": [
+        "Penetration: niedriger Einführungspreis, schnelle Marktdurchdringung, später ggf. Preiserhöhung",
+        "Abschöpfung (Skimming): hoher Einführungspreis, Zahlungsbereitschaft der Innovatoren abschöpfen, später Preissenkung",
+        "Empfehlung Skimming bei Innovation mit Patentschutz: wenig Konkurrenz, schnelle Amortisation der Entwicklungskosten",
+        "Begründung schlüssig auf die Situation bezogen (z. B. Qualitätsimage, Preisspielraum für spätere Senkung)"
+      ]
+    },
+    {
+      "id": "mk-o05",
+      "typ": "offen",
+      "punkte": 4,
+      "mindestens": 4,
+      "frage": "**Ordnen Sie** die Produkte der Westpfalz Metallwerk GmbH in die BCG-Matrix ein und **nennen Sie** die jeweilige Normstrategie:\n- G-200: hoher relativer Marktanteil, Marktwachstum 1 %\n- G-300: niedriger relativer Marktanteil, Marktwachstum 15 %",
+      "kriterien": [
+        "G-200 = Cash Cow",
+        "Normstrategie G-200: abschöpfen, Investitionen begrenzen, Mittel für andere Produkte nutzen",
+        "G-300 = Question Mark (Fragezeichen)",
+        "Normstrategie G-300: gezielt investieren (Offensive) oder – wenn keine Aussicht – aufgeben"
+      ]
+    },
+    {
+      "id": "mk-o06",
+      "typ": "offen",
+      "punkte": 6,
+      "mindestens": 3,
+      "frage": "Die Westpfalz Metallwerk GmbH will Planungsbüros stärker über **Online-Marketing** ansprechen. **Nennen Sie** drei geeignete Instrumente und **erläutern Sie** jeweils deren Nutzen.",
+      "kriterien": [
+        "Suchmaschinenoptimierung (SEO) – bessere organische Auffindbarkeit bei Suchen nach Gehäusen",
+        "Suchmaschinenwerbung (SEA, z. B. Google Ads) – gezielte, messbare Anzeigen bei Suchbegriffen",
+        "Social Media/Business-Netzwerke (LinkedIn) – Fachpublikum, Image, Kontakte",
+        "Newsletter/E-Mail-Marketing (mit Einwilligung) – Kundenbindung, Produktneuheiten",
+        "Website mit Produktkonfigurator/Downloads (CAD-Daten) – Service für Planer, Leadgenerierung",
+        "Webinare/Content-Marketing – Expertise zeigen"
+      ]
+    },
+    {
+      "id": "mk-o07",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** zwei Möglichkeiten, wie die Westpfalz Metallwerk GmbH ökologische Nachhaltigkeit in ihren **Marketing-Mix** integrieren kann, ohne Greenwashing zu betreiben.",
+      "kriterien": [
+        "Produktpolitik: z. B. Recyclingstahl, langlebige/reparierbare Produkte, Rücknahme – belegt durch Zertifikate/Daten",
+        "Distributions-/Verpackungspolitik: Mehrwegverpackung, gebündelte Transporte",
+        "Kommunikationspolitik: nur konkrete, nachprüfbare Aussagen (z. B. CO₂-Fußabdruck nach Standard)",
+        "Hinweis auf Belegbarkeit/kein pauschales „klimaneutral“ ohne Nachweis"
+      ]
+    },
+    {
+      "id": "mk-o08",
+      "typ": "offen",
+      "punkte": 4,
+      "mindestens": 2,
+      "frage": "Der Vertrieb soll entscheiden, ob neue Kunden in Norddeutschland über **Reisende** oder **Handelsvertreter** betreut werden. **Nennen Sie** je zwei Vorteile beider Varianten.",
+      "kriterien": [
+        "Reisender: weisungsgebunden, gut steuerbar, verkauft nur eigene Produkte, Know-how bleibt im Unternehmen",
+        "Reisender: bei hohem Umsatz günstiger (Fixum + geringe Provision)",
+        "Handelsvertreter: überwiegend variable Kosten (nur Provision), bei niedrigem Umsatz günstiger",
+        "Handelsvertreter: bestehender Kundenstamm/Marktkenntnis, schnell einsetzbar"
+      ]
     }
   ],
   "karten": [

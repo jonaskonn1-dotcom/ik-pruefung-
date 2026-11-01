@@ -80,7 +80,7 @@ function view(el) {
 
     ${sims.length ? `<section class="card"><h2 class="h-small">Prüfungssimulationen</h2>
       <table class="tbl"><thead><tr><th>Datum</th><th>Bereich</th><th>Punkte</th><th>Note</th></tr></thead><tbody>
-      ${sims.slice(-8).reverse().map((v) => `<tr><td>${fmtDate(v.datum, { day: '2-digit', month: '2-digit' })}</td><td>${esc(v.titel)}</td><td>${v.prozent}</td><td><b>${v.note}</b></td></tr>`).join('')}
+      ${sims.slice(-8).reverse().map((v) => `<tr><td>${fmtDate(v.datum, { day: '2-digit', month: '2-digit' })}</td><td>${esc(v.titel)}</td><td>${v.ausstehend ? '–' : v.prozent}</td><td><b>${v.ausstehend ? 'offen' : v.note}</b></td></tr>`).join('')}
       </tbody></table></section>` : `<a class="btn big" href="#/simulation">${icon.clock} Erste Prüfungssimulation starten</a>`}
 
     <section>

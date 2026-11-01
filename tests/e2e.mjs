@@ -19,6 +19,7 @@ async function run(name, viewport, scheme, fn) {
 
 const answerCurrent = async (page) => {
   const typ = await page.locator('.q-meta .badge').first().textContent();
+  if (/Offene/.test(typ)) { await page.fill('#txt-in', 'Meine Antwort'); await page.click('#go'); await page.waitForSelector('.krit-list'); await page.locator('.krit-list input').first().check(); await page.click('[data-act=rate][data-v=teilweise]'); return; }
   if (/Rechen/.test(typ)) await page.fill('#num-in', '123');
   else if (/Zuordnung/.test(typ)) { for (const s of await page.locator('select[data-act=match]').all()) await s.selectOption({ index: 1 }); }
   else if (/Reihenfolge/.test(typ)) { for (const b of await page.locator('button[data-act=order]').all()) await b.click(); }

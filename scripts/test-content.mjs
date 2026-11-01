@@ -9,7 +9,8 @@ import { svAN, svAG, r2 } from '../src/lib/calc.js';
 const verbose = process.argv.includes('--verbose');
 const MIN_FRAGEN = 15;
 const MIN_KARTEN = 10;
-const TYPEN = ['einfach', 'mehrfach', 'zuordnung', 'reihenfolge', 'zahl'];
+const TYPEN = ['einfach', 'mehrfach', 'zuordnung', 'reihenfolge', 'zahl', 'offen'];
+const MIN_OFFEN = { mvpk: 8, wiso: 3 };
 
 const errors = [];
 const warnings = [];
@@ -51,7 +52,7 @@ function uniq(id, where) {
 }
 
 // ---------- Themen ----------
-let nFragen = 0, nKarten = 0, nRechen = 0;
+let nFragen = 0, nKarten = 0, nRechen = 0, nOffen = 0;
 for (const { rel, data: t } of themen) {
   uniq(t.id, rel);
   if (!t.titel) err(rel, 'titel fehlt');
@@ -64,6 +65,9 @@ for (const { rel, data: t } of themen) {
   const karten = t.karten || [];
   if (fragen.length < MIN_FRAGEN) err(rel, `nur ${fragen.length} Fragen (mind. ${MIN_FRAGEN})`);
   if (karten.length < MIN_KARTEN) err(rel, `nur ${karten.length} Lernkarten (mind. ${MIN_KARTEN})`);
+  const minOffen = MIN_OFFEN[t.bereich?.ao2024] || 0;
+  const anzOffen = fragen.filter((q) => q.typ === 'offen').length;
+  if (anzOffen < minOffen) err(rel, `nur ${anzOffen} offene Aufgaben (mind. ${minOffen})`);
 
   for (const q of fragen) {
     nFragen++;
@@ -71,7 +75,7 @@ for (const { rel, data: t } of themen) {
     uniq(q.id, rel);
     if (!TYPEN.includes(q.typ)) { err(w, `unbekannter typ "${q.typ}"`); continue; }
     if (!q.frage) err(w, 'frage fehlt');
-    if (!q.erklaerung) err(w, 'erklaerung fehlt');
+    if (!q.erklaerung && q.typ !== 'offen') err(w, 'erklaerung fehlt');
     const vars = q.vars || {};
     checkText(w + ' frage', q.frage, vars);
     checkText(w + ' erklaerung', q.erklaerung, vars);
@@ -96,6 +100,14 @@ for (const { rel, data: t } of themen) {
       case 'reihenfolge':
         if (!Array.isArray(q.elemente) || q.elemente.length < 3) err(w, 'elemente: mind. 3');
         else if (new Set(q.elemente).size !== q.elemente.length) err(w, 'doppelte elemente');
+        break;
+      case 'offen':
+        nOffen++;
+        if (!Array.isArray(q.kriterien) || q.kriterien.length < 2) err(w, 'offen: mind. 2 kriterien (Bewertungspunkte)');
+        else q.kriterien.forEach((k, i) => checkText(`${w} kriterium ${i}`, k, vars));
+        if (q.mindestens != null && (!Number.isInteger(q.mindestens) || q.mindestens < 1 || q.mindestens > (q.kriterien?.length || 0))) err(w, 'mindestens ungültig');
+        if (q.punkte != null && !(q.punkte > 0)) err(w, 'punkte ungültig');
+        checkText(w + ' musterloesung', q.musterloesung, vars);
         break;
       case 'zahl': {
         nRechen++;
@@ -181,4 +193,4 @@ if (errors.length) {
   console.error(`\n${errors.length} Fehler. (${themen.length} Themen, ${nFragen} Fragen, davon ${nRechen} Rechenaufgaben, ${nKarten} Karten, ${nFormeln} Formeln)`);
   process.exit(1);
 }
-console.log(`✓ Inhalte OK: ${themen.length} Themen, ${nFragen} Fragen (${nRechen} Rechenaufgaben nachgerechnet), ${nKarten} Lernkarten, ${nFormeln} Formeln.`);
+console.log(`✓ Inhalte OK: ${themen.length} Themen, ${nFragen} Fragen (${nRechen} Rechenaufgaben nachgerechnet, ${nOffen} offene Aufgaben), ${nKarten} Lernkarten, ${nFormeln} Formeln.`);

@@ -168,6 +168,109 @@
         2
       ],
       "erklaerung": "DAP: Verkäufer trägt Kosten und Gefahr bis zum Bestimmungsort, **unentladen**. Entladen → DPU. Einfuhrabfertigung und -abgaben → DDP. (Innerhalb der EU entfällt die Zollabfertigung ohnehin.)"
+    },
+    {
+      "id": "ah-o01",
+      "typ": "offen",
+      "punkte": 6,
+      "mindestens": 3,
+      "frage": "Nordic Switchgear AB (Schweden) bestellt erstmals. **Nennen Sie** drei Risiken des Auslandsgeschäfts und **je eine Maßnahme**, um sie zu begrenzen.",
+      "kriterien": [
+        "Zahlungsrisiko → Vorauszahlung, Akkreditiv, Warenkreditversicherung, Bonitätsauskunft",
+        "Transportrisiko → Transportversicherung, passende Incoterms-Klausel",
+        "Währungsrisiko (nur bei Fakturierung in SEK) → Fakturierung in Euro oder Devisentermingeschäft",
+        "Rechtsrisiko → Rechtswahl/Gerichtsstand vereinbaren, UN-Kaufrecht beachten",
+        "Länderrisiko/politisches Risiko → Exportkreditgarantien (in der EU gering)"
+      ]
+    },
+    {
+      "id": "ah-o02",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie**, was Incoterms® regeln, und **nennen Sie** zwei Punkte, die sie **nicht** regeln.",
+      "kriterien": [
+        "Regeln Lieferort sowie Kosten- und Gefahrübergang zwischen Verkäufer und Käufer",
+        "Regeln Pflichten für Transport, Verladung, Versicherung, Ausfuhr-/Einfuhrabfertigung",
+        "Nicht geregelt: Eigentumsübergang",
+        "Nicht geregelt: Zahlungsbedingungen/Preis, Folgen von Vertragsverletzungen, anwendbares Recht"
+      ]
+    },
+    {
+      "id": "ah-o03",
+      "typ": "offen",
+      "punkte": 6,
+      "frage": "Ein Kunde in Kanada möchte „CIF Halifax“ kaufen. **Beschreiben Sie** die Pflichten der Westpfalz Metallwerk GmbH und den Gefahrübergang bei dieser Klausel und **beurteilen Sie** das Risiko für den Käufer.",
+      "kriterien": [
+        "Verkäufer organisiert und bezahlt Transport bis Bestimmungshafen Halifax",
+        "Verkäufer schließt Seeversicherung ab (Mindestdeckung Klausel C, 110 %)",
+        "Verkäufer übernimmt Ausfuhrabfertigung",
+        "Gefahrübergang bereits mit Verladung an Bord im Verschiffungshafen (Zweipunktklausel)",
+        "Beurteilung: Käufer trägt Transportrisiko auf See, nur Mindestdeckung – ggf. Zusatzversicherung"
+      ]
+    },
+    {
+      "id": "ah-o04",
+      "typ": "offen",
+      "punkte": 6,
+      "frage": "**Beschreiben Sie** den Ablauf eines **Dokumentenakkreditivs** aus Sicht der Westpfalz Metallwerk GmbH als Exporteur und **nennen Sie** einen Vor- und einen Nachteil.",
+      "kriterien": [
+        "Kaufvertrag mit Akkreditivklausel; Importeur beauftragt seine Bank, Akkreditiv zu eröffnen",
+        "Avisierung über die Bank des Exporteurs, WPM prüft Akkreditivbedingungen",
+        "WPM versendet Ware und reicht fristgerecht die geforderten Dokumente ein",
+        "Bank prüft Dokumente und zahlt; Importeur erhält Dokumente gegen Zahlung",
+        "Vorteil: Zahlungsversprechen der Bank, hohe Sicherheit",
+        "Nachteil: Kosten, Aufwand, strenge Dokumentenprüfung (Unstimmigkeiten gefährden Zahlung)"
+      ]
+    },
+    {
+      "id": "ah-o05",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** den Unterschied zwischen einer **innergemeinschaftlichen Lieferung** und einer **Ausfuhrlieferung** und **nennen Sie** je einen erforderlichen Nachweis.",
+      "kriterien": [
+        "Innergemeinschaftliche Lieferung: an Unternehmer in einem anderen EU-Staat mit gültiger USt-IdNr., steuerfrei",
+        "Nachweis: Gelangensbestätigung/Belegnachweis, USt-IdNr., Zusammenfassende Meldung",
+        "Ausfuhrlieferung: in ein Drittland (außerhalb der EU), steuerfrei",
+        "Nachweis: Ausgangsvermerk aus dem elektronischen Ausfuhrverfahren (ATLAS)"
+      ]
+    },
+    {
+      "id": "ah-o06",
+      "typ": "offen",
+      "punkte": 6,
+      "mindestens": 3,
+      "frage": "Die Westpfalz Metallwerk GmbH möchte ein **CRM-System** einführen. **Nennen Sie** drei Vorteile für den Vertrieb und **erläutern Sie** zwei Punkte, die aus Datenschutzsicht zu beachten sind.",
+      "kriterien": [
+        "Vorteil: zentrale Kundenhistorie, alle Mitarbeitenden haben gleichen Informationsstand",
+        "Vorteil: gezielte Betreuung/Kampagnen, Cross- und Up-Selling, Kundenbindung",
+        "Vorteil: Auswertungen (ABC-Kunden, Pipeline, Umsatzprognose)",
+        "Datenschutz: Rechtsgrundlage und Zweckbindung (Vertrag, berechtigtes Interesse, Einwilligung für Werbung)",
+        "Datenschutz: Zugriffsrechte, Löschfristen, AV-Vertrag mit Cloud-Anbieter, Informationspflichten"
+      ]
+    },
+    {
+      "id": "ah-o07",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "Ein Exportauftrag soll in US-Dollar fakturiert werden; Zahlung in 90 Tagen. **Erläutern Sie** das Währungsrisiko und **beschreiben Sie** eine Absicherungsmöglichkeit.",
+      "kriterien": [
+        "Risiko: Steigt der Euro gegenüber dem Dollar bis zur Zahlung, erhält WPM weniger Euro (Erlösminderung)",
+        "Absicherung: Devisentermingeschäft – Kurs für den Zahlungstermin wird heute festgelegt",
+        "Alternativen: Fakturierung in Euro, Devisenoption, Kurssicherungsklausel",
+        "Hinweis: Absicherung kostet bzw. verhindert Kursgewinne"
+      ]
+    },
+    {
+      "id": "ah-o08",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "Die ABC-Kundenanalyse zeigt: 12 % der Kunden bringen 78 % des Umsatzes. **Leiten Sie** zwei Maßnahmen für A-Kunden und eine für C-Kunden **ab**.",
+      "kriterien": [
+        "A-Kunden: Key-Account-Betreuung, feste Ansprechpartner, regelmäßige Besuche",
+        "A-Kunden: individuelle Konditionen/Rahmenverträge, bevorzugte Lieferung, Kundenbindungsprogramme",
+        "C-Kunden: standardisierte, kostengünstige Betreuung (Onlineshop, Innendienst, Mindestbestellwert)",
+        "Begründung über Wirtschaftlichkeit der Vertriebsressourcen"
+      ]
     }
   ],
   "karten": [

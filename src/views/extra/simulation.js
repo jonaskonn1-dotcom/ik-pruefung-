@@ -4,20 +4,41 @@ import { store, recordAnswer } from '../../store.js';
 import { esc, icon, header, shuffle, note, fmtDate, plain } from '../../ui.js';
 import { restore, serialize, renderQuestion, renderFeedback, evaluate, hasAnswer, handleAction, keyToAction, gewicht, TYP_LABEL } from '../question.js';
 import { mehrLinks } from '../mehr.js';
+import { auswahlMitOffen } from '../quiz.js';
+import { BEWERTUNG } from '../question.js';
 
 const KURZ_FAKTOR = 0.5;
 
 /** Fragen ziehen: reihum über alle Themen des Bereichs, damit jedes Thema vorkommt. */
-function ziehen(bereichId, anzahl) {
-  const themen = shuffle(themenImBereich(bereichId).filter((t) => (t.fragen || []).length));
-  const toepfe = themen.map((t) => shuffle(t.fragen));
+function reihum(fragen, k) {
+  const nachThema = new Map();
+  for (const q of shuffle(fragen)) { if (!nachThema.has(q.thema)) nachThema.set(q.thema, []); nachThema.get(q.thema).push(q); }
+  const toepfe = shuffle([...nachThema.values()]);
   const out = [];
-  while (out.length < anzahl && toepfe.some((t) => t.length)) {
-    for (const t of toepfe) { if (t.length && out.length < anzahl) out.push(t.pop()); }
+  while (out.length < k && toepfe.some((t) => t.length)) {
+    for (const t of toepfe) { if (t.length && out.length < k) out.push(t.pop()); }
   }
-  // Reihenfolge nach Themen gruppieren (wie Handlungssituationen in der Prüfung)
+  return out;
+}
+
+function ziehen(bereich, anzahl) {
+  const themen = shuffle(themenImBereich(bereich.id).filter((t) => (t.fragen || []).length));
+  const pool = themen.flatMap((t) => t.fragen);
+  const out = auswahlMitOffen(pool, anzahl, bereich.simAnteilOffen || 0, reihum);
+  // Reihenfolge nach Themen gruppieren (wie Handlungssituationen in der Prüfung), gebundene vor offenen
   const order = new Map(themen.map((t, i) => [t.id, i]));
-  return out.sort((a, b) => order.get(a.thema) - order.get(b.thema));
+  return out.sort((a, b) => order.get(a.thema) - order.get(b.thema) || (a.typ === 'offen') - (b.typ === 'offen'));
+}
+
+/** Punkte, Prozent und Note aus den Einzelergebnissen berechnen. */
+function berechne(res) {
+  const punkte = res.ergebnisse.reduce((s, r) => s + r.p, 0);
+  const max = res.ergebnisse.reduce((s, r) => s + r.g, 0);
+  res.punkte = Math.round(punkte * 10) / 10; res.max = max;
+  res.prozent = Math.round(punkte / max * 1000) / 10;
+  res.note = note(res.prozent, config.notenschluessel).note;
+  res.ausstehend = res.ergebnisse.filter((r) => r.pending).length;
+  return res;
 }
 
 const fmtZeit = (ms) => {
@@ -36,7 +57,7 @@ function setupView(el) {
     ${header('Prüfungssimulation', '#/')}
     ${lauf ? `<div class="card warnbox"><p><strong>Eine Simulation läuft noch</strong> (${esc(lauf.titel)}, Restzeit ${fmtZeit(lauf.ende - Date.now())}).</p>
       <div class="row-btns"><a class="btn primary" href="#/simulation/laufend">Fortsetzen</a><button class="btn bad" id="abbruch">Verwerfen</button></div></div>` : ''}
-    <p class="muted">Wie in der echten Prüfung: feste Bearbeitungszeit, keine Lösungen während der Bearbeitung, am Ende Punkte und IHK-Note. Rechenaufgaben zählen doppelt, Zuordnungen und Reihenfolgen geben Teilpunkte.</p>
+    <p class="muted">Wie in der echten Prüfung: feste Bearbeitungszeit, keine Lösungen während der Bearbeitung, am Ende Punkte und IHK-Note. Rechenaufgaben zählen doppelt, offene Aufgaben je nach Umfang 2–6 Punkte (Selbstbewertung nach der Abgabe), Zuordnungen und Reihenfolgen geben Teilpunkte. MVPK enthält ca. 60 % offene Aufgaben, WiSo ist wie in der echten Prüfung rein gebunden.</p>
     <div class="stack">
       ${bereiche.map((b) => {
         const n = Math.min(b.simFragen, themenImBereich(b.id).reduce((x, t) => x + (t.fragen || []).length, 0));
@@ -51,7 +72,7 @@ function setupView(el) {
     </div>
     ${verlauf.length ? `<h2>Bisherige Simulationen</h2>
       <table class="tbl"><thead><tr><th>Datum</th><th>Bereich</th><th>Punkte</th><th>Note</th></tr></thead><tbody>
-      ${verlauf.map((v) => `<tr><td>${fmtDate(v.datum, { day: '2-digit', month: '2-digit' })}</td><td>${esc(v.titel)}</td><td>${v.prozent} %</td><td><b>${v.note}</b></td></tr>`).join('')}
+      ${verlauf.map((v) => `<tr><td>${fmtDate(v.datum, { day: '2-digit', month: '2-digit' })}</td><td>${esc(v.titel)}</td><td>${v.prozent} %</td><td><b>${v.ausstehend ? '<a href="#/simulation/ergebnis?i=' + (s.sims || []).indexOf(v) + '">bewerten</a>' : v.note}</b></td></tr>`).join('')}
       </tbody></table>` : ''}
     <p class="small muted">Notenschlüssel: ${config.notenschluessel.map((n) => `${n.note} ab ${n.ab}`).join(' · ')} Punkten.</p>`;
 
@@ -61,7 +82,7 @@ function setupView(el) {
       const ber = profil.bereiche.find((x) => x.id === b.dataset.start);
       const kurz = !!b.dataset.kurz;
       const anzahl = Math.round(ber.simFragen * (kurz ? KURZ_FAKTOR : 1));
-      const fragen = ziehen(ber.id, anzahl);
+      const fragen = ziehen(ber, anzahl);
       const minuten = Math.round(ber.dauer * (kurz ? KURZ_FAKTOR : 1));
       const states = fragen.map((q) => restore(q));
       store.update((x) => {
@@ -121,22 +142,20 @@ function laufView(el) {
     }
     clearInterval(timer);
     const schwelle = config.quiz.fehlerkorbRichtigBisEntfernen;
-    let punkte = 0, max = 0;
     const ergebnisse = states.map((x) => {
       const beantwortet = hasAnswer(x);
-      const r = beantwortet ? evaluate(x) : (x.revealed = true, x.ok = false, x.punkte = 0, { ok: false, punkte: 0 });
       const g = gewicht(x.q);
-      punkte += r.punkte * g; max += g;
-      recordAnswer(x.q.id, r.ok, schwelle);
+      // Offene Aufgaben mit Antwort werden nach der Abgabe selbst bewertet
+      if (x.q.typ === 'offen' && beantwortet) return { id: x.q.id, thema: x.q.thema, ok: false, p: 0, g, beantwortet, pending: true, d: serialize(x) };
+      const r = beantwortet ? evaluate(x) : (x.revealed = true, x.ok = false, x.punkte = 0, { ok: false, punkte: 0 });
+      recordAnswer(x.q.id, r.ok, schwelle, r.punkte);
       return { id: x.q.id, thema: x.q.thema, ok: r.ok, p: r.punkte * g, g, beantwortet, d: serialize(x) };
     });
-    const prozent = Math.round(punkte / max * 1000) / 10;
-    const n = note(prozent, config.notenschluessel);
-    const res = {
+    const res = berechne({
       datum: new Date().toISOString().slice(0, 10), profil: lauf.profil, bereich: lauf.bereich, titel: lauf.titel,
-      prozent, note: n.note, punkte: Math.round(punkte * 10) / 10, max, dauerMin: Math.round((Math.min(Date.now(), lauf.ende) - lauf.start) / 60000),
+      dauerMin: Math.round((Math.min(Date.now(), lauf.ende) - lauf.start) / 60000),
       minuten: lauf.minuten, ergebnisse, auto: !!auto,
-    };
+    });
     store.update((x) => { x.sims = [...(x.sims || []), res].slice(-30); delete x.simLauf; });
     location.hash = '#/simulation/ergebnis';
   }
@@ -163,10 +182,14 @@ function laufView(el) {
     if (e.target.id === 'flag') { states[idx].flag = e.target.checked; persist(); return; }
     if (e.target.dataset.act === 'match') { handleAction(states[idx], 'match', Number(e.target.dataset.i), e.target.value); persist(); }
   });
-  el.addEventListener('input', (e) => { if (e.target.dataset.act === 'num') { handleAction(states[idx], 'num', 0, e.target.value); persist(); } });
+  el.addEventListener('input', (e) => {
+    const a = e.target.dataset.act;
+    if (a === 'num' || a === 'text') { handleAction(states[idx], a, 0, e.target.value); persist(); if (a === 'text') { const info = el.querySelector('.sim-info span'); if (info) info.textContent = `${states.filter(hasAnswer).length}/${states.length} beantwortet`; } }
+  });
   const onKey = (e) => {
     if (e.ctrlKey || e.metaKey || e.altKey) return;
     const tag = e.target.tagName;
+    if (tag === 'TEXTAREA') return;
     if (e.key === 'Enter' && tag !== 'SELECT' && !(tag === 'BUTTON' && !e.target.closest('.opts'))) { e.preventDefault(); if (idx < states.length - 1) goTo(idx + 1); return; }
     if (tag === 'INPUT' || tag === 'SELECT' || tag === 'TEXTAREA') return;
     if (e.key === 'ArrowRight') { goTo(idx + 1); return; }
@@ -181,10 +204,50 @@ function laufView(el) {
   return () => { clearInterval(timer); document.removeEventListener('keydown', onKey); };
 }
 
+function bewertungView(el, res, simIndex) {
+  const db = data();
+  const offen = res.ergebnisse.filter((r) => r.pending);
+  const r = offen[0];
+  const q = db.fragen.get(r.id);
+  const st = restore(q, r.d);
+  st.revealed = true;
+  const nr = res.ergebnisse.indexOf(r) + 1;
+  function render() {
+    el.innerHTML = `
+      ${header('Selbstbewertung', '#/simulation')}
+      <p class="muted">Vergleiche deine Antworten mit der Musterlösung. Noch <b>${offen.length}</b> offene Aufgabe(n) zu bewerten – erst danach steht die Note fest.</p>
+      ${progressBarSimple((res.ergebnisse.length - offen.length) / res.ergebnisse.length)}
+      <p class="q-topic">Aufgabe ${nr} · ${esc(db.themenById.get(q.thema)?.titel || '')} · ${r.g} P.</p>
+      <article class="question">${renderQuestion(st)}</article>`;
+  }
+  el.addEventListener('change', (e) => {
+    if (e.target.dataset.act === 'krit') { handleAction(st, 'krit', Number(e.target.dataset.i)); const y = scrollY; render(); scrollTo(0, y); }
+  });
+  el.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-act=rate]');
+    if (!b) return;
+    if (handleAction(st, 'rate', 0, b.dataset.v) !== 'rated') return;
+    const bw = BEWERTUNG[st.rating];
+    store.update((s) => {
+      const x = s.sims[simIndex].ergebnisse.find((y) => y.id === r.id && y.pending);
+      x.pending = false; x.ok = bw.ok; x.p = bw.punkte * x.g; x.d = serialize(st);
+      berechne(s.sims[simIndex]);
+    });
+    recordAnswer(q.id, bw.ok, config.quiz.fehlerkorbRichtigBisEntfernen, bw.punkte);
+    window.dispatchEvent(new Event('ik-rerender'));
+    scrollTo(0, 0);
+  });
+  render();
+}
+
+const progressBarSimple = (f) => `<div class="bar"><span style="width:${Math.round(f * 100)}%"></span></div>`;
+
 function ergebnisView(el, _p, query) {
   const sims = store.get().sims || [];
-  const res = query.i != null ? sims[Number(query.i)] : sims[sims.length - 1];
+  const simIndex = query.i != null ? Number(query.i) : sims.length - 1;
+  const res = sims[simIndex];
   if (!res) { location.hash = '#/simulation'; return; }
+  if (res.ergebnisse.some((r) => r.pending)) return bewertungView(el, res, simIndex);
   const db = data();
   const n = config.notenschluessel.find((x) => x.note === res.note);
   const proThema = new Map();
@@ -221,7 +284,7 @@ function ergebnisView(el, _p, query) {
       const q = db.fragen.get(r.id);
       if (!q) return '';
       const st = restore(q, r.d);
-      if (r.beantwortet) evaluate(st); else { st.revealed = true; st.ok = false; }
+      if (r.beantwortet) evaluate(st); else { st.revealed = true; st.ok = false; if (q.typ === 'offen') st.rating = 'nicht'; }
       return `<article class="review-item"><p class="q-topic">Aufgabe ${i + 1} · ${TYP_LABEL[q.typ]} · ${Math.round(r.p * 10) / 10}/${r.g} P.${r.beantwortet ? '' : ' · nicht beantwortet'}</p>
         ${renderQuestion(st)}${renderFeedback(st)}</article>`;
     }).join('<hr>');

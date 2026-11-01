@@ -261,6 +261,103 @@
       "einheit": "€",
       "loesung": 56885.71,
       "erklaerung": "SK = {{hk|€}} × {{1+(vw+vt)/100}} + SEKV {{sekv|€}} = {{r2(hk*(1+(vw+vt)/100) + sekv)|€}}\n+ {{g|%}} Gewinn = BVP {{r2(r2(hk*(1+(vw+vt)/100) + sekv)*(1+g/100))|€}}\n÷ (1 − {{s/100}}) = **ZVP {{r2(r2(r2(hk*(1+(vw+vt)/100) + sekv)*(1+g/100))/(1-s/100))|€}}**"
+    },
+    {
+      "id": "ksk-kalk-o01",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie**, warum in der Vorwärtskalkulation der Gewinn „auf Hundert“, Skonto und Rabatt dagegen „im Hundert“ berechnet werden.",
+      "kriterien": [
+        "Gewinn wird auf die Selbstkosten bezogen – die bekannte Größe (SK) ist 100 %",
+        "Skonto wird vom Zielverkaufspreis, Rabatt vom Listenverkaufspreis abgezogen – diese sind 100 %",
+        "In der Vorwärtskalkulation ist nur der niedrigere Wert bekannt, er entspricht 100 % − Satz",
+        "Deshalb Division durch (1 − Satz) statt Multiplikation mit (1 + Satz)"
+      ]
+    },
+    {
+      "id": "ksk-kalk-o02",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** Zweck und Zeitpunkt von **Vor-** und **Nachkalkulation** in der Westpfalz Metallwerk GmbH.",
+      "kriterien": [
+        "Vorkalkulation: vor Auftragsannahme mit Normalzuschlägen/Plankosten",
+        "Zweck Vorkalkulation: Angebotspreis bzw. Preisuntergrenze ermitteln",
+        "Nachkalkulation: nach Auftragsabwicklung mit Istkosten/Istzuschlägen",
+        "Zweck Nachkalkulation: Kontrolle, ob kalkulierter Gewinn erreicht wurde (Über-/Unterdeckung), Verbesserung künftiger Kalkulationen"
+      ]
+    },
+    {
+      "id": "ksk-kalk-o03",
+      "typ": "offen",
+      "punkte": 6,
+      "frage": "Die Nachkalkulation eines Auftrags zeigt eine Kostenunterdeckung von 4.500 € in der Fertigung. **Erläutern Sie** die Bedeutung und **nennen Sie** zwei mögliche Ursachen sowie eine Konsequenz für künftige Kalkulationen.",
+      "kriterien": [
+        "Unterdeckung: Istgemeinkosten höher als mit Normalzuschlägen verrechnet → Gewinn niedriger als kalkuliert",
+        "Ursache: gestiegene Gemeinkosten (Energie, Instandhaltung, Gehälter)",
+        "Ursache: geringere Auslastung → Fixkosten auf weniger Leistung verteilt; Normalzuschlag veraltet",
+        "Konsequenz: Normalzuschlagssätze überprüfen/anpassen, Kostenursachen analysieren"
+      ]
+    },
+    {
+      "id": "ksk-kalk-o04",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "Ein Kunde bietet für den Flansch F-80 einen festen Marktpreis. **Erläutern Sie**, mit welchem Kalkulationsverfahren die WPM prüft, ob sich der Auftrag lohnt, und wie dabei vorgegangen wird.",
+      "kriterien": [
+        "Rückwärtskalkulation (bzw. Differenzkalkulation, wenn Kosten bekannt)",
+        "Vom Listenpreis Rabatt und Skonto abziehen → Barverkaufspreis",
+        "Gewinnzuschlag herausrechnen (÷ (1 + Gewinn %)) → maximal zulässige Selbstkosten",
+        "Vergleich mit den eigenen Selbstkosten: liegen sie darunter, lohnt sich der Auftrag"
+      ]
+    },
+    {
+      "id": "ksk-kalk-o05",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Begründen Sie**, warum für Verwaltungs- und Vertriebsgemeinkosten die **Herstellkosten des Umsatzes** und nicht die der Erzeugung als Zuschlagsbasis verwendet werden.",
+      "kriterien": [
+        "Verwaltung und Vertrieb betreffen die verkauften (umgesetzten) Produkte",
+        "Bestandsmehrungen sind noch nicht verkauft und dürfen nicht mit VwVtGK belastet werden",
+        "Bestandsminderungen (Verkauf aus Lager) verursachen Vertriebskosten",
+        "HK des Umsatzes = HK der Erzeugung − Mehrbestand + Minderbestand"
+      ]
+    },
+    {
+      "id": "ksk-kalk-o06",
+      "typ": "offen",
+      "punkte": 4,
+      "mindestens": 2,
+      "frage": "**Nennen Sie** je zwei Beispiele für Sondereinzelkosten der Fertigung und des Vertriebs und **erläutern Sie**, wie sie in der Kalkulation berücksichtigt werden.",
+      "kriterien": [
+        "SEKF: Spezialwerkzeuge, Modelle, Konstruktionskosten, Lizenzgebühren für einen Auftrag",
+        "SEKV: Spezialverpackung, Fracht, Transportversicherung, Vertreterprovision für den Auftrag",
+        "Werden dem Auftrag direkt zugerechnet (nicht über Zuschläge)",
+        "SEKF fließen in die Fertigungskosten/Herstellkosten, SEKV nach den VwVtGK in die Selbstkosten"
+      ]
+    },
+    {
+      "id": "ksk-kalk-o07",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** die Aufgabe des **BAB** für die Zuschlagskalkulation.",
+      "kriterien": [
+        "Verteilung der Gemeinkosten auf die Kostenstellen (Material, Fertigung, Verwaltung, Vertrieb)",
+        "Umlage der Hilfskostenstellen auf die Hauptkostenstellen",
+        "Ermittlung der Ist-Zuschlagssätze (Gemeinkosten ÷ Zuschlagsbasis)",
+        "Vergleich mit Normalzuschlägen → Kostenüber-/-unterdeckung, Grundlage für Kalkulation und Kontrolle"
+      ]
+    },
+    {
+      "id": "ksk-kalk-o08",
+      "typ": "offen",
+      "punkte": 6,
+      "frage": "Die Fertigung der Westpfalz Metallwerk GmbH ist stark automatisiert. **Begründen Sie**, warum eine Kalkulation mit **Maschinenstundensätzen** genauer ist als eine reine Lohnzuschlagskalkulation, und **beschreiben Sie** das Vorgehen.",
+      "kriterien": [
+        "Bei hoher Automatisierung stehen hohe maschinenabhängige Gemeinkosten geringen Fertigungslöhnen gegenüber",
+        "Lohnzuschlag führt zu sehr hohen Zuschlagssätzen und verzerrt die Kostenverteilung (Lohnzeit ≠ Maschinenzeit)",
+        "Maschinenabhängige FGK (kalk. AfA, Zinsen, Energie, Instandhaltung, Raum) ÷ Laufstunden = Maschinenstundensatz",
+        "Kalkulation: Maschinenkosten = Satz × Bearbeitungszeit; Rest-FGK weiter auf Fertigungslöhne"
+      ]
     }
   ],
   "karten": [

@@ -168,6 +168,43 @@
       "einheit": "€",
       "loesung": 360,
       "erklaerung": "Dividende je Aktie = {{aus}} ÷ {{gk}} Aktien = {{aus/gk|€}}\n× {{stk}} Aktien = **{{r2(aus/gk*stk)|€}}** (davon werden Kapitalertragsteuer und Soli einbehalten)."
+    },
+    {
+      "id": "wr-o01",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "Ein Gründer schwankt zwischen **GmbH** und **Einzelunternehmen (e. K.)**. **Vergleichen Sie** beide Rechtsformen hinsichtlich Haftung, Kapital und Gründungsaufwand.",
+      "kriterien": [
+        "Haftung: e. K. unbeschränkt mit Privatvermögen; GmbH nur mit Gesellschaftsvermögen",
+        "Kapital: e. K. kein Mindestkapital; GmbH 25.000 € Stammkapital (mind. 12.500 € bei Anmeldung)",
+        "Gründung: GmbH notarieller Vertrag, Eintragung konstitutiv, höhere Kosten",
+        "e. K.: einfache Gründung, volle Entscheidungsfreiheit; GmbH: bessere Kapitalbeschaffung, Fortbestand unabhängig von Personen"
+      ]
+    },
+    {
+      "id": "wr-o02",
+      "typ": "offen",
+      "punkte": 4,
+      "mindestens": 3,
+      "frage": "Michael Becker soll Prokura erhalten. **Erläutern Sie**, wie Prokura erteilt wird, und **nennen Sie** drei Geschäfte, die er als Prokurist **nicht** vornehmen darf.",
+      "kriterien": [
+        "Erteilung nur durch den Inhaber/gesetzlichen Vertreter persönlich, ausdrücklich; Eintragung ins Handelsregister (deklaratorisch)",
+        "Nicht ohne besondere Befugnis: Grundstücke veräußern oder belasten",
+        "Nicht: Bilanz/Steuererklärung unterschreiben, Insolvenz anmelden",
+        "Nicht: Prokura erteilen, Geschäft verkaufen/auflösen, Gesellschafter aufnehmen"
+      ]
+    },
+    {
+      "id": "wr-o03",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** die Haftung der Gesellschafter einer **OHG** und einer **KG**.",
+      "kriterien": [
+        "OHG: alle Gesellschafter haften unbeschränkt, unmittelbar und gesamtschuldnerisch",
+        "KG Komplementär: haftet wie OHG-Gesellschafter unbeschränkt",
+        "KG Kommanditist: haftet nur bis zur Höhe der im Handelsregister eingetragenen Einlage",
+        "Nach geleisteter Einlage keine persönliche Haftung des Kommanditisten mehr"
+      ]
     }
   ],
   "karten": [

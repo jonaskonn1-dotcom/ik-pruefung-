@@ -171,6 +171,42 @@
         2
       ],
       "erklaerung": "Verletztenrente zahlt die **Unfallversicherung**, Arbeitslosengeld die **Arbeitslosenversicherung**. Familienangehörige ohne eigenes Einkommen sind in der GKV beitragsfrei mitversichert (Familienversicherung)."
+    },
+    {
+      "id": "ws-o01",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** das **Solidaritätsprinzip** und das **Umlageverfahren** in der gesetzlichen Sozialversicherung.",
+      "kriterien": [
+        "Solidaritätsprinzip: Beiträge richten sich nach dem Einkommen, Leistungen nach dem Bedarf (KV)",
+        "Starke tragen Schwache mit, unabhängig vom individuellen Risiko",
+        "Umlageverfahren: laufende Beiträge finanzieren die laufenden Leistungen (z. B. Renten)",
+        "Generationenvertrag; Problem demografischer Wandel"
+      ]
+    },
+    {
+      "id": "ws-o02",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "Ein Mitarbeiter verletzt sich auf dem direkten Heimweg. **Erläutern Sie**, welche Versicherung zuständig ist, wer sie finanziert und welche Leistungen sie erbringt.",
+      "kriterien": [
+        "Gesetzliche Unfallversicherung – Wegeunfall ist versichert",
+        "Träger: Berufsgenossenschaft",
+        "Finanzierung allein durch den Arbeitgeber (Lohnsumme, Gefahrklasse)",
+        "Leistungen: Heilbehandlung (D-Arzt), Verletztengeld, Reha, ggf. Verletztenrente"
+      ]
+    },
+    {
+      "id": "ws-o03",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Beschreiben Sie** das **Drei-Säulen-Modell** der Altersvorsorge und **begründen Sie**, warum private Vorsorge wichtiger wird.",
+      "kriterien": [
+        "1. Säule: gesetzliche Rentenversicherung",
+        "2. Säule: betriebliche Altersversorgung (z. B. Entgeltumwandlung mit AG-Zuschuss)",
+        "3. Säule: private Vorsorge (Rentenversicherung, Fonds, Immobilie)",
+        "Begründung: demografischer Wandel – weniger Beitragszahler je Rentner, sinkendes Rentenniveau"
+      ]
     }
   ],
   "karten": [

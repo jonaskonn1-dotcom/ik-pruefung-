@@ -200,6 +200,105 @@
       "einheit": "%",
       "loesung": 4.2,
       "erklaerung": "Umsatzrentabilität = {{g}} ÷ {{u}} = {{g/u*100|%}}\nKapitalumschlag = {{u}} ÷ {{gk}} = {{u/gk}}\nROI = {{g/u*100}} % × {{u/gk}} = **{{r2(g/u * u/gk * 100)|%}}**"
+    },
+    {
+      "id": "ja-o01",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "Die Eigenkapitalquote der Westpfalz Metallwerk GmbH sank von 41 % auf 35 %. **Beurteilen Sie** die Entwicklung und **nennen Sie** zwei mögliche Ursachen.",
+      "kriterien": [
+        "Geringere finanzielle Unabhängigkeit, schlechtere Kreditwürdigkeit/Rating, höheres Risiko",
+        "Für Industriebetriebe ist 35 % noch solide (Branchenvergleich nötig)",
+        "Ursache: Investitionen mit Fremdkapital finanziert",
+        "Ursache: Verluste/Gewinnausschüttungen, Entnahmen"
+      ]
+    },
+    {
+      "id": "ja-o02",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** die **goldene Bilanzregel** und **beurteilen Sie** eine Anlagendeckung II von 119 %.",
+      "kriterien": [
+        "Langfristig gebundenes Vermögen soll langfristig finanziert sein (Fristenkongruenz)",
+        "Anlagendeckung II = (EK + langfristiges FK) ÷ AV × 100",
+        "119 % → Anlagevermögen vollständig langfristig finanziert, Regel erfüllt",
+        "Überschuss finanziert zusätzlich Teile des Umlaufvermögens (eiserner Bestand)"
+      ]
+    },
+    {
+      "id": "ja-o03",
+      "typ": "offen",
+      "punkte": 6,
+      "frage": "Die Liquidität 2. Grades liegt bei 73 %. **Beurteilen Sie** den Wert und **schlagen Sie** drei Maßnahmen zur Verbesserung **vor**.",
+      "kriterien": [
+        "Richtwert ≥ 100 % → unterschritten; kurzfristige Verbindlichkeiten nicht durch flüssige Mittel und Forderungen gedeckt",
+        "Gefahr von Zahlungsschwierigkeiten, Abhängigkeit vom Verkauf der Vorräte",
+        "Maßnahme: Forderungen schneller einziehen (Mahnwesen, Skonto für Kunden, Factoring)",
+        "Maßnahme: Umschuldung kurzfristiger in langfristige Kredite",
+        "Maßnahme: Lagerbestände abbauen, Sale-and-lease-back, Kapitalerhöhung"
+      ]
+    },
+    {
+      "id": "ja-o04",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** den **Leverage-Effekt** und das damit verbundene Risiko.",
+      "kriterien": [
+        "Liegt die Gesamtkapitalrentabilität über dem Fremdkapitalzins, steigt die Eigenkapitalrentabilität mit zunehmendem Fremdkapitalanteil",
+        "Grund: jeder zusätzlich eingesetzte FK-Euro erwirtschaftet mehr als er kostet",
+        "Risiko: sinkt die Rentabilität unter den Zins oder steigt der Zins, sinkt die EK-Rentabilität überproportional (Leverage-Risiko)",
+        "Höhere Verschuldung erhöht zudem Abhängigkeit und Insolvenzrisiko"
+      ]
+    },
+    {
+      "id": "ja-o05",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Nennen Sie** die Bestandteile des Jahresabschlusses einer mittelgroßen GmbH und **erläutern Sie** den Zweck des Anhangs.",
+      "kriterien": [
+        "Bilanz, Gewinn- und Verlustrechnung, Anhang (§ 264 HGB)",
+        "Zusätzlich Lagebericht (mittelgroß/groß) – nicht Teil des Jahresabschlusses im engeren Sinn",
+        "Anhang erläutert Bilanz und GuV, Bilanzierungs- und Bewertungsmethoden",
+        "Anhang enthält zusätzliche Angaben (z. B. Verbindlichkeitenspiegel, Mitarbeiterzahl)"
+      ]
+    },
+    {
+      "id": "ja-o06",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** das **Niederstwertprinzip** und **begründen Sie**, warum es Ausdruck des Vorsichtsprinzips ist.",
+      "kriterien": [
+        "Vermögensgegenstände sind mit dem niedrigeren Wert aus Anschaffungskosten und Tageswert anzusetzen",
+        "Umlaufvermögen: strenges Niederstwertprinzip (Abschreibungspflicht)",
+        "Anlagevermögen: gemildertes Niederstwertprinzip (Pflicht nur bei dauernder Wertminderung)",
+        "Vorsicht: drohende Verluste werden ausgewiesen, nicht realisierte Gewinne nicht (Imparitätsprinzip) → Gläubigerschutz"
+      ]
+    },
+    {
+      "id": "ja-o07",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** die Aussagekraft des **Cashflows** für die Westpfalz Metallwerk GmbH.",
+      "kriterien": [
+        "Cashflow = Jahresüberschuss + Abschreibungen + Erhöhung langfristiger Rückstellungen (vereinfacht)",
+        "Zeigt den Mittelzufluss aus der laufenden Geschäftstätigkeit (Innenfinanzierungskraft)",
+        "Maßstab für mögliche Investitionen, Schuldentilgung, Gewinnausschüttung",
+        "Weniger anfällig für bilanzpolitische Gestaltung als der Gewinn"
+      ]
+    },
+    {
+      "id": "ja-o08",
+      "typ": "offen",
+      "punkte": 4,
+      "mindestens": 3,
+      "frage": "**Nennen Sie** vier Grenzen bzw. Kritikpunkte der Bilanzanalyse mit Kennzahlen.",
+      "kriterien": [
+        "Vergangenheitsbezogen (Stichtagsbetrachtung)",
+        "Bilanzpolitik/Wahlrechte verzerren Kennzahlen",
+        "Wichtige Informationen fehlen (Auftragsbestand, Mitarbeiterqualifikation, stille Reserven)",
+        "Aussagekraft nur im Zeit- und Branchenvergleich",
+        "Liquiditätskennzahlen ohne Fälligkeitstermine nur grobe Näherung"
+      ]
     }
   ],
   "karten": [

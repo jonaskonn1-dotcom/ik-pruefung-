@@ -213,6 +213,103 @@
       "einheit": "€",
       "loesung": 6300,
       "erklaerung": "Normal gesamt = {{nm+nf+nv+nt|€}}\nIst gesamt = {{im+if_+iv+it|€}}\nDifferenz = **{{(nm+nf+nv+nt) - (im+if_+iv+it)|€}}** → {{(nm+nf+nv+nt) - (im+if_+iv+it) >= 0 ? 'Überdeckung' : 'Unterdeckung'}}\nJe Stelle: Material {{nm-im|€}}, Fertigung {{nf-if_|€}}, Verwaltung {{nv-iv|€}}, Vertrieb {{nt-it|€}}."
+    },
+    {
+      "id": "klr-o01",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** die Begriffe **Anderskosten** und **Zusatzkosten** an je einem Beispiel.",
+      "kriterien": [
+        "Anderskosten: Kosten, denen Aufwand in anderer Höhe gegenübersteht",
+        "Beispiel: kalkulatorische Abschreibung (vom Wiederbeschaffungswert) statt bilanzieller",
+        "Zusatzkosten: Kosten ohne entsprechenden Aufwand in der FiBu",
+        "Beispiel: kalkulatorischer Unternehmerlohn, kalkulatorische Miete, Zinsen auf Eigenkapital"
+      ]
+    },
+    {
+      "id": "klr-o02",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Begründen Sie**, warum die Kosten- und Leistungsrechnung neutrale Aufwendungen nicht berücksichtigt, und **nennen Sie** zwei Beispiele.",
+      "kriterien": [
+        "KLR soll nur den betriebsbedingten, regelmäßigen Werteverzehr erfassen",
+        "Sonst würden Kalkulation und Betriebsergebnis verzerrt",
+        "Beispiel: Verlust aus Anlagenverkauf, Spenden, Steuernachzahlung für Vorjahre",
+        "Beispiel: Kursverluste bei Wertpapieren, Brandschaden (außerordentlich)"
+      ]
+    },
+    {
+      "id": "klr-o03",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** die Unterschiede zwischen **Kostenarten-**, **Kostenstellen-** und **Kostenträgerrechnung**.",
+      "kriterien": [
+        "Kostenartenrechnung: Welche Kosten sind angefallen? Erfassung und Gliederung (Einzel-/Gemeinkosten, fix/variabel)",
+        "Kostenstellenrechnung: Wo sind die Kosten angefallen? Verteilung der Gemeinkosten im BAB",
+        "Kostenträgerrechnung: Wofür sind Kosten angefallen? Stückkalkulation und Kostenträgerzeitrechnung",
+        "Zusammenhang: Ergebnisse bauen aufeinander auf"
+      ]
+    },
+    {
+      "id": "klr-o04",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Nennen Sie** vier Verteilungsschlüssel für Gemeinkosten im BAB mit jeweils einer passenden Kostenart.",
+      "kriterien": [
+        "Fläche (m²) – Miete, Heizung, Reinigung",
+        "Verbrauch (kWh) – Strom",
+        "Anzahl Mitarbeitende bzw. Lohn-/Gehaltslisten – Sozialkosten, Gehälter",
+        "Anlagenwerte – kalk. Abschreibung, kalk. Zinsen, Versicherungen"
+      ]
+    },
+    {
+      "id": "klr-o05",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** den Begriff **Fixkostendegression** und ihre Bedeutung für die Westpfalz Metallwerk GmbH.",
+      "kriterien": [
+        "Fixkosten bleiben bei Mengenänderung (innerhalb der Kapazität) gleich",
+        "Mit steigender Menge sinken die Fixkosten je Stück und damit die Stückkosten",
+        "Bedeutung: hohe Auslastung senkt Stückkosten → Preisspielraum/Wettbewerbsvorteil",
+        "Umgekehrt: Unterauslastung erhöht Stückkosten (Leerkosten)"
+      ]
+    },
+    {
+      "id": "klr-o06",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie**, warum Normalzuschlagssätze in der Vorkalkulation verwendet werden.",
+      "kriterien": [
+        "Normalzuschläge sind Durchschnittswerte vergangener Perioden",
+        "Ist-Zuschläge stehen zum Zeitpunkt der Angebotskalkulation noch nicht fest",
+        "Zufällige Schwankungen werden geglättet → stabile, vergleichbare Preise",
+        "Abweichungen werden über die Nachkalkulation als Über-/Unterdeckung sichtbar"
+      ]
+    },
+    {
+      "id": "klr-o07",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Beschreiben Sie** die Aufgaben der **Hilfskostenstellen** und das Prinzip ihrer Umlage.",
+      "kriterien": [
+        "Hilfskostenstellen erbringen Leistungen für andere Kostenstellen (z. B. Fuhrpark, Energie, Kantine)",
+        "Sie geben keine Leistungen direkt an Kostenträger ab",
+        "Ihre Kosten werden nach der Inanspruchnahme (z. B. km, kWh, Köpfe) auf die Hauptkostenstellen umgelegt",
+        "Erst danach werden die Zuschlagssätze der Hauptkostenstellen berechnet"
+      ]
+    },
+    {
+      "id": "klr-o08",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** die Aufgaben der Kosten- und Leistungsrechnung im Unternehmen (mindestens vier).",
+      "kriterien": [
+        "Ermittlung des Betriebsergebnisses (Wirtschaftlichkeitskontrolle)",
+        "Preiskalkulation (Angebotspreise, Preisuntergrenzen)",
+        "Kostenkontrolle nach Kostenstellen/Verantwortungsbereichen",
+        "Entscheidungsgrundlagen (Make-or-buy, Zusatzauftrag, Programmplanung)",
+        "Bewertung von Beständen (fertige/unfertige Erzeugnisse)"
+      ]
     }
   ],
   "karten": [

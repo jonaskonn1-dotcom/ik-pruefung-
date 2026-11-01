@@ -355,3 +355,21 @@ h3.h-small { margin-top: .9rem; }
 .opt-edit .check { min-height: 48px; }
 .eigene-list li { margin: .75rem 0; }
 [hidden] { display: none !important; }
+.doc-hint { display: flex; align-items: center; gap: .9rem; margin-top: .6rem; padding: .5rem .9rem; font-size: .88rem; line-height: 1.35; border-radius: 14px; background: rgba(255,255,255,.12); color: inherit; text-decoration: none; border: 1px dashed rgba(255,255,255,.45); }
+.doc-hint .doc-num { font-weight: 800; font-size: 1.15rem; white-space: nowrap; }
+.doc-hint small { opacity: .85; font-size: .78rem; }
+#txt-in { min-height: 9rem; }
+.pre { white-space: pre-wrap; }
+.own-answer, .muster, .rate-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: .8rem 1rem; margin: .75rem 0; }
+.muster { border-color: var(--ok); }
+.krit-list { list-style: none; padding: 0; margin: .25rem 0 0; }
+.krit-list .check { align-items: flex-start; padding: .3rem 0; }
+.krit-list .check input { margin-top: 3px; flex: none; }
+.rate-btns { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; margin: .4rem 0; }
+.rate-btns .btn { padding: .5rem; }
+.rate-btns .suggested { border-width: 2px; border-color: var(--accent); }
+.rate-voll.chosen { background: var(--ok-soft); color: var(--ok); border-color: var(--ok); opacity: 1; }
+.rate-teilweise.chosen { background: var(--warn-soft); color: var(--warn); border-color: var(--warn); opacity: 1; }
+.rate-nicht.chosen { background: var(--bad-soft); color: var(--bad); border-color: var(--bad); opacity: 1; }
+.feedback.part { border-color: var(--warn); background: var(--warn-soft); }
+.feedback.part .fb-head { color: var(--warn); }

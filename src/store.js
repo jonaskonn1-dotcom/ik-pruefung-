@@ -59,10 +59,11 @@ function tag(s) {
 }
 
 /** Antwort protokollieren. modus 'fehler' zählt die Streak für den Fehlerkorb. */
-export function recordAnswer(qid, ok, schwelle = 2) {
+/** punkte (0..1) erlaubt Teilpunkte, z. B. Selbstbewertung „teilweise“ = 0,5 für die Trefferquote. */
+export function recordAnswer(qid, ok, schwelle = 2, punkte = ok ? 1 : 0) {
   store.update((s) => {
     const e = (s.q[qid] ||= { n: 0, ok: 0, last: false, t: 0 });
-    e.n++; if (ok) e.ok++; e.last = ok; e.t = Date.now();
+    e.n++; e.ok += ok ? 1 : Math.max(0, Math.min(1, punkte || 0)); e.last = ok; e.t = Date.now();
     const d = tag(s); d.fragen++; if (ok) d.richtig++;
     if (!ok) s.fehler[qid] = { seit: s.fehler[qid]?.seit || Date.now(), streak: 0 };
     else if (s.fehler[qid]) {

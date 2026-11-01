@@ -168,6 +168,106 @@
       "einheit": "€",
       "loesung": 710,
       "erklaerung": "{{kosten|€}} ÷ {{tn}} = **{{r2(kosten/tn)|€}}** je Teilnehmer. Budgetausschöpfung: {{r2(kosten/budget*100)|%}}."
+    },
+    {
+      "id": "pp-o01",
+      "typ": "offen",
+      "punkte": 6,
+      "mindestens": 3,
+      "frage": "Für die Stelle „Sachbearbeiter/in Einkauf“ soll entschieden werden, ob intern oder extern gesucht wird. **Nennen Sie** je zwei Vor- und Nachteile der **internen** Personalbeschaffung.",
+      "kriterien": [
+        "Vorteil: Bewerber/in und Leistung bekannt, geringeres Fehlbesetzungsrisiko",
+        "Vorteil: geringere Kosten, kürzere Einarbeitung, Motivation durch Aufstiegschancen",
+        "Nachteil: kleinere Auswahl, ggf. keine passende Qualifikation",
+        "Nachteil: Betriebsblindheit, Lücke an der alten Stelle, Enttäuschung/Konflikte bei abgelehnten Kollegen"
+      ]
+    },
+    {
+      "id": "pp-o02",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** den Unterschied zwischen **Stellenbeschreibung** und **Anforderungsprofil**.",
+      "kriterien": [
+        "Stellenbeschreibung: personenunabhängig, beschreibt Ziel, Aufgaben, Kompetenzen, Verantwortung und Einordnung der Stelle",
+        "Anforderungsprofil: beschreibt die Qualifikationen/Eigenschaften, die ein Stelleninhaber mitbringen muss",
+        "Anforderungsprofil wird aus der Stellenbeschreibung abgeleitet",
+        "Anforderungsprofil dient als Maßstab für die Personalauswahl (Soll-Profil)"
+      ]
+    },
+    {
+      "id": "pp-o03",
+      "typ": "offen",
+      "punkte": 4,
+      "mindestens": 3,
+      "frage": "**Nennen Sie** vier Inhalte, die eine Stellenanzeige der Westpfalz Metallwerk GmbH enthalten sollte, und **erklären Sie**, worauf nach dem AGG zu achten ist.",
+      "kriterien": [
+        "Inhalte: Unternehmensdarstellung, Stellenbezeichnung (m/w/d), Aufgaben, Anforderungen, Angebot/Leistungen, Kontakt/Bewerbungsweg und Frist",
+        "AGG: keine Benachteiligung wegen Geschlecht, Alter, Herkunft, Religion, Behinderung, sexueller Identität",
+        "Geschlechtsneutrale Formulierung (m/w/d), keine Altersangaben wie „jung“",
+        "Nur sachlich begründete Anforderungen (z. B. „sichere Deutschkenntnisse“ statt „Muttersprache“)"
+      ]
+    },
+    {
+      "id": "pp-o04",
+      "typ": "offen",
+      "punkte": 6,
+      "frage": "Für die Auswahl einer Teamleitung Versand soll ein **Assessment-Center** durchgeführt werden. **Beschreiben Sie** das Verfahren und **nennen Sie** je zwei Vor- und Nachteile.",
+      "kriterien": [
+        "Mehrere Bewerber durchlaufen über einen oder mehrere Tage verschiedene Übungen (Gruppendiskussion, Rollenspiel, Präsentation, Postkorb)",
+        "Mehrere geschulte Beobachter bewerten nach festgelegten Kriterien",
+        "Vorteil: realitätsnahe Beurteilung von Sozial-/Führungskompetenz, mehrere Beurteiler → objektiver",
+        "Nachteil: hoher Zeit- und Kostenaufwand, Stresssituation/Prüfungscharakter, Bewerber können sich auf Übungen einstellen"
+      ]
+    },
+    {
+      "id": "pp-o05",
+      "typ": "offen",
+      "punkte": 6,
+      "mindestens": 3,
+      "frage": "Die Fluktuation in der Fertigung ist stark gestiegen. **Nennen Sie** drei mögliche Ursachen und **schlagen Sie** drei Maßnahmen zur Mitarbeiterbindung **vor**.",
+      "kriterien": [
+        "Ursachen: Unzufriedenheit mit Vergütung, Führungsverhalten, Arbeitsbedingungen/Schichtsystem, fehlende Entwicklungsmöglichkeiten, Betriebsklima",
+        "Maßnahme: Mitarbeitergespräche/Befragung, Führungskräfteschulung",
+        "Maßnahme: Personalentwicklung, Karrierepfade, Weiterbildung",
+        "Maßnahme: flexible Arbeitszeiten, Zusatzleistungen (bAV, Jobrad), faire Bezahlung, Gesundheitsmanagement"
+      ]
+    },
+    {
+      "id": "pp-o06",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** die Begriffe **Job-Enrichment** und **Job-Rotation** an je einem Beispiel aus der Westpfalz Metallwerk GmbH.",
+      "kriterien": [
+        "Job-Enrichment: Arbeitsbereicherung durch zusätzliche Entscheidungs-/Kontrollbefugnisse (vertikale Erweiterung)",
+        "Beispiel Enrichment: Sachbearbeiterin Einkauf darf Bestellungen bis 10.000 € selbst freigeben und Lieferanten bewerten",
+        "Job-Rotation: planmäßiger Wechsel von Arbeitsplätzen/Aufgaben",
+        "Beispiel Rotation: Nachwuchskraft durchläuft Einkauf, Vertrieb und Controlling"
+      ]
+    },
+    {
+      "id": "pp-o07",
+      "typ": "offen",
+      "punkte": 4,
+      "mindestens": 3,
+      "frage": "Ein Mitarbeiter verlangt bei seinem Ausscheiden ein **qualifiziertes Arbeitszeugnis**. **Nennen Sie** die Bestandteile und zwei Grundsätze für die Formulierung.",
+      "kriterien": [
+        "Bestandteile: Personalien, Art und Dauer der Tätigkeit (Aufgabenbeschreibung)",
+        "Bestandteile: Beurteilung der Leistung und des Verhaltens, Schlussformel",
+        "Grundsatz: Wahrheit und Wohlwollen (berufliches Fortkommen nicht erschweren)",
+        "Grundsatz: Klarheit, keine versteckten Codes, keine Angaben zu Krankheit/Betriebsratstätigkeit"
+      ]
+    },
+    {
+      "id": "pp-o08",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "Bei der Einstellung eines neuen Mitarbeiters verweigert der Betriebsrat die Zustimmung. **Erläutern Sie** die Rechtslage nach § 99 BetrVG und das weitere Vorgehen des Arbeitgebers.",
+      "kriterien": [
+        "Gilt in Unternehmen mit mehr als 20 wahlberechtigten AN; BR muss vorher unterrichtet werden",
+        "Zustimmungsverweigerung nur aus den Gründen des § 99 Abs. 2, schriftlich innerhalb einer Woche",
+        "Arbeitgeber kann beim Arbeitsgericht die Ersetzung der Zustimmung beantragen",
+        "Vorläufige Einstellung möglich, wenn sachlich dringend erforderlich (§ 100 BetrVG)"
+      ]
     }
   ],
   "karten": [

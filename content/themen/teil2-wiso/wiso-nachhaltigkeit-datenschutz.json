@@ -129,6 +129,44 @@
       "einheit": "t",
       "loesung": 109.44,
       "erklaerung": "Einsparung = {{kwh}} × {{spar|%}} = {{kwh*spar/100|n0}} kWh\nCO₂ = {{kwh*spar/100|n0}} × {{ef}} kg = {{kwh*spar/100*ef|n0}} kg = **{{r2(kwh*spar/100*ef/1000)}} t**\nKostenersparnis: {{kwh*spar/100*preis|€}} pro Jahr – Ökologie und Ökonomie gehen hier zusammen. (Faktoren fiktiv.)"
+    },
+    {
+      "id": "wn-o01",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** das **Drei-Säulen-Modell** der Nachhaltigkeit mit je einem Beispiel aus der Westpfalz Metallwerk GmbH.",
+      "kriterien": [
+        "Ökologisch: Umwelt und Ressourcen schonen – z. B. Recyclingstahl, Photovoltaik, Abwärmenutzung",
+        "Ökonomisch: dauerhaft wirtschaftlich erfolgreich – z. B. Energiekosten senken, langlebige Produkte",
+        "Sozial: faire Arbeitsbedingungen und Verantwortung – z. B. Tarifbindung, Gesundheitsmanagement, Ausbildung",
+        "Gleichrangigkeit/Wechselwirkung der Dimensionen"
+      ]
+    },
+    {
+      "id": "wn-o02",
+      "typ": "offen",
+      "punkte": 4,
+      "mindestens": 3,
+      "frage": "**Nennen Sie** vier Grundsätze der DSGVO für die Verarbeitung personenbezogener Daten und **erläutern Sie** einen davon an einem Beispiel.",
+      "kriterien": [
+        "Rechtmäßigkeit, Treu und Glauben, Transparenz",
+        "Zweckbindung, Datenminimierung",
+        "Richtigkeit, Speicherbegrenzung",
+        "Integrität und Vertraulichkeit, Rechenschaftspflicht",
+        "Beispiel passend (z. B. Bewerbungsunterlagen nach Abschluss des Verfahrens löschen = Speicherbegrenzung)"
+      ]
+    },
+    {
+      "id": "wn-o03",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "Ein Mitarbeiter hat versehentlich eine Kundenliste an eine falsche E-Mail-Adresse geschickt. **Beschreiben Sie** das richtige Vorgehen.",
+      "kriterien": [
+        "Sofort intern melden (Vorgesetzte, Datenschutzbeauftragter)",
+        "Risiko bewerten; Empfänger um Löschung bitten",
+        "Meldung an die Aufsichtsbehörde (LfDI RLP) binnen 72 Stunden, wenn ein Risiko für Betroffene besteht",
+        "Bei hohem Risiko Betroffene benachrichtigen; Vorfall dokumentieren und Maßnahmen gegen Wiederholung (Schulung, Verschlüsselung)"
+      ]
     }
   ],
   "karten": [

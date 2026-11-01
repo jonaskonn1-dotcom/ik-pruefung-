@@ -164,6 +164,43 @@
       ],
       "loesung": 0,
       "erklaerung": "§ 78a BetrVG schützt Auszubildende in JAV/Betriebsrat. Der Arbeitgeber kann sich nur über das Arbeitsgericht lösen, wenn die Weiterbeschäftigung unzumutbar ist."
+    },
+    {
+      "id": "wa-o01",
+      "typ": "offen",
+      "punkte": 4,
+      "mindestens": 4,
+      "frage": "**Nennen Sie** je zwei Pflichten des Ausbildenden und des Auszubildenden nach dem BBiG.",
+      "kriterien": [
+        "Ausbildender: Ausbildungsziel vermitteln, Ausbilder bestellen",
+        "Ausbildender: Ausbildungsmittel kostenlos, Freistellung für Berufsschule/Prüfungen, Vergütung, Zeugnis",
+        "Auszubildender: Lernpflicht, Berufsschulbesuch, Ausbildungsnachweis führen",
+        "Auszubildender: Weisungen befolgen, Betriebsordnung beachten, Schweigepflicht"
+      ]
+    },
+    {
+      "id": "wa-o02",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "Eine 16-jährige Auszubildende soll an einem Berufsschultag mit 6 Unterrichtsstunden nachmittags noch im Betrieb arbeiten. **Beurteilen Sie** die Situation nach dem JArbSchG.",
+      "kriterien": [
+        "Einmal pro Woche darf an einem Berufsschultag mit mehr als 5 Unterrichtsstunden à 45 Min. nicht beschäftigt werden",
+        "Dieser Tag wird mit 8 Stunden auf die Arbeitszeit angerechnet",
+        "Handelt es sich um diesen Tag, ist die Beschäftigung unzulässig",
+        "Verstoß ist eine Ordnungswidrigkeit; Ansprechpartner: Ausbilder, JAV, IHK"
+      ]
+    },
+    {
+      "id": "wa-o03",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie**, wann das Ausbildungsverhältnis endet, wenn die Abschlussprüfung vor Ende der Vertragslaufzeit bestanden wird, und welche Folge eine Weiterbeschäftigung ohne Vereinbarung hat.",
+      "kriterien": [
+        "Ende mit Bekanntgabe des Prüfungsergebnisses durch den Prüfungsausschuss (§ 21 Abs. 2 BBiG)",
+        "Nicht erst mit dem vertraglichen Ende",
+        "Weiterbeschäftigung ohne ausdrückliche Vereinbarung → unbefristetes Arbeitsverhältnis (§ 24 BBiG)",
+        "Daher Übernahme rechtzeitig klären"
+      ]
     }
   ],
   "karten": [

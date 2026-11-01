@@ -217,6 +217,106 @@
       "toleranz": 1,
       "loesung": -1078,
       "erklaerung": "Barwerte: {{abzinsen(rf,i,1)|€}} + {{abzinsen(rf,i,2)|€}} + {{abzinsen(rf,i,3)|€}} + ({{rf}} + {{rw}}) ÷ 1,07⁴ = {{abzinsen(rf + rw,i,4)|€}}\nKapitalwert = Summe − {{a0|€}} = **{{r0(-a0 + abzinsen(rf,i,1) + abzinsen(rf,i,2) + abzinsen(rf,i,3) + abzinsen(rf + rw,i,4))|€}}**"
+    },
+    {
+      "id": "if-o01",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Vergleichen Sie** statische und dynamische Investitionsrechenverfahren und **nennen Sie** je ein Beispiel.",
+      "kriterien": [
+        "Statisch: rechnen mit Durchschnittswerten einer Periode, berücksichtigen den Zeitpunkt der Zahlungen nicht",
+        "Beispiel statisch: Kosten-, Gewinn-, Rentabilitätsvergleich, Amortisationsrechnung",
+        "Dynamisch: betrachten die gesamte Nutzungsdauer, zinsen Zahlungen ab/auf",
+        "Beispiel dynamisch: Kapitalwertmethode, interner Zinsfuß, Annuitätenmethode"
+      ]
+    },
+    {
+      "id": "if-o02",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "Eine Investition hat einen **negativen Kapitalwert** von −1.078 €. **Interpretieren Sie** das Ergebnis.",
+      "kriterien": [
+        "Die Verzinsung des eingesetzten Kapitals liegt unter dem Kalkulationszinssatz",
+        "Die Investition ist bei diesem Zinssatz (rein finanziell) nicht vorteilhaft",
+        "Der Betrag ist gering → Ergebnis empfindlich gegenüber Annahmen (Rückflüsse, Restwert, Zins)",
+        "Qualitative Gründe (Strategie, Qualität, Nachhaltigkeit) können trotzdem für die Investition sprechen"
+      ]
+    },
+    {
+      "id": "if-o03",
+      "typ": "offen",
+      "punkte": 6,
+      "mindestens": 3,
+      "frage": "Für einen neuen Gabelstapler wird **Leasing** oder **Kreditkauf** erwogen. **Nennen Sie** drei Vorteile und zwei Nachteile des Leasings.",
+      "kriterien": [
+        "Vorteil: schont die Liquidität, keine hohe Anfangsauszahlung",
+        "Vorteil: keine Kreditsicherheiten nötig, Kreditlinie bleibt frei",
+        "Vorteil: Leasingraten als Aufwand absetzbar; Anpassung an technischen Fortschritt, ggf. Service inklusive",
+        "Nachteil: insgesamt meist teurer als Kreditkauf",
+        "Nachteil: langfristige Bindung, kein Eigentum, Nutzungsauflagen"
+      ]
+    },
+    {
+      "id": "if-o04",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** den Unterschied zwischen **Annuitätendarlehen** und **Ratendarlehen**.",
+      "kriterien": [
+        "Annuitätendarlehen: gleichbleibende Gesamtbelastung (Zins + Tilgung)",
+        "Annuität: Zinsanteil sinkt, Tilgungsanteil steigt",
+        "Ratendarlehen: gleichbleibende Tilgung",
+        "Ratendarlehen: Zinsen und Gesamtbelastung sinken; hohe Anfangsbelastung"
+      ]
+    },
+    {
+      "id": "if-o05",
+      "typ": "offen",
+      "punkte": 4,
+      "mindestens": 3,
+      "frage": "**Nennen Sie** vier Arten der **Innenfinanzierung** und **erläutern Sie** eine davon.",
+      "kriterien": [
+        "Selbstfinanzierung durch Gewinnthesaurierung",
+        "Finanzierung aus Abschreibungsgegenwerten",
+        "Finanzierung aus Rückstellungen (z. B. Pensionsrückstellungen)",
+        "Vermögensumschichtung (Verkauf nicht betriebsnotwendigen Vermögens, Sale-and-lease-back, Lagerabbau)",
+        "Erläuterung schlüssig (z. B. Abschreibungen fließen über Umsatzerlöse zurück, sind aber keine Auszahlung)"
+      ]
+    },
+    {
+      "id": "if-o06",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "Die Hausbank verlangt für einen Kredit Sicherheiten. **Vergleichen Sie** Sicherungsübereignung und Pfandrecht (Faustpfand).",
+      "kriterien": [
+        "Beide sind Realsicherheiten an beweglichen Sachen",
+        "Faustpfand: Schuldner übergibt den Besitz an den Gläubiger (Bank)",
+        "Sicherungsübereignung: Bank wird Eigentümerin, Schuldner bleibt Besitzer und kann die Sache weiter nutzen",
+        "Für Maschinen/Fahrzeuge im Betrieb ist die Sicherungsübereignung geeignet"
+      ]
+    },
+    {
+      "id": "if-o07",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "Die Westpfalz Metallwerk GmbH erwägt **echtes Factoring**. **Beschreiben Sie** die drei Funktionen und **nennen Sie** einen Nachteil.",
+      "kriterien": [
+        "Finanzierungsfunktion: sofortige Liquidität durch Ankauf der Forderungen",
+        "Delkrederefunktion: Factor übernimmt das Ausfallrisiko",
+        "Dienstleistungsfunktion: Debitorenbuchhaltung, Mahnwesen, Inkasso",
+        "Nachteil: Kosten (Gebühren, Zinsen), Kunden erfahren ggf. davon (offenes Factoring)"
+      ]
+    },
+    {
+      "id": "if-o08",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** die Aufgaben des **Controllings** und **nennen Sie** je ein Instrument des operativen und strategischen Controllings.",
+      "kriterien": [
+        "Aufgaben: Planung, Steuerung, Kontrolle und Informationsversorgung der Unternehmensführung",
+        "Soll-Ist-Vergleich mit Abweichungsanalyse und Gegenmaßnahmen",
+        "Operativ: Budgetierung, Deckungsbeitragsrechnung, Kennzahlen, Soll-Ist-Vergleich",
+        "Strategisch: SWOT-Analyse, Portfolio, Balanced Scorecard, Benchmarking"
+      ]
     }
   ],
   "karten": [

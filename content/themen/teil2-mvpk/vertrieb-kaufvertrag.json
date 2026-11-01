@@ -152,6 +152,106 @@
       ],
       "loesung": 0,
       "erklaerung": "Durch Weiterverkauf erlischt der einfache Eigentumsvorbehalt (gutgläubiger Erwerb). Beim **verlängerten** EV tritt die Forderung aus dem Weiterverkauf (oder das Produkt bei Verarbeitung) an die Stelle der Ware."
+    },
+    {
+      "id": "vk-o01",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "Ein Kunde ruft an und bestellt 200 Gehäuse G-200 zu den Konditionen des Angebots vom letzten Monat. Das Angebot enthielt die Klausel „freibleibend“. **Erläutern Sie**, ob bereits ein Kaufvertrag zustande gekommen ist.",
+      "kriterien": [
+        "Freibleibendes Angebot ist kein bindender Antrag, sondern Aufforderung zur Abgabe eines Angebots",
+        "Die Bestellung des Kunden ist der Antrag",
+        "Kaufvertrag erst mit Annahme durch WPM (Auftragsbestätigung oder Lieferung)",
+        "Ergebnis: Noch kein Kaufvertrag"
+      ]
+    },
+    {
+      "id": "vk-o02",
+      "typ": "offen",
+      "punkte": 6,
+      "frage": "Die Rhein-Blech AG liefert vereinbart „Lieferung bis 15.05.“ nicht. Die Fertigung der Westpfalz Metallwerk GmbH droht stillzustehen. **Prüfen Sie** die Voraussetzungen des Lieferungsverzugs und **nennen Sie** die Rechte der WPM.",
+      "kriterien": [
+        "Fälligkeit liegt vor (Termin 15.05. überschritten)",
+        "Mahnung entbehrlich, da Leistungszeit kalendermäßig bestimmt",
+        "Verschulden des Lieferers für Schadensersatz erforderlich (wird vermutet)",
+        "Recht ohne Nachfrist: auf Lieferung bestehen und Verzögerungsschaden verlangen",
+        "Nach erfolglos gesetzter angemessener Nachfrist: Rücktritt und/oder Schadensersatz statt der Leistung (z. B. Mehrkosten Deckungskauf)"
+      ]
+    },
+    {
+      "id": "vk-o03",
+      "typ": "offen",
+      "punkte": 6,
+      "frage": "Ein Kunde reklamiert 40 von 500 gelieferten Gehäusen wegen Lackschäden. **Beschreiben Sie**, welche Rechte der Kunde hat und in welcher Reihenfolge er sie geltend machen kann.",
+      "kriterien": [
+        "Voraussetzung: Sachmangel bei Gefahrübergang, rechtzeitige Rüge (Handelskauf: unverzüglich, § 377 HGB)",
+        "Vorrangig Nacherfüllung: Käufer wählt Nachbesserung oder Ersatzlieferung",
+        "Angemessene Frist zur Nacherfüllung",
+        "Nach Fehlschlagen/Fristablauf: Rücktritt (nicht bei unerheblichem Mangel) oder Minderung",
+        "Zusätzlich ggf. Schadensersatz bei Verschulden"
+      ]
+    },
+    {
+      "id": "vk-o04",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "Die Westpfalz Metallwerk GmbH kauft Edelstahlblech ein. **Erläutern Sie** die Pflichten aus § 377 HGB und die Folgen bei Nichtbeachtung.",
+      "kriterien": [
+        "Beim zweiseitigen Handelskauf: Ware unverzüglich nach Ablieferung untersuchen",
+        "Offene Mängel unverzüglich rügen",
+        "Versteckte Mängel unverzüglich nach Entdeckung rügen",
+        "Folge bei Versäumnis: Ware gilt als genehmigt, Mängelrechte gehen verloren"
+      ]
+    },
+    {
+      "id": "vk-o05",
+      "typ": "offen",
+      "punkte": 6,
+      "frage": "Ein Stammkunde zahlt eine fällige Rechnung über 18.600 € nicht. **Beschreiben Sie** ein sinnvolles **außergerichtliches** Vorgehen im Mahnwesen und **nennen Sie** die nächsten Schritte, falls der Kunde weiterhin nicht zahlt.",
+      "kriterien": [
+        "Zahlungserinnerung (freundlich, Kopie der Rechnung)",
+        "Mahnungen mit Fristsetzung, ggf. Verzugszinsen und 40-€-Pauschale ankündigen",
+        "Persönlicher Kontakt/Telefon, Ursachen klären, ggf. Ratenzahlung vereinbaren (Kundenbeziehung)",
+        "Weitere Schritte: gerichtliches Mahnverfahren (Mahnbescheid) oder Klage, alternativ Inkassounternehmen",
+        "Lieferstopp/Vorkasse für weitere Aufträge erwägen"
+      ]
+    },
+    {
+      "id": "vk-o06",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** den Unterschied zwischen **Hemmung** und **Neubeginn** der Verjährung und **nennen Sie** jeweils ein Beispiel.",
+      "kriterien": [
+        "Hemmung: Zeitraum der Hemmung wird in die Verjährungsfrist nicht eingerechnet, die Frist läuft danach weiter",
+        "Beispiel Hemmung: Zustellung eines Mahnbescheids, Klage, Verhandlungen",
+        "Neubeginn: Verjährungsfrist beginnt vollständig neu zu laufen",
+        "Beispiel Neubeginn: Anerkenntnis durch den Schuldner (Abschlagszahlung, Zinszahlung, Bitte um Stundung), Vollstreckungshandlung"
+      ]
+    },
+    {
+      "id": "vk-o07",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "Ein Kunde holt bestellte Ware trotz Mitteilung der Versandbereitschaft nicht ab. **Nennen Sie** zwei Rechte der Westpfalz Metallwerk GmbH beim Annahmeverzug und **erläutern Sie**, wie sich die Haftung der WPM verändert.",
+      "kriterien": [
+        "Ware auf Kosten und Gefahr des Käufers einlagern/hinterlegen",
+        "Selbsthilfeverkauf nach Androhung (§ 373 HGB) bzw. Klage auf Abnahme, Rücktritt nach Fristsetzung",
+        "Haftung der WPM nur noch für Vorsatz und grobe Fahrlässigkeit",
+        "Gefahr des zufälligen Untergangs geht auf den Käufer über"
+      ]
+    },
+    {
+      "id": "vk-o08",
+      "typ": "offen",
+      "punkte": 4,
+      "mindestens": 2,
+      "frage": "**Begründen Sie**, warum die Westpfalz Metallwerk GmbH ihre Waren unter **Eigentumsvorbehalt** liefert, und **erläutern Sie** einen Fall, in dem der einfache Eigentumsvorbehalt erlischt.",
+      "kriterien": [
+        "Sicherung der Kaufpreisforderung: Ware bleibt bis zur vollständigen Zahlung Eigentum der WPM",
+        "Bei Zahlungsausfall/Insolvenz Herausgabe bzw. Aussonderung möglich",
+        "Erlöschen bei Verarbeitung/Verbindung (z. B. Gehäuse in Schaltanlage eingebaut)",
+        "Erlöschen bei gutgläubigem Erwerb durch Dritte (Weiterverkauf) bzw. Zerstörung – Lösung: verlängerter Eigentumsvorbehalt"
+      ]
     }
   ],
   "karten": [

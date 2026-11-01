@@ -277,6 +277,104 @@
       "einheit": "€",
       "loesung": 139.5,
       "erklaerung": "BBG KV/PV 2026 = {{W.bbgKvMonat|€}} < {{brutto|€}} → Basis {{W.bbgKvMonat|€}}\nSatz = {{W.pv/2}} % + {{W.pvKinderlosZuschlag}} % = {{W.pv/2 + W.pvKinderlosZuschlag|%}}\n{{W.bbgKvMonat|€}} × {{W.pv/2 + W.pvKinderlosZuschlag|%}} = **{{svAN(brutto, { kinderlos: true }).pv|€}}**"
+    },
+    {
+      "id": "pe-o01",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** den Unterschied zwischen **Beitragsbemessungsgrenze** und **Versicherungspflichtgrenze** in der Krankenversicherung.",
+      "kriterien": [
+        "Beitragsbemessungsgrenze: Einkommen bis zu dieser Grenze ist beitragspflichtig, darüber beitragsfrei (2026 KV/PV 5.812,50 €/Monat)",
+        "Versicherungspflichtgrenze (JAEG): darüber endet die Versicherungspflicht in der GKV",
+        "Wer darüber verdient, kann in die PKV wechseln oder freiwillig gesetzlich versichert bleiben (2026: 6.450 €/Monat)",
+        "Beide Werte werden jährlich angepasst"
+      ]
+    },
+    {
+      "id": "pe-o02",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Beschreiben Sie** den Weg vom **Bruttoentgelt** zum **Auszahlungsbetrag** und **nennen Sie** die jeweiligen Abzüge.",
+      "kriterien": [
+        "Bruttoentgelt (+ geldwerte Vorteile, VL-Zuschuss) = steuer- und SV-pflichtiges Brutto",
+        "− Lohnsteuer, Solidaritätszuschlag, Kirchensteuer",
+        "− Arbeitnehmeranteile KV, PV, RV, AV = Nettoentgelt",
+        "− sonstige Abzüge (VL-Sparbetrag, Vorschuss, Sachbezugswert) = Auszahlungsbetrag"
+      ]
+    },
+    {
+      "id": "pe-o03",
+      "typ": "offen",
+      "punkte": 4,
+      "mindestens": 3,
+      "frage": "**Nennen Sie** vier Kostenbestandteile, die der Arbeitgeber über das Bruttogehalt hinaus für einen Mitarbeiter trägt.",
+      "kriterien": [
+        "Arbeitgeberanteile zu KV, PV, RV, AV",
+        "Beiträge zur Unfallversicherung (Berufsgenossenschaft)",
+        "Umlagen U1, U2 und Insolvenzgeldumlage (U3)",
+        "Freiwillige Leistungen (bAV-Zuschuss, Jobticket, VL-Zuschuss) bzw. tarifliche Sonderzahlungen",
+        "Kosten für Arbeitsplatz, Weiterbildung, Entgeltfortzahlung bei Krankheit/Urlaub"
+      ]
+    },
+    {
+      "id": "pe-o04",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie**, warum ein kinderloser 30-jähriger Mitarbeiter bei gleichem Gehalt weniger netto erhält als ein Kollege mit zwei Kindern unter 25 Jahren (Sozialversicherung, ohne Steuern).",
+      "kriterien": [
+        "Kinderloser ab 23 Jahren zahlt PV-Zuschlag von 0,6 Prozentpunkten (allein vom AN getragen)",
+        "Eltern zahlen den Grundsatz-AN-Anteil von 1,8 %",
+        "Ab dem 2. Kind (bis 5.) unter 25 Jahren Abschlag von 0,25 Prozentpunkten je Kind",
+        "Ergebnis: 2,4 % gegenüber 1,55 % PV-Anteil → geringeres Netto"
+      ]
+    },
+    {
+      "id": "pe-o05",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Vergleichen Sie** Zeitlohn und Akkordlohn und **nennen Sie** je ein Einsatzgebiet in der Westpfalz Metallwerk GmbH.",
+      "kriterien": [
+        "Zeitlohn: Vergütung nach Anwesenheitszeit, unabhängig von der Leistungsmenge; geeignet bei Qualitätsarbeit, nicht messbarer Leistung, Gefahr (z. B. Qualitätskontrolle, Instandhaltung, Verwaltung)",
+        "Akkordlohn: Vergütung nach Leistungsmenge, Normalleistung als Basis; geeignet bei messbaren, wiederholbaren Tätigkeiten (z. B. Serienkanten)",
+        "Akkord: Leistungsanreiz, aber Risiko Qualitätsmängel/Überforderung; Mindestlohn bzw. Garantielohn gilt",
+        "Akkord für Jugendliche verboten (JArbSchG)"
+      ]
+    },
+    {
+      "id": "pe-o06",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "Ein Mitarbeiter erhält einen Dienstwagen auch zur Privatnutzung. **Erläutern Sie** die Auswirkungen auf die Entgeltabrechnung.",
+      "kriterien": [
+        "Private Nutzung ist ein geldwerter Vorteil (Sachbezug)",
+        "Bewertung pauschal mit 1 % des Bruttolistenpreises pro Monat (+ 0,03 % je Entfernungskilometer) oder Fahrtenbuch; E-Autos ermäßigt",
+        "Erhöht das steuer- und sozialversicherungspflichtige Brutto",
+        "Wird nach Berechnung der Abzüge wieder abgezogen (kein Geldzufluss) → Auszahlung sinkt durch höhere Abzüge"
+      ]
+    },
+    {
+      "id": "pe-o07",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "Eine Aushilfe soll 2026 auf Minijob-Basis eingestellt werden. **Erläutern Sie** die Geringfügigkeitsgrenze und ihren Zusammenhang mit dem Mindestlohn sowie die Rentenversicherung im Minijob.",
+      "kriterien": [
+        "Geringfügigkeitsgrenze 2026: 603 € im Monat",
+        "Dynamisch an den Mindestlohn gekoppelt: Mindestlohn × 130 ÷ 3 (2026: 13,90 €/Std.)",
+        "Arbeitgeber zahlt Pauschalbeiträge (KV, RV, ggf. Pauschsteuer, Umlagen)",
+        "Minijobber ist rentenversicherungspflichtig, kann sich auf Antrag befreien lassen"
+      ]
+    },
+    {
+      "id": "pe-o08",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Nennen Sie** die Buchungen bei der monatlichen Gehaltsabrechnung (Auszahlung, einbehaltene Abzüge, Arbeitgeberanteil) mit den Kontenbezeichnungen.",
+      "kriterien": [
+        "Gehälter (Brutto) an Bank (Auszahlung)",
+        "… an Verbindlichkeiten gegenüber Finanzbehörden (LSt, Soli, KiSt)",
+        "… an Verbindlichkeiten gegenüber Sozialversicherungsträgern (AN-Anteil)",
+        "Arbeitgeberanteil zur Sozialversicherung (gesetzliche soziale Aufwendungen) an Verbindlichkeiten gegenüber SV-Trägern"
+      ]
     }
   ],
   "karten": [

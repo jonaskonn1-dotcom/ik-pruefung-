@@ -10,7 +10,23 @@ export const TYP_LABEL = {
   zuordnung: 'Zuordnung',
   reihenfolge: 'Reihenfolge',
   zahl: 'Rechenaufgabe',
+  offen: 'Offene Aufgabe',
 };
+
+/** Selbstbewertung offener Aufgaben */
+export const BEWERTUNG = {
+  voll: { label: 'Voll', punkte: 1, ok: true },
+  teilweise: { label: 'Teilweise', punkte: 0.5, ok: false },
+  nicht: { label: 'Nicht', punkte: 0, ok: false },
+};
+const BEW_KEYS = ['voll', 'teilweise', 'nicht'];
+
+/** Vorschlag aus abgehakten Bewertungspunkten. */
+export function vorschlag(st) {
+  const n = st.krit?.length || 0;
+  const noetig = st.q.mindestens || st.q.kriterien.length;
+  return n >= noetig ? 'voll' : n > 0 ? 'teilweise' : 'nicht';
+}
 
 /** Zustand für eine Frage anlegen (mischt Optionen). */
 export function prepare(q) {
@@ -27,8 +43,9 @@ export function prepare(q) {
     if (perm.every((v, i) => v === i)) perm = perm.reverse();
     st.perm = perm;
     st.order = [];
-  } else if (q.typ === 'zahl') {
+  } else if (q.typ === 'zahl' || q.typ === 'offen') {
     st.value = '';
+    if (q.typ === 'offen') { st.krit = []; st.rating = null; }
   }
   return st;
 }
@@ -39,9 +56,13 @@ export function hasAnswer(st) {
     case 'zuordnung': return Object.keys(st.sel).length === st.q.paare.length;
     case 'reihenfolge': return st.order.length === st.q.elemente.length;
     case 'zahl': return !Number.isNaN(parseNumber(st.value));
+    case 'offen': return !!String(st.value || '').trim();
   }
   return false;
 }
+
+/** Darf „Prüfen“ gedrückt werden? Offene Aufgaben auch ohne Text (Antwort im Kopf/auf Papier). */
+export const canCheck = (st) => st.q.typ === 'offen' || hasAnswer(st);
 
 /** Wertet aus. Liefert {ok, punkte (0..1, Teilpunkte für Simulation)} */
 export function evaluate(st) {
@@ -67,6 +88,12 @@ export function evaluate(st) {
       const v = parseNumber(st.value);
       const tol = q.toleranz ?? config.quiz.toleranzStandard;
       ok = Math.abs(v - q.loesung) <= tol + 1e-9; punkte = ok ? 1 : 0; break;
+    }
+    case 'offen': {
+      const b = BEWERTUNG[st.rating];
+      ok = !!b?.ok; punkte = b ? b.punkte : 0;
+      st.revealed = true; st.ok = ok; st.punkte = punkte;
+      return { ok, punkte, offen: !b };
     }
   }
   st.revealed = true; st.ok = ok; st.punkte = punkte;
@@ -136,6 +163,28 @@ export function renderQuestion(st, { showFeedback = true } = {}) {
     ${rev && !st.ok ? `<p class="sol">Richtige Lösung: <strong>${fmtNumber(q.loesung, Number.isInteger(q.loesung) ? 0 : 2)} ${esc(q.einheit || '')}</strong></p>` : ''}`;
   }
 
+  if (q.typ === 'offen') {
+    const ant = String(st.value || '');
+    if (!st.revealed || !showFeedback) {
+      body = `<label for="txt-in" class="sr-only">Ihre Antwort</label>
+        <textarea id="txt-in" data-act="text" rows="7" placeholder="Antwort in Stichpunkten oder ganzen Sätzen …" ${st.revealed ? 'readonly' : ''}>${esc(ant)}</textarea>
+        <p class="hint">${q.punkte ? q.punkte + ' Punkte · ' : ''}Danach siehst du die Musterlösung und bewertest dich selbst.</p>`;
+    } else {
+      const sug = vorschlag(st);
+      body = `<div class="own-answer"><div class="q-topic">Deine Antwort</div>${ant.trim() ? `<p class="pre">${esc(ant)}</p>` : '<p class="muted small">(keine schriftliche Antwort)</p>'}</div>
+        <div class="muster"><div class="q-topic">Musterlösung – Bewertungspunkte${q.mindestens ? ` (${q.mindestens} von ${q.kriterien.length} genügen)` : ''}</div>
+          ${q.musterloesung ? `<p>${rich(q.musterloesung, v)}</p>` : ''}
+          <p class="hint">Hake ab, was in deiner Antwort vorkommt:</p>
+          <ul class="krit-list">${q.kriterien.map((k, i) => `<li><label class="check"><input type="checkbox" data-act="krit" data-i="${i}" ${st.krit.includes(i) ? 'checked' : ''} ${st.rating ? 'disabled' : ''}><span>${rich(k, v)}</span></label></li>`).join('')}</ul>
+        </div>
+        <div class="rate-box" role="group" aria-label="Selbstbewertung">
+          <div class="q-topic">Selbstbewertung</div>
+          <div class="rate-btns">${BEW_KEYS.map((k, i) => `<button type="button" class="btn rate-${k}${st.rating === k ? ' chosen' : ''}${!st.rating && sug === k ? ' suggested' : ''}" data-act="rate" data-v="${k}" ${st.rating ? 'disabled' : ''}>${BEWERTUNG[k].label}${keyHint(i)}</button>`).join('')}</div>
+          ${!st.rating ? `<p class="hint">Vorschlag nach deinen Häkchen: <b>${BEWERTUNG[sug].label}</b>. Voll = richtig, Teilweise/Nicht = kommt in den Fehlerkorb.</p>` : ''}
+        </div>`;
+    }
+  }
+
   return `<div class="q-meta"><span class="badge">${TYP_LABEL[q.typ]}</span>${q.stand2026 ? badge2026() : ''}${q.eigen ? '<span class="badge">eigene</span>' : ''}</div>
     <div class="q-text" id="q-text">${rich(q.frage, v)}</div>
     <div class="q-body">${body}</div>`;
@@ -143,6 +192,11 @@ export function renderQuestion(st, { showFeedback = true } = {}) {
 
 export function renderFeedback(st) {
   const q = st.q;
+  if (q.typ === 'offen') {
+    if (!st.rating) return '';
+    const b = BEWERTUNG[st.rating];
+    return `<div class="feedback ${b.ok ? 'ok' : st.rating === 'teilweise' ? 'part' : 'bad'}" role="status"><div class="fb-head">Selbstbewertung: ${b.label} (${b.punkte * 100} %)</div>${q.erklaerung ? `<div class="fb-expl">${rich(q.erklaerung, q.vars || {})}</div>` : ''}</div>`;
+  }
   return `<div class="feedback ${st.ok ? 'ok' : 'bad'}" role="status">
     <div class="fb-head">${st.ok ? '✓ Richtig!' : '✗ Leider falsch'}</div>
     <div class="fb-expl">${rich(q.erklaerung, q.vars || {})}</div>
@@ -151,7 +205,12 @@ export function renderFeedback(st) {
 
 /** Interaktion auf ein Element anwenden. Gibt true zurück, wenn neu gerendert werden muss. */
 export function handleAction(st, act, i, value) {
+  if (st.q.typ === 'offen' && st.revealed && !st.rating) {
+    if (act === 'krit') { st.krit = st.krit.includes(i) ? st.krit.filter((x) => x !== i) : [...st.krit, i]; return true; }
+    if (act === 'rate' && BEWERTUNG[value]) { st.rating = value; return 'rated'; }
+  }
   if (st.revealed) return false;
+  if (act === 'text') { st.value = value; return false; }
   const q = st.q;
   if (act === 'opt') {
     if (q.typ === 'einfach') { st.sel = new Set([i]); }
@@ -173,6 +232,7 @@ export function handleAction(st, act, i, value) {
 export function keyToAction(st, key) {
   const n = Number(key);
   if (!(n >= 1 && n <= 9)) return null;
+  if (st.q.typ === 'offen') return st.revealed && !st.rating && n <= 3 ? { act: 'rate', v: BEW_KEYS[n - 1] } : null;
   if ((st.q.typ === 'einfach' || st.q.typ === 'mehrfach' || st.q.typ === 'reihenfolge') && st.perm[n - 1] != null) {
     return { act: st.q.typ === 'reihenfolge' ? 'order' : 'opt', i: st.perm[n - 1] };
   }
@@ -183,16 +243,16 @@ export function keyToAction(st, key) {
 export function serialize(st) {
   return {
     id: st.q.id, perm: st.perm, rows: st.rows, rights: st.rights, order: st.order, value: st.value,
-    sel: st.sel instanceof Set ? [...st.sel] : st.sel, flag: !!st.flag,
+    sel: st.sel instanceof Set ? [...st.sel] : st.sel, flag: !!st.flag, krit: st.krit, rating: st.rating,
   };
 }
 export function restore(q, d) {
   const st = prepare(q);
   if (!d) return st;
-  for (const k of ['perm', 'rows', 'rights', 'order', 'value']) if (d[k] !== undefined) st[k] = d[k];
+  for (const k of ['perm', 'rows', 'rights', 'order', 'value', 'krit', 'rating']) if (d[k] !== undefined) st[k] = d[k];
   if (d.sel !== undefined) st.sel = Array.isArray(d.sel) ? new Set(d.sel) : d.sel;
   st.flag = !!d.flag;
   return st;
 }
 /** Punktgewicht in der Simulation: Rechenaufgaben zählen doppelt. */
-export const gewicht = (q) => (q.typ === 'zahl' ? 2 : 1);
+export const gewicht = (q) => (q.typ === 'offen' ? (q.punkte ? Math.min(6, Math.max(2, q.punkte / 2)) : 3) : q.typ === 'zahl' ? 2 : 1);

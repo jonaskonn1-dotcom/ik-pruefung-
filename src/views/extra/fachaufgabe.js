@@ -1,7 +1,7 @@
 // Trainer für die Fachaufgabe im Einsatzgebiet: Checklisten, typische Fachgesprächsfragen mit Notizen, Probe-Timer.
-import { fachaufgabe, aktivesProfil } from '../../content.js';
+import { fachaufgabe, aktivesProfil, config } from '../../content.js';
 import { store } from '../../store.js';
-import { esc, header, icon, progressBar, shuffle } from '../../ui.js';
+import { esc, header, icon, progressBar, shuffle, fmtDate, daysUntil } from '../../ui.js';
 import { faFortschritt } from '../fortschritt.js';
 import { mehrLinks } from '../mehr.js';
 
@@ -19,6 +19,7 @@ function uebersicht(el) {
   el.innerHTML = `
     ${header('Fachaufgabe', '#/')}
     ${tabNav('')}
+    ${config.termine.dokumentation ? `<div class="card warnbox"><b>${esc(config.termine.dokumentation.label)}: ${fmtDate(config.termine.dokumentation.von)}</b> – noch ${Math.max(0, daysUntil(config.termine.dokumentation.von))} Tage.<br><small>${esc(config.termine.dokumentation.hinweis || '')}</small></div>` : ''}
     <section class="card">
       <label class="field">Thema meiner Fachaufgabe<input type="text" id="thema" value="${esc(f.thema || '')}" placeholder="z. B. Einführung eines Kanban-Systems für C-Teile"></label>
       <label class="field">Einsatzgebiet<select id="gebiet"><option value="">– wählen –</option>${d.einsatzgebiete.map((g) => `<option${f.gebiet === g ? ' selected' : ''}>${esc(g)}</option>`).join('')}</select></label>

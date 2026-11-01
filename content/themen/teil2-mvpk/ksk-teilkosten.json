@@ -207,6 +207,106 @@
       "einheit": "€",
       "loesung": 17600,
       "erklaerung": "Fremdbezug: {{pb}} × {{x}} = {{pb*x|€}}\nEigenfertigung: {{kf}} + {{kv}} × {{x}} = {{kf+kv*x|€}}\nErsparnis = **{{r2(pb*x - (kf + kv*x))|€}}** (kritische Menge jetzt {{kf/(pb-kv)|n0}} Stück)."
+    },
+    {
+      "id": "tk-o01",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** den Unterschied zwischen **Vollkosten-** und **Teilkostenrechnung** und **nennen Sie** je einen Anwendungsfall.",
+      "kriterien": [
+        "Vollkostenrechnung: alle Kosten (einschließlich Fixkosten) werden auf die Kostenträger verteilt",
+        "Anwendung Vollkosten: langfristige Preisbildung, Angebotskalkulation, Bestandsbewertung",
+        "Teilkostenrechnung: nur variable Kosten werden zugerechnet; Fixkosten als Block (Deckungsbeitrag)",
+        "Anwendung Teilkosten: kurzfristige Entscheidungen – Zusatzauftrag, Engpass, Make-or-buy, Preisuntergrenze"
+      ]
+    },
+    {
+      "id": "tk-o02",
+      "typ": "offen",
+      "punkte": 6,
+      "frage": "Ein Kunde bietet einen Zusatzauftrag unter den Selbstkosten, aber über den variablen Kosten an. Die WPM hat freie Kapazitäten. **Beurteilen Sie** den Auftrag quantitativ und **nennen Sie** zwei qualitative Aspekte.",
+      "kriterien": [
+        "Positiver Deckungsbeitrag (Preis > kv) → Auftrag verbessert das Betriebsergebnis",
+        "Fixkosten fallen ohnehin an und sind durch Stammaufträge gedeckt",
+        "Voraussetzung freie Kapazität ist erfüllt → quantitativ annehmen",
+        "Qualitativ: Gefahr für Preisgefüge/Stammkunden verlangen gleiche Preise",
+        "Qualitativ: Chance auf Folgeaufträge/Neukunden, Auslastung sichert Arbeitsplätze"
+      ]
+    },
+    {
+      "id": "tk-o03",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** kurzfristige und langfristige **Preisuntergrenze** und **begründen Sie** den Unterschied.",
+      "kriterien": [
+        "Kurzfristige PUG = variable Stückkosten (db = 0)",
+        "Begründung: Fixkosten fallen kurzfristig unabhängig vom Auftrag an",
+        "Langfristige PUG = Selbstkosten je Stück (kv + Kf/x)",
+        "Begründung: Auf Dauer müssen alle Kosten gedeckt werden, sonst Substanzverlust"
+      ]
+    },
+    {
+      "id": "tk-o04",
+      "typ": "offen",
+      "punkte": 6,
+      "frage": "Auf der CNC-Maschine besteht ein **Engpass**. **Beschreiben Sie**, wie das optimale Produktionsprogramm ermittelt wird, und **begründen Sie**, warum der absolute Deckungsbeitrag dafür ungeeignet ist.",
+      "kriterien": [
+        "Zuerst Mindestmengen/Lieferverpflichtungen einplanen",
+        "Relativen Deckungsbeitrag berechnen: db ÷ Engpassbeanspruchung je Stück (z. B. €/Minute)",
+        "Produkte in absteigender Reihenfolge des relativen db einplanen, bis die Kapazität erschöpft ist",
+        "Absoluter db berücksichtigt nicht, wie viel der knappen Kapazität ein Produkt verbraucht"
+      ]
+    },
+    {
+      "id": "tk-o05",
+      "typ": "offen",
+      "punkte": 6,
+      "mindestens": 4,
+      "frage": "Die WPM überlegt, Dichtungen künftig fremd zu beziehen statt selbst zu fertigen (Make-or-buy). **Nennen Sie** zwei quantitative und vier qualitative Entscheidungskriterien.",
+      "kriterien": [
+        "Quantitativ: Vergleich variable Kosten Eigenfertigung vs. Bezugspreis (kurzfristig)",
+        "Quantitativ: Gesamtkostenvergleich inkl. abbaubarer Fixkosten, kritische Menge (langfristig)",
+        "Qualitativ: Qualität und Lieferzuverlässigkeit des Lieferanten",
+        "Qualitativ: Abhängigkeit vom Lieferanten, Know-how-Verlust bzw. -Schutz",
+        "Qualitativ: Kapazitätsauslastung/Beschäftigung, Flexibilität",
+        "Qualitativ: Nachhaltigkeit/Transportwege, Kernkompetenz"
+      ]
+    },
+    {
+      "id": "tk-o06",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "Die Halterung H-50 hat einen positiven Deckungsbeitrag, aber nach Vollkosten einen Verlust. Die Geschäftsführung will sie aus dem Sortiment nehmen. **Nehmen Sie Stellung.**",
+      "kriterien": [
+        "Positiver db trägt zur Deckung der Fixkosten bei",
+        "Bei Elimination bleiben die (nicht abbaubaren) Fixkosten bestehen → Betriebsergebnis verschlechtert sich um den DB",
+        "Kurzfristig im Sortiment behalten",
+        "Langfristig: Preis-/Kostenmaßnahmen prüfen; Elimination nur, wenn Fixkosten abgebaut werden können oder Kapazität für bessere Produkte genutzt wird"
+      ]
+    },
+    {
+      "id": "tk-o07",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** den Begriff **Break-even-Point** und **nennen Sie** zwei Maßnahmen, mit denen er gesenkt werden kann.",
+      "kriterien": [
+        "Absatzmenge, bei der Erlöse = Gesamtkosten (Gewinn = 0); Kf ÷ db",
+        "Ab dieser Menge Gewinnzone",
+        "Maßnahme: Fixkosten senken",
+        "Maßnahme: Stückdeckungsbeitrag erhöhen (Preis erhöhen oder variable Kosten senken)"
+      ]
+    },
+    {
+      "id": "tk-o08",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Beschreiben Sie** den Aufbau der **mehrstufigen Deckungsbeitragsrechnung** und **nennen Sie** ihren Vorteil gegenüber der einstufigen.",
+      "kriterien": [
+        "Erlöse − variable Kosten = DB I",
+        "Stufenweise Abzug der Fixkosten: Erzeugnis-, Erzeugnisgruppen-, Bereichs-, Unternehmensfixkosten → DB II, III, IV, Betriebsergebnis",
+        "Fixkosten werden dort zugerechnet, wo sie verursacht werden",
+        "Vorteil: zeigt, welche Produkte/Gruppen ihre eigenen Fixkosten decken → bessere Sortiments- und Programmentscheidungen"
+      ]
     }
   ],
   "karten": [

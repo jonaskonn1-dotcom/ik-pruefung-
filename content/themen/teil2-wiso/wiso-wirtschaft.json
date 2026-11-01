@@ -133,6 +133,42 @@
       "optionen": ["Steigende Einkommen der Käufer (normales Gut)", "Preisanstieg eines Substitutionsguts", "Positive Zukunftserwartungen bzw. Modetrend", "Preissenkung des Gutes selbst", "Steigende Produktionskosten der Anbieter"],
       "loesung": [0, 1, 2],
       "erklaerung": "Eine Preisänderung des Gutes selbst bewirkt eine **Bewegung auf** der Kurve, keine Verschiebung. Produktionskosten verschieben die **Angebotskurve** (nach links)."
+    },
+    {
+      "id": "ww-o01",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Beschreiben Sie** die Merkmale einer **Hochkonjunktur** und **nennen Sie** eine geeignete Maßnahme der Fiskalpolitik.",
+      "kriterien": [
+        "Hohe Kapazitätsauslastung, hohe Nachfrage",
+        "Geringe Arbeitslosigkeit, Fachkräftemangel",
+        "Steigende Preise und Löhne (Inflationsgefahr)",
+        "Antizyklische Fiskalpolitik: Staatsausgaben senken, Steuern erhöhen bzw. Konjunkturausgleichsrücklage bilden"
+      ]
+    },
+    {
+      "id": "ww-o02",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** an einem Beispiel einen **Zielkonflikt** im magischen Viereck.",
+      "kriterien": [
+        "Nennung zweier Ziele, die sich gegenseitig behindern",
+        "Beispiel: hoher Beschäftigungsstand ↔ Preisniveaustabilität (Nachfragebelebung kann Inflation erhöhen)",
+        "Alternativ: Wachstum ↔ Umweltschutz, Preisstabilität (Zinserhöhung) ↔ Wachstum",
+        "Begründung des Wirkungszusammenhangs"
+      ]
+    },
+    {
+      "id": "ww-o03",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "Die Inflationsrate liegt bei 5 %. **Erläutern Sie** zwei Folgen für die Westpfalz Metallwerk GmbH und ihre Beschäftigten.",
+      "kriterien": [
+        "Steigende Material- und Energiekosten → Kalkulation/Preise anpassen",
+        "Lohnforderungen steigen (Tarifverhandlungen), Personalkosten erhöhen sich",
+        "Kaufkraftverlust der Beschäftigten, Reallohn sinkt, wenn Löhne nicht mitsteigen",
+        "EZB erhöht ggf. Leitzinsen → Kredite/Investitionen teurer"
+      ]
     }
   ],
   "karten": [

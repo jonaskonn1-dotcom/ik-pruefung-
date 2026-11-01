@@ -42,7 +42,7 @@ export function mehrView(el) {
     <section class="card">
       <h2 class="h-small">Prüfungstermine</h2>
       <p>${esc(t.schriftlich.label)}: <strong>${fmtDate(t.schriftlich.von)}${t.schriftlich.bis !== t.schriftlich.von ? ' – ' + fmtDate(t.schriftlich.bis) : ''}</strong><br>
-      ${esc(t.muendlich.label)}: <strong>${fmtDate(t.muendlich.von)} – ${fmtDate(t.muendlich.bis)}</strong></p>
+      ${esc(t.muendlich.label)}: <strong>${fmtDate(t.muendlich.von)} – ${fmtDate(t.muendlich.bis)}</strong>${t.dokumentation ? `<br>${esc(t.dokumentation.label)}: <strong>${fmtDate(t.dokumentation.von)}</strong> <small class="muted">(${esc(t.dokumentation.hinweis || '')})</small>` : ''}</p>
       <p class="small muted">Änderbar in <code>content/config.json</code> (danach neu veröffentlichen).</p>
     </section>
 

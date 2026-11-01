@@ -148,6 +148,104 @@
       "einheit": "€",
       "loesung": 1129.66,
       "erklaerung": "Tagessatz = {{gehalt|€}} ÷ {{tage}} = {{gehalt/tage|€}}\nAbgeltung = {{gehalt/tage|€}} × {{rest}} = **{{r2(gehalt/tage*rest)|€}}** (§ 7 Abs. 4 BUrlG – nur bei Beendigung zulässig, steuer- und SV-pflichtig)."
+    },
+    {
+      "id": "pk-o01",
+      "typ": "offen",
+      "punkte": 4,
+      "mindestens": 2,
+      "frage": "**Nennen Sie** je zwei Haupt- und Nebenpflichten aus dem Arbeitsvertrag für Arbeitnehmer und Arbeitgeber.",
+      "kriterien": [
+        "Hauptpflicht AN: Arbeitsleistung; Nebenpflicht AN: Verschwiegenheit, Treuepflicht, Wettbewerbsverbot, Anzeige von Arbeitsunfähigkeit",
+        "Hauptpflicht AG: Vergütung; Nebenpflicht AG: Fürsorge (Arbeitsschutz), Gleichbehandlung, Urlaubsgewährung, Zeugnis, Beschäftigung"
+      ]
+    },
+    {
+      "id": "pk-o02",
+      "typ": "offen",
+      "punkte": 6,
+      "frage": "Ein Lagermitarbeiter kommt wiederholt zu spät; eine Abmahnung liegt bereits vor. Die Westpfalz Metallwerk GmbH (240 AN, Betriebsrat) will ordentlich kündigen. **Beschreiben Sie**, welche Schritte und Voraussetzungen zu beachten sind.",
+      "kriterien": [
+        "KSchG anwendbar (> 10 AN, > 6 Monate) → Kündigung muss sozial gerechtfertigt sein: verhaltensbedingt",
+        "Vorherige einschlägige Abmahnung liegt vor; erneuter gleichartiger Verstoß, Interessenabwägung",
+        "Anhörung des Betriebsrats vor der Kündigung (§ 102 BetrVG), sonst unwirksam",
+        "Schriftform mit eigenhändiger Unterschrift (§ 623 BGB)",
+        "Einhaltung der Kündigungsfrist nach § 622 BGB bzw. Tarifvertrag"
+      ]
+    },
+    {
+      "id": "pk-o03",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "Wegen Verlagerung der Blechfertigung sollen zwei Stellen wegfallen. **Erläutern Sie** die **Sozialauswahl** bei betriebsbedingten Kündigungen.",
+      "kriterien": [
+        "Auswahl unter vergleichbaren Arbeitnehmern (austauschbar)",
+        "Kriterien: Betriebszugehörigkeit, Lebensalter, Unterhaltspflichten, Schwerbehinderung",
+        "Sozial weniger schutzbedürftige Arbeitnehmer sind zuerst zu kündigen",
+        "Leistungsträger können aus berechtigtem betrieblichem Interesse herausgenommen werden"
+      ]
+    },
+    {
+      "id": "pk-o04",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "**Erläutern Sie** die Unterschiede zwischen **ordentlicher** und **außerordentlicher** Kündigung.",
+      "kriterien": [
+        "Ordentlich: unter Einhaltung der Kündigungsfrist (§ 622 BGB/Tarif)",
+        "Ordentlich: bei KSchG nur sozial gerechtfertigt (personen-, verhaltens-, betriebsbedingt)",
+        "Außerordentlich: aus wichtigem Grund, Fortsetzung bis Fristende unzumutbar, i. d. R. fristlos (§ 626 BGB)",
+        "Außerordentlich: Erklärung innerhalb von 2 Wochen nach Kenntnis"
+      ]
+    },
+    {
+      "id": "pk-o05",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "Die Westpfalz Metallwerk GmbH möchte eine Projektassistenz für 18 Monate befristet einstellen. **Erläutern Sie** die Voraussetzungen einer sachgrundlosen Befristung.",
+      "kriterien": [
+        "Höchstdauer 2 Jahre (§ 14 Abs. 2 TzBfG) – 18 Monate zulässig",
+        "Innerhalb dieser Zeit höchstens dreimalige Verlängerung",
+        "Keine Vorbeschäftigung beim selben Arbeitgeber (Vorbeschäftigungsverbot)",
+        "Schriftform der Befristungsabrede vor Arbeitsbeginn, sonst unbefristet"
+      ]
+    },
+    {
+      "id": "pk-o06",
+      "typ": "offen",
+      "punkte": 4,
+      "mindestens": 3,
+      "frage": "**Nennen Sie** drei Personengruppen mit **besonderem Kündigungsschutz** und **erläutern Sie** bei einer Gruppe die Besonderheit.",
+      "kriterien": [
+        "Schwangere/Mütter bis 4 Monate nach Entbindung – Kündigung nur mit Zustimmung der Aufsichtsbehörde",
+        "Beschäftigte in Elternzeit",
+        "Schwerbehinderte – vorherige Zustimmung des Integrationsamts",
+        "Betriebsrats-/JAV-Mitglieder – ordentliche Kündigung ausgeschlossen, außerordentliche nur mit Zustimmung des BR",
+        "Auszubildende nach der Probezeit – nur fristlos aus wichtigem Grund"
+      ]
+    },
+    {
+      "id": "pk-o07",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "Ein Mitarbeiter erhält am 03.06. eine Kündigung und hält sie für sozial ungerechtfertigt. **Erläutern Sie**, was er tun muss und welche Frist gilt.",
+      "kriterien": [
+        "Kündigungsschutzklage beim Arbeitsgericht erheben",
+        "Frist: 3 Wochen nach Zugang der schriftlichen Kündigung (§ 4 KSchG)",
+        "Versäumt er die Frist, gilt die Kündigung als wirksam (§ 7 KSchG)",
+        "Ggf. Einspruch beim Betriebsrat (§ 3 KSchG), Arbeitsuchendmeldung bei der Agentur für Arbeit"
+      ]
+    },
+    {
+      "id": "pk-o08",
+      "typ": "offen",
+      "punkte": 4,
+      "frage": "Statt einer Kündigung wird einem Mitarbeiter ein **Aufhebungsvertrag** angeboten. **Nennen Sie** je einen Vorteil für Arbeitgeber und Arbeitnehmer und ein Risiko für den Arbeitnehmer.",
+      "kriterien": [
+        "Vorteil AG: kein Kündigungsschutz/keine Sozialauswahl, keine BR-Anhörung, Rechtssicherheit",
+        "Vorteil AN: flexibler Beendigungszeitpunkt, ggf. Abfindung, gutes Zeugnis verhandelbar",
+        "Risiko AN: Sperrzeit beim Arbeitslosengeld (bis 12 Wochen)",
+        "Formvoraussetzung: Schriftform (§ 623 BGB)"
+      ]
     }
   ],
   "karten": [

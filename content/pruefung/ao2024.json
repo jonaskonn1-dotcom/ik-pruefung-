@@ -11,7 +11,7 @@
       "hinweis": "Im 4. Ausbildungshalbjahr abgelegt – hier zum Wiederholen."
     },
     {
-      "id": "mvpk", "simFragen": 40, "teil": 2, "kurz": "MVPK",
+      "id": "mvpk", "simFragen": 30, "simAnteilOffen": 0.6, "teil": 2, "kurz": "MVPK",
       "name": "Marketing, Vertrieb, Personalwesen und kaufmännische Steuerung und Kontrolle",
       "dauer": 150, "gewicht": 35, "art": "schriftlich",
       "aufgaben": "ca. 60 % offene / 40 % gebundene Aufgaben"
