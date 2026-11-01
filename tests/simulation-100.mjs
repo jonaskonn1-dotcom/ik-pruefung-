@@ -4,7 +4,7 @@ import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 const { chromium } = createRequire(import.meta.url)('playwright');
 const walk = (d) => readdirSync(d).flatMap((f) => { const p = join(d, f); return statSync(p).isDirectory() ? walk(p) : [p]; });
-const Q = new Map(); for (const f of walk('new URL('../content/themen', import.meta.url).pathname')) for (const q of JSON.parse(readFileSync(f)).fragen) Q.set(q.id, q);
+const Q = new Map(); for (const f of walk(new URL('../content/themen', import.meta.url).pathname)) for (const q of JSON.parse(readFileSync(f)).fragen) Q.set(q.id, q);
 const b = await chromium.launch(); const p = await b.newPage();
 p.on('dialog', d => d.accept()); const errs = []; p.on('pageerror', e => errs.push(e.message));
 for (const ber of ['mvpk', 'wiso']) {
