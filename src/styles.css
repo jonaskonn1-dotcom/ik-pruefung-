@@ -351,3 +351,7 @@ textarea { resize: vertical; line-height: 1.45; }
 .big-timer.low .bt-zeit, .big-timer.over .bt-zeit { color: var(--bad); }
 .big-timer.over { background: var(--bad-soft); }
 h3.h-small { margin-top: .9rem; }
+.opt-edit { display: flex; align-items: center; gap: .5rem; margin: .4rem 0; }
+.opt-edit .check { min-height: 48px; }
+.eigene-list li { margin: .75rem 0; }
+[hidden] { display: none !important; }
