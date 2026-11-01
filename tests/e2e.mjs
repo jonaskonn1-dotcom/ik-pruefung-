@@ -33,8 +33,8 @@ await run('mobil', { width: 375, height: 812 }, 'light', async (page, shot) => {
   await shot('3-quiz-frage');
   await answerCurrent(page); await page.waitForSelector('.feedback'); await shot('4-quiz-feedback');
   // restliche Fragen durchklicken
-  for (let i = 1; i < 16; i++) { await page.click('#go'); await page.waitForSelector('.question'); await answerCurrent(page); await page.waitForSelector('.feedback'); }
-  await page.click('#go'); await page.waitForSelector('.result'); await shot('5-ergebnis');
+  for (;;) { await page.click('#go'); if (await page.$('.result')) break; await page.waitForSelector('.question'); await answerCurrent(page); await page.waitForSelector('.feedback'); }
+  await page.waitForSelector('.result'); await shot('5-ergebnis');
   await page.goto(url + '#/fehler'); await page.waitForSelector('h1'); await shot('6-fehlerkorb');
   await page.goto(url + '#/karten/lernen'); await page.waitForSelector('.flashcard'); await page.click('.flashcard'); await shot('7-karte');
   await page.click('[data-r=gewusst]');
