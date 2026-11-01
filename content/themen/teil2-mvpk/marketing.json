@@ -134,6 +134,43 @@
       "einheit": "€",
       "loesung": 70000,
       "erklaerung": "Kosten Reisender = {{fix|€}} + {{pr/100}} × U\nKosten Vertreter = {{hv/100}} × U\nGleichsetzen: {{fix}} + {{pr/100}} U = {{hv/100}} U → U = {{fix}} ÷ {{(hv-pr)/100}} = **{{fix/((hv-pr)/100)|€}}**\nBei höherem Umsatz ist der **Reisende** günstiger, darunter der Handelsvertreter."
+    },
+    {
+      "id": "mk-17",
+      "typ": "zahl",
+      "frage": "Eine Messeteilnahme in Hannover kostet {{kosten|€}}. Aus den Messekontakten entstehen Aufträge mit einem zusätzlichen Deckungsbeitrag von {{db|€}}.\n\nWie hoch ist die **Werberendite** (ROMI) in Prozent?",
+      "vars": {
+        "kosten": 38000,
+        "db": 61560
+      },
+      "calc": "r2((db - kosten)/kosten*100)",
+      "einheit": "%",
+      "loesung": 62,
+      "erklaerung": "ROMI = (zusätzlicher DB − Kosten) ÷ Kosten × 100 = ({{db}} − {{kosten}}) ÷ {{kosten}} × 100 = **{{r2((db - kosten)/kosten*100)|%}}**"
+    },
+    {
+      "id": "mk-18",
+      "typ": "zuordnung",
+      "frage": "Ordnen Sie die Produktpolitik-Entscheidungen zu.",
+      "paare": [
+        [
+          "Neues Gehäuse G-300 aus Aluminium entwickeln",
+          "Produktinnovation"
+        ],
+        [
+          "G-200 erhält ein neues Türschloss und verbesserte Dichtung",
+          "Produktvariation"
+        ],
+        [
+          "Die alte Halterung H-30 wird aus dem Sortiment genommen",
+          "Produktelimination"
+        ],
+        [
+          "Zusätzlich Montageservice beim Kunden anbieten",
+          "Diversifikation/Serviceerweiterung (Programmerweiterung)"
+        ]
+      ],
+      "erklaerung": "Produktpolitik: Innovation (neu), Variation (Veränderung bestehender Produkte), Differenzierung (zusätzliche Varianten), Diversifikation (neue Produkte/Märkte), Elimination (Herausnahme)."
     }
   ],
   "karten": [

@@ -123,6 +123,47 @@
       "optionen": ["Gegen die Pflicht, nur Aufgaben zu übertragen, die dem Ausbildungszweck dienen (§ 14 Abs. 3 BBiG)", "Gegen das Arbeitszeitgesetz", "Gegen das Kündigungsschutzgesetz", "Gegen keine Vorschrift"],
       "loesung": 0,
       "erklaerung": "Ausbildungsfremde Tätigkeiten sind unzulässig. Ansprechpartner: Ausbilder, Betriebsrat/JAV, Ausbildungsberater der IHK."
+    },
+    {
+      "id": "wa-16",
+      "typ": "zahl",
+      "frage": "Ein 16-jähriger Auszubildender (geboren am 10.03.2010) beginnt am 01.08.2026 seine Ausbildung. Wie viele **Werktage Urlaub** stehen ihm nach dem JArbSchG für das Jahr 2027 mindestens zu? (Maßgeblich ist das Alter zu Beginn des Kalenderjahres.)",
+      "calc": "27",
+      "einheit": "Werktage",
+      "toleranz": 0,
+      "loesung": 27,
+      "erklaerung": "Am 01.01.2027 ist er 16 Jahre alt, also „noch nicht 17“ → **27 Werktage** (§ 19 JArbSchG). Bei einer 5-Tage-Woche entspricht das 22,5 Arbeitstagen."
+    },
+    {
+      "id": "wa-17",
+      "typ": "mehrfach",
+      "frage": "Welche Arbeiten dürfen **Jugendliche** nach dem JArbSchG grundsätzlich **nicht** ausführen?",
+      "optionen": [
+        "Akkordarbeit",
+        "Arbeiten, die ihre Leistungsfähigkeit übersteigen",
+        "Arbeiten mit gefährlichen Arbeitsstoffen (außer zur Ausbildung unter Aufsicht)",
+        "Kopieren und Ablage im Büro",
+        "Teilnahme an der Berufsschule"
+      ],
+      "loesung": [
+        0,
+        1,
+        2
+      ],
+      "erklaerung": "§§ 22, 23 JArbSchG: Verbot gefährlicher Arbeiten, Akkord- und tempoabhängiger Arbeit. Ausnahmen zur Erreichung des Ausbildungsziels unter Aufsicht einer fachkundigen Person sind möglich."
+    },
+    {
+      "id": "wa-18",
+      "typ": "einfach",
+      "frage": "Ein Auszubildender soll nach Ende der Ausbildung übernommen werden. Was gilt für das **Weiterbeschäftigungsangebot** an ein Mitglied der JAV?",
+      "optionen": [
+        "Verlangt das JAV-Mitglied innerhalb der letzten drei Monate vor Ausbildungsende schriftlich die Weiterbeschäftigung, gilt ein unbefristetes Arbeitsverhältnis als begründet (§ 78a BetrVG).",
+        "JAV-Mitglieder haben keinen besonderen Schutz.",
+        "Der Betriebsrat entscheidet über die Übernahme.",
+        "Die IHK muss der Übernahme zustimmen."
+      ],
+      "loesung": 0,
+      "erklaerung": "§ 78a BetrVG schützt Auszubildende in JAV/Betriebsrat. Der Arbeitgeber kann sich nur über das Arbeitsgericht lösen, wenn die Weiterbeschäftigung unzumutbar ist."
     }
   ],
   "karten": [

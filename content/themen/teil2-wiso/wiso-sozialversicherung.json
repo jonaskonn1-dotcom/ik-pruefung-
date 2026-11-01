@@ -127,6 +127,50 @@
       "optionen": ["Das Einkommen, bis zu dem Beiträge erhoben werden; darüber liegendes Einkommen ist beitragsfrei.", "Das Einkommen, ab dem man in die private KV wechseln darf.", "Die Grenze für Minijobs.", "Der Höchstbetrag der Rente."],
       "loesung": 0,
       "erklaerung": "2026: KV/PV {{W.bbgKvMonat|€}}, RV/AV {{W.bbgRvMonat|€}} pro Monat. Nicht verwechseln mit der **Versicherungspflichtgrenze** (KV-Wahlfreiheit, {{W.jaegMonat|€}}) oder der **Geringfügigkeitsgrenze** ({{W.minijobGrenze|€}})."
+    },
+    {
+      "id": "ws-16",
+      "typ": "zahl",
+      "frage": "Ein Mitarbeiter ist ab dem 03.02. ununterbrochen arbeitsunfähig erkrankt. Sein Bruttogehalt beträgt {{brutto|€}}, sein Nettogehalt {{netto|€}}. Ab dem Tag nach Ablauf der 6-wöchigen Entgeltfortzahlung zahlt die Krankenkasse Krankengeld: 70 % des Bruttos, höchstens 90 % des Nettos (vor Abzug der eigenen SV-Beiträge auf das Krankengeld).\n\nWie hoch ist das **kalendertägliche Krankengeld** (Monat = 30 Tage, zwei Nachkommastellen)?",
+      "vars": {
+        "brutto": 3600,
+        "netto": 2450
+      },
+      "calc": "r2(min(brutto/30*0.7, netto/30*0.9))",
+      "einheit": "€",
+      "loesung": 73.5,
+      "erklaerung": "70 % Brutto: {{brutto}} ÷ 30 × 0,7 = {{r2(brutto/30*0.7)|€}}\n90 % Netto: {{netto}} ÷ 30 × 0,9 = {{r2(netto/30*0.9)|€}}\nMaßgeblich ist der niedrigere Betrag: **{{r2(min(brutto/30*0.7, netto/30*0.9))|€}}** je Kalendertag."
+    },
+    {
+      "id": "ws-17",
+      "typ": "einfach",
+      "frage": "Ein Mitarbeiter will sich über einen ablehnenden Bescheid der Deutschen Rentenversicherung zu einer Reha beschweren. Was ist der **erste Schritt**?",
+      "optionen": [
+        "Widerspruch beim Rentenversicherungsträger innerhalb eines Monats",
+        "Klage beim Arbeitsgericht",
+        "Klage beim Amtsgericht",
+        "Beschwerde bei der IHK"
+      ],
+      "loesung": 0,
+      "erklaerung": "Vor der Klage beim Sozialgericht ist ein **Widerspruchsverfahren** durchzuführen (Frist 1 Monat nach Bekanntgabe). Bleibt der Widerspruch erfolglos: Klage beim Sozialgericht (gerichtskostenfrei für Versicherte)."
+    },
+    {
+      "id": "ws-18",
+      "typ": "mehrfach",
+      "frage": "Welche Leistungen erbringt die **gesetzliche Krankenversicherung**?",
+      "optionen": [
+        "Ärztliche und zahnärztliche Behandlung",
+        "Krankengeld nach Ende der Entgeltfortzahlung",
+        "Vorsorgeuntersuchungen",
+        "Verletztenrente nach einem Arbeitsunfall",
+        "Arbeitslosengeld"
+      ],
+      "loesung": [
+        0,
+        1,
+        2
+      ],
+      "erklaerung": "Verletztenrente zahlt die **Unfallversicherung**, Arbeitslosengeld die **Arbeitslosenversicherung**. Familienangehörige ohne eigenes Einkommen sind in der GKV beitragsfrei mitversichert (Familienversicherung)."
     }
   ],
   "karten": [

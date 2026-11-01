@@ -125,6 +125,33 @@
       "einheit": "€",
       "loesung": 13848.63,
       "erklaerung": "Nach Rabatt: {{netto|€}} − {{rb|%}} = {{r2(netto*(1-rb/100))|€}}\n+ 19 % USt = Rechnungsbetrag {{r2(r2(netto*(1-rb/100))*1.19)|€}}\n− {{s|%}} Skonto vom Bruttobetrag = **{{r2(r2(r2(netto*(1-rb/100))*1.19)*(1-s/100))|€}}**\n(Die Umsatzsteuer wird durch den Skonto anteilig berichtigt.)"
+    },
+    {
+      "id": "vk-17",
+      "typ": "zahl",
+      "frage": "Ein Kunde mindert wegen leichter Lackschäden. Vertragspreis netto {{preis|€}}. Der Wert der mangelfreien Ware beträgt {{wert|€}}, der Wert der mangelhaften Ware {{wertm|€}}.\n\nAuf welchen Betrag (netto) ist der Kaufpreis nach der **Minderung** herabzusetzen (§ 441 Abs. 3 BGB)?",
+      "vars": {
+        "preis": 9600,
+        "wert": 10000,
+        "wertm": 8500
+      },
+      "calc": "r2(preis*wertm/wert)",
+      "einheit": "€",
+      "loesung": 8160,
+      "erklaerung": "Minderung im Verhältnis: geminderter Preis = Vertragspreis × Wert mangelhaft ÷ Wert mangelfrei = {{preis}} × {{wertm}} ÷ {{wert}} = **{{r2(preis*wertm/wert)|€}}** (Minderung um {{r2(preis - preis*wertm/wert)|€}})."
+    },
+    {
+      "id": "vk-18",
+      "typ": "einfach",
+      "frage": "Die Westpfalz Metallwerk GmbH liefert unter **verlängertem Eigentumsvorbehalt** an einen Großhändler, der die Gehäuse weiterverkauft. Was bedeutet das?",
+      "optionen": [
+        "Die Kaufpreisforderung des Großhändlers gegen seine Kunden wird im Voraus an die WPM abgetreten.",
+        "Die Ware bleibt auch nach Weiterverkauf Eigentum der WPM.",
+        "Der Großhändler darf die Ware nicht weiterverkaufen.",
+        "Der Eigentumsvorbehalt gilt für alle künftigen Geschäfte mit allen Kunden."
+      ],
+      "loesung": 0,
+      "erklaerung": "Durch Weiterverkauf erlischt der einfache Eigentumsvorbehalt (gutgläubiger Erwerb). Beim **verlängerten** EV tritt die Forderung aus dem Weiterverkauf (oder das Produkt bei Verarbeitung) an die Stelle der Ware."
     }
   ],
   "karten": [

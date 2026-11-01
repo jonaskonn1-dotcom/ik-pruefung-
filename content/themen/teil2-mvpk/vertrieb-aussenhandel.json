@@ -122,6 +122,52 @@
       "einheit": "CHF",
       "loesung": 23312,
       "erklaerung": "Bei der Mengennotierung gilt: Fremdwährung = Euro × Kurs = {{eur}} × {{kurs}} = **{{r2(eur*kurs)}} CHF**\n(Die Schweiz ist Drittland: Ausfuhrlieferung, Ausfuhranmeldung über ATLAS, steuerfrei mit Ausfuhrnachweis.)"
+    },
+    {
+      "id": "ah-16",
+      "typ": "zahl",
+      "frage": "Ein Auftrag aus der Schweiz über {{chf}} CHF wird in 60 Tagen bezahlt. Kassakurs heute: 1 EUR = {{kasse}} CHF. Die Westpfalz Metallwerk GmbH sichert sich mit einem Devisentermingeschäft zum Terminkurs 1 EUR = {{termin}} CHF ab. Bei Zahlung liegt der Kassakurs bei {{spaeter}} CHF.\n\nWie viel Euro hat die Absicherung im Vergleich zur ungesicherten Variante **gebracht**? (Vorteil positiv)",
+      "vars": {
+        "chf": 120000,
+        "kasse": 0.94,
+        "termin": 0.935,
+        "spaeter": 0.97
+      },
+      "calc": "r2(chf/termin - chf/spaeter)",
+      "einheit": "€",
+      "loesung": 4630.91,
+      "erklaerung": "Mit Termingeschäft: {{chf}} ÷ {{termin}} = {{r2(chf/termin)|€}}\nOhne Absicherung: {{chf}} ÷ {{spaeter}} = {{r2(chf/spaeter)|€}}\nVorteil = **{{r2(chf/termin - chf/spaeter)|€}}** – der Euro ist gestiegen, die Absicherung hat den Kursverlust verhindert."
+    },
+    {
+      "id": "ah-17",
+      "typ": "einfach",
+      "frage": "Welche Aussage zum **Ursprungszeugnis** ist richtig?",
+      "optionen": [
+        "Es bescheinigt das Herkunftsland der Ware und wird in Deutschland von der IHK ausgestellt.",
+        "Es ersetzt die Handelsrechnung.",
+        "Es ist ein Warenwertpapier wie das Konnossement.",
+        "Es wird vom Zoll des Einfuhrlandes nach der Ankunft ausgestellt."
+      ],
+      "loesung": 0,
+      "erklaerung": "Ursprungszeugnisse (nichtpräferenzieller Ursprung) stellen die IHKs aus – heute meist elektronisch. Präferenznachweise für Zollvergünstigungen sind z. B. die EUR.1 oder eine Ursprungserklärung auf der Rechnung."
+    },
+    {
+      "id": "ah-18",
+      "typ": "mehrfach",
+      "frage": "Welche Pflichten hat der **Verkäufer** bei der Klausel **DAP** (Incoterms® 2020), Lieferort: Werk des Kunden in Göteborg?",
+      "optionen": [
+        "Transport bis zum benannten Ort organisieren und bezahlen",
+        "Ausfuhrfreimachung im eigenen Land",
+        "Ware entladebereit auf dem ankommenden Fahrzeug bereitstellen",
+        "Einfuhrverzollung in Schweden übernehmen",
+        "Ware beim Kunden entladen"
+      ],
+      "loesung": [
+        0,
+        1,
+        2
+      ],
+      "erklaerung": "DAP: Verkäufer trägt Kosten und Gefahr bis zum Bestimmungsort, **unentladen**. Entladen → DPU. Einfuhrabfertigung und -abgaben → DDP. (Innerhalb der EU entfällt die Zollabfertigung ohnehin.)"
     }
   ],
   "karten": [
