@@ -64,7 +64,7 @@ export function mehrView(el) {
     <section class="card">
       <h2 class="h-small">Daten</h2>
       <p class="small muted">Dein Lernstand wird nur auf diesem Gerät gespeichert (localStorage).${store.isMemoryOnly() ? ' <strong>Achtung: Speichern ist im Moment nicht möglich (privater Modus?).</strong>' : ''}</p>
-      <button class="btn bad" id="reset">Lernstand zurücksetzen</button>
+      <div class="row-btns"><a class="btn" href="#/daten">Export / Import</a><button class="btn bad" id="reset">Zurücksetzen</button></div>
     </section>
     <p class="small muted center">Kein offizielles Angebot der IHK oder AkA. Eigene Übungsaufgaben ohne Gewähr.</p>`;
 
