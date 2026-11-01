@@ -337,3 +337,17 @@ hr { border: 0; border-top: 1px solid var(--border); margin: 1rem 0; }
 .file-btn { position: relative; overflow: hidden; }
 .file-btn input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
 .file-btn:focus-within { outline: 3px solid var(--focus); outline-offset: 2px; }
+.seg-link { flex: 1; display: grid; place-items: center; min-height: 44px; border-radius: 9px; color: var(--text); text-decoration: none; font-weight: 600; font-size: .92rem; text-align: center; }
+.seg-link[aria-selected="true"] { background: var(--surface); box-shadow: var(--shadow); color: var(--accent); }
+textarea { resize: vertical; line-height: 1.45; }
+.checklist { list-style: none; padding: 0; margin: .25rem 0 0; }
+.checklist .check { align-items: flex-start; padding: .35rem 0; }
+.checklist .check input { margin-top: 2px; flex: none; }
+.fa-frage { font-size: 1.15rem; font-weight: 700; line-height: 1.35; }
+.big-timer { text-align: center; padding: 1.5rem 1rem; }
+.bt-zeit { font: 800 4.2rem/1 ui-monospace, SFMono-Regular, Menlo, monospace; font-variant-numeric: tabular-nums; color: var(--accent); }
+.bt-sub { color: var(--muted); margin: .5rem 0; font-weight: 600; }
+.big-timer.mid .bt-zeit { color: var(--warn); }
+.big-timer.low .bt-zeit, .big-timer.over .bt-zeit { color: var(--bad); }
+.big-timer.over { background: var(--bad-soft); }
+h3.h-small { margin-top: .9rem; }

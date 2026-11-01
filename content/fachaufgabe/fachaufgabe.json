@@ -1,0 +1,84 @@
+{
+  "titel": "Fachaufgabe im Einsatzgebiet",
+  "hinweis": "Ablauf, Fristen und Formvorgaben (Umfang der Dokumentation, Einreichung, Genehmigung) regelt die IHK Pfalz in ihren Merkblättern – bitte dort prüfen. Die Gewichtung unten stammt aus deiner Vorgabe und ist in content/pruefung/ao2024.json änderbar.",
+  "einsatzgebiete": ["Marketing und Vertrieb", "Beschaffung und Logistik", "Leistungserstellung/Produktion", "Personalwesen", "Rechnungswesen und Controlling", "Anderes (eigene Angabe)"],
+  "checklisten": [
+    {
+      "id": "doku", "titel": "Dokumentation (10 %)",
+      "punkte": [
+        "Fachaufgabe mit Ausbilder/in abgestimmt und Thema klar abgegrenzt (Was gehört dazu, was nicht?)",
+        "Formvorgaben der IHK Pfalz geprüft (Umfang, Schrift, Deckblatt, Abgabeweg und -frist)",
+        "Ausgangssituation und Auftrag des Betriebs beschrieben (Ist-Zustand, Problem)",
+        "Ziel(e) messbar formuliert (z. B. Durchlaufzeit −20 %, Kosten −5.000 €/Jahr)",
+        "Vorgehen/Prozessschritte chronologisch und nachvollziehbar dargestellt",
+        "Eigene Entscheidungen begründet und Alternativen benannt",
+        "Wirtschaftlichkeit betrachtet (Kosten, Nutzen, ggf. Rechnung)",
+        "Beteiligte Stellen und Schnittstellen benannt (wer, wann, warum)",
+        "Ergebnis und Zielerreichung bewertet",
+        "Reflexion: Was lief gut, was würde ich anders machen?",
+        "Nachhaltigkeit, Digitalisierung oder Datenschutz – wo relevant – berücksichtigt",
+        "Anlagen (Formulare, Auswertungen) nur, wenn nötig; Betriebsgeheimnisse anonymisiert",
+        "Eigenständigkeitserklärung unterschrieben",
+        "Rechtschreibung und Fachbegriffe von einer zweiten Person gegenlesen lassen"
+      ]
+    },
+    {
+      "id": "praes", "titel": "Präsentation (20 %, ca. 10 Min.)",
+      "punkte": [
+        "Roter Faden: Ausgangslage → Ziel → Vorgehen → Ergebnis → Reflexion",
+        "Höchstens ca. 8–10 Folien, wenig Text, aussagekräftige Grafiken",
+        "Einstieg in den ersten 30 Sekunden: Wer bin ich, worum geht es, warum ist es wichtig?",
+        "Wirtschaftlichkeit/Ergebnis mit einer Zahl oder Grafik belegt",
+        "Präsentation mindestens dreimal laut mit Timer geprobt (9:30–10:00 Min.)",
+        "Vor fremdem Publikum geprobt (Ausbilder/in, Kollegen, Familie)",
+        "Technik geklärt: Was stellt die IHK bereit? Ersatz auf USB-Stick/PDF und als Ausdruck",
+        "Moderationskarten mit Stichworten statt Volltext",
+        "Schluss vorbereitet: Kernaussage und Überleitung zum Fachgespräch",
+        "Körpersprache: Blickkontakt zum Prüfungsausschuss, nicht zur Leinwand sprechen"
+      ]
+    },
+    {
+      "id": "fg", "titel": "Fachgespräch (70 %, ca. 20 Min.)",
+      "punkte": [
+        "Alle Fachbegriffe aus der eigenen Dokumentation erklären können",
+        "Zu jedem Prozessschritt: Warum so? Welche Alternative gab es?",
+        "Zahlen der eigenen Aufgabe sicher kennen und herleiten können",
+        "Zusammenhänge zu anderen Abteilungen erklären (Schnittstellen)",
+        "Rechtliche Grundlagen des Themas wiederholt (z. B. Kaufvertrag, Arbeitsrecht, DSGVO)",
+        "Verwandte Prüfungsthemen aus dem Einsatzgebiet wiederholt (Quiz/Karten in der App)",
+        "Probegespräch mit Ausbilder/in geführt",
+        "Antwortstrategie: kurz antworten, Beispiel aus dem Betrieb, bei Unklarheit nachfragen",
+        "Kritische Fragen zu Schwächen der eigenen Lösung vorbereitet",
+        "Hinweis prüfen: Ab 2027 gelten neue Werte (z. B. Mindestlohn 14,60 €) – im Gespräch aktuellen Stand nennen"
+      ]
+    }
+  ],
+  "fragen": [
+    { "id": "fa-01", "kategorie": "Einstieg", "frage": "Fassen Sie Ihre Fachaufgabe in zwei Sätzen zusammen.", "tipp": "Ausgangslage + Ziel + Ergebnis. Üben, bis es ohne Zögern klappt." },
+    { "id": "fa-02", "kategorie": "Einstieg", "frage": "Warum haben Sie genau diese Aufgabe gewählt und welche Bedeutung hat sie für den Betrieb?", "tipp": "Nutzen für den Betrieb (Kosten, Zeit, Qualität, Kunden) betonen." },
+    { "id": "fa-03", "kategorie": "Prozess", "frage": "Welche Abteilungen bzw. Personen waren beteiligt und welche Informationen haben Sie von wem bekommen?", "tipp": "Schnittstellen konkret benennen (z. B. Einkauf → Lager → Buchhaltung)." },
+    { "id": "fa-04", "kategorie": "Prozess", "frage": "Welcher Schritt in Ihrem Prozess war am schwierigsten und wie haben Sie das Problem gelöst?", "tipp": "Ehrlich, mit Lösung und Lerneffekt." },
+    { "id": "fa-05", "kategorie": "Prozess", "frage": "Wie haben Sie Ihr Vorgehen geplant (Zeitplan, Meilensteine)?", "tipp": "Projektplanung kurz skizzieren: Arbeitspakete, Termine, Abstimmungen." },
+    { "id": "fa-06", "kategorie": "Alternativen", "frage": "Welche Alternativen zu Ihrer Lösung gab es und warum haben Sie sich dagegen entschieden?", "tipp": "Mindestens eine Alternative mit Vor- und Nachteilen nennen – das ist Kern des Fachgesprächs." },
+    { "id": "fa-07", "kategorie": "Alternativen", "frage": "Was würden Sie heute anders machen?", "tipp": "Reflexion zeigt Kompetenz. Konkreten Punkt nennen, nicht „nichts“." },
+    { "id": "fa-08", "kategorie": "Wirtschaftlichkeit", "frage": "Wie haben Sie die Wirtschaftlichkeit Ihrer Lösung beurteilt?", "tipp": "Kosten-Nutzen, Kostenvergleich, Amortisation, Deckungsbeitrag – je nach Thema. Zahlen parat haben." },
+    { "id": "fa-09", "kategorie": "Wirtschaftlichkeit", "frage": "Welche Kosten sind bei Ihrer Aufgabe angefallen – und welche davon sind fix, welche variabel?", "tipp": "Verbindung zur KLR herstellen." },
+    { "id": "fa-10", "kategorie": "Wirtschaftlichkeit", "frage": "Welche Kennzahlen eignen sich, um den Erfolg Ihrer Maßnahme zu messen?", "tipp": "Z. B. Durchlaufzeit, Fehlerquote, Lagerumschlag, Conversion Rate, Fluktuation." },
+    { "id": "fa-11", "kategorie": "Recht", "frage": "Welche rechtlichen Vorschriften mussten Sie beachten?", "tipp": "Je nach Thema: BGB/HGB (Kaufvertrag), Arbeitsrecht, DSGVO, Steuerrecht, Umweltrecht." },
+    { "id": "fa-12", "kategorie": "Recht", "frage": "Welche personenbezogenen Daten wurden verarbeitet und wie haben Sie den Datenschutz sichergestellt?", "tipp": "Rechtsgrundlage, Zugriffsrechte, Löschfristen, Zweckbindung." },
+    { "id": "fa-13", "kategorie": "Nachhaltigkeit", "frage": "Inwiefern spielt Nachhaltigkeit bei Ihrer Aufgabe eine Rolle?", "tipp": "Ökologisch/ökonomisch/sozial – auch kleine Beiträge zählen (Papier, Transporte, Energie)." },
+    { "id": "fa-14", "kategorie": "Digitalisierung", "frage": "Welche IT-Systeme haben Sie genutzt und wo sehen Sie Potenzial für weitere Digitalisierung oder Automatisierung?", "tipp": "ERP-Module nennen; Medienbrüche, E-Rechnung, Workflows, KI-Einsatz kritisch bewerten." },
+    { "id": "fa-15", "kategorie": "Kommunikation", "frage": "Wie haben Sie die Ergebnisse kommuniziert und wer hat die Entscheidung getroffen?", "tipp": "Entscheidungskompetenzen klar benennen (Ausbilder, Abteilungsleitung, Vollmachten)." },
+    { "id": "fa-16", "kategorie": "Kommunikation", "frage": "Wie sind Sie mit Widerständen oder Konflikten umgegangen?", "tipp": "Sachlich bleiben, Lösung im Team, Beispiel nennen." },
+    { "id": "fa-17", "kategorie": "Vertiefung", "frage": "Erklären Sie den Fachbegriff X aus Ihrer Präsentation genauer.", "tipp": "Liste aller Fachbegriffe aus Doku und Folien anlegen und je eine Definition vorbereiten." },
+    { "id": "fa-18", "kategorie": "Vertiefung", "frage": "Was wäre passiert, wenn der Lieferant/Kunde/Kollege anders reagiert hätte (z. B. Lieferverzug, Mängelrüge, Absage)?", "tipp": "Leistungsstörungen und Handlungsalternativen parat haben." },
+    { "id": "fa-19", "kategorie": "Vertiefung", "frage": "Wie hängt Ihre Aufgabe mit dem Unternehmensziel bzw. der Strategie zusammen?", "tipp": "Ökonomische, ökologische, soziale Ziele; Zielharmonie/-konflikt." },
+    { "id": "fa-20", "kategorie": "Einsatzgebiet: Marketing und Vertrieb", "frage": "Wie haben Sie Ihre Zielgruppe bestimmt und welche Instrumente des Marketing-Mix haben Sie eingesetzt?", "tipp": "4 P, Marktforschung, Kundendaten aus dem CRM." },
+    { "id": "fa-21", "kategorie": "Einsatzgebiet: Marketing und Vertrieb", "frage": "Wie läuft bei Ihnen ein Kundenauftrag von der Anfrage bis zum Zahlungseingang ab?", "tipp": "Anfrage, Angebot, Auftragsbestätigung, Versand, Rechnung, Mahnwesen." },
+    { "id": "fa-22", "kategorie": "Einsatzgebiet: Beschaffung und Logistik", "frage": "Nach welchen Kriterien haben Sie Lieferanten verglichen und ausgewählt?", "tipp": "Quantitativ (Einstandspreis) und qualitativ (Nutzwertanalyse)." },
+    { "id": "fa-23", "kategorie": "Einsatzgebiet: Beschaffung und Logistik", "frage": "Wie wird bei Ihnen der Bestellzeitpunkt und die Bestellmenge bestimmt?", "tipp": "Meldebestand, Bestellrhythmus, optimale Bestellmenge, ABC/XYZ." },
+    { "id": "fa-24", "kategorie": "Einsatzgebiet: Leistungserstellung/Produktion", "frage": "Wie wird die Kapazität geplant und was passiert bei Engpässen?", "tipp": "Kapazitätsabgleich, Prioritäten, relativer Deckungsbeitrag, Fremdvergabe." },
+    { "id": "fa-25", "kategorie": "Einsatzgebiet: Personalwesen", "frage": "Wie haben Sie die Stelle ausgeschrieben und Bewerber ausgewählt – unter Beachtung welcher Gesetze?", "tipp": "AGG, BetrVG § 99, Datenschutz bei Bewerberdaten." },
+    { "id": "fa-26", "kategorie": "Einsatzgebiet: Rechnungswesen und Controlling", "frage": "Wie haben Sie Abweichungen analysiert und welche Maßnahmen vorgeschlagen?", "tipp": "Soll-Ist-Vergleich, Ursachen (Preis/Menge/Verbrauch), Kennzahlen." }
+  ]
+}
