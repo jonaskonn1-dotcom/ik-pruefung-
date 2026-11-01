@@ -45,12 +45,12 @@
     },
     {
       "id": "mk-06", "typ": "zahl",
-      "frage": "Das Marktvolumen für Schaltschrankgehäuse in Deutschland beträgt {{mv}} Mio. €. Die Westpfalz Metallwerk GmbH setzt {{u}} Mio. € um, der größte Wettbewerber {{k}} Mio. €.\n\nBerechnen Sie den **relativen Marktanteil** der Westpfalz Metallwerk GmbH (auf zwei Nachkommastellen).",
-      "vars": { "mv": 80, "u": 6.4, "k": 9.6 },
+      "frage": "Das Marktvolumen für Schaltschrankgehäuse in Deutschland beträgt {{mv|n0}} €. Die Westpfalz Metallwerk GmbH setzt {{u|n0}} € um, der größte Wettbewerber {{k|n0}} €.\n\nBerechnen Sie den **relativen Marktanteil** der Westpfalz Metallwerk GmbH (auf zwei Nachkommastellen).",
+      "vars": { "mv": 80000000, "u": 6400000, "k": 9600000 },
       "calc": "r2(u / k)",
       "toleranz": 0.01,
       "loesung": 0.67,
-      "erklaerung": "Relativer Marktanteil = eigener Marktanteil ÷ Marktanteil des stärksten Konkurrenten (= eigener Umsatz ÷ Umsatz Konkurrent)\n= {{u}} ÷ {{k}} = **{{r2(u/k)}}**\nAbsoluter Marktanteil zum Vergleich: {{u}} ÷ {{mv}} × 100 = {{u/mv*100|%}}. Ein Wert < 1 bedeutet: Man ist nicht Marktführer."
+      "erklaerung": "Relativer Marktanteil = eigener Marktanteil ÷ Marktanteil des stärksten Konkurrenten (= eigener Umsatz ÷ Umsatz Konkurrent)\n= {{u|n0}} € ÷ {{k|n0}} € = **{{r2(u/k)}}**\nAbsoluter Marktanteil zum Vergleich: {{u|n0}} € ÷ {{mv|n0}} € × 100 = {{u/mv*100|%}}. Ein Wert < 1 bedeutet: Man ist nicht Marktführer."
     },
     {
       "id": "mk-07", "typ": "zuordnung",

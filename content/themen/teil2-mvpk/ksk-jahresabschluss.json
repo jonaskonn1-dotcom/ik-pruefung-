@@ -30,30 +30,30 @@
     {
       "id": "ja-02",
       "typ": "zahl",
-      "frage": "Aufbereitete Bilanz der Westpfalz Metallwerk GmbH:\n- Anlagevermögen {{av|T€}}\n- Umlaufvermögen {{uv|T€}} (davon Vorräte {{vor|T€}}, Forderungen {{ford|T€}}, flüssige Mittel {{fm|T€}})\n- Eigenkapital {{ek|T€}}\n- langfristiges Fremdkapital {{lfk|T€}}\n- kurzfristiges Fremdkapital {{kfk|T€}}\n\nBerechnen Sie die **Eigenkapitalquote** (zwei Nachkommastellen).",
+      "frage": "Aufbereitete Bilanz der Westpfalz Metallwerk GmbH:\n- Anlagevermögen {{av|n0}} €\n- Umlaufvermögen {{uv|n0}} € (davon Vorräte {{vor|n0}} €, Forderungen {{ford|n0}} €, flüssige Mittel {{fm|n0}} €)\n- Eigenkapital {{ek|n0}} €\n- langfristiges Fremdkapital {{lfk|n0}} €\n- kurzfristiges Fremdkapital {{kfk|n0}} €\n\nBerechnen Sie die **Eigenkapitalquote** (zwei Nachkommastellen).",
       "vars": {
-        "av": 6200,
-        "uv": 3800,
-        "vor": 1900,
-        "ford": 1500,
-        "fm": 400,
-        "ek": 3500,
-        "lfk": 3900,
-        "kfk": 2600
+        "av": 6200000,
+        "uv": 3800000,
+        "vor": 1900000,
+        "ford": 1500000,
+        "fm": 400000,
+        "ek": 3500000,
+        "lfk": 3900000,
+        "kfk": 2600000
       },
       "calc": "r2(ek/(ek+lfk+kfk)*100)",
       "einheit": "%",
       "loesung": 35,
-      "erklaerung": "Gesamtkapital = {{ek}} + {{lfk}} + {{kfk}} = {{ek+lfk+kfk|T€}} (= Bilanzsumme)\nEK-Quote = {{ek}} ÷ {{ek+lfk+kfk}} × 100 = **{{r2(ek/(ek+lfk+kfk)*100)|%}}**"
+      "erklaerung": "Gesamtkapital = {{ek}} + {{lfk}} + {{kfk}} = {{ek+lfk+kfk|n0}} € (= Bilanzsumme)\nEK-Quote = {{ek}} ÷ {{ek+lfk+kfk}} × 100 = **{{r2(ek/(ek+lfk+kfk)*100)|%}}**"
     },
     {
       "id": "ja-03",
       "typ": "zahl",
-      "frage": "Mit den Bilanzdaten (Anlagevermögen {{av|T€}}, Eigenkapital {{ek|T€}}, langfristiges Fremdkapital {{lfk|T€}}):\n\nBerechnen Sie die **Anlagendeckung II** (zwei Nachkommastellen).",
+      "frage": "Mit den Bilanzdaten (Anlagevermögen {{av|n0}} €, Eigenkapital {{ek|n0}} €, langfristiges Fremdkapital {{lfk|n0}} €):\n\nBerechnen Sie die **Anlagendeckung II** (zwei Nachkommastellen).",
       "vars": {
-        "av": 6200,
-        "ek": 3500,
-        "lfk": 3900
+        "av": 6200000,
+        "ek": 3500000,
+        "lfk": 3900000
       },
       "calc": "r2((ek+lfk)/av*100)",
       "einheit": "%",
@@ -63,11 +63,11 @@
     {
       "id": "ja-04",
       "typ": "zahl",
-      "frage": "Flüssige Mittel {{fm|T€}}, Forderungen {{ford|T€}}, kurzfristige Verbindlichkeiten {{kfk|T€}}.\n\nBerechnen Sie die **Liquidität 2. Grades** (zwei Nachkommastellen).",
+      "frage": "Flüssige Mittel {{fm|n0}} €, Forderungen {{ford|n0}} €, kurzfristige Verbindlichkeiten {{kfk|n0}} €.\n\nBerechnen Sie die **Liquidität 2. Grades** (zwei Nachkommastellen).",
       "vars": {
-        "fm": 400,
-        "ford": 1500,
-        "kfk": 2600
+        "fm": 400000,
+        "ford": 1500000,
+        "kfk": 2600000
       },
       "calc": "r2((fm+ford)/kfk*100)",
       "einheit": "%",
@@ -77,12 +77,12 @@
     {
       "id": "ja-05",
       "typ": "zahl",
-      "frage": "Jahresüberschuss {{g|T€}}, Fremdkapitalzinsen {{z|T€}}, Eigenkapital {{ek|T€}}, Gesamtkapital {{gk|T€}}.\n\nBerechnen Sie die **Gesamtkapitalrentabilität** (zwei Nachkommastellen).",
+      "frage": "Jahresüberschuss {{g|n0}} €, Fremdkapitalzinsen {{z|n0}} €, Eigenkapital {{ek|n0}} €, Gesamtkapital {{gk|n0}} €.\n\nBerechnen Sie die **Gesamtkapitalrentabilität** (zwei Nachkommastellen).",
       "vars": {
-        "g": 420,
-        "z": 260,
-        "ek": 3500,
-        "gk": 10000
+        "g": 420000,
+        "z": 260000,
+        "ek": 3500000,
+        "gk": 10000000
       },
       "calc": "r2((g+z)/gk*100)",
       "einheit": "%",
@@ -105,16 +105,16 @@
     {
       "id": "ja-07",
       "typ": "zahl",
-      "frage": "Jahresüberschuss {{g|T€}}, Abschreibungen {{afa|T€}}, Zuführung zu langfristigen Rückstellungen {{rst|T€}}.\n\nWie hoch ist der **Cashflow** (vereinfachte Ermittlung)? Geben Sie das Ergebnis **in Tsd. €** an.",
+      "frage": "Jahresüberschuss {{g|n0}} €, Abschreibungen {{afa|n0}} €, Zuführung zu langfristigen Rückstellungen {{rst|n0}} €.\n\nWie hoch ist der **Cashflow** (vereinfachte Ermittlung)?",
       "vars": {
-        "g": 420,
-        "afa": 610,
-        "rst": 85
+        "g": 420000,
+        "afa": 610000,
+        "rst": 85000
       },
       "calc": "g + afa + rst",
-      "einheit": "Tsd. €",
-      "loesung": 1115,
-      "erklaerung": "Cashflow = Jahresüberschuss + Abschreibungen + Erhöhung langfristiger Rückstellungen = {{g}} + {{afa}} + {{rst}} = **{{g+afa+rst|T€}}**\nAbschreibungen und Rückstellungszuführungen sind Aufwand, aber keine Auszahlung → sie stehen für Investitionen und Tilgung zur Verfügung (Innenfinanzierung)."
+      "einheit": "€",
+      "loesung": 1115000,
+      "erklaerung": "Cashflow = Jahresüberschuss + Abschreibungen + Erhöhung langfristiger Rückstellungen = {{g}} + {{afa}} + {{rst}} = **{{g+afa+rst|n0}} €**\nAbschreibungen und Rückstellungszuführungen sind Aufwand, aber keine Auszahlung → sie stehen für Investitionen und Tilgung zur Verfügung (Innenfinanzierung)."
     },
     {
       "id": "ja-08",
@@ -217,10 +217,10 @@
     {
       "id": "ja-14",
       "typ": "zahl",
-      "frage": "Durchschnittlicher Forderungsbestand {{ford|T€}}, Umsatzerlöse inkl. USt {{u|T€}}.\n\nWie viele Tage beträgt das **durchschnittliche Kundenziel** (Debitorenlaufzeit, 360 Tage)? Runden Sie auf ganze Tage.",
+      "frage": "Durchschnittlicher Forderungsbestand {{ford|n0}} €, Umsatzerlöse inkl. USt {{u|n0}} €.\n\nWie viele Tage beträgt das **durchschnittliche Kundenziel** (Debitorenlaufzeit, 360 Tage)? Runden Sie auf ganze Tage.",
       "vars": {
-        "ford": 1500,
-        "u": 19992
+        "ford": 1500000,
+        "u": 19992000
       },
       "calc": "r0(ford/u*360)",
       "einheit": "Tage",
@@ -244,11 +244,11 @@
     {
       "id": "ja-16",
       "typ": "zahl",
-      "frage": "Jahresüberschuss {{g|T€}}, Eigenkapital zu Jahresbeginn {{ek0|T€}}, zum Jahresende {{ek1|T€}}.\n\nBerechnen Sie die **Eigenkapitalrentabilität** auf Basis des durchschnittlichen Eigenkapitals (zwei Nachkommastellen).",
+      "frage": "Jahresüberschuss {{g|n0}} €, Eigenkapital zu Jahresbeginn {{ek0|n0}} €, zum Jahresende {{ek1|n0}} €.\n\nBerechnen Sie die **Eigenkapitalrentabilität** auf Basis des durchschnittlichen Eigenkapitals (zwei Nachkommastellen).",
       "vars": {
-        "g": 420,
-        "ek0": 3300,
-        "ek1": 3500
+        "g": 420000,
+        "ek0": 3300000,
+        "ek1": 3500000
       },
       "calc": "r2(g/((ek0+ek1)/2)*100)",
       "einheit": "%",
@@ -258,11 +258,11 @@
     {
       "id": "ja-17",
       "typ": "zahl",
-      "frage": "Eigenkapital {{ek|T€}}, langfristiges Fremdkapital {{lfk|T€}}, kurzfristiges Fremdkapital {{kfk|T€}}.\n\nWie hoch ist der **Verschuldungsgrad** (zwei Nachkommastellen)?",
+      "frage": "Eigenkapital {{ek|n0}} €, langfristiges Fremdkapital {{lfk|n0}} €, kurzfristiges Fremdkapital {{kfk|n0}} €.\n\nWie hoch ist der **Verschuldungsgrad** (zwei Nachkommastellen)?",
       "vars": {
-        "ek": 3500,
-        "lfk": 3900,
-        "kfk": 2600
+        "ek": 3500000,
+        "lfk": 3900000,
+        "kfk": 2600000
       },
       "calc": "r2((lfk+kfk)/ek*100)",
       "einheit": "%",
@@ -298,11 +298,11 @@
     {
       "id": "ja-20",
       "typ": "zahl",
-      "frage": "Umsatzerlöse {{u|T€}}, Gewinn {{g|T€}}, Gesamtkapital {{gk|T€}}.\n\nBerechnen Sie den **Return on Investment (ROI)** über Umsatzrentabilität × Kapitalumschlag (zwei Nachkommastellen).",
+      "frage": "Umsatzerlöse {{u|n0}} €, Gewinn {{g|n0}} €, Gesamtkapital {{gk|n0}} €.\n\nBerechnen Sie den **Return on Investment (ROI)** über Umsatzrentabilität × Kapitalumschlag (zwei Nachkommastellen).",
       "vars": {
-        "u": 16800,
-        "g": 420,
-        "gk": 10000
+        "u": 16800000,
+        "g": 420000,
+        "gk": 10000000
       },
       "calc": "r2(g/u * u/gk * 100)",
       "einheit": "%",
