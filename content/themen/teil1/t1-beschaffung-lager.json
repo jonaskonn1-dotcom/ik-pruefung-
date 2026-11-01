@@ -1,0 +1,152 @@
+{
+  "id": "t1-beschaffung-lager",
+  "titel": "Beschaffung, Logistik und Lager",
+  "gruppe": "Teil 1",
+  "bereich": { "ao2024": "t1", "vo2002": "gp" },
+  "beschreibung": "Bezugsquellen, Angebotsvergleich (quantitativ/qualitativ), Nutzwertanalyse, optimale Bestellmenge, Bestellverfahren, Lagerkennzahlen, ABC/XYZ-Analyse, Lagerarten, nachhaltige Logistik.",
+  "fragen": [
+    {
+      "id": "bl-01", "typ": "zahl",
+      "frage": "Angebot der Rhein-Blech AG für Edelstahlbleche: Listenpreis {{lp|€}} je Tonne, Mengenrabatt {{rb|%}}, Skonto {{s|%}}, Fracht pauschal {{fr|€}} für die Lieferung. Bestellt werden {{t}} Tonnen.\n\nWie hoch ist der **Einstandspreis (Bezugspreis) der gesamten Lieferung**?",
+      "vars": { "lp": 3200, "rb": 8, "s": 2, "fr": 380, "t": 12 },
+      "calc": "r2(r2(r2(lp*t*(1-rb/100))*(1-s/100)) + fr)",
+      "einheit": "€",
+      "loesung": 35001.44,
+      "erklaerung": "Listeneinkaufspreis {{lp*t|€}}\n− {{rb|%}} Rabatt = Zieleinkaufspreis {{r2(lp*t*(1-rb/100))|€}}\n− {{s|%}} Skonto = Bareinkaufspreis {{r2(r2(lp*t*(1-rb/100))*(1-s/100))|€}}\n+ Bezugskosten {{fr|€}}\n= **Einstandspreis {{r2(r2(r2(lp*t*(1-rb/100))*(1-s/100)) + fr)|€}}**"
+    },
+    {
+      "id": "bl-02", "typ": "zahl",
+      "frage": "Zwei Angebote für 5.000 Scharniere:\n- Lieferant A: {{pa|€}}/Stück, {{ra|%}} Rabatt, {{sa|%}} Skonto, frei Haus\n- Lieferant B: {{pb|€}}/Stück, kein Rabatt, {{sb|%}} Skonto, Fracht {{fb|€}}\n\nUm wie viel Euro ist das **günstigere** Angebot billiger als das andere? (Betrag positiv)",
+      "vars": { "pa": 1.48, "ra": 10, "sa": 2, "pb": 1.36, "sb": 3, "fb": 95 },
+      "calc": "r2(abs(r2(r2(pa*5000*(1-ra/100))*(1-sa/100)) - (r2(pb*5000*(1-sb/100)) + fb)))",
+      "einheit": "€",
+      "loesung": 164.2,
+      "erklaerung": "A: {{pa*5000|€}} − {{ra|%}} = {{r2(pa*5000*(1-ra/100))|€}} − {{sa|%}} = **{{r2(r2(pa*5000*(1-ra/100))*(1-sa/100))|€}}**\nB: {{pb*5000|€}} − {{sb|%}} = {{r2(pb*5000*(1-sb/100))|€}} + Fracht {{fb|€}} = **{{r2(pb*5000*(1-sb/100)) + fb|€}}**\nDifferenz = {{r2(abs(r2(r2(pa*5000*(1-ra/100))*(1-sa/100)) - (r2(pb*5000*(1-sb/100)) + fb)))|€}} → Angebot {{r2(r2(pa*5000*(1-ra/100))*(1-sa/100)) < r2(pb*5000*(1-sb/100)) + fb ? 'A' : 'B'}} ist günstiger. Zusätzlich qualitative Kriterien beachten (Qualität, Lieferzeit, Zuverlässigkeit, Nachhaltigkeit)."
+    },
+    {
+      "id": "bl-03", "typ": "zahl",
+      "frage": "**Nutzwertanalyse** für Lieferant C. Kriterien (Gewichtung) und Punkte (0–10):\n- Preis ({{g1|%}}): {{p1}} Punkte\n- Qualität ({{g2|%}}): {{p2}} Punkte\n- Lieferzuverlässigkeit ({{g3|%}}): {{p3}} Punkte\n- Nachhaltigkeit ({{g4|%}}): {{p4}} Punkte\n\nBerechnen Sie den **Nutzwert**.",
+      "vars": { "g1": 40, "p1": 6, "g2": 30, "p2": 9, "g3": 20, "p3": 8, "g4": 10, "p4": 7 },
+      "calc": "r2(g1/100*p1 + g2/100*p2 + g3/100*p3 + g4/100*p4)",
+      "einheit": "Punkte",
+      "loesung": 7.4,
+      "erklaerung": "Nutzwert = Σ Gewicht × Punkte = 0,4 × {{p1}} + 0,3 × {{p2}} + 0,2 × {{p3}} + 0,1 × {{p4}} = **{{r2(g1/100*p1 + g2/100*p2 + g3/100*p3 + g4/100*p4)}}**\nDer Lieferant mit dem höchsten Nutzwert wird gewählt."
+    },
+    {
+      "id": "bl-04", "typ": "zahl",
+      "frage": "Für Dichtungsprofile gilt: Jahresbedarf {{m}} Meter, bestellfixe Kosten {{kb|€}} je Bestellung, Einstandspreis {{p|€}}/m, Lagerhaltungskostensatz {{l|%}} p. a.\n\nBerechnen Sie die **optimale Bestellmenge** nach Andler (ganze Meter, gerundet).",
+      "vars": { "m": 36000, "kb": 120, "p": 2.4, "l": 25 },
+      "calc": "r0(sqrt(200*m*kb/(p*l)))",
+      "einheit": "m",
+      "toleranz": 1,
+      "loesung": 3795,
+      "erklaerung": "x_opt = √(200 × M × Kb ÷ (p × l)) = √(200 × {{m}} × {{kb}} ÷ ({{p}} × {{l}})) = **{{r0(sqrt(200*m*kb/(p*l)))}} m**\nBei dieser Menge sind Bestell- und Lagerhaltungskosten zusammen minimal (Bestellkosten = Lagerkosten)."
+    },
+    {
+      "id": "bl-05", "typ": "zahl",
+      "frage": "Für Edelstahlblech gilt: Tagesverbrauch {{tv}} kg, Wiederbeschaffungszeit {{wbz}} Arbeitstage, Mindestbestand (eiserner Bestand) {{mb}} kg.\n\nWie hoch ist der **Meldebestand**?",
+      "vars": { "tv": 850, "wbz": 8, "mb": 3400 },
+      "calc": "tv*wbz + mb",
+      "einheit": "kg",
+      "loesung": 10200,
+      "erklaerung": "Meldebestand = Tagesverbrauch × Wiederbeschaffungszeit + Mindestbestand = {{tv}} × {{wbz}} + {{mb}} = **{{tv*wbz+mb}} kg**"
+    },
+    {
+      "id": "bl-06", "typ": "zahl",
+      "frage": "Lagerdaten für Montageplatten (in €): Anfangsbestand {{ab}}, Endbestände der 12 Monate in Summe {{summe12}}. Jahresverbrauch zu Einstandspreisen {{v}}.\n\nBerechnen Sie die **Umschlagshäufigkeit** (zwei Nachkommastellen).",
+      "vars": { "ab": 42000, "summe12": 498000, "v": 520000 },
+      "calc": "r2(v / ((ab + summe12)/13))",
+      "loesung": 12.52,
+      "erklaerung": "Ø Lagerbestand = (AB + 12 Monatsendbestände) ÷ 13 = ({{ab}} + {{summe12}}) ÷ 13 = {{(ab+summe12)/13|€}}\nUmschlagshäufigkeit = {{v}} ÷ {{(ab+summe12)/13|n2}} = **{{r2(v / ((ab + summe12)/13))}}**\nØ Lagerdauer = 360 ÷ {{r2(v / ((ab + summe12)/13))}} = {{r2(360 / r2(v / ((ab + summe12)/13)))}} Tage"
+    },
+    {
+      "id": "bl-07", "typ": "zahl",
+      "frage": "Die durchschnittliche Lagerdauer eines Materials beträgt {{ld}} Tage, der Marktzinssatz {{i|%}} p. a. Der Ø Lagerbestand beträgt {{db|€}}.\n\nWie hoch sind die **Lagerzinsen** pro Jahr?",
+      "vars": { "ld": 45, "i": 8, "db": 60000 },
+      "calc": "r2(db * (i*ld/360)/100)",
+      "einheit": "€",
+      "loesung": 600,
+      "erklaerung": "Lagerzinssatz = {{i}} × {{ld}} ÷ 360 = {{i*ld/360|%}}\nLagerzinsen = {{db|€}} × {{i*ld/360|%}} = **{{r2(db * (i*ld/360)/100)|€}}**"
+    },
+    {
+      "id": "bl-08", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Ergebnisse der **ABC-Analyse** den passenden Beschaffungsstrategien zu.",
+      "paare": [
+        ["A-Güter (z. B. Edelstahlblech)", "genaue Bedarfsermittlung, Preisverhandlungen, Just-in-time, häufige Lieferantenbewertung"],
+        ["C-Güter (z. B. Schrauben, Büromaterial)", "vereinfachte Beschaffung: Rahmenverträge, Katalog/E-Procurement, größere Mengen"],
+        ["B-Güter", "mittlerer Aufwand, Kombination der Verfahren"]
+      ],
+      "erklaerung": "ABC nach Wertanteil. Ergänzend **XYZ-Analyse** nach Verbrauchsschwankung: X konstant (JIT geeignet), Y schwankend, Z unregelmäßig (Einzelbeschaffung bei Bedarf)."
+    },
+    {
+      "id": "bl-09", "typ": "einfach",
+      "frage": "Beim **Bestellrhythmusverfahren** …",
+      "optionen": ["… wird in festen Zeitabständen bestellt, die Bestellmenge richtet sich nach dem Bedarf bis zur nächsten Lieferung.", "… wird immer bestellt, wenn der Meldebestand erreicht ist.", "… wird nur bei Kundenaufträgen bestellt.", "… werden alle Teile einmal jährlich bestellt."],
+      "loesung": 0,
+      "erklaerung": "**Bestellpunktverfahren**: Bestellung bei Erreichen des Meldebestands (feste Menge, variabler Zeitpunkt). **Bestellrhythmusverfahren**: fester Zeitpunkt, variable Menge (Auffüllen auf Höchstbestand)."
+    },
+    {
+      "id": "bl-10", "typ": "mehrfach",
+      "frage": "Welche Aufgaben erfüllt ein **Lager**?",
+      "optionen": ["Sicherung der Produktionsbereitschaft bei Lieferverzögerungen", "Ausnutzen von Mengenrabatten (Großeinkauf)", "Ausgleich zwischen Beschaffung und Verbrauch (Zeitausgleich)", "Veredelung (z. B. Reifen, Trocknen) bei bestimmten Gütern", "Senkung der Kapitalbindung"],
+      "loesung": [0, 1, 2, 3],
+      "erklaerung": "Lagerfunktionen: Sicherung, Ausgleich (zeitlich, mengenmäßig), Spekulation, Veredelung, Sortierung. Kosten: Kapitalbindung, Raum, Personal, Schwund, Veralterung → Lager **erhöhen** die Kapitalbindung."
+    },
+    {
+      "id": "bl-11", "typ": "zuordnung",
+      "frage": "Ordnen Sie die **Lagerorganisation** zu.",
+      "paare": [
+        ["Jeder Artikel hat einen festen Lagerplatz", "Festplatzsystem"],
+        ["Artikel werden auf jeden freien Platz eingelagert, das Lagerverwaltungssystem merkt sich den Ort", "chaotische Lagerung (Freiplatzsystem)"],
+        ["Zuerst eingelagerte Ware wird zuerst entnommen", "FIFO-Prinzip"],
+        ["Zuletzt eingelagerte Ware wird zuerst entnommen (Schüttgut)", "LIFO-Prinzip"]
+      ],
+      "erklaerung": "Chaotische Lagerung nutzt die Kapazität besser, braucht aber EDV (Barcode/RFID). FIFO verhindert Überalterung."
+    },
+    {
+      "id": "bl-12", "typ": "einfach",
+      "frage": "Die Lieferantin Saar-Stahlhandel KG liefert unter **Eigentumsvorbehalt**. Was bedeutet das?",
+      "optionen": ["Die Ware bleibt bis zur vollständigen Bezahlung Eigentum des Lieferers.", "Die Ware gehört sofort dem Käufer, der Lieferer behält nur den Besitz.", "Der Käufer darf die Ware nicht verarbeiten.", "Der Lieferer kann jederzeit ohne Grund vom Vertrag zurücktreten."],
+      "loesung": 0,
+      "erklaerung": "Einfacher EV: Eigentum bis zur Zahlung. **Verlängerter** EV: erstreckt sich auf Forderungen aus dem Weiterverkauf bzw. das verarbeitete Produkt. **Erweiterter** EV: Eigentum bis zur Begleichung aller Forderungen aus der Geschäftsverbindung."
+    },
+    {
+      "id": "bl-13", "typ": "mehrfach",
+      "frage": "Welche Maßnahmen machen die **Logistik** nachhaltiger?",
+      "optionen": ["Mehrweg-Ladungsträger statt Einwegverpackungen", "Verlagerung langer Strecken auf die Schiene", "Tourenoptimierung und volle Auslastung der Lkw", "Häufige Eillieferungen mit Kleintransportern", "Leerfahrten in Kauf nehmen, um Zeit zu sparen"],
+      "loesung": [0, 1, 2],
+      "erklaerung": "Weitere Maßnahmen: E-Stapler, Photovoltaik auf Lagerdächern, Bündelung von Bestellungen, regionale Lieferanten, Kreislaufverpackungen."
+    },
+    {
+      "id": "bl-14", "typ": "zahl",
+      "frage": "Der Mindestbestand für Scharniere beträgt {{mb}} Stück, die optimale Bestellmenge {{bm}} Stück.\n\nWie hoch ist der **Höchstbestand**?",
+      "vars": { "mb": 2000, "bm": 8000 },
+      "calc": "mb + bm",
+      "einheit": "Stück",
+      "loesung": 10000,
+      "erklaerung": "Höchstbestand = Mindestbestand + Bestellmenge = {{mb}} + {{bm}} = **{{mb+bm}} Stück** (unter der Annahme, dass die Lieferung genau bei Erreichen des Mindestbestands eintrifft)."
+    },
+    {
+      "id": "bl-15", "typ": "zahl",
+      "frage": "Ein Lieferant bietet einen Bonus: Bei einem Jahresumsatz über {{grenze|€}} erhält die Westpfalz Metallwerk GmbH {{bonus|%}} nachträglichen Rabatt auf den gesamten Jahresumsatz. Bisheriger Umsatz {{ums|€}}.\n\nWie viel Euro **Bonus** würde die Westpfalz Metallwerk GmbH erhalten, wenn sie zusätzlich für {{zus|€}} bestellt und damit die Grenze überschreitet?",
+      "vars": { "grenze": 250000, "bonus": 3, "ums": 238000, "zus": 15000 },
+      "calc": "ums + zus > grenze ? (ums + zus)*bonus/100 : 0",
+      "einheit": "€",
+      "loesung": 7590,
+      "erklaerung": "Neuer Umsatz = {{ums+zus|€}} > {{grenze|€}} ✓\nBonus = {{ums+zus|€}} × {{bonus|%}} = **{{(ums + zus)*bonus/100|€}}**\nAbwägen: Lohnt die zusätzliche Bestellung (Kapitalbindung, Lagerkosten, Bedarf)?"
+    }
+  ],
+  "karten": [
+    { "id": "bl-k01", "vorne": "Bezugskalkulation", "hinten": "Listeneinkaufspreis − Rabatt = Zieleinkaufspreis − Skonto = Bareinkaufspreis + Bezugskosten = Einstandspreis" },
+    { "id": "bl-k02", "vorne": "Quantitativer vs. qualitativer Angebotsvergleich", "hinten": "Quantitativ: Einstandspreis (Bezugskalkulation)\nQualitativ: Qualität, Lieferzeit, Zuverlässigkeit, Service, Standort, Nachhaltigkeit – z. B. per Nutzwertanalyse (Gewicht × Punkte)" },
+    { "id": "bl-k03", "vorne": "Bezugsquellenermittlung", "hinten": "Intern: Lieferantendatei/ERP, frühere Bestellungen\nExtern: Internet/B2B-Plattformen, Messen, Kataloge, Branchenverzeichnisse, IHK, Vertreterbesuche" },
+    { "id": "bl-k04", "vorne": "Andler-Formel", "hinten": "x_opt = √(200 × Jahresbedarf × bestellfixe Kosten ÷ (Einstandspreis × Lagerhaltungskostensatz))" },
+    { "id": "bl-k05", "vorne": "Melde-, Mindest-, Höchstbestand", "hinten": "Meldebestand = Tagesverbrauch × Wiederbeschaffungszeit + Mindestbestand\nHöchstbestand = Mindestbestand + Bestellmenge" },
+    { "id": "bl-k06", "vorne": "Lagerkennzahlen", "hinten": "Ø Bestand = (AB + EB) ÷ 2 bzw. (AB + 12 ME) ÷ 13\nUmschlagshäufigkeit = Verbrauch ÷ Ø Bestand\nØ Lagerdauer = 360 ÷ UH\nLagerzinssatz = Zinssatz × Lagerdauer ÷ 360" },
+    { "id": "bl-k07", "vorne": "ABC- und XYZ-Analyse", "hinten": "ABC: Wertanteil (A: ~15 % Menge / ~75 % Wert)\nXYZ: Verbrauchsschwankung (X konstant, Y schwankend, Z unregelmäßig)" },
+    { "id": "bl-k08", "vorne": "Bestellpunkt- vs. Bestellrhythmusverfahren", "hinten": "Bestellpunkt: Bestellung bei Meldebestand, feste Menge\nBestellrhythmus: feste Termine, variable Menge" },
+    { "id": "bl-k09", "vorne": "Lagerfunktionen und Lagerkosten", "hinten": "Funktionen: Sicherung, Ausgleich, Spekulation, Veredelung, Sortierung\nKosten: Kapitalbindung (Zinsen), Raum, Personal, Versicherung, Schwund, Veralterung" },
+    { "id": "bl-k10", "vorne": "Eigentumsvorbehalt – Arten", "hinten": "Einfach (bis Zahlung), verlängert (Weiterverkaufsforderung/verarbeitete Ware), erweitert (alle Forderungen aus der Geschäftsbeziehung). Erlischt beim einfachen EV durch Verarbeitung, Verbindung oder gutgläubigen Erwerb Dritter." },
+    { "id": "bl-k11", "vorne": "Fixe und chaotische Lagerung", "hinten": "Fest: einfach, übersichtlich, aber Platzverschwendung\nChaotisch: optimale Raumnutzung, schnelle Einlagerung, braucht Lagerverwaltungssystem" }
+  ]
+}

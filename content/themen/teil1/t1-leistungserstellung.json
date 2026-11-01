@@ -1,0 +1,151 @@
+{
+  "id": "t1-leistungserstellung",
+  "titel": "Leistungserstellung: Fertigung, Planung, Qualität",
+  "gruppe": "Teil 1",
+  "bereich": { "ao2024": "t1", "vo2002": "gp" },
+  "beschreibung": "Fertigungsverfahren und -typen, Produktionsplanung, Stücklisten, Durchlaufzeit, Kapazität, Produktivität, Qualitätsmanagement, Lean Production, Industrie 4.0.",
+  "fragen": [
+    {
+      "id": "le-01", "typ": "zuordnung",
+      "frage": "Ordnen Sie die **Fertigungstypen** (nach Menge) zu.",
+      "paare": [
+        ["Sonderanfertigung eines Edelstahlgehäuses nach Kundenzeichnung", "Einzelfertigung"],
+        ["Rohrflansch F-80 in Losen von 2.000 Stück, dann Umrüstung auf F-60", "Serienfertigung"],
+        ["Ununterbrochene Herstellung gleicher Schrauben über Jahre", "Massenfertigung"],
+        ["Gehäuse G-200 in drei Farbvarianten aus gleichem Grundmaterial", "Sortenfertigung"]
+      ],
+      "erklaerung": "Einzelfertigung: hohe Flexibilität, hohe Stückkosten. Serie: begrenzte Stückzahl, Rüstkosten. Sorte: Varianten eines Grundprodukts. Masse: hohe Stückzahl, niedrigste Stückkosten, hoher Automatisierungsgrad."
+    },
+    {
+      "id": "le-02", "typ": "zuordnung",
+      "frage": "Ordnen Sie die **Organisationstypen der Fertigung** zu.",
+      "paare": [
+        ["Alle Drehmaschinen stehen in einer Halle, alle Kantbänke in einer anderen", "Werkstattfertigung (Verrichtungsprinzip)"],
+        ["Maschinen sind in der Reihenfolge der Arbeitsgänge angeordnet, getaktet", "Fließfertigung (Objektprinzip)"],
+        ["Ein Team fertigt ein Gehäuse komplett an einer Insel mit mehreren Maschinen", "Gruppenfertigung (Fertigungsinsel)"],
+        ["Ein Großschaltschrank wird an einem festen Platz montiert, Personal kommt hinzu", "Baustellenfertigung"]
+      ],
+      "erklaerung": "Werkstatt: flexibel, aber lange Transportwege und Durchlaufzeiten. Fließ: kurze Durchlaufzeiten, unflexibel. Gruppe: Kompromiss mit Teamverantwortung (Job-Enrichment)."
+    },
+    {
+      "id": "le-03", "typ": "zahl",
+      "frage": "Für einen Auftrag über {{x}} Flansche F-80 gelten: Rüstzeit {{tr}} Minuten, Ausführungszeit {{te}} Minuten je Stück.\n\nWie hoch ist die **Auftragszeit** in Stunden (zwei Nachkommastellen)?",
+      "vars": { "x": 400, "tr": 45, "te": 2.4 },
+      "calc": "r2((tr + x*te)/60)",
+      "einheit": "Std.",
+      "loesung": 16.75,
+      "erklaerung": "Auftragszeit T = Rüstzeit + Menge × Zeit je Einheit = {{tr}} + {{x}} × {{te}} = {{tr + x*te}} Min. = **{{r2((tr + x*te)/60)}} Std.** (Zeitermittlung nach REFA)."
+    },
+    {
+      "id": "le-04", "typ": "zahl",
+      "frage": "In einem Monat wurden {{stueck}} Gehäuse mit {{std}} Arbeitsstunden gefertigt. Im Folgemonat steigt die Menge auf {{stueck2}} Stück bei {{std2}} Stunden.\n\nUm wie viel Prozent ist die **Arbeitsproduktivität** gestiegen (zwei Nachkommastellen)?",
+      "vars": { "stueck": 3200, "std": 6400, "stueck2": 3450, "std2": 6600 },
+      "calc": "r2(((stueck2/std2)/(stueck/std) - 1)*100)",
+      "einheit": "%",
+      "loesung": 4.55,
+      "erklaerung": "Produktivität 1 = {{stueck}} ÷ {{std}} = {{stueck/std}} Stück/Std.\nProduktivität 2 = {{stueck2}} ÷ {{std2}} = {{r(stueck2/std2,4)}} Stück/Std.\nSteigerung = **{{r2(((stueck2/std2)/(stueck/std) - 1)*100)|%}}**"
+    },
+    {
+      "id": "le-05", "typ": "zahl",
+      "frage": "Die Kantbank hat eine Kapazität von {{kap}} Stunden pro Monat. Sie wird {{ist}} Stunden genutzt.\n\nWie hoch ist der **Beschäftigungsgrad (Kapazitätsauslastung)**?",
+      "vars": { "kap": 320, "ist": 272 },
+      "calc": "r2(ist/kap*100)",
+      "einheit": "%",
+      "loesung": 85,
+      "erklaerung": "Beschäftigungsgrad = Ist-Beschäftigung ÷ Kapazität × 100 = {{ist}} ÷ {{kap}} × 100 = **{{r2(ist/kap*100)|%}}**"
+    },
+    {
+      "id": "le-06", "typ": "zahl",
+      "frage": "Für ein Gehäuse G-200 werden laut **Stückliste** benötigt: 1 Korpus, 1 Tür, 4 Scharniere, 2 Montageplatten; jede Tür benötigt zusätzlich 1 Schloss und 6 Schrauben, jeder Korpus 12 Schrauben.\n\nWie viele **Schrauben** werden für einen Auftrag über {{x}} Gehäuse benötigt (Bruttobedarf)?",
+      "vars": { "x": 250 },
+      "calc": "x*(1*12 + 1*6)",
+      "einheit": "Stück",
+      "toleranz": 0,
+      "loesung": 4500,
+      "erklaerung": "Schrauben je Gehäuse: Korpus 1 × 12 + Tür 1 × 6 = 18\nBruttobedarf = {{x}} × 18 = **{{x*18}} Stück**\nNettobedarf = Bruttobedarf − Lagerbestand − offene Bestellungen + Sicherheitsbestand (+ reservierte Mengen)."
+    },
+    {
+      "id": "le-07", "typ": "zuordnung",
+      "frage": "Ordnen Sie die **Stücklistenarten** zu.",
+      "paare": [
+        ["Listet alle Teile eines Erzeugnisses mit Gesamtmengen ohne Strukturebenen", "Mengenübersichtsstückliste"],
+        ["Zeigt den Aufbau über alle Fertigungsstufen", "Strukturstückliste"],
+        ["Zeigt nur die direkt untergeordneten Teile einer Baugruppe", "Baukastenstückliste"],
+        ["Gibt an, in welchen Erzeugnissen ein Teil verwendet wird", "Teileverwendungsnachweis"]
+      ],
+      "erklaerung": "Stücklisten sind Grundlage der Materialbedarfsplanung (deterministisch, programmgesteuert) im ERP-System."
+    },
+    {
+      "id": "le-08", "typ": "reihenfolge",
+      "frage": "Bringen Sie die Schritte der **Produktionsplanung und -steuerung** in eine sinnvolle Reihenfolge.",
+      "elemente": ["Produktionsprogramm planen (was, wie viel?)", "Materialbedarf ermitteln (Stücklistenauflösung)", "Termin- und Kapazitätsplanung", "Auftragsfreigabe", "Fertigungssteuerung und Betriebsdatenerfassung", "Qualitätskontrolle und Fertigmeldung"],
+      "erklaerung": "PPS: Planung (Programm, Material, Zeit/Kapazität) → Steuerung (Freigabe, Reihenfolge, Überwachung). Im ERP-System (z. B. MRP-Lauf) weitgehend automatisiert."
+    },
+    {
+      "id": "le-09", "typ": "einfach",
+      "frage": "Was ist das Ziel von **Just-in-time**-Produktion?",
+      "optionen": ["Material wird genau dann angeliefert, wenn es in der Fertigung benötigt wird – Lagerbestände und Kapitalbindung sinken.", "Große Lagerbestände sichern jederzeitige Lieferfähigkeit.", "Die Fertigung wird nur nachts betrieben.", "Alle Teile werden selbst hergestellt."],
+      "loesung": 0,
+      "erklaerung": "JIT setzt zuverlässige Lieferanten, enge IT-Vernetzung und kurze Wege voraus. Risiko: Lieferausfälle (Lieferkettenstörungen) stoppen die Produktion → teilweise Rückkehr zu Sicherheitsbeständen („Just-in-case“)."
+    },
+    {
+      "id": "le-10", "typ": "mehrfach",
+      "frage": "Welche Prinzipien gehören zum **Lean Management / Lean Production**?",
+      "optionen": ["Vermeidung von Verschwendung (Muda), z. B. Überproduktion, Wartezeiten, unnötige Transporte", "Kontinuierliche Verbesserung (KVP/Kaizen)", "Pull-Prinzip mit Kanban", "Möglichst hohe Lagerbestände als Puffer", "Fehler erst bei der Endkontrolle entdecken"],
+      "loesung": [0, 1, 2],
+      "erklaerung": "Lean: Wertschöpfung aus Kundensicht, Verschwendung eliminieren, Fluss und Pull, Qualität an der Quelle (Poka Yoke), Perfektion durch KVP. 5S für Ordnung am Arbeitsplatz."
+    },
+    {
+      "id": "le-11", "typ": "zahl",
+      "frage": "Bei einer Stichprobe von {{n}} Gehäusen wurden {{f}} fehlerhafte Teile gefunden.\n\nWie hoch ist die **Fehlerquote** in Prozent?",
+      "vars": { "n": 800, "f": 14 },
+      "calc": "r2(f/n*100)",
+      "einheit": "%",
+      "loesung": 1.75,
+      "erklaerung": "Fehlerquote = {{f}} ÷ {{n}} × 100 = **{{r2(f/n*100)|%}}**\nIn ppm (parts per million): {{f/n*1000000|n0}} ppm."
+    },
+    {
+      "id": "le-12", "typ": "einfach",
+      "frage": "Wofür steht der **PDCA-Zyklus** im Qualitätsmanagement?",
+      "optionen": ["Plan – Do – Check – Act", "Produce – Deliver – Control – Account", "Plan – Design – Construct – Apply", "Prüfen – Dokumentieren – Controllen – Abrechnen"],
+      "loesung": 0,
+      "erklaerung": "Deming-Kreis: Planen → Umsetzen → Überprüfen → Verbessern/Standardisieren. Basis von ISO 9001 und KVP."
+    },
+    {
+      "id": "le-13", "typ": "mehrfach",
+      "frage": "Welche Beispiele gehören zu **Industrie 4.0** in der Fertigung der Westpfalz Metallwerk GmbH?",
+      "optionen": ["Maschinen melden ihren Zustand automatisch an das ERP-System (IoT)", "Vorausschauende Wartung (Predictive Maintenance) aufgrund von Sensordaten", "Digitaler Zwilling einer Fertigungslinie zur Simulation", "Handschriftliche Laufkarten für jeden Auftrag", "Bestandsführung ausschließlich auf Karteikarten"],
+      "loesung": [0, 1, 2],
+      "erklaerung": "Industrie 4.0 = Vernetzung von Maschinen, Produkten und IT (cyber-physische Systeme), Echtzeitdaten, Automatisierung. Voraussetzungen: IT-Sicherheit, Datenqualität, qualifizierte Mitarbeitende."
+    },
+    {
+      "id": "le-14", "typ": "zahl",
+      "frage": "Ein Auftrag durchläuft drei Arbeitsgänge: Laserschneiden {{a}} Std., Kanten {{b}} Std., Schweißen {{c}} Std. Zwischen den Arbeitsgängen liegen jeweils {{w}} Std. Transport- und Liegezeit (zweimal).\n\nWie hoch ist die **Durchlaufzeit** in Stunden?",
+      "vars": { "a": 6, "b": 9.5, "c": 12, "w": 16 },
+      "calc": "a + b + c + 2*w",
+      "einheit": "Std.",
+      "loesung": 59.5,
+      "erklaerung": "Durchlaufzeit = Bearbeitungszeiten + Übergangszeiten = {{a}} + {{b}} + {{c}} + 2 × {{w}} = **{{a+b+c+2*w}} Std.** Der Liegezeitanteil ({{2*w}} Std.) ist typisch hoch – Ansatzpunkt für Lean-Maßnahmen."
+    },
+    {
+      "id": "le-15", "typ": "einfach",
+      "frage": "Wie unterscheiden sich **Kundenauftragsfertigung** und **Lagerfertigung**?",
+      "optionen": ["Kundenauftragsfertigung beginnt erst nach Auftragseingang; Lagerfertigung produziert auf Basis von Absatzprognosen für einen anonymen Markt.", "Lagerfertigung beginnt erst nach Auftragseingang.", "Kundenauftragsfertigung hat immer niedrigere Stückkosten.", "Es gibt keinen Unterschied."],
+      "loesung": 0,
+      "erklaerung": "Auftragsfertigung: individuell, geringes Absatzrisiko, längere Lieferzeit (Sonderschränke). Lagerfertigung: sofort lieferbar, aber Lagerkosten und Absatzrisiko (Standardhalterungen H-50)."
+    }
+  ],
+  "karten": [
+    { "id": "le-k01", "vorne": "Fertigungstypen (nach Menge)", "hinten": "Einzel-, Serien-, Sorten-, Massenfertigung" },
+    { "id": "le-k02", "vorne": "Organisationstypen der Fertigung", "hinten": "Werkstattfertigung (Verrichtungsprinzip), Fließfertigung (Objektprinzip), Gruppenfertigung (Inseln), Baustellenfertigung" },
+    { "id": "le-k03", "vorne": "Auftragszeit nach REFA", "hinten": "T = tr + m × te\ntr: Rüstzeit, m: Menge, te: Zeit je Einheit (Grundzeit + Verteilzeit + Erholungszeit)" },
+    { "id": "le-k04", "vorne": "Produktivität, Wirtschaftlichkeit, Rentabilität", "hinten": "Produktivität = Output ÷ Input (Mengen)\nWirtschaftlichkeit = Leistungen ÷ Kosten (Werte)\nRentabilität = Gewinn ÷ Kapital × 100" },
+    { "id": "le-k05", "vorne": "Brutto- und Nettobedarf", "hinten": "Bruttobedarf (aus Stückliste × Menge)\n− verfügbarer Lagerbestand\n− offene Bestellungen\n+ Sicherheitsbestand / Reservierungen\n= Nettobedarf" },
+    { "id": "le-k06", "vorne": "Stücklistenarten", "hinten": "Mengenübersichtsstückliste, Strukturstückliste, Baukastenstückliste; umgekehrt: Teileverwendungsnachweis" },
+    { "id": "le-k07", "vorne": "Lean Production – Kernideen", "hinten": "Verschwendung vermeiden (7 Muda), Pull/Kanban, Just-in-time, KVP/Kaizen, 5S, Poka Yoke, Wertstromanalyse" },
+    { "id": "le-k08", "vorne": "Durchlaufzeit – Bestandteile", "hinten": "Rüstzeit + Bearbeitungszeit + Transportzeit + Liegezeit (Warten) + Kontrollzeit" },
+    { "id": "le-k09", "vorne": "Qualitätsmanagement – Begriffe", "hinten": "ISO 9001 (QM-System), PDCA, TQM (Qualität als Aufgabe aller), Stichprobenprüfung, Fehlerquote, FMEA (Fehlermöglichkeits- und Einflussanalyse)" },
+    { "id": "le-k10", "vorne": "Industrie 4.0", "hinten": "Vernetzte, sich selbst steuernde Produktion: IoT-Sensorik, Predictive Maintenance, digitaler Zwilling, Echtzeitdaten im ERP/MES, Automatisierung, additive Fertigung (3D-Druck)" },
+    { "id": "le-k11", "vorne": "Beschäftigungsgrad", "hinten": "Ist-Beschäftigung ÷ Kapazität × 100. Niedrige Auslastung → hohe Fixkosten je Stück (Leerkosten)." }
+  ]
+}

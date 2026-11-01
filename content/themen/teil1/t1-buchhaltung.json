@@ -1,0 +1,152 @@
+{
+  "id": "t1-buchhaltung",
+  "titel": "Buchhaltung: Buchungssätze, Abschreibung, Umsatzsteuer",
+  "gruppe": "Teil 1",
+  "bereich": { "ao2024": "t1", "vo2002": "ksk" },
+  "beschreibung": "Bestands- und Erfolgskonten, Buchungssätze im Industriekontenrahmen (IKR), Einkauf und Verkauf, Bezugskosten, Nachlässe, Abschreibung (linear, zeitanteilig, GWG), Umsatzsteuer-Zahllast, Bestandsveränderungen, Inventur.",
+  "fragen": [
+    {
+      "id": "bu-01", "typ": "einfach",
+      "frage": "Die Westpfalz Metallwerk GmbH kauft Edelstahlblech auf Ziel: netto 12.000 € + 19 % USt. Wie lautet der **Buchungssatz** (aufwandsorientierte Erfassung)?",
+      "optionen": ["Aufwendungen für Rohstoffe 12.000 € und Vorsteuer 2.280 € an Verbindlichkeiten a. L. L. 14.280 €", "Verbindlichkeiten a. L. L. 14.280 € an Rohstoffe 14.280 €", "Rohstoffe 14.280 € an Bank 14.280 €", "Aufwendungen für Rohstoffe 14.280 € an Umsatzsteuer 14.280 €"],
+      "loesung": 0,
+      "erklaerung": "IKR: 6000 Aufwendungen für Rohstoffe 12.000 / 2600 Vorsteuer 2.280 an 4400 Verbindlichkeiten a. L. L. 14.280. Beim Kauf auf Ziel entsteht eine Verbindlichkeit; die Vorsteuer ist eine Forderung gegenüber dem Finanzamt."
+    },
+    {
+      "id": "bu-02", "typ": "einfach",
+      "frage": "Ein Kunde erhält Gehäuse auf Ziel: netto 30.000 € + 19 % USt. Buchungssatz?",
+      "optionen": ["Forderungen a. L. L. 35.700 € an Umsatzerlöse für eigene Erzeugnisse 30.000 € und Umsatzsteuer 5.700 €", "Umsatzerlöse 35.700 € an Forderungen 35.700 €", "Bank 35.700 € an Umsatzerlöse 35.700 €", "Forderungen 30.000 € an Vorsteuer 30.000 €"],
+      "loesung": 0,
+      "erklaerung": "2400 Forderungen a. L. L. 35.700 an 5000 Umsatzerlöse für eigene Erzeugnisse 30.000 und 4800 Umsatzsteuer 5.700."
+    },
+    {
+      "id": "bu-03", "typ": "zahl",
+      "frage": "Im Dezember betragen die Umsatzsteuer {{ust|€}} und die Vorsteuer {{vst|€}}.\n\nWie hoch ist die **Zahllast**?",
+      "vars": { "ust": 186200, "vst": 121450 },
+      "calc": "ust - vst",
+      "einheit": "€",
+      "loesung": 64750,
+      "erklaerung": "Zahllast = Umsatzsteuer − Vorsteuer = {{ust|€}} − {{vst|€}} = **{{ust-vst|€}}** → Überweisung ans Finanzamt (Umsatzsteuer-Voranmeldung bis zum 10. des Folgemonats). Buchung: Umsatzsteuer an Vorsteuer (Umbuchung), Umsatzsteuer an Bank."
+    },
+    {
+      "id": "bu-04", "typ": "zahl",
+      "frage": "Eine CNC-Maschine wird am {{tag}} für netto {{ak|€}} angeschafft. Transport und Montage kosten netto {{nk|€}}. Nutzungsdauer {{nd}} Jahre, lineare Abschreibung.\n\nWie hoch ist die **Abschreibung im Anschaffungsjahr** (Geschäftsjahr = Kalenderjahr)?",
+      "vars": { "tag": "10. September", "ak": 168000, "nk": 12000, "nd": 10, "monate": 4 },
+      "calc": "r2((ak + nk)/nd * monate/12)",
+      "einheit": "€",
+      "loesung": 6000,
+      "erklaerung": "Anschaffungskosten = Kaufpreis + Anschaffungsnebenkosten = {{ak|€}} + {{nk|€}} = {{ak+nk|€}}\nJahres-AfA = {{ak+nk|€}} ÷ {{nd}} = {{(ak+nk)/nd|€}}\nZeitanteilig (monatsgenau, Anschaffungsmonat zählt mit): September–Dezember = {{monate}} Monate\nAfA = {{(ak+nk)/nd|€}} × {{monate}}/12 = **{{r2((ak + nk)/nd * monate/12)|€}}**"
+    },
+    {
+      "id": "bu-05", "typ": "zahl",
+      "frage": "Mit den Daten aus der vorigen Aufgabe (Anschaffungskosten {{ak|€}}, ND {{nd}} Jahre, Anschaffung im September des Jahres 1): Wie hoch ist der **Restbuchwert am Ende des Jahres 2**?",
+      "vars": { "ak": 180000, "nd": 10 },
+      "calc": "ak - ak/nd*4/12 - ak/nd",
+      "einheit": "€",
+      "loesung": 156000,
+      "erklaerung": "Jahr 1: {{ak/nd*4/12|€}} AfA; Jahr 2: {{ak/nd|€}}\nRestbuchwert = {{ak|€}} − {{ak/nd*4/12|€}} − {{ak/nd|€}} = **{{ak - ak/nd*4/12 - ak/nd|€}}**"
+    },
+    {
+      "id": "bu-06", "typ": "einfach",
+      "frage": "Ein Bürostuhl kostet netto 650 €. Wie kann er steuerlich behandelt werden?",
+      "optionen": ["Als geringwertiges Wirtschaftsgut im Anschaffungsjahr voll abgeschrieben werden (bis 800 € netto)", "Er muss über 13 Jahre linear abgeschrieben werden, eine andere Möglichkeit gibt es nicht", "Er wird nicht abgeschrieben", "Er muss als Umlaufvermögen erfasst werden"],
+      "loesung": 0,
+      "erklaerung": "GWG: Anschaffungskosten bis 800 € netto → Sofortabschreibung möglich. Alternativ (wahlweise für alle WG des Jahres zwischen 250,01 und 1.000 €): Sammelposten mit 5 Jahren Auflösung. Stand 2026 – prüfen.",
+      "stand2026": true
+    },
+    {
+      "id": "bu-07", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Konten den **Kontenarten** zu.",
+      "paare": [
+        ["Technische Anlagen und Maschinen", "aktives Bestandskonto"],
+        ["Verbindlichkeiten gegenüber Kreditinstituten", "passives Bestandskonto"],
+        ["Umsatzerlöse für eigene Erzeugnisse", "Ertragskonto"],
+        ["Löhne", "Aufwandskonto"]
+      ],
+      "erklaerung": "Aktivkonten: Zugänge im Soll. Passivkonten: Zugänge im Haben. Aufwandskonten (Soll) und Ertragskonten (Haben) werden über die GuV abgeschlossen, deren Saldo (Gewinn/Verlust) über das Eigenkapitalkonto."
+    },
+    {
+      "id": "bu-08", "typ": "einfach",
+      "frage": "Für eine Rohstofflieferung berechnet die Spedition Fracht: 450 € netto + USt, bar bezahlt. Buchungssatz?",
+      "optionen": ["Bezugskosten für Rohstoffe (Unterkonto 6001) 450 € und Vorsteuer 85,50 € an Kasse 535,50 €", "Ausgangsfrachten 450 € an Kasse 450 €", "Kasse 535,50 € an Bezugskosten 535,50 €", "Umsatzerlöse 450 € an Kasse 450 €"],
+      "loesung": 0,
+      "erklaerung": "Bezugskosten (Eingangsfrachten) erhöhen die Anschaffungskosten der Rohstoffe → Unterkonto **6001 Bezugskosten**. Frachten für den **Versand** an Kunden sind dagegen Aufwand 6140 Ausgangsfrachten."
+    },
+    {
+      "id": "bu-09", "typ": "einfach",
+      "frage": "Ein Kunde zahlt eine Rechnung über 11.900 € (brutto) unter Abzug von 2 % Skonto per Banküberweisung. Wie lautet der Buchungssatz?",
+      "optionen": ["Bank 11.662 €, Erlösberichtigungen 200 € und Umsatzsteuer 38 € an Forderungen a. L. L. 11.900 €", "Bank 11.900 € an Forderungen 11.900 €", "Forderungen 11.662 € an Bank 11.662 €", "Bank 11.662 € und Vorsteuer 238 € an Forderungen 11.900 €"],
+      "loesung": 0,
+      "erklaerung": "Skonto brutto 238 € = netto 200 € + USt 38 €. Der Kundenskonto mindert die Erlöse (5001 Erlösberichtigungen) und die Umsatzsteuer wird berichtigt (4800).\nBank 11.662 / 5001 Erlösberichtigungen 200 / 4800 Umsatzsteuer 38 an 2400 Forderungen 11.900."
+    },
+    {
+      "id": "bu-10", "typ": "zahl",
+      "frage": "Laut Inventur haben die fertigen Erzeugnisse einen Schlussbestand von {{sb|€}}; der Anfangsbestand betrug {{ab|€}}.\n\nWie hoch ist die **Bestandsveränderung**? (Mehrung positiv, Minderung negativ)",
+      "vars": { "sb": 148000, "ab": 162000 },
+      "calc": "sb - ab",
+      "einheit": "€",
+      "loesung": -14000,
+      "erklaerung": "Bestandsveränderung = SB − AB = {{sb|€}} − {{ab|€}} = **{{sb-ab|€}}** → Bestands**minderung**: Es wurde mehr verkauft als produziert. Buchung: 5202 Bestandsveränderungen an 2200 Fertige Erzeugnisse {{abs(sb-ab)|€}}. Eine Minderung wirkt wie Aufwand in der GuV."
+    },
+    {
+      "id": "bu-11", "typ": "reihenfolge",
+      "frage": "Bringen Sie die Arbeiten zum **Jahresabschluss in der Buchführung** in eine sinnvolle Reihenfolge.",
+      "elemente": ["Inventur durchführen und Inventar aufstellen", "Vorbereitende Abschlussbuchungen (Abschreibungen, Bestandsveränderungen, Rechnungsabgrenzung)", "Erfolgskonten über das GuV-Konto abschließen", "Gewinn bzw. Verlust auf das Eigenkapitalkonto übertragen", "Bestandskonten über das Schlussbilanzkonto abschließen"],
+      "erklaerung": "Inventur (Ist) → Abgleich mit Buchwerten → vorbereitende Buchungen → GuV → Eigenkapital → Schlussbilanzkonto → Bilanz."
+    },
+    {
+      "id": "bu-12", "typ": "zahl",
+      "frage": "Eine Rechnung über Rohstoffe lautet über brutto {{brutto|€}} (19 % USt).\n\nWie hoch ist die **Vorsteuer**?",
+      "vars": { "brutto": 8925 },
+      "calc": "r2(brutto - brutto/1.19)",
+      "einheit": "€",
+      "loesung": 1425,
+      "erklaerung": "Netto = {{brutto}} ÷ 1,19 = {{r2(brutto/1.19)|€}}\nVorsteuer = {{brutto|€}} − {{r2(brutto/1.19)|€}} = **{{r2(brutto - brutto/1.19)|€}}** (oder: Brutto × 19/119)."
+    },
+    {
+      "id": "bu-13", "typ": "einfach",
+      "frage": "Die Westpfalz Metallwerk GmbH zahlt am 1. Dezember die Kfz-Versicherung für Dezember bis November des Folgejahres (1.200 €) im Voraus. Was ist am 31.12. zu buchen?",
+      "optionen": ["Aktive Rechnungsabgrenzung 1.100 € an Versicherungsbeiträge 1.100 €", "Versicherungsbeiträge 1.100 € an Bank 1.100 €", "Passive Rechnungsabgrenzung 100 € an Versicherungsbeiträge 100 €", "Keine Buchung erforderlich"],
+      "loesung": 0,
+      "erklaerung": "11 Monate (1.100 €) betreffen das Folgejahr → Aufwand periodengerecht abgrenzen: **ARA** (Ausgabe jetzt, Aufwand später). PRA: Einnahme jetzt, Ertrag später. Sonstige Verbindlichkeiten/Forderungen: Aufwand/Ertrag jetzt, Zahlung später."
+    },
+    {
+      "id": "bu-14", "typ": "zahl",
+      "frage": "Eine Maschine (Restbuchwert {{rbw|€}}) wird für netto {{vk|€}} verkauft.\n\nWie hoch ist der **Erfolg aus dem Anlagenabgang**? (Gewinn positiv, Verlust negativ)",
+      "vars": { "rbw": 24000, "vk": 18500 },
+      "calc": "vk - rbw",
+      "einheit": "€",
+      "loesung": -5500,
+      "erklaerung": "Erlös {{vk|€}} − Restbuchwert {{rbw|€}} = **{{vk-rbw|€}}** → Verlust aus dem Abgang (Konto 6960 Verluste aus dem Abgang von Vermögensgegenständen) – in der KLR ein **neutraler Aufwand**."
+    },
+    {
+      "id": "bu-15", "typ": "einfach",
+      "frage": "Ein Lieferant gewährt nachträglich einen Preisnachlass von netto 500 € wegen leichter Mängel. Wie wird bei aufwandsorientierter Erfassung gebucht?",
+      "optionen": ["Verbindlichkeiten a. L. L. 595 € an Nachlässe für Rohstoffe 500 € und Vorsteuer 95 €", "Nachlässe 595 € an Verbindlichkeiten 595 €", "Bank 500 € an Umsatzerlöse 500 €", "Vorsteuer 95 € an Verbindlichkeiten 95 €"],
+      "loesung": 0,
+      "erklaerung": "Nachlässe mindern die Anschaffungskosten (6002 Nachlässe) und die Vorsteuer wird anteilig berichtigt. Die Verbindlichkeit sinkt um den Bruttobetrag."
+    },
+    {
+      "id": "bu-16", "typ": "zahl",
+      "frage": "Für eine Reparatur der Lackieranlage ist im neuen Jahr mit Kosten von {{rep|€}} zu rechnen (Instandhaltung im ersten Quartal nachgeholt). Am Bilanzstichtag wird eine Rückstellung gebildet. Im Folgejahr betragen die tatsächlichen Kosten {{ist|€}}.\n\nWie hoch ist der **Ertrag bzw. Aufwand** bei Auflösung der Rückstellung? (Ertrag positiv)",
+      "vars": { "rep": 14000, "ist": 12600 },
+      "calc": "rep - ist",
+      "einheit": "€",
+      "loesung": 1400,
+      "erklaerung": "Rückstellung {{rep|€}} − tatsächliche Kosten {{ist|€}} = **{{rep-ist|€}}** → Ertrag aus der Auflösung von Rückstellungen (periodenfremd, neutral). Wäre die Rechnung höher, entstünde ein periodenfremder Aufwand."
+    }
+  ],
+  "karten": [
+    { "id": "bu-k01", "vorne": "Vier Kontenarten und Buchungsregeln", "hinten": "Aktivkonto: AB und Zugänge Soll\nPassivkonto: AB und Zugänge Haben\nAufwandskonto: Soll → GuV\nErtragskonto: Haben → GuV" },
+    { "id": "bu-k02", "vorne": "Einkauf auf Ziel (IKR)", "hinten": "6000 Aufwendungen für Rohstoffe\n2600 Vorsteuer\nan 4400 Verbindlichkeiten a. L. L." },
+    { "id": "bu-k03", "vorne": "Verkauf auf Ziel (IKR)", "hinten": "2400 Forderungen a. L. L.\nan 5000 Umsatzerlöse für eigene Erzeugnisse\nan 4800 Umsatzsteuer" },
+    { "id": "bu-k04", "vorne": "Zahllast und Vorsteuerüberhang", "hinten": "USt > VSt → Zahllast (Verbindlichkeit)\nVSt > USt → Vorsteuerüberhang (Forderung)\nVoranmeldung bis 10. des Folgemonats" },
+    { "id": "bu-k05", "vorne": "Anschaffungskosten", "hinten": "Kaufpreis (netto) + Anschaffungsnebenkosten (Fracht, Montage, Zölle) − Anschaffungspreisminderungen (Rabatt, Skonto, Boni)" },
+    { "id": "bu-k06", "vorne": "Lineare Abschreibung zeitanteilig", "hinten": "AfA = AK ÷ ND × Monate/12; der Anschaffungsmonat zählt voll mit (pro rata temporis)" },
+    { "id": "bu-k07", "vorne": "GWG und Sammelposten", "hinten": "bis 250 € netto: sofort Aufwand\nbis 800 € netto: GWG-Sofortabschreibung\n250,01–1.000 €: wahlweise Sammelposten, 5 Jahre", "stand2026": true },
+    { "id": "bu-k08", "vorne": "Bestandsveränderungen buchen", "hinten": "Mehrung: Fertige Erzeugnisse an Bestandsveränderungen (ertragsähnlich)\nMinderung: Bestandsveränderungen an Fertige Erzeugnisse (aufwandsähnlich)" },
+    { "id": "bu-k09", "vorne": "Zeitliche Abgrenzung", "hinten": "ARA: Ausgabe jetzt – Aufwand später\nPRA: Einnahme jetzt – Ertrag später\nSonstige Verbindlichkeiten: Aufwand jetzt – Ausgabe später\nSonstige Forderungen: Ertrag jetzt – Einnahme später\nRückstellungen: Aufwand jetzt – Höhe/Fälligkeit ungewiss" },
+    { "id": "bu-k10", "vorne": "Kundenskonto buchen", "hinten": "Bank (Zahlung) + 5001 Erlösberichtigungen (Skonto netto) + 4800 Umsatzsteuer (Steueranteil) an 2400 Forderungen (brutto)" },
+    { "id": "bu-k11", "vorne": "Inventur – Arten", "hinten": "Stichtagsinventur (zeitnah ±10 Tage), verlegte Inventur (3 Monate vor/2 Monate nach), permanente Inventur (laufende Fortschreibung), Stichprobeninventur" }
+  ]
+}
