@@ -49,6 +49,12 @@ export function aktivesProfil() {
 }
 
 /** Themen eines Prüfungsbereichs im aktiven Profil (eigene Themen ohne Zuordnung landen nirgends). */
+/** Schriftliche Bereiche für gemischtes Üben. Teil 1 (bereits abgelegt) nur, wenn zugeschaltet. */
+export function mixBereiche(profil = aktivesProfil()) {
+  const mitTeil1 = !!store.get().settings.mitTeil1;
+  return profil.bereiche.filter((b) => b.art !== 'muendlich' && (mitTeil1 || b.teil !== 1));
+}
+
 export function themenImBereich(bereichId, profil = aktivesProfil()) {
   return db.themen.filter((t) => t.bereich?.[profil.id] === bereichId);
 }

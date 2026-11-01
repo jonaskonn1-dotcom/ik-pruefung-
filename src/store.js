@@ -4,7 +4,7 @@ const KEY = 'ik-lernstand-v1';
 
 const empty = () => ({
   version: 1,
-  settings: { theme: 'auto', profil: null, quizAnzahl: 10, neueKartenProTag: 20 },
+  settings: { theme: 'auto', profil: null, quizAnzahl: 10, neueKartenProTag: 20, mitTeil1: false },
   q: {},        // Frage-ID → { n, ok, last, t }
   fehler: {},   // Frage-ID → { seit, streak }
   karten: {},   // Karten-ID → { box, due, n }

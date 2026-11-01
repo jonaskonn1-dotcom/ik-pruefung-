@@ -1,4 +1,4 @@
-import { data, aktivesProfil, themenImBereich, config } from '../content.js';
+import { data, aktivesProfil, themenImBereich, mixBereiche, config } from '../content.js';
 import { store, recordAnswer } from '../store.js';
 import { esc, icon, shuffle, note, header, plain } from '../ui.js';
 import { prepare, renderQuestion, renderFeedback, evaluate, hasAnswer, handleAction, keyToAction } from './question.js';
@@ -14,8 +14,7 @@ export function selectQuestions(query) {
   else if (query.thema) pool = db.themenById.get(query.thema)?.fragen || [];
   else if (query.bereich) pool = themenImBereich(query.bereich).flatMap((t) => t.fragen || []);
   else {
-    const profil = aktivesProfil();
-    pool = profil.bereiche.filter((b) => b.art !== 'muendlich').flatMap((b) => themenImBereich(b.id)).flatMap((t) => t.fragen || []);
+    pool = mixBereiche().flatMap((b) => themenImBereich(b.id)).flatMap((t) => t.fragen || []);
   }
   if (query.thema && (query.modus === 'fehler')) pool = pool.filter((q) => q.thema === query.thema);
   if (query.typ) pool = pool.filter((q) => q.typ === query.typ);

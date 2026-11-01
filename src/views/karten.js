@@ -1,5 +1,5 @@
 // Lernkarten mit Leitner-System (5 Fächer).
-import { data, aktivesProfil, themenImBereich } from '../content.js';
+import { data, aktivesProfil, themenImBereich, mixBereiche } from '../content.js';
 import { store, today, recordCard } from '../store.js';
 import { esc, rich, icon, header, progressBar, badge2026 } from '../ui.js';
 
@@ -12,8 +12,7 @@ function addDays(iso, n) {
 
 function alleKarten(themaId) {
   if (themaId) return data().themenById.get(themaId)?.karten || [];
-  const profil = aktivesProfil();
-  const ids = new Set(profil.bereiche.flatMap((b) => themenImBereich(b.id)).map((t) => t.id));
+  const ids = new Set(mixBereiche().flatMap((b) => themenImBereich(b.id)).map((t) => t.id));
   ids.add('eigene');
   return data().themen.filter((t) => ids.has(t.id)).flatMap((t) => t.karten || []);
 }

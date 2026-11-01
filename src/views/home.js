@@ -39,6 +39,10 @@ export function homeView(el) {
   const bereiche = profil.bereiche.map((b) => {
     if (b.art === 'muendlich') {
       const fa = faFortschritt();
+      if (!fa.aktiv) return `<div class="area soon" aria-disabled="true">
+        <div class="area-top"><span class="area-name">${esc(b.kurz)}</span><span class="area-meta">${b.gewicht} %</span></div>
+        <div class="area-full">${esc(b.name)}</div>
+        <span class="badge">kommt bald</span></div>`;
       return `<a class="area" href="#/fachaufgabe">
         <div class="area-top"><span class="area-name">${esc(b.kurz)}</span><span class="area-meta">${b.gewicht} %</span></div>
         <div class="area-full">${esc(b.name)}</div>
