@@ -1,0 +1,149 @@
+{
+  "id": "ksk-teilkosten",
+  "titel": "Teilkostenrechnung: Deckungsbeitrag, Break-even, Make-or-buy, Zusatzauftrag, Engpass",
+  "gruppe": "KSK",
+  "bereich": { "ao2024": "mvpk", "vo2002": "ksk" },
+  "beschreibung": "Stück- und Gesamtdeckungsbeitrag, Gewinnschwelle, Preisuntergrenzen, Zusatzaufträge, Eigenfertigung oder Fremdbezug, optimales Produktionsprogramm bei Engpass, Kostenauflösung.",
+  "fragen": [
+    {
+      "id": "tk-01", "typ": "zahl",
+      "frage": "Die Montagehalterung H-50 wird für {{p|€}} netto verkauft. Die variablen Kosten betragen {{kv|€}} je Stück, die Fixkosten der Produktlinie {{kf|€}} pro Monat. Abgesetzt werden {{x}} Stück.\n\nBerechnen Sie das **Betriebsergebnis** der Produktlinie pro Monat.",
+      "vars": { "p": 14.2, "kv": 8.7, "kf": 41000, "x": 9000 },
+      "calc": "r2((p-kv)*x - kf)",
+      "einheit": "€",
+      "loesung": 8500,
+      "erklaerung": "db = {{p|€}} − {{kv|€}} = {{p-kv|€}}\nDB = {{p-kv|€}} × {{x}} = {{(p-kv)*x|€}}\nBetriebsergebnis = DB − Kf = {{(p-kv)*x|€}} − {{kf|€}} = **{{r2((p-kv)*x - kf)|€}}**"
+    },
+    {
+      "id": "tk-02", "typ": "zahl",
+      "frage": "Mit den Daten der Halterung H-50 (Preis {{p|€}}, kv {{kv|€}}, Kf {{kf|€}}):\n\nBei welcher Menge liegt die **Gewinnschwelle (Break-even-Point)**? Runden Sie auf ganze Stück auf.",
+      "vars": { "p": 14.2, "kv": 8.7, "kf": 41000 },
+      "calc": "ceil(r(kf/(p-kv), 6))",
+      "einheit": "Stück",
+      "toleranz": 0,
+      "loesung": 7455,
+      "erklaerung": "Break-even-Menge = Kf ÷ db = {{kf}} ÷ {{p-kv}} = {{kf/(p-kv)|n2}} → aufgerundet **{{ceil(r(kf/(p-kv), 6))}} Stück**\nErst ab dieser Menge wird ein Gewinn erzielt. Break-even-Umsatz ≈ {{ceil(r(kf/(p-kv), 6))*p|€}}"
+    },
+    {
+      "id": "tk-03", "typ": "zahl",
+      "frage": "Die Westpfalz Metallwerk GmbH ist zu {{ausl|%}} ausgelastet (Kapazität {{kap}} Gehäuse/Monat). Regulärer Preis {{p|€}}, variable Kosten {{kv|€}}/Stück, Fixkosten {{kf|€}}. Ein Kunde bietet einen **Zusatzauftrag** über {{z}} Gehäuse zu {{pz|€}} je Stück.\n\nUm wie viel Euro **verändert sich das Betriebsergebnis**, wenn der Auftrag angenommen wird?",
+      "vars": { "ausl": 80, "kap": 5000, "p": 145, "kv": 92, "kf": 180000, "z": 600, "pz": 108 },
+      "calc": "(pz - kv) * z",
+      "einheit": "€",
+      "loesung": 9600,
+      "erklaerung": "Freie Kapazität: {{kap*(1-ausl/100)}} Stück ≥ {{z}} Stück ✓\nDie Fixkosten bleiben unverändert und sind durch die regulären Aufträge bereits gedeckt.\ndb Zusatzauftrag = {{pz|€}} − {{kv|€}} = {{pz-kv|€}}\nErgebnisverbesserung = {{pz-kv|€}} × {{z}} = **{{(pz-kv)*z|€}}** → annehmen (aber: Wirkung auf Stammkunden und Preisgefüge prüfen)."
+    },
+    {
+      "id": "tk-04", "typ": "einfach",
+      "frage": "Wo liegt die **kurzfristige (absolute) Preisuntergrenze** eines Produkts bei freier Kapazität?",
+      "optionen": ["Bei den variablen Stückkosten", "Bei den Selbstkosten je Stück", "Beim Listenverkaufspreis", "Bei den Fixkosten je Stück"],
+      "loesung": 0,
+      "erklaerung": "Kurzfristig genügt es, die **variablen Kosten** zu decken (db ≥ 0) – die Fixkosten fallen ohnehin an. **Langfristig** müssen alle Kosten gedeckt sein → Preisuntergrenze = Selbstkosten (kv + Kf/x)."
+    },
+    {
+      "id": "tk-05", "typ": "zahl",
+      "frage": "Die Westpfalz Metallwerk GmbH benötigt jährlich Dichtungen für die Gehäuse. **Eigenfertigung**: Fixkosten {{kf|€}} pro Jahr (nur bei Eigenfertigung), variable Kosten {{kv|€}}/Stück. **Fremdbezug**: Einstandspreis {{pb|€}}/Stück.\n\nAb welcher Menge ist die Eigenfertigung günstiger (**kritische Menge**)?",
+      "vars": { "kf": 24000, "kv": 1.15, "pb": 1.75 },
+      "calc": "r(kf / (pb - kv), 4)",
+      "einheit": "Stück",
+      "loesung": 40000,
+      "erklaerung": "Kosten gleichsetzen: {{kf}} + {{kv}} x = {{pb}} x\n→ x = {{kf}} ÷ ({{pb}} − {{kv}}) = **{{r(kf/(pb-kv), 4)|n0}} Stück**\nDarüber: Eigenfertigung günstiger; darunter: Fremdbezug.\nQualitative Kriterien: Know-how, Qualität, Abhängigkeit vom Lieferanten, Kapazität, Lieferzuverlässigkeit."
+    },
+    {
+      "id": "tk-06", "typ": "zahl",
+      "frage": "Bei **vorhandener freier Kapazität** und nicht abbaubaren Fixkosten prüft die Westpfalz Metallwerk GmbH, ob sie eine Abdeckung selbst fertigen soll. Variable Kosten Eigenfertigung {{kv|€}}/Stück, Fremdbezugspreis {{pb|€}}/Stück, Bedarf {{x}} Stück.\n\nWie hoch ist die **Kostenersparnis** durch Eigenfertigung?",
+      "vars": { "kv": 3.85, "pb": 4.6, "x": 12000 },
+      "calc": "r2((pb - kv) * x)",
+      "einheit": "€",
+      "loesung": 9000,
+      "erklaerung": "Kurzfristig sind nur die **variablen Kosten** entscheidungsrelevant (Fixkosten fallen in beiden Fällen an).\nErsparnis je Stück = {{pb|€}} − {{kv|€}} = {{pb-kv|€}}\n× {{x}} Stück = **{{r2((pb-kv)*x)|€}}**"
+    },
+    {
+      "id": "tk-07", "typ": "reihenfolge",
+      "frage": "Auf der CNC-Maschine besteht ein **Engpass**. Bringen Sie die Produkte in die Reihenfolge, in der sie gefertigt werden sollten (höchster **relativer** Deckungsbeitrag zuerst).\n- F-80: db 18,00 €, 6 Min./Stück\n- F-60: db 12,00 €, 3 Min./Stück\n- F-100: db 30,00 €, 12 Min./Stück\n- F-40: db 4,00 €, 2 Min./Stück",
+      "elemente": ["F-60 (4,00 €/Min.)", "F-80 (3,00 €/Min.)", "F-100 (2,50 €/Min.)", "F-40 (2,00 €/Min.)"],
+      "erklaerung": "Relativer db = db ÷ Engpasszeit: F-60 12/3 = 4,00; F-80 18/6 = 3,00; F-100 30/12 = 2,50; F-40 4/2 = 2,00 €/Min. Bei Engpass entscheidet der **relative**, nicht der absolute db (F-100 hätte den höchsten absoluten db!)."
+    },
+    {
+      "id": "tk-08", "typ": "zahl",
+      "frage": "Engpass CNC-Maschine: {{kap}} Minuten pro Monat. Produkte (Absatzhöchstmengen):\n- F-60: db 12 €, 3 Min., max. {{m60}} Stück\n- F-80: db 18 €, 6 Min., max. {{m80}} Stück\n- F-100: db 30 €, 12 Min., max. {{m100}} Stück\n\nWie hoch ist der **maximale Gesamtdeckungsbeitrag** bei optimalem Produktionsprogramm?",
+      "vars": { "kap": 12000, "m60": 1500, "m80": 800, "m100": 400 },
+      "calc": "m60*12 + m80*18 + floor((kap - m60*3 - m80*6)/12)*30",
+      "einheit": "€",
+      "loesung": 39150,
+      "erklaerung": "Rangfolge nach relativem db: F-60 (4 €/Min.) → F-80 (3 €/Min.) → F-100 (2,50 €/Min.)\nF-60: {{m60}} × 3 = {{m60*3}} Min. → DB {{m60*12|€}}\nF-80: {{m80}} × 6 = {{m80*6}} Min. → DB {{m80*18|€}}\nRest: {{kap - m60*3 - m80*6}} Min. ÷ 12 = {{floor((kap - m60*3 - m80*6)/12)}} Stück F-100 → DB {{floor((kap - m60*3 - m80*6)/12)*30|€}}\n**Gesamt-DB = {{m60*12 + m80*18 + floor((kap - m60*3 - m80*6)/12)*30|€}}**"
+    },
+    {
+      "id": "tk-09", "typ": "zahl",
+      "frage": "Im März betrugen die Gesamtkosten der Gehäusefertigung {{k1|€}} bei {{x1}} Stück, im April {{k2|€}} bei {{x2}} Stück.\n\nErmitteln Sie die **variablen Kosten je Stück** (Differenzen-Quotienten-Verfahren).",
+      "vars": { "k1": 412000, "x1": 3600, "k2": 454000, "x2": 4200 },
+      "calc": "(k2-k1)/(x2-x1)",
+      "einheit": "€",
+      "loesung": 70,
+      "erklaerung": "kv = ΔK ÷ Δx = ({{k2}} − {{k1}}) ÷ ({{x2}} − {{x1}}) = {{k2-k1}} ÷ {{x2-x1}} = **{{(k2-k1)/(x2-x1)|€}}**\nKf = {{k1}} − {{(k2-k1)/(x2-x1)}} × {{x1}} = {{k1-(k2-k1)/(x2-x1)*x1|€}}"
+    },
+    {
+      "id": "tk-10", "typ": "mehrfach",
+      "frage": "Welche Aussagen zur **Teilkostenrechnung** (Deckungsbeitragsrechnung) sind richtig?",
+      "optionen": ["Sie trennt Kosten in fixe und variable Bestandteile.", "Sie eignet sich für kurzfristige Entscheidungen wie Zusatzaufträge und Engpässe.", "Ein Produkt mit positivem db, aber negativem Nettoergebnis nach Vollkosten sollte kurzfristig nicht eliminiert werden.", "Sie verteilt alle Fixkosten mit Zuschlagssätzen auf die Produkte.", "Sie ersetzt die Vollkostenrechnung für die langfristige Preispolitik vollständig."],
+      "loesung": [0, 1, 2],
+      "erklaerung": "Die DB-Rechnung verzichtet bewusst auf die Schlüsselung der Fixkosten. Ein Produkt mit positivem db trägt zur Fixkostendeckung bei; fällt es weg, verschlechtert sich das Ergebnis, solange die Fixkosten nicht abbaubar sind. Langfristig müssen die Vollkosten gedeckt sein."
+    },
+    {
+      "id": "tk-11", "typ": "zahl",
+      "frage": "Mehrstufige Deckungsbeitragsrechnung der Produktgruppe „Gehäuse“:\n- Umsatzerlöse {{u|€}}\n- variable Kosten {{kv|€}}\n- Erzeugnisfixkosten (z. B. Spezialwerkzeuge) {{efk|€}}\n- Erzeugnisgruppenfixkosten {{gfk|€}}\n\nWie hoch ist der **Deckungsbeitrag III**?",
+      "vars": { "u": 2400000, "kv": 1380000, "efk": 260000, "gfk": 310000 },
+      "calc": "u - kv - efk - gfk",
+      "einheit": "€",
+      "loesung": 450000,
+      "erklaerung": "DB I = {{u|€}} − {{kv|€}} = {{u-kv|€}}\nDB II = DB I − Erzeugnisfixkosten {{efk|€}} = {{u-kv-efk|€}}\n**DB III** = DB II − Erzeugnisgruppenfixkosten {{gfk|€}} = {{u-kv-efk-gfk|€}}\nDanach: − Bereichs- und Unternehmensfixkosten = Betriebsergebnis."
+    },
+    {
+      "id": "tk-12", "typ": "zahl",
+      "frage": "Für die Halterung H-50 soll ein Gewinn von {{g|€}} pro Monat erzielt werden. Preis {{p|€}}, kv {{kv|€}}, Kf {{kf|€}}.\n\nWelche **Absatzmenge** ist dafür nötig?",
+      "vars": { "g": 22000, "p": 14.2, "kv": 8.7, "kf": 41000 },
+      "calc": "ceil(r((kf + g)/(p - kv), 6))",
+      "einheit": "Stück",
+      "toleranz": 0,
+      "loesung": 11455,
+      "erklaerung": "Menge = (Kf + Zielgewinn) ÷ db = ({{kf}} + {{g}}) ÷ {{p-kv}} = {{(kf+g)/(p-kv)|n2}} → **{{ceil(r((kf + g)/(p - kv), 6))}} Stück**"
+    },
+    {
+      "id": "tk-13", "typ": "einfach",
+      "frage": "Der db eines Produkts ist **negativ**. Was folgt daraus für die kurzfristige Entscheidung?",
+      "optionen": ["Jedes verkaufte Stück verschlechtert das Ergebnis – das Produkt sollte (kurzfristig) nicht mehr hergestellt werden, sofern keine strategischen Gründe dagegen sprechen.", "Das Produkt deckt seine variablen Kosten und einen Teil der Fixkosten.", "Das Produkt sollte vorrangig gefertigt werden.", "Nichts – der db ist für Entscheidungen unerheblich."],
+      "loesung": 0,
+      "erklaerung": "db < 0 → Preis < kv. Jedes Stück vergrößert den Verlust. Ausnahmen: Sortimentsverbund (Kunde kauft sonst andere Produkte nicht), Markteinführung, Restposten."
+    },
+    {
+      "id": "tk-14", "typ": "zahl",
+      "frage": "Ein Kunde verlangt für die Halterung H-50 einen Preisnachlass. Bei Kf {{kf|€}}, kv {{kv|€}} und geplanter Menge {{x}} Stück: Wie hoch ist die **langfristige Preisuntergrenze** je Stück?",
+      "vars": { "kf": 41000, "kv": 8.7, "x": 9000 },
+      "calc": "r2(kf/x + kv)",
+      "einheit": "€",
+      "loesung": 13.26,
+      "erklaerung": "Langfristige PUG = Selbstkosten je Stück = Kf ÷ x + kv = {{kf}} ÷ {{x}} + {{kv}} = **{{r2(kf/x + kv)|€}}**\nKurzfristige PUG = kv = {{kv|€}}"
+    },
+    {
+      "id": "tk-15", "typ": "zahl",
+      "frage": "Ist-Umsatz der Halterung H-50: {{x}} Stück à {{p|€}}. Break-even-Menge: {{bep}} Stück.\n\nBerechnen Sie den **Sicherheitskoeffizienten** (zwei Nachkommastellen).",
+      "vars": { "x": 9000, "p": 14.2, "bep": 7455 },
+      "calc": "r2((x - bep)/x*100)",
+      "einheit": "%",
+      "loesung": 17.17,
+      "erklaerung": "Sicherheitskoeffizient = (Ist-Menge − BEP-Menge) ÷ Ist-Menge × 100 = ({{x}} − {{bep}}) ÷ {{x}} × 100 = **{{r2((x - bep)/x*100)|%}}**\nDer Absatz darf um diesen Prozentsatz sinken, bevor Verlust entsteht."
+    }
+  ],
+  "karten": [
+    { "id": "tk-k01", "vorne": "Stückdeckungsbeitrag und Betriebsergebnis", "hinten": "db = p − kv\nDB = db × x = Erlöse − variable Kosten\nBetriebsergebnis = DB − Kf" },
+    { "id": "tk-k02", "vorne": "Break-even-Point", "hinten": "x_BEP = Kf ÷ db (aufrunden)\nUmsatz_BEP = x_BEP × p\nZielmenge für Gewinn G: (Kf + G) ÷ db" },
+    { "id": "tk-k03", "vorne": "Zusatzauftrag – Entscheidungsregel", "hinten": "Annehmen, wenn Preis > kv (db > 0) und freie Kapazität vorhanden.\nErgebnisänderung = db × Menge.\nQualitativ: Preisgefüge, Stammkunden, Folgeaufträge, Auslastung." },
+    { "id": "tk-k04", "vorne": "Preisuntergrenzen", "hinten": "Kurzfristig (absolut): kv\nLangfristig: Selbstkosten = kv + Kf/x" },
+    { "id": "tk-k05", "vorne": "Make-or-buy – kurzfristig und langfristig", "hinten": "Kurzfristig (freie Kapazität, Fixkosten nicht abbaubar): kv vs. Einstandspreis.\nLangfristig: kritische Menge x = Kf(Eigen) ÷ (Einstandspreis − kv)." },
+    { "id": "tk-k06", "vorne": "Engpass – optimales Produktionsprogramm", "hinten": "1. Mindest-/Liefermengen einplanen\n2. relativer db = db ÷ Engpasszeit je Stück\n3. Produkte in absteigender Reihenfolge des relativen db bis zur Kapazitätsgrenze einplanen" },
+    { "id": "tk-k07", "vorne": "Mehrstufige DB-Rechnung", "hinten": "Erlöse − variable Kosten = DB I\n− Erzeugnisfixkosten = DB II\n− Erzeugnisgruppenfixkosten = DB III\n− Bereichsfixkosten = DB IV\n− Unternehmensfixkosten = Betriebsergebnis" },
+    { "id": "tk-k08", "vorne": "Kostenauflösung (Differenzen-Quotienten)", "hinten": "kv = (K2 − K1) ÷ (x2 − x1)\nKf = K1 − kv × x1" },
+    { "id": "tk-k09", "vorne": "Vollkosten- vs. Teilkostenrechnung", "hinten": "**Vollkosten**: alle Kosten auf Produkte verteilt → langfristige Preise, Bewertung.\n**Teilkosten**: nur variable Kosten zugerechnet → kurzfristige Entscheidungen (Zusatzauftrag, Engpass, Make-or-buy, Sortiment)." },
+    { "id": "tk-k10", "vorne": "Sicherheitskoeffizient", "hinten": "(Ist-Absatz − Break-even-Absatz) ÷ Ist-Absatz × 100\nGibt an, wie weit der Absatz sinken darf, bis Verlust entsteht." }
+  ]
+}

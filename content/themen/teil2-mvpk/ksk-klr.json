@@ -1,0 +1,149 @@
+{
+  "id": "ksk-klr",
+  "titel": "KLR: Abgrenzung, Kostenarten, Kostenstellen, BAB",
+  "gruppe": "KSK",
+  "bereich": { "ao2024": "mvpk", "vo2002": "ksk" },
+  "beschreibung": "Aufwand/Kosten, neutrale Aufwendungen, Anders- und Zusatzkosten, Ergebnistabelle, Einzel-/Gemeinkosten, fixe/variable Kosten, BAB mit Umlage, Maschinenstundensatz.",
+  "fragen": [
+    {
+      "id": "klr-01", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Aufwendungen der Westpfalz Metallwerk GmbH richtig zu.",
+      "paare": [
+        ["Verlust aus dem Verkauf eines alten Gabelstaplers unter Buchwert", "neutraler Aufwand (betriebsfremd/außerordentlich)"],
+        ["Verbrauch von Edelstahlblech in der Fertigung", "Zweckaufwand = Grundkosten"],
+        ["Bilanzielle Abschreibung, die in der KLR durch kalkulatorische ersetzt wird", "Aufwand ≠ Kosten (Anderskosten)"],
+        ["Kalkulatorischer Unternehmerlohn (Einzelunternehmen)", "Zusatzkosten"]
+      ],
+      "erklaerung": "**Neutraler Aufwand**: betriebsfremd, periodenfremd oder außerordentlich. **Grundkosten** = Zweckaufwand (gleiche Höhe in FiBu und KLR). **Anderskosten**: in der KLR in anderer Höhe angesetzt (kalk. AfA, kalk. Zinsen auf FK). **Zusatzkosten**: ohne Aufwand in der FiBu (kalk. Unternehmerlohn, kalk. Miete, Zinsen auf EK)."
+    },
+    {
+      "id": "klr-02", "typ": "zahl",
+      "frage": "Ergebnistabelle der Westpfalz Metallwerk GmbH (Auszug):\n- Erträge laut GuV {{ertr|€}}, davon neutrale Erträge {{nertr|€}}\n- Aufwendungen laut GuV {{aufw|€}}, davon neutrale Aufwendungen {{naufw|€}}\n- Bilanzielle Abschreibungen (in den Aufwendungen enthalten) {{bafa|€}}, kalkulatorische Abschreibungen {{kafa|€}}\n\nWie hoch ist das **Betriebsergebnis**?",
+      "vars": { "ertr": 8600000, "nertr": 120000, "aufw": 8240000, "naufw": 95000, "bafa": 410000, "kafa": 460000 },
+      "calc": "(ertr - nertr) - (aufw - naufw - bafa + kafa)",
+      "einheit": "€",
+      "loesung": 285000,
+      "erklaerung": "Leistungen = {{ertr|€}} − {{nertr|€}} = {{ertr-nertr|€}}\nKosten = {{aufw|€}} − neutrale Aufw. {{naufw|€}} − bilanzielle AfA {{bafa|€}} + kalk. AfA {{kafa|€}} = {{aufw - naufw - bafa + kafa|€}}\n**Betriebsergebnis** = {{(ertr - nertr) - (aufw - naufw - bafa + kafa)|€}}\nGesamtergebnis (GuV) = {{ertr-aufw|€}}"
+    },
+    {
+      "id": "klr-03", "typ": "mehrfach",
+      "frage": "Welche Kosten sind bei der Westpfalz Metallwerk GmbH **fixe Kosten** (bezogen auf die Produktionsmenge)?",
+      "optionen": ["Miete der Lagerhalle", "Gehalt der Geschäftsführerin", "Zeitabhängige Abschreibung der CNC-Maschine", "Edelstahlblech für die Gehäuse", "Akkordlöhne in der Fertigung", "Verpackungsmaterial je Gehäuse"],
+      "loesung": [0, 1, 2],
+      "erklaerung": "**Fixe Kosten** bleiben bei Änderung der Ausbringungsmenge (innerhalb der Kapazität) gleich. **Variable Kosten** steigen mit der Menge: Material, Akkordlöhne, Verpackung, Energie für Maschinenlaufzeit. Achtung: Fixkosten **je Stück** sinken mit steigender Menge (Fixkostendegression)."
+    },
+    {
+      "id": "klr-04", "typ": "zahl",
+      "frage": "Die Fixkosten der Gehäusefertigung betragen {{kf|€}} pro Monat, die variablen Kosten {{kv|€}} je Stück.\n\nWie hoch sind die **Stückkosten** bei einer Produktion von {{x}} Stück?",
+      "vars": { "kf": 96000, "kv": 38.5, "x": 3200 },
+      "calc": "r2(kf/x + kv)",
+      "einheit": "€",
+      "loesung": 68.5,
+      "erklaerung": "Stückkosten k = Kf ÷ x + kv = {{kf}} ÷ {{x}} + {{kv}} = {{kf/x|€}} + {{kv|€}} = **{{r2(kf/x + kv)|€}}**\nBei {{x*1.25}} Stück wären es nur {{r2(kf/(x*1.25) + kv)|€}} → **Fixkostendegression**."
+    },
+    {
+      "id": "klr-05", "typ": "zahl",
+      "frage": "Im BAB sind die Kosten der **Hilfskostenstelle Fuhrpark** in Höhe von {{fuhr|€}} nach gefahrenen Kilometern auf die Hauptkostenstellen umzulegen: Material {{kmM}} km, Fertigung {{kmF}} km, Verwaltung {{kmV}} km, Vertrieb {{kmT}} km.\n\nWelchen Betrag erhält die Kostenstelle **Vertrieb**?",
+      "vars": { "fuhr": 36000, "kmM": 8000, "kmF": 4000, "kmV": 6000, "kmT": 30000 },
+      "calc": "fuhr / (kmM + kmF + kmV + kmT) * kmT",
+      "einheit": "€",
+      "loesung": 22500,
+      "erklaerung": "Gesamt-km = {{kmM + kmF + kmV + kmT}}\nKosten je km = {{fuhr}} ÷ {{kmM + kmF + kmV + kmT}} = {{fuhr / (kmM + kmF + kmV + kmT)|€}}\nVertrieb: {{kmT}} km × {{fuhr / (kmM + kmF + kmV + kmT)|€}} = **{{fuhr / (kmM + kmF + kmV + kmT) * kmT|€}}**"
+    },
+    {
+      "id": "klr-06", "typ": "zahl",
+      "frage": "Die Miete für das Betriebsgebäude ({{miete|€}} pro Monat) wird im BAB nach Fläche verteilt: Material {{qM}} m², Fertigung {{qF}} m², Verwaltung {{qV}} m², Vertrieb {{qT}} m².\n\nWie viel Miete entfällt auf die **Fertigung**?",
+      "vars": { "miete": 24000, "qM": 1200, "qF": 3600, "qV": 600, "qT": 600 },
+      "calc": "miete / (qM+qF+qV+qT) * qF",
+      "einheit": "€",
+      "loesung": 14400,
+      "erklaerung": "Gesamtfläche {{qM+qF+qV+qT}} m² → {{miete/(qM+qF+qV+qT)|€}} je m²\nFertigung: {{qF}} × {{miete/(qM+qF+qV+qT)|€}} = **{{miete/(qM+qF+qV+qT)*qF|€}}**"
+    },
+    {
+      "id": "klr-07", "typ": "einfach",
+      "frage": "Welche Aufgabe hat die **Kostenartenrechnung**?",
+      "optionen": ["Erfassen und Gliedern aller Kosten einer Periode: Welche Kosten sind angefallen?", "Verteilen der Gemeinkosten auf die Abteilungen: Wo sind Kosten angefallen?", "Ermitteln der Kosten je Produkt: Wofür sind Kosten angefallen?", "Vergleich der Kosten mit Konkurrenzunternehmen"],
+      "loesung": 0,
+      "erklaerung": "Kostenarten (Welche?) → Kostenstellen (Wo?) → Kostenträger (Wofür?). Die Kostenstellenrechnung erfolgt im BAB, die Kostenträgerrechnung als Stückrechnung (Kalkulation) oder Zeitrechnung (Kostenträgerblatt)."
+    },
+    {
+      "id": "klr-08", "typ": "reihenfolge",
+      "frage": "Bringen Sie die Arbeitsschritte im **BAB** in die richtige Reihenfolge.",
+      "elemente": ["Gemeinkosten aus der Kostenartenrechnung übernehmen", "Gemeinkosten nach Verteilungsschlüsseln auf alle Kostenstellen verteilen", "Kosten der Hilfskostenstellen auf die Hauptkostenstellen umlegen", "Zuschlagsgrundlagen (Einzelkosten, HK) ermitteln", "Ist-Zuschlagssätze berechnen und mit Normalzuschlägen vergleichen"],
+      "erklaerung": "Primäre Gemeinkostenverteilung (Schlüssel: Fläche, Köpfe, kWh) → sekundäre Verteilung (Umlage Hilfskostenstellen) → Zuschlagsgrundlagen → Zuschlagssätze → Über-/Unterdeckung."
+    },
+    {
+      "id": "klr-09", "typ": "zahl",
+      "frage": "Für die CNC-Drehmaschine, auf der der Flansch F-80 gefertigt wird, liegen pro Jahr vor:\n- kalkulatorische Abschreibung {{afa|€}}\n- kalkulatorische Zinsen {{zins|€}}\n- Energiekosten {{energie|€}}\n- Instandhaltung {{inst|€}}\n- Raumkosten {{raum|€}}\nDie Maschine läuft {{std}} Stunden im Jahr.\n\nBerechnen Sie den **Maschinenstundensatz**.",
+      "vars": { "afa": 52000, "zins": 9600, "energie": 14400, "inst": 7800, "raum": 4200, "std": 1600 },
+      "calc": "r2((afa+zins+energie+inst+raum)/std)",
+      "einheit": "€",
+      "loesung": 55,
+      "erklaerung": "Maschinenabhängige Gemeinkosten = {{afa+zins+energie+inst+raum|€}}\n÷ {{std}} Laufstunden = **{{r2((afa+zins+energie+inst+raum)/std)|€}} je Stunde**\nIn der Kalkulation: Maschinenkosten = Maschinenstundensatz × Bearbeitungszeit; Rest-FGK weiter auf die Fertigungslöhne."
+    },
+    {
+      "id": "klr-10", "typ": "zahl",
+      "frage": "Eine Anlage hat einen Anschaffungswert von {{ak|€}} und einen Wiederbeschaffungswert von {{wbw|€}}. Die Nutzungsdauer beträgt {{nd}} Jahre, kalkulatorischer Zinssatz {{i|%}}.\n\nWie hoch sind die **kalkulatorischen Zinsen** pro Jahr (Durchschnittsmethode auf Basis der Anschaffungskosten)?",
+      "vars": { "ak": 240000, "wbw": 300000, "nd": 10, "i": 6 },
+      "calc": "ak/2 * i/100",
+      "einheit": "€",
+      "loesung": 7200,
+      "erklaerung": "Durchschnittlich gebundenes Kapital = AK ÷ 2 = {{ak/2|€}}\nKalk. Zinsen = {{ak/2|€}} × {{i|%}} = **{{ak/2*i/100|€}}**\nDie **kalkulatorische Abschreibung** hingegen erfolgt vom Wiederbeschaffungswert: {{wbw|€}} ÷ {{nd}} = {{wbw/nd|€}}."
+    },
+    {
+      "id": "klr-11", "typ": "einfach",
+      "frage": "Warum setzt die KLR **kalkulatorische Abschreibungen** vom Wiederbeschaffungswert an?",
+      "optionen": ["Damit über die Verkaufspreise genug Mittel zurückfließen, um die Anlage zu gestiegenen Preisen zu ersetzen (Substanzerhaltung).", "Weil das Steuerrecht dies vorschreibt.", "Damit der Bilanzgewinn möglichst hoch ausgewiesen wird.", "Weil die Anschaffungskosten unbekannt sind."],
+      "loesung": 0,
+      "erklaerung": "Die KLR dient der realistischen Preiskalkulation. Bilanziell (HGB/EStG) darf nur von den Anschaffungs-/Herstellungskosten abgeschrieben werden (Nominalwertprinzip)."
+    },
+    {
+      "id": "klr-12", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Verteilungsschlüssel den Gemeinkosten im BAB zu.",
+      "paare": [
+        ["Miete, Heizung, Reinigung", "Fläche (m²)"],
+        ["Strom für Maschinen", "Verbrauch (kWh) bzw. Maschinenleistung"],
+        ["Gehälter, Sozialkosten", "Gehaltslisten bzw. Anzahl Mitarbeitende"],
+        ["Kalkulatorische Abschreibung", "Anlagenwerte der Kostenstelle"]
+      ],
+      "erklaerung": "Gemeinkosten werden möglichst **verursachungsgerecht** verteilt: direkt über Belege (Stelleneinzelkosten) oder über Schlüssel (Stellengemeinkosten)."
+    },
+    {
+      "id": "klr-13", "typ": "zahl",
+      "frage": "Im BAB ergeben sich für die Kostenstelle Fertigung Gemeinkosten von {{fgk|€}}. Die Fertigungslöhne betragen {{fl|€}}.\n\nWie hoch ist der **FGK-Zuschlagssatz**? (zwei Nachkommastellen)",
+      "vars": { "fgk": 412500, "fl": 275000 },
+      "calc": "r2(fgk/fl*100)",
+      "einheit": "%",
+      "loesung": 150,
+      "erklaerung": "FGK-Zuschlagssatz = FGK ÷ Fertigungslöhne × 100 = {{fgk|€}} ÷ {{fl|€}} × 100 = **{{r2(fgk/fl*100)|%}}**"
+    },
+    {
+      "id": "klr-14", "typ": "einfach",
+      "frage": "Was versteht man unter **Leistungen** in der KLR?",
+      "optionen": ["Den bewerteten, betriebsbedingten Wertezuwachs einer Periode (z. B. Umsatzerlöse, Bestandsmehrungen, Eigenleistungen)", "Alle Erträge laut GuV einschließlich Zinserträge aus Wertpapieren", "Alle Einzahlungen auf dem Bankkonto", "Die Arbeitsleistung der Beschäftigten in Stunden"],
+      "loesung": 0,
+      "erklaerung": "Leistungen = Erträge − neutrale Erträge (betriebsfremd, periodenfremd, außerordentlich), z. B. Umsatzerlöse aus Gehäusen, Bestandsmehrungen an Erzeugnissen, aktivierte Eigenleistungen. Erträge aus Wertpapieren oder Mieteinnahmen sind neutral."
+    },
+    {
+      "id": "klr-15", "typ": "zahl",
+      "frage": "Ein Stammkunde fragt Flansche F-80 an. Je Stück fallen an: Fertigungsmaterial {{fm|€}}, MGK {{mgk|%}}, Bearbeitungszeit {{min}} Minuten auf der CNC-Maschine (Maschinenstundensatz {{mss|€}}), Fertigungslöhne {{fl|€}}, Rest-FGK {{rfgk|%}}.\n\nWie hoch sind die **Herstellkosten je Stück**?",
+      "vars": { "fm": 6.4, "mgk": 10, "min": 12, "mss": 55, "fl": 3.2, "rfgk": 80 },
+      "calc": "r2(fm*(1+mgk/100) + mss*min/60 + fl*(1+rfgk/100))",
+      "einheit": "€",
+      "loesung": 23.8,
+      "erklaerung": "Materialkosten = {{fm|€}} × {{1+mgk/100}} = {{r2(fm*(1+mgk/100))|€}}\nMaschinenkosten = {{mss|€}} × {{min}}/60 Std. = {{mss*min/60|€}}\nFertigungslöhne + Rest-FGK = {{fl|€}} × {{1+rfgk/100}} = {{r2(fl*(1+rfgk/100))|€}}\n**Herstellkosten** = {{r2(fm*(1+mgk/100) + mss*min/60 + fl*(1+rfgk/100))|€}}"
+    }
+  ],
+  "karten": [
+    { "id": "klr-k01", "vorne": "Aufwand vs. Kosten", "hinten": "**Aufwand** (FiBu): gesamter Werteverzehr einer Periode → GuV\n**Kosten** (KLR): betriebsbedingter, bewerteter Güterverzehr zur Leistungserstellung\nNeutraler Aufwand ist kein Kostenbestandteil." },
+    { "id": "klr-k02", "vorne": "Grund-, Anders- und Zusatzkosten", "hinten": "Grundkosten = Zweckaufwand (gleiche Höhe)\nAnderskosten = kalkulatorische Kosten in anderer Höhe als der Aufwand (kalk. AfA, kalk. Zinsen, kalk. Wagnisse)\nZusatzkosten = kein Aufwand (kalk. Unternehmerlohn, kalk. Miete, EK-Zinsen)" },
+    { "id": "klr-k03", "vorne": "Neutrale Aufwendungen – 3 Arten", "hinten": "betriebsfremd (Spende, Verluste aus Wertpapieren)\nperiodenfremd (Steuernachzahlung Vorjahr)\naußerordentlich (Brandschaden, Anlagenverkauf unter Buchwert)" },
+    { "id": "klr-k04", "vorne": "Kostenarten – Kostenstellen – Kostenträger", "hinten": "Welche Kosten? → Kostenartenrechnung\nWo angefallen? → Kostenstellenrechnung (BAB)\nWofür angefallen? → Kostenträgerrechnung (Kalkulation, Kostenträgerblatt)" },
+    { "id": "klr-k05", "vorne": "Fixe und variable Kosten", "hinten": "K = Kf + kv × x\nStückkosten k = Kf/x + kv\nFixkostendegression: Mit steigender Menge sinken die fixen Kosten je Stück." },
+    { "id": "klr-k06", "vorne": "Haupt- und Hilfskostenstellen", "hinten": "**Hauptkostenstellen**: Material, Fertigung, Verwaltung, Vertrieb – rechnen direkt auf Kostenträger ab.\n**Hilfskostenstellen** (allgemeine: Fuhrpark, Kantine; Fertigungshilfsstellen: Arbeitsvorbereitung) – werden auf Hauptkostenstellen umgelegt." },
+    { "id": "klr-k07", "vorne": "Maschinenstundensatz – Bestandteile", "hinten": "kalk. Abschreibung (vom WBW), kalk. Zinsen (½ AK × i), Energie, Instandhaltung, Raumkosten, Werkzeuge\n÷ Maschinenlaufstunden" },
+    { "id": "klr-k08", "vorne": "Kalkulatorische Abschreibung vs. bilanzielle Abschreibung", "hinten": "Kalkulatorisch: vom Wiederbeschaffungswert, tatsächliche Nutzungsdauer, nur betriebsnotwendige Anlagen.\nBilanziell: von Anschaffungskosten, AfA-Tabelle, alle Anlagen." },
+    { "id": "klr-k09", "vorne": "Betriebsergebnis vs. neutrales Ergebnis", "hinten": "Betriebsergebnis = Leistungen − Kosten\nNeutrales Ergebnis = neutrale Erträge − neutrale Aufwendungen (+ Ergebnis aus kostenrechnerischen Korrekturen)\nSumme = Gesamtergebnis (GuV)" },
+    { "id": "klr-k10", "vorne": "Kalkulatorische Wagnisse", "hinten": "Einzelwagnisse (Forderungsausfälle, Gewährleistung, Schwund) werden als Durchschnitt verrechnet. Das allgemeine Unternehmerwagnis ist nicht Kosten, sondern wird durch den Gewinn abgegolten." }
+  ]
+}

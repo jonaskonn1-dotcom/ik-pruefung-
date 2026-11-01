@@ -1,0 +1,149 @@
+{
+  "id": "ksk-jahresabschluss",
+  "titel": "Jahresabschluss, Bilanzanalyse, Kennzahlen, Liquidität",
+  "gruppe": "KSK",
+  "bereich": { "ao2024": "mvpk", "vo2002": "ksk" },
+  "beschreibung": "Bestandteile des Jahresabschlusses, Bilanzaufbereitung, Kapital- und Vermögensstruktur, Anlagendeckung, Liquiditätsgrade, Rentabilität, Cashflow, Liquiditätsplanung.",
+  "fragen": [
+    {
+      "id": "ja-01", "typ": "mehrfach",
+      "frage": "Woraus besteht der **Jahresabschluss** einer mittelgroßen GmbH wie der Westpfalz Metallwerk GmbH (HGB)?",
+      "optionen": ["Bilanz", "Gewinn- und Verlustrechnung", "Anhang", "Lagebericht (zusätzlich, nicht Teil des Jahresabschlusses im engeren Sinn)", "Betriebsabrechnungsbogen", "Kostenträgerblatt"],
+      "loesung": [0, 1, 2],
+      "erklaerung": "Kapitalgesellschaften: Jahresabschluss = **Bilanz + GuV + Anhang** (§ 264 HGB). Mittelgroße und große Kapitalgesellschaften stellen zusätzlich einen **Lagebericht** auf. BAB und Kostenträgerblatt gehören zur internen KLR."
+    },
+    {
+      "id": "ja-02", "typ": "zahl",
+      "frage": "Aufbereitete Bilanz der Westpfalz Metallwerk GmbH (in Tsd. €):\n- Anlagevermögen {{av}}\n- Umlaufvermögen {{uv}} (davon Vorräte {{vor}}, Forderungen {{ford}}, flüssige Mittel {{fm}})\n- Eigenkapital {{ek}}\n- langfristiges Fremdkapital {{lfk}}\n- kurzfristiges Fremdkapital {{kfk}}\n\nBerechnen Sie die **Eigenkapitalquote** (zwei Nachkommastellen).",
+      "vars": { "av": 6200, "uv": 3800, "vor": 1900, "ford": 1500, "fm": 400, "ek": 3500, "lfk": 3900, "kfk": 2600 },
+      "calc": "r2(ek/(ek+lfk+kfk)*100)",
+      "einheit": "%",
+      "loesung": 35,
+      "erklaerung": "Gesamtkapital = {{ek}} + {{lfk}} + {{kfk}} = {{ek+lfk+kfk}} Tsd. € (= Bilanzsumme {{av+uv}})\nEK-Quote = {{ek}} ÷ {{ek+lfk+kfk}} × 100 = **{{r2(ek/(ek+lfk+kfk)*100)|%}}**"
+    },
+    {
+      "id": "ja-03", "typ": "zahl",
+      "frage": "Mit den Bilanzdaten (Tsd. €: AV {{av}}, EK {{ek}}, langfristiges FK {{lfk}}):\n\nBerechnen Sie die **Anlagendeckung II** (zwei Nachkommastellen).",
+      "vars": { "av": 6200, "ek": 3500, "lfk": 3900 },
+      "calc": "r2((ek+lfk)/av*100)",
+      "einheit": "%",
+      "loesung": 119.35,
+      "erklaerung": "Anlagendeckung II = (EK + langfristiges FK) ÷ AV × 100 = ({{ek}} + {{lfk}}) ÷ {{av}} × 100 = **{{r2((ek+lfk)/av*100)|%}}**\n> 100 % → die goldene Bilanzregel (weite Fassung) ist erfüllt: Das Anlagevermögen ist langfristig finanziert. Anlagendeckung I = {{r2(ek/av*100)|%}}."
+    },
+    {
+      "id": "ja-04", "typ": "zahl",
+      "frage": "Flüssige Mittel {{fm}} Tsd. €, Forderungen {{ford}} Tsd. €, kurzfristige Verbindlichkeiten {{kfk}} Tsd. €.\n\nBerechnen Sie die **Liquidität 2. Grades** (zwei Nachkommastellen).",
+      "vars": { "fm": 400, "ford": 1500, "kfk": 2600 },
+      "calc": "r2((fm+ford)/kfk*100)",
+      "einheit": "%",
+      "loesung": 73.08,
+      "erklaerung": "Liquidität II = (flüssige Mittel + kurzfristige Forderungen) ÷ kurzfristiges FK × 100 = ({{fm}} + {{ford}}) ÷ {{kfk}} × 100 = **{{r2((fm+ford)/kfk*100)|%}}**\nRichtwert ≥ 100 % → hier **nicht erfüllt**: Die kurzfristigen Verbindlichkeiten sind ohne Verkauf von Vorräten nicht gedeckt."
+    },
+    {
+      "id": "ja-05", "typ": "zahl",
+      "frage": "Jahresüberschuss {{g}} Tsd. €, Fremdkapitalzinsen {{z}} Tsd. €, Eigenkapital {{ek}} Tsd. €, Gesamtkapital {{gk}} Tsd. €.\n\nBerechnen Sie die **Gesamtkapitalrentabilität** (zwei Nachkommastellen).",
+      "vars": { "g": 420, "z": 260, "ek": 3500, "gk": 10000 },
+      "calc": "r2((g+z)/gk*100)",
+      "einheit": "%",
+      "loesung": 6.8,
+      "erklaerung": "GK-Rentabilität = (Gewinn + FK-Zinsen) ÷ GK × 100 = ({{g}} + {{z}}) ÷ {{gk}} × 100 = **{{r2((g+z)/gk*100)|%}}**\nEK-Rentabilität = {{g}} ÷ {{ek}} × 100 = {{r2(g/ek*100)|%}}"
+    },
+    {
+      "id": "ja-06", "typ": "zahl",
+      "frage": "Umsatzerlöse {{u}} Tsd. €, Jahresüberschuss {{g}} Tsd. €.\n\nWie hoch ist die **Umsatzrentabilität**?",
+      "vars": { "u": 16800, "g": 420 },
+      "calc": "r2(g/u*100)",
+      "einheit": "%",
+      "loesung": 2.5,
+      "erklaerung": "Umsatzrentabilität = Gewinn ÷ Umsatz × 100 = {{g}} ÷ {{u}} × 100 = **{{r2(g/u*100)|%}}** → von jedem Euro Umsatz bleiben {{r2(g/u*100)}} Cent Gewinn."
+    },
+    {
+      "id": "ja-07", "typ": "zahl",
+      "frage": "Jahresüberschuss {{g}} Tsd. €, Abschreibungen {{afa}} Tsd. €, Zuführung zu langfristigen Rückstellungen {{rst}} Tsd. €.\n\nWie hoch ist der **Cashflow** (vereinfachte Ermittlung)?",
+      "vars": { "g": 420, "afa": 610, "rst": 85 },
+      "calc": "g + afa + rst",
+      "einheit": "Tsd. €",
+      "loesung": 1115,
+      "erklaerung": "Cashflow = Jahresüberschuss + Abschreibungen + Erhöhung langfristiger Rückstellungen = {{g}} + {{afa}} + {{rst}} = **{{g+afa+rst}} Tsd. €**\nAbschreibungen und Rückstellungszuführungen sind Aufwand, aber keine Auszahlung → sie stehen für Investitionen und Tilgung zur Verfügung (Innenfinanzierung)."
+    },
+    {
+      "id": "ja-08", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Kennzahlen dem Analysebereich zu.",
+      "paare": [
+        ["Anlageintensität", "Vermögensstruktur (Investierung)"],
+        ["Verschuldungsgrad", "Kapitalstruktur (Finanzierung)"],
+        ["Anlagendeckung I", "horizontale Bilanzstruktur (Investierung/Finanzierung)"],
+        ["Liquidität 1. Grades", "Zahlungsfähigkeit"]
+      ],
+      "erklaerung": "Vertikale Analyse: Aktiva (Vermögensstruktur) bzw. Passiva (Kapitalstruktur). Horizontale Analyse: Beziehung zwischen Aktiva und Passiva (Deckungsgrade, Liquidität). Dazu: Erfolgsanalyse (Rentabilität)."
+    },
+    {
+      "id": "ja-09", "typ": "einfach",
+      "frage": "Die Gesamtkapitalrentabilität beträgt 6,8 %, der Fremdkapitalzins 4,5 %. Was passiert mit der **Eigenkapitalrentabilität**, wenn zusätzliche Investitionen mit Fremdkapital finanziert werden (sonst gleiche Bedingungen)?",
+      "optionen": ["Sie steigt (positiver Leverage-Effekt).", "Sie sinkt.", "Sie bleibt gleich.", "Sie wird negativ."],
+      "loesung": 0,
+      "erklaerung": "Solange GK-Rentabilität > FK-Zins, „verdient“ jeder zusätzliche FK-Euro mehr als er kostet → EK-Rentabilität steigt (**Leverage-Effekt**). Risiko: Sinkt die Rentabilität unter den Zins, kehrt sich der Effekt um."
+    },
+    {
+      "id": "ja-10", "typ": "zahl",
+      "frage": "Liquiditätsplan für Dezember (in €): Anfangsbestand Bank {{ab|€}}. Erwartete Einzahlungen aus Umsätzen {{ein|€}}. Auszahlungen: Material {{mat|€}}, Löhne/Gehälter inkl. Nebenkosten {{pers|€}}, Darlehenstilgung und Zinsen {{darl|€}}, sonstige {{sonst|€}}.\n\nWie hoch ist der voraussichtliche **Endbestand**? (Negativ = Unterdeckung)",
+      "vars": { "ab": 180000, "ein": 1240000, "mat": 610000, "pers": 720000, "darl": 95000, "sonst": 140000 },
+      "calc": "ab + ein - mat - pers - darl - sonst",
+      "einheit": "€",
+      "loesung": -145000,
+      "erklaerung": "{{ab|€}} + {{ein|€}} − ({{mat|€}} + {{pers|€}} + {{darl|€}} + {{sonst|€}}) = **{{ab + ein - mat - pers - darl - sonst|€}}**\nBei Unterdeckung: Kontokorrentkredit nutzen, Zahlungen verschieben, Forderungen schneller einziehen (Factoring), Weihnachtsgeld-Termine prüfen."
+    },
+    {
+      "id": "ja-11", "typ": "einfach",
+      "frage": "Welche Bewertungsregel gilt nach HGB für das **Umlaufvermögen** (z. B. Vorräte) am Bilanzstichtag?",
+      "optionen": ["Strenges Niederstwertprinzip: Ist der Börsen-/Marktwert niedriger als die Anschaffungskosten, muss abgeschrieben werden.", "Höchstwertprinzip: Es ist immer der höhere Wert anzusetzen.", "Es darf nur zu Wiederbeschaffungskosten bewertet werden, auch wenn diese höher sind.", "Eine Abschreibung ist nur bei dauernder Wertminderung erlaubt."],
+      "loesung": 0,
+      "erklaerung": "Umlaufvermögen: **strenges Niederstwertprinzip** (§ 253 Abs. 4 HGB). Anlagevermögen: gemildertes Niederstwertprinzip (Pflicht nur bei voraussichtlich dauernder Wertminderung). Verbindlichkeiten: Höchstwertprinzip. Grundlage: Vorsichtsprinzip/Imparitätsprinzip."
+    },
+    {
+      "id": "ja-12", "typ": "zahl",
+      "frage": "Bilanzsumme {{bs}} Tsd. €, Anlagevermögen {{av}} Tsd. €.\n\nBerechnen Sie die **Anlageintensität**.",
+      "vars": { "bs": 10000, "av": 6200 },
+      "calc": "r2(av/bs*100)",
+      "einheit": "%",
+      "loesung": 62,
+      "erklaerung": "Anlageintensität = AV ÷ Gesamtvermögen × 100 = {{av}} ÷ {{bs}} × 100 = **{{r2(av/bs*100)|%}}**\nHoch bei Industriebetrieben (Maschinen, Gebäude) → hohe Fixkosten, geringere Anpassungsfähigkeit an Beschäftigungsschwankungen."
+    },
+    {
+      "id": "ja-13", "typ": "mehrfach",
+      "frage": "Welche Maßnahmen verbessern kurzfristig die **Liquidität** der Westpfalz Metallwerk GmbH?",
+      "optionen": ["Forderungen an eine Factoring-Gesellschaft verkaufen", "Lagerbestände abbauen (Just-in-time)", "Sale-and-lease-back einer Maschine", "Kauf einer neuen Maschine gegen Barzahlung", "Kundenzahlungsziele von 30 auf 60 Tage verlängern"],
+      "loesung": [0, 1, 2],
+      "erklaerung": "Liquidität steigt durch schnelleren Geldeingang (Factoring, Skonto für Kunden, Mahnwesen), weniger Kapitalbindung (Lagerabbau) und Freisetzung gebundenen Kapitals (Sale-and-lease-back). Barkäufe und längere Kundenziele verschlechtern sie."
+    },
+    {
+      "id": "ja-14", "typ": "zahl",
+      "frage": "Durchschnittlicher Forderungsbestand {{ford}} Tsd. €, Umsatzerlöse inkl. USt {{u}} Tsd. €.\n\nWie viele Tage beträgt das **durchschnittliche Kundenziel** (Debitorenlaufzeit, 360 Tage)? Runden Sie auf ganze Tage.",
+      "vars": { "ford": 1500, "u": 19992 },
+      "calc": "r0(ford/u*360)",
+      "einheit": "Tage",
+      "toleranz": 0,
+      "loesung": 27,
+      "erklaerung": "Umschlagshäufigkeit der Forderungen = {{u}} ÷ {{ford}} = {{r2(u/ford)}}\nKundenziel = 360 ÷ {{r2(u/ford)}} ≈ **{{r0(ford/u*360)}} Tage**\nVergleich mit dem vereinbarten Zahlungsziel zeigt die Zahlungsmoral der Kunden."
+    },
+    {
+      "id": "ja-15", "typ": "einfach",
+      "frage": "Wozu dient die **Aufbereitung** der Bilanz vor der Analyse?",
+      "optionen": ["Um Positionen nach Fristigkeit (kurz-/langfristig) zusammenzufassen und vergleichbare Kennzahlen bilden zu können", "Um den Jahresüberschuss steuerlich zu senken", "Um die Bilanz im Handelsregister zu veröffentlichen", "Um die GuV zu ersetzen"],
+      "loesung": 0,
+      "erklaerung": "Strukturbilanz: AV, Vorräte, Forderungen, flüssige Mittel / EK, lang- und kurzfristiges FK. Rückstellungen und Verbindlichkeiten werden nach Laufzeit zugeordnet, ggf. der Bilanzgewinn (Ausschüttung) ins kurzfristige FK."
+    }
+  ],
+  "karten": [
+    { "id": "ja-k01", "vorne": "Jahresabschluss nach Rechtsform", "hinten": "Alle Kaufleute: Bilanz + GuV\nKapitalgesellschaften: + Anhang; mittelgroße/große zusätzlich Lagebericht und Prüfungspflicht\nOffenlegung im Unternehmensregister" },
+    { "id": "ja-k02", "vorne": "Kapitalstruktur-Kennzahlen", "hinten": "EK-Quote = EK ÷ GK × 100\nFK-Quote = FK ÷ GK × 100\nVerschuldungsgrad = FK ÷ EK × 100" },
+    { "id": "ja-k03", "vorne": "Anlagendeckung (goldene Bilanzregel)", "hinten": "AD I = EK ÷ AV × 100\nAD II = (EK + langfr. FK) ÷ AV × 100 ≥ 100 %\nGrundsatz: Fristenkongruenz – langfristiges Vermögen langfristig finanzieren." },
+    { "id": "ja-k04", "vorne": "Liquiditätsgrade", "hinten": "I: flüssige Mittel ÷ kurzfr. FK (10–30 %)\nII: (flüssige Mittel + Forderungen) ÷ kurzfr. FK (≥ 100 %)\nIII: Umlaufvermögen ÷ kurzfr. FK (150–200 %)" },
+    { "id": "ja-k05", "vorne": "Rentabilitätskennzahlen", "hinten": "EK-Rentabilität = Gewinn ÷ EK\nGK-Rentabilität = (Gewinn + FK-Zinsen) ÷ GK\nUmsatzrentabilität = Gewinn ÷ Umsatz\nROI = Umsatzrentabilität × Kapitalumschlag" },
+    { "id": "ja-k06", "vorne": "Leverage-Effekt", "hinten": "GK-Rentabilität > FK-Zins → mehr FK erhöht die EK-Rentabilität.\nGK-Rentabilität < FK-Zins → Leverage-Risiko: EK-Rentabilität sinkt überproportional." },
+    { "id": "ja-k07", "vorne": "Cashflow – Bedeutung", "hinten": "Jahresüberschuss + AfA + Erhöhung langfr. Rückstellungen.\nMaßstab für Innenfinanzierungskraft: Investitionen, Schuldentilgung, Gewinnausschüttung ohne neue Kredite." },
+    { "id": "ja-k08", "vorne": "Bewertungsprinzipien HGB", "hinten": "Vorsichtsprinzip, Realisationsprinzip (Gewinne erst bei Umsatz), Imparitätsprinzip (Verluste schon bei Entstehung)\nUV: strenges Niederstwertprinzip\nAV: gemildertes Niederstwertprinzip\nVerbindlichkeiten: Höchstwertprinzip" },
+    { "id": "ja-k09", "vorne": "Liquiditätsplanung – Maßnahmen bei Unterdeckung", "hinten": "Kontokorrentkredit, Auszahlungen verschieben, Lieferantenziel nutzen, Forderungen einziehen/Factoring, Lagerabbau, Sale-and-lease-back, Kapitalerhöhung" },
+    { "id": "ja-k10", "vorne": "Kunden- und Lieferantenziel", "hinten": "Kundenziel = Ø Forderungen ÷ Umsatz (brutto) × 360\nLieferantenziel = Ø Verbindlichkeiten aus L+L ÷ Wareneinkauf (brutto) × 360" }
+  ]
+}

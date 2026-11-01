@@ -1,0 +1,158 @@
+{
+  "id": "ksk-investition-finanzierung",
+  "titel": "Investition, Finanzierung und Controlling",
+  "gruppe": "KSK",
+  "bereich": { "ao2024": "mvpk", "vo2002": "ksk" },
+  "beschreibung": "Statische Verfahren (Kosten-, Gewinn-, Rentabilitätsvergleich, Amortisation), Kapitalwertmethode, Finanzierungsarten, Kredite und Sicherheiten, Leasing, Factoring, Controlling-Instrumente.",
+  "fragen": [
+    {
+      "id": "if-01", "typ": "zahl",
+      "frage": "Für eine neue Kantbank stehen zwei Angebote zur Wahl. Maschine A: Anschaffung {{akA|€}}, Nutzungsdauer {{nd}} Jahre, kein Restwert, sonstige Fixkosten {{sfA|€}}/Jahr, variable Kosten {{kvA|€}}/Stück. Kalkulationszinssatz {{i|%}}.\n\nWie hoch sind die **jährlichen Fixkosten** von Maschine A (kalk. AfA + kalk. Zinsen + sonstige Fixkosten)?",
+      "vars": { "akA": 180000, "nd": 8, "sfA": 6500, "kvA": 1.9, "i": 6 },
+      "calc": "akA/nd + akA/2*i/100 + sfA",
+      "einheit": "€",
+      "loesung": 34400,
+      "erklaerung": "kalk. AfA = {{akA}} ÷ {{nd}} = {{akA/nd|€}}\nkalk. Zinsen = {{akA}} ÷ 2 × {{i|%}} = {{akA/2*i/100|€}}\n+ sonstige Fixkosten {{sfA|€}}\n= **{{akA/nd + akA/2*i/100 + sfA|€}}**"
+    },
+    {
+      "id": "if-02", "typ": "zahl",
+      "frage": "Kostenvergleich: Maschine A hat Fixkosten von {{kfA|€}}/Jahr und variable Kosten {{kvA|€}}/Stück. Maschine B: Fixkosten {{kfB|€}}, variable Kosten {{kvB|€}}/Stück.\n\nBei welcher Jahresmenge sind beide Maschinen **gleich teuer** (kritische Menge)?",
+      "vars": { "kfA": 39800, "kvA": 1.9, "kfB": 27500, "kvB": 2.6 },
+      "calc": "r((kfA - kfB)/(kvB - kvA), 4)",
+      "einheit": "Stück",
+      "toleranz": 1,
+      "loesung": 17571.4286,
+      "erklaerung": "{{kfA}} + {{kvA}} x = {{kfB}} + {{kvB}} x\n→ x = ({{kfA}} − {{kfB}}) ÷ ({{kvB}} − {{kvA}}) = **{{r((kfA - kfB)/(kvB - kvA), 4)|n0}} Stück**\nÜber dieser Menge ist Maschine A (niedrigere variable Kosten) günstiger."
+    },
+    {
+      "id": "if-03", "typ": "zahl",
+      "frage": "Eine Investition in eine Schweißroboter-Zelle kostet {{ak|€}}. Sie erwirtschaftet jährlich einen durchschnittlichen Gewinn von {{g|€}}; die jährliche Abschreibung beträgt {{afa|€}}.\n\nWie lange dauert die **Amortisation** (statisch, zwei Nachkommastellen)?",
+      "vars": { "ak": 320000, "g": 28000, "afa": 40000 },
+      "calc": "r2(ak/(g+afa))",
+      "einheit": "Jahre",
+      "loesung": 4.71,
+      "erklaerung": "Ø Rückfluss = Gewinn + Abschreibung = {{g}} + {{afa}} = {{g+afa|€}}\nAmortisationszeit = {{ak}} ÷ {{g+afa}} = **{{r2(ak/(g+afa))}} Jahre**\nIst sie kürzer als die geforderte Höchstdauer (z. B. 5 Jahre), wird investiert."
+    },
+    {
+      "id": "if-04", "typ": "zahl",
+      "frage": "Die Roboterzelle ({{ak|€}}, Restwert 0) bringt einen durchschnittlichen Gewinn von {{g|€}} pro Jahr.\n\nWie hoch ist die **Rentabilität** der Investition (Gewinn bezogen auf das durchschnittlich gebundene Kapital)?",
+      "vars": { "ak": 320000, "g": 28000 },
+      "calc": "r2(g/(ak/2)*100)",
+      "einheit": "%",
+      "loesung": 17.5,
+      "erklaerung": "Ø Kapitaleinsatz = ({{ak}} + 0) ÷ 2 = {{ak/2|€}}\nRentabilität = {{g}} ÷ {{ak/2}} × 100 = **{{r2(g/(ak/2)*100)|%}}**"
+    },
+    {
+      "id": "if-05", "typ": "zahl",
+      "frage": "Eine Investition kostet {{a0|€}} und bringt in den nächsten drei Jahren Rückflüsse von {{r1|€}}, {{r2_|€}} und {{r3|€}}. Kalkulationszinssatz {{i|%}}.\n\nBerechnen Sie den **Kapitalwert** (auf ganze Euro gerundet).",
+      "vars": { "a0": 150000, "r1": 50000, "r2_": 60000, "r3": 70000, "i": 8 },
+      "calc": "r0(-a0 + abzinsen(r1,i,1) + abzinsen(r2_,i,2) + abzinsen(r3,i,3))",
+      "einheit": "€",
+      "toleranz": 1,
+      "loesung": 3305,
+      "erklaerung": "Barwerte: {{r1}} ÷ 1,08 = {{abzinsen(r1,i,1)|€}}; {{r2_}} ÷ 1,08² = {{abzinsen(r2_,i,2)|€}}; {{r3}} ÷ 1,08³ = {{abzinsen(r3,i,3)|€}}\nSumme = {{abzinsen(r1,i,1)+abzinsen(r2_,i,2)+abzinsen(r3,i,3)|€}}\nKapitalwert = Summe − {{a0|€}} = **{{r0(-a0 + abzinsen(r1,i,1) + abzinsen(r2_,i,2) + abzinsen(r3,i,3))|€}}** → C₀ > 0: vorteilhaft."
+    },
+    {
+      "id": "if-06", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Finanzierungsarten zu.",
+      "paare": [
+        ["Aufnahme eines Bankdarlehens", "Außenfinanzierung – Fremdfinanzierung"],
+        ["Ein neuer Gesellschafter bringt Kapital in die GmbH ein", "Außenfinanzierung – Beteiligungsfinanzierung"],
+        ["Gewinne werden nicht ausgeschüttet (Thesaurierung)", "Innenfinanzierung – Selbstfinanzierung"],
+        ["Abschreibungsgegenwerte fließen über die Umsatzerlöse zurück", "Innenfinanzierung aus Abschreibungen"]
+      ],
+      "erklaerung": "Herkunft: Außen- vs. Innenfinanzierung. Rechtsstellung: Eigen- vs. Fremdkapital. Rückstellungen sind Innen- und Fremdfinanzierung zugleich."
+    },
+    {
+      "id": "if-07", "typ": "zahl",
+      "frage": "Die Westpfalz Metallwerk GmbH nimmt ein **Annuitätendarlehen** über {{k|€}} auf, Zinssatz {{i|%}}, Laufzeit {{n}} Jahre, jährliche Zahlung.\n\nWie hoch ist der **Tilgungsanteil im ersten Jahr**?",
+      "vars": { "k": 200000, "i": 5, "n": 8 },
+      "calc": "r2(annuitaet(k,i,n) - k*i/100)",
+      "einheit": "€",
+      "loesung": 20944.36,
+      "erklaerung": "Annuität = {{k}} × (1,05⁸ × 0,05) ÷ (1,05⁸ − 1) = {{r2(annuitaet(k,i,n))|€}}\nZinsen Jahr 1 = {{k}} × {{i|%}} = {{k*i/100|€}}\n**Tilgung Jahr 1** = {{r2(annuitaet(k,i,n))|€}} − {{k*i/100|€}} = {{r2(annuitaet(k,i,n) - k*i/100)|€}}\nDer Tilgungsanteil steigt jedes Jahr, der Zinsanteil sinkt."
+    },
+    {
+      "id": "if-08", "typ": "zahl",
+      "frage": "Ein **Ratendarlehen** über {{k|€}} wird in {{n}} gleichen Jahresraten getilgt; Zinssatz {{i|%}}.\n\nWie hoch ist die **Gesamtbelastung (Zins + Tilgung) im 2. Jahr**?",
+      "vars": { "k": 120000, "n": 6, "i": 4.5 },
+      "calc": "r2(k/n + (k - k/n)*i/100)",
+      "einheit": "€",
+      "loesung": 24500,
+      "erklaerung": "Tilgung je Jahr = {{k}} ÷ {{n}} = {{k/n|€}}\nRestschuld zu Beginn Jahr 2 = {{k-k/n|€}}\nZinsen Jahr 2 = {{k-k/n|€}} × {{i|%}} = {{(k-k/n)*i/100|€}}\n**Belastung Jahr 2** = {{r2(k/n + (k - k/n)*i/100)|€}}"
+    },
+    {
+      "id": "if-09", "typ": "zuordnung",
+      "frage": "Ordnen Sie die Kreditsicherheiten zu.",
+      "paare": [
+        ["Grundschuld auf dem Betriebsgrundstück", "Realsicherheit an unbeweglichen Sachen"],
+        ["Bank wird Eigentümerin der Maschine, das Unternehmen nutzt sie weiter", "Sicherungsübereignung"],
+        ["Abtretung der Kundenforderungen an die Bank", "Zession (Sicherungsabtretung)"],
+        ["Gesellschafterin haftet persönlich für den Kredit", "Bürgschaft (Personalsicherheit)"]
+      ],
+      "erklaerung": "Personalsicherheiten: Bürgschaft (selbstschuldnerisch beim Kaufmann), Garantie. Realsicherheiten: Grundschuld/Hypothek, Pfandrecht (Faustpfand), Sicherungsübereignung, Zession. Beim Faustpfand gibt der Schuldner den Besitz ab, bei der Sicherungsübereignung nicht."
+    },
+    {
+      "id": "if-10", "typ": "mehrfach",
+      "frage": "Welche Aussagen zum **Leasing** sind richtig?",
+      "optionen": ["Leasing schont die Liquidität, da keine hohe Anfangsauszahlung anfällt.", "Leasingraten sind beim Leasingnehmer i. d. R. als Aufwand absetzbar.", "Über die gesamte Laufzeit ist Leasing meist teurer als ein Kreditkauf.", "Beim Leasing wird der Leasingnehmer sofort Eigentümer.", "Wird das Leasingobjekt nach HGB dem Leasinggeber zugerechnet, erscheint es nicht in der Bilanz des Leasingnehmers."],
+      "loesung": [0, 1, 2, 4],
+      "erklaerung": "Leasing: Nutzung statt Eigentum, liquiditätsschonend, bilanzneutral (bei Zurechnung zum Leasinggeber nach HGB/Leasingerlassen), Raten als Aufwand, Anpassung an technischen Fortschritt. Nachteile: Gesamtkosten höher, langfristige Bindung."
+    },
+    {
+      "id": "if-11", "typ": "einfach",
+      "frage": "Was versteht man unter **echtem Factoring**?",
+      "optionen": ["Der Factor kauft Forderungen und übernimmt das Ausfallrisiko (Delkrederefunktion).", "Der Factor kauft Forderungen, das Ausfallrisiko bleibt beim Unternehmen.", "Die Bank gewährt einen Kontokorrentkredit.", "Ein Lieferant gewährt ein Zahlungsziel."],
+      "loesung": 0,
+      "erklaerung": "Factoring-Funktionen: **Finanzierung** (sofortige Liquidität), **Delkredere** (Risikoübernahme, nur beim echten Factoring), **Dienstleistung** (Debitorenbuchhaltung, Mahnwesen)."
+    },
+    {
+      "id": "if-12", "typ": "zahl",
+      "frage": "Ein Lieferant bietet: „Zahlbar innerhalb von {{ziel}} Tagen netto oder innerhalb von {{frist}} Tagen mit {{s|%}} Skonto.“ Rechnungsbetrag {{rb|€}}. Zur Skontonutzung müsste ein Kontokorrentkredit zu {{kk|%}} p. a. in Anspruch genommen werden.\n\nWie hoch ist der **Finanzierungsgewinn** durch Skontoausnutzung (30/360)?",
+      "vars": { "ziel": 30, "frist": 10, "s": 2, "rb": 23800, "kk": 11 },
+      "calc": "r2(rb*s/100 - zinsen(rb*(1-s/100), kk, ziel-frist))",
+      "einheit": "€",
+      "loesung": 333.46,
+      "erklaerung": "Skonto = {{rb|€}} × {{s|%}} = {{rb*s/100|€}}\nKreditbedarf = {{rb*(1-s/100)|€}} für {{ziel-frist}} Tage\nZinsen = {{rb*(1-s/100)}} × {{kk}} × {{ziel-frist}} ÷ 36.000 = {{r2(zinsen(rb*(1-s/100), kk, ziel-frist))|€}}\n**Finanzierungsgewinn** = {{r2(rb*s/100 - zinsen(rb*(1-s/100), kk, ziel-frist))|€}} → Skonto ziehen lohnt sich (Skontosatz p. a. ≈ {{s*360/(ziel-frist)|%}})."
+    },
+    {
+      "id": "if-13", "typ": "zuordnung",
+      "frage": "Ordnen Sie die **Controlling-Instrumente** zu.",
+      "paare": [
+        ["Vergleich von Plan- und Istkosten mit Ursachenanalyse", "Abweichungsanalyse (Soll-Ist-Vergleich)"],
+        ["Kennzahlen aus Finanz-, Kunden-, Prozess- und Lernperspektive", "Balanced Scorecard"],
+        ["Vergleich der eigenen Prozesse mit den Besten der Branche", "Benchmarking"],
+        ["Zielpreis vom Markt ableiten und zulässige Kosten bestimmen", "Target Costing"]
+      ],
+      "erklaerung": "Controlling = Planung, Steuerung und Kontrolle mit Informationsversorgung der Führung. Operativ: Budgets, Soll-Ist-Vergleich, DB-Rechnung. Strategisch: Balanced Scorecard, Portfolio, SWOT, Benchmarking."
+    },
+    {
+      "id": "if-14", "typ": "zahl",
+      "frage": "Für die Abteilung Vertrieb wurde ein Budget von {{plan|€}} geplant. Die Ist-Kosten betragen {{ist|€}}.\n\nWie hoch ist die **Abweichung in Prozent** vom Plan? (Überschreitung positiv, zwei Nachkommastellen)",
+      "vars": { "plan": 480000, "ist": 511200 },
+      "calc": "r2((ist - plan)/plan*100)",
+      "einheit": "%",
+      "loesung": 6.5,
+      "erklaerung": "Abweichung = Ist − Plan = {{ist-plan|€}}\nrelativ = {{ist-plan}} ÷ {{plan}} × 100 = **{{r2((ist - plan)/plan*100)|%}}** Budgetüberschreitung → Ursachen analysieren (Preis-, Mengen-, Verbrauchsabweichung)."
+    },
+    {
+      "id": "if-15", "typ": "einfach",
+      "frage": "Warum ist die **Kapitalwertmethode** den statischen Verfahren überlegen?",
+      "optionen": ["Sie berücksichtigt den zeitlichen Anfall der Zahlungen durch Abzinsung.", "Sie kommt ohne Zinssatz aus.", "Sie betrachtet nur ein durchschnittliches Jahr.", "Sie ist einfacher zu berechnen."],
+      "loesung": 0,
+      "erklaerung": "Dynamische Verfahren (Kapitalwert, interner Zinsfuß, Annuitätenmethode) betrachten die gesamte Nutzungsdauer und bewerten frühere Zahlungen höher als spätere. Statische Verfahren rechnen mit Durchschnittswerten einer Periode."
+    }
+  ],
+  "karten": [
+    { "id": "if-k01", "vorne": "Statische Investitionsrechnung – 4 Verfahren", "hinten": "Kostenvergleich (Kosten/Jahr bzw. je Stück)\nGewinnvergleich (bei unterschiedlichen Erlösen)\nRentabilitätsvergleich (Gewinn ÷ Ø Kapital)\nAmortisationsrechnung (AK ÷ Ø Rückfluss)" },
+    { "id": "if-k02", "vorne": "Kalkulatorische Kosten in der Investitionsrechnung", "hinten": "kalk. AfA = (AK − Restwert) ÷ ND\nkalk. Zinsen = (AK + Restwert) ÷ 2 × i" },
+    { "id": "if-k03", "vorne": "Kapitalwertmethode", "hinten": "C₀ = −A₀ + Σ Rückfluss_t ÷ (1+i)^t (+ abgezinster Restwert)\nC₀ > 0 → vorteilhaft; Verzinsung liegt über dem Kalkulationszins." },
+    { "id": "if-k04", "vorne": "Finanzierungsarten nach Herkunft und Rechtsstellung", "hinten": "Außen: Beteiligung (EK), Kredit (FK), Subventionen\nInnen: Selbstfinanzierung (Gewinnthesaurierung, EK), aus Abschreibungen, aus Rückstellungen (FK), Vermögensumschichtung" },
+    { "id": "if-k05", "vorne": "Annuitäten-, Raten-, Fälligkeitsdarlehen", "hinten": "Annuität: gleiche Rate, Zinsanteil sinkt, Tilgung steigt\nRaten: gleiche Tilgung, sinkende Belastung\nFälligkeit: nur Zinsen, Tilgung am Ende in einer Summe" },
+    { "id": "if-k06", "vorne": "Kreditsicherheiten", "hinten": "Personal: Bürgschaft, Garantie\nReal: Grundschuld, Hypothek, Pfand (Besitz an Bank), Sicherungsübereignung (Besitz bleibt), Zession, Eigentumsvorbehalt (Lieferant)" },
+    { "id": "if-k07", "vorne": "Leasing – Vor- und Nachteile", "hinten": "+ liquiditätsschonend, keine Kreditsicherheiten nötig, Raten als Aufwand, technisch aktuell\n− teurer als Kauf, langfristige Bindung, kein Eigentum" },
+    { "id": "if-k08", "vorne": "Factoring – drei Funktionen", "hinten": "Finanzierungsfunktion (sofort Geld, ca. 80–90 % Bevorschussung)\nDelkrederefunktion (Ausfallrisiko beim Factor – echtes Factoring)\nDienstleistungsfunktion (Buchhaltung, Mahnwesen, Inkasso)" },
+    { "id": "if-k09", "vorne": "Skonto ziehen mit Kontokorrentkredit?", "hinten": "Jahreszins des Skontos ≈ Skontosatz × 360 ÷ (Zahlungsziel − Skontofrist)\nz. B. 2 % bei 30/10 → 36 % p. a. Liegt der Kreditzins darunter → Skonto ziehen." },
+    { "id": "if-k10", "vorne": "Operatives vs. strategisches Controlling", "hinten": "**Operativ** (kurzfristig, Gewinn/Liquidität): Budgets, Soll-Ist-Vergleich, DB-Rechnung, Kennzahlen\n**Strategisch** (langfristig, Erfolgspotenziale): SWOT, Portfolio, Balanced Scorecard, Benchmarking" }
+  ]
+}
