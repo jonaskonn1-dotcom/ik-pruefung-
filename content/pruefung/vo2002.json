@@ -1,0 +1,38 @@
+{
+  "id": "vo2002",
+  "name": "Alte Verordnung 2002",
+  "kurz": "VO 2002",
+  "rechtsgrundlage": "Verordnung über die Berufsausbildung zum Industriekaufmann/zur Industriekauffrau vom 23.07.2002",
+  "bereiche": [
+    {
+      "id": "gp", "teil": 2, "kurz": "GP",
+      "name": "Geschäftsprozesse (Marketing & Absatz, Beschaffung & Bevorratung, Personal, Leistungserstellung)",
+      "dauer": 180, "gewicht": 40, "art": "schriftlich"
+    },
+    {
+      "id": "ksk", "teil": 2, "kurz": "KSK",
+      "name": "Kaufmännische Steuerung und Kontrolle",
+      "dauer": 90, "gewicht": 20, "art": "schriftlich"
+    },
+    {
+      "id": "wiso", "teil": 2, "kurz": "WiSo",
+      "name": "Wirtschafts- und Sozialkunde",
+      "dauer": 60, "gewicht": 10, "art": "schriftlich"
+    },
+    {
+      "id": "fa", "teil": 2, "kurz": "Einsatzgebiet",
+      "name": "Einsatzgebiet (Präsentation + Fachgespräch)",
+      "gewicht": 30, "art": "muendlich",
+      "teile": [
+        { "name": "Report/Präsentation", "gewicht": 30, "dauer": 15 },
+        { "name": "Fachgespräch", "gewicht": 70, "dauer": 15 }
+      ]
+    }
+  ],
+  "bestehen": [
+    "Gesamtergebnis mindestens „ausreichend“",
+    "in mindestens drei Prüfungsbereichen mindestens „ausreichend“",
+    "kein Prüfungsbereich „ungenügend“"
+  ],
+  "bestehenHinweis": "Bitte in der Verordnung von 2002 prüfen."
+}

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>IK-Prüfungstrainer</title>
+    <meta name="description" content="Lern-App zur Vorbereitung auf die IHK-Abschlussprüfung Industriekaufmann/-frau (AO 2024 und VO 2002): Quiz, Lernkarten, Formelsammlung, Fehlerkorb." />
+    <meta name="theme-color" content="#0f5c63" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0d1416" media="(prefers-color-scheme: dark)" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="IK-Trainer" />
+    <script>
+      try { var t = localStorage.getItem('ik-theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Zum Inhalt springen</a>
+    <div class="app">
+      <nav class="nav" aria-label="Hauptnavigation" id="nav"></nav>
+      <main id="main" class="main" tabindex="-1"></main>
+    </div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <noscript>Diese App benötigt JavaScript.</noscript>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

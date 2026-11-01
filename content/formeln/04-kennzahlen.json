@@ -1,0 +1,21 @@
+{
+  "titel": "Bilanz- und Erfolgskennzahlen",
+  "kurz": "Kennzahlen",
+  "formeln": [
+    { "id": "f-kz-ekq", "name": "Eigenkapitalquote", "formel": "EK-Quote = Eigenkapital ÷ Gesamtkapital × 100", "erklaerung": "Finanzielle Unabhängigkeit, Kreditwürdigkeit. Gegenstück: Fremdkapitalquote.", "tags": ["Finanzierung", "Kapitalstruktur"] },
+    { "id": "f-kz-vg", "name": "Verschuldungsgrad", "formel": "Verschuldungsgrad = Fremdkapital ÷ Eigenkapital × 100", "erklaerung": "Je höher, desto abhängiger von Gläubigern.", "tags": ["Kapitalstruktur"] },
+    { "id": "f-kz-avi", "name": "Anlageintensität", "formel": "Anlageintensität = Anlagevermögen ÷ Gesamtvermögen × 100", "erklaerung": "Vermögensstruktur; hoch bei Industriebetrieben → hohe Fixkosten, geringe Flexibilität.", "tags": ["Vermögensstruktur"] },
+    { "id": "f-kz-ad1", "name": "Anlagendeckung I", "formel": "Anlagendeckung I = Eigenkapital ÷ Anlagevermögen × 100", "erklaerung": "Goldene Bilanzregel (eng): Anlagevermögen durch Eigenkapital finanziert (≥ 100 %).", "tags": ["Goldene Bilanzregel", "Investierung"] },
+    { "id": "f-kz-ad2", "name": "Anlagendeckung II", "formel": "Anlagendeckung II = (Eigenkapital + langfristiges FK) ÷ Anlagevermögen × 100", "erklaerung": "Goldene Bilanzregel (weit): ≥ 100 %, besser AV + eiserner Bestand der Vorräte.", "tags": ["Goldene Bilanzregel"] },
+    { "id": "f-kz-liq1", "name": "Liquidität 1. Grades (Barliquidität)", "formel": "Liquidität I = flüssige Mittel ÷ kurzfristige Verbindlichkeiten × 100", "erklaerung": "Richtwert ca. 10–30 %.", "tags": ["Liquidität"] },
+    { "id": "f-kz-liq2", "name": "Liquidität 2. Grades (einzugsbedingt)", "formel": "Liquidität II = (flüssige Mittel + kurzfristige Forderungen) ÷ kurzfristige Verbindlichkeiten × 100", "erklaerung": "Richtwert ≥ 100 % („Quick Ratio“).", "beispiel": { "vars": { "fm": 60000, "ford": 190000, "kv": 220000 }, "text": "({{fm|€}} + {{ford|€}}) ÷ {{kv|€}} × 100 = {{r2((fm+ford)/kv*100)|%}}", "calc": "r2((fm+ford)/kv*100)", "ergebnis": 113.64 }, "tags": ["Liquidität"] },
+    { "id": "f-kz-liq3", "name": "Liquidität 3. Grades (umsatzbedingt)", "formel": "Liquidität III = Umlaufvermögen ÷ kurzfristige Verbindlichkeiten × 100", "erklaerung": "Richtwert ca. 150–200 %.", "tags": ["Liquidität"] },
+    { "id": "f-kz-ekr", "name": "Eigenkapitalrentabilität", "formel": "EK-Rentabilität = Gewinn ÷ Eigenkapital × 100", "erklaerung": "Verzinsung des eingesetzten Eigenkapitals. Vergleich mit Kapitalmarktzins + Risikoprämie.", "beispiel": { "vars": { "g": 180000, "ek": 1500000 }, "text": "{{g|€}} ÷ {{ek|€}} × 100 = {{g/ek*100|%}}", "calc": "g/ek*100", "ergebnis": 12 }, "tags": ["Rentabilität"] },
+    { "id": "f-kz-gkr", "name": "Gesamtkapitalrentabilität", "formel": "GK-Rentabilität = (Gewinn + Fremdkapitalzinsen) ÷ Gesamtkapital × 100", "erklaerung": "Leistungsfähigkeit des gesamten Kapitals. Leverage-Effekt: Ist GK-Rentabilität > FK-Zins, steigt die EK-Rentabilität mit zunehmendem FK-Anteil.", "tags": ["Rentabilität", "Leverage"] },
+    { "id": "f-kz-ur", "name": "Umsatzrentabilität", "formel": "Umsatzrentabilität = Gewinn ÷ Umsatzerlöse × 100", "erklaerung": "Wie viel Cent Gewinn bleiben je Euro Umsatz?", "tags": ["Rentabilität"] },
+    { "id": "f-kz-roi", "name": "Return on Investment (ROI)", "formel": "ROI = Umsatzrentabilität × Kapitalumschlag\n= (Gewinn ÷ Umsatz) × (Umsatz ÷ Gesamtkapital) × 100", "erklaerung": "DuPont-Kennzahlensystem.", "tags": ["Rentabilität", "Controlling"] },
+    { "id": "f-kz-cf", "name": "Cashflow (vereinfacht)", "formel": "Cashflow = Jahresüberschuss + Abschreibungen + Erhöhung langfr. Rückstellungen", "erklaerung": "Innenfinanzierungskraft: Mittel für Investitionen, Tilgung, Ausschüttung.", "tags": ["Finanzierung", "Innenfinanzierung"] },
+    { "id": "f-kz-wirt", "name": "Wirtschaftlichkeit", "formel": "Wirtschaftlichkeit = Leistungen ÷ Kosten (bzw. Ertrag ÷ Aufwand)", "erklaerung": "> 1 → wirtschaftlich.", "tags": ["Produktivität"] },
+    { "id": "f-kz-prod", "name": "Produktivität", "formel": "Produktivität = Ausbringungsmenge ÷ Einsatzmenge (z. B. Stück je Arbeitsstunde)", "erklaerung": "Mengenmäßige Kennzahl (Arbeits-, Maschinenproduktivität).", "tags": ["Produktivität", "Teil 1"] }
+  ]
+}

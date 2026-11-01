@@ -1,0 +1,203 @@
+{
+  "id": "ksk-kalkulation",
+  "titel": "Zuschlagskalkulation (Vor- und Nachkalkulation)",
+  "gruppe": "KSK",
+  "bereich": { "ao2024": "mvpk", "vo2002": "ksk" },
+  "beschreibung": "Kalkulationsschema, Zuschlagssätze aus dem BAB, Vorwärts-, Rückwärts- und Differenzkalkulation, Kostenüber- und -unterdeckung.",
+  "fragen": [
+    {
+      "id": "ksk-kalk-01",
+      "typ": "zahl",
+      "frage": "Die Westpfalz Metallwerk GmbH kalkuliert einen Auftrag über 400 Schaltschrankgehäuse G-200. Kalkulationsdaten:\n- Fertigungsmaterial: {{fm|€}}\n- MGK: {{mgk|%}}\n- Fertigungslöhne: {{fl|€}}\n- FGK: {{fgk|%}}\n- Sondereinzelkosten der Fertigung: {{sekf|€}}\n- VwGK: {{vw|%}}, VtGK: {{vt|%}}\n\nErmitteln Sie die **Selbstkosten** des Auftrags.",
+      "vars": { "fm": 18400, "mgk": 12, "fl": 9600, "fgk": 145, "sekf": 600, "vw": 9, "vt": 6 },
+      "calc": "r2((r2(fm*(1+mgk/100)) + r2(fl*(1+fgk/100)) + sekf) * (1+(vw+vt)/100))",
+      "einheit": "€",
+      "loesung": 51437.2,
+      "erklaerung": "**Materialkosten** = {{fm|€}} + {{mgk|%}} MGK = {{r2(fm*(1+mgk/100))|€}}\n**Fertigungskosten** = {{fl|€}} + {{fgk|%}} FGK ({{r2(fl*fgk/100)|€}}) + SEKF {{sekf|€}} = {{r2(fl*(1+fgk/100))+sekf|€}}\n**Herstellkosten** = {{r2(fm*(1+mgk/100)) + r2(fl*(1+fgk/100)) + sekf|€}}\n+ VwGK {{vw|%}} + VtGK {{vt|%}} (Basis jeweils Herstellkosten)\n**Selbstkosten** = {{r2((r2(fm*(1+mgk/100)) + r2(fl*(1+fgk/100)) + sekf) * (1+(vw+vt)/100))|€}}"
+    },
+    {
+      "id": "ksk-kalk-02",
+      "typ": "zahl",
+      "frage": "Für die Montagehalterung H-50 betragen die Selbstkosten {{sk|€}} je Stück. Kalkuliert wird mit {{g|%}} Gewinn, {{s|%}} Kundenskonto, {{p|%}} Vertreterprovision und {{rb|%}} Kundenrabatt.\n\nWie hoch ist der **Listenverkaufspreis (netto)** je Stück? Runden Sie jede Zwischenstufe auf zwei Nachkommastellen.",
+      "vars": { "sk": 12.50, "g": 8, "s": 2, "p": 3, "rb": 10 },
+      "calc": "r2(r2(r2(sk*(1+g/100)) / (1-(s+p)/100)) / (1-rb/100))",
+      "einheit": "€",
+      "loesung": 15.79,
+      "erklaerung": "Selbstkosten {{sk|€}} + {{g|%}} Gewinn = **Barverkaufspreis** {{r2(sk*(1+g/100))|€}}\nSkonto und Provision werden **im Hundert** (vom Zielverkaufspreis) gerechnet: BVP ÷ (100 % − {{s+p|%}}) = **Zielverkaufspreis** {{r2(r2(sk*(1+g/100))/(1-(s+p)/100))|€}}\nRabatt ebenfalls im Hundert: ZVP ÷ (100 % − {{rb|%}}) = **Listenverkaufspreis** {{r2(r2(r2(sk*(1+g/100)) / (1-(s+p)/100)) / (1-rb/100))|€}}"
+    },
+    {
+      "id": "ksk-kalk-03",
+      "typ": "einfach",
+      "frage": "Warum werden Kundenskonto und Kundenrabatt in der Vorwärtskalkulation „im Hundert“ (vermindertes Hundert) berechnet?",
+      "optionen": [
+        "Weil Skonto und Rabatt vom Kunden später vom höheren Preis abgezogen werden – der höhere Preis ist also die 100-%-Basis.",
+        "Weil die Umsatzsteuer bereits im Barverkaufspreis enthalten ist.",
+        "Weil Skonto und Rabatt Gemeinkosten sind, die auf die Herstellkosten bezogen werden.",
+        "Weil das Handelsgesetzbuch eine Berechnung „auf Hundert“ verbietet."
+      ],
+      "loesung": 0,
+      "erklaerung": "Der Kunde zieht Rabatt vom Listenverkaufspreis und Skonto vom Zielverkaufspreis ab. Diese höheren Preise sind die Basis (100 %). In der Vorwärtskalkulation kennt man aber nur den niedrigeren Wert, der dann 100 % − Satz entspricht → Division durch (1 − Satz)."
+    },
+    {
+      "id": "ksk-kalk-04",
+      "typ": "reihenfolge",
+      "frage": "Bringen Sie die Stufen der Vorwärtskalkulation in die richtige Reihenfolge.",
+      "elemente": [
+        "Materialkosten",
+        "Herstellkosten",
+        "Selbstkosten",
+        "Barverkaufspreis",
+        "Zielverkaufspreis",
+        "Listenverkaufspreis (netto)"
+      ],
+      "erklaerung": "MK + FK = HK → + VwGK + VtGK (+ SEKV) = SK → + Gewinn = BVP → + Skonto/Provision = ZVP → + Rabatt = LVP. Die Umsatzsteuer kommt erst danach hinzu (Bruttopreis)."
+    },
+    {
+      "id": "ksk-kalk-05",
+      "typ": "zahl",
+      "frage": "Aus dem BAB des letzten Monats liegen vor: Materialgemeinkosten {{mgkS|€}}, Fertigungsmaterial (Einzelkosten) {{fm|€}}.\n\nBerechnen Sie den **MGK-Zuschlagssatz** in Prozent.",
+      "vars": { "mgkS": 37800, "fm": 315000 },
+      "calc": "r2(mgkS / fm * 100)",
+      "einheit": "%",
+      "loesung": 12,
+      "erklaerung": "MGK-Zuschlagssatz = MGK ÷ Fertigungsmaterial × 100\n= {{mgkS|€}} ÷ {{fm|€}} × 100 = **{{r2(mgkS/fm*100)|%}}**"
+    },
+    {
+      "id": "ksk-kalk-06",
+      "typ": "zahl",
+      "frage": "Die Herstellkosten der Erzeugung (Produktion) betragen {{hke|€}}. Bei den fertigen Erzeugnissen liegt ein **Mehrbestand** von {{mehr|€}} vor, bei den unfertigen Erzeugnissen ein **Minderbestand** von {{minder|€}}.\n\nWie hoch sind die **Herstellkosten des Umsatzes**?",
+      "vars": { "hke": 820000, "mehr": 15000, "minder": 5000 },
+      "calc": "hke - mehr + minder",
+      "einheit": "€",
+      "loesung": 810000,
+      "erklaerung": "HK des Umsatzes = HK der Erzeugung − Bestandsmehrungen + Bestandsminderungen\n= {{hke|€}} − {{mehr|€}} + {{minder|€}} = **{{hke-mehr+minder|€}}**\nEin Mehrbestand wurde produziert, aber nicht verkauft → er gehört nicht zum Umsatz. Ein Minderbestand wurde aus Vorperioden verkauft → er kommt hinzu."
+    },
+    {
+      "id": "ksk-kalk-07",
+      "typ": "zahl",
+      "frage": "Die Verwaltungsgemeinkosten betragen {{vwS|€}}, die Herstellkosten des Umsatzes {{hku|€}}.\n\nBerechnen Sie den **Verwaltungsgemeinkosten-Zuschlagssatz**.",
+      "vars": { "vwS": 72900, "hku": 810000 },
+      "calc": "r2(vwS / hku * 100)",
+      "einheit": "%",
+      "loesung": 9,
+      "erklaerung": "VwGK-Zuschlagssatz = VwGK ÷ Herstellkosten des Umsatzes × 100 = {{vwS|€}} ÷ {{hku|€}} × 100 = **{{r2(vwS/hku*100)|%}}**"
+    },
+    {
+      "id": "ksk-kalk-08",
+      "typ": "einfach",
+      "frage": "In der Nachkalkulation stellt die Westpfalz Metallwerk GmbH fest, dass die mit Normalzuschlägen verrechneten Gemeinkosten **höher** sind als die tatsächlich angefallenen Ist-Gemeinkosten. Wie nennt man das?",
+      "optionen": [
+        "Kostenüberdeckung",
+        "Kostenunterdeckung",
+        "Beschäftigungsabweichung",
+        "Leerkosten"
+      ],
+      "loesung": 0,
+      "erklaerung": "Normalkosten > Istkosten → **Kostenüberdeckung** (es wurde mehr verrechnet als angefallen ist, der Gewinn ist höher als kalkuliert).\nNormalkosten < Istkosten → Kostenunterdeckung."
+    },
+    {
+      "id": "ksk-kalk-09",
+      "typ": "zahl",
+      "frage": "In der Fertigungshauptstelle sind Fertigungslöhne von {{fl|€}} angefallen. Kalkuliert wurde mit einem Normal-Zuschlagssatz von {{normal|%}} FGK. Die Ist-Fertigungsgemeinkosten betragen laut BAB {{ist|€}}.\n\nWie hoch ist die Kostenüber- bzw. -unterdeckung? Geben Sie eine **Unterdeckung negativ** an.",
+      "vars": { "fl": 50000, "normal": 140, "ist": 74500 },
+      "calc": "fl*normal/100 - ist",
+      "einheit": "€",
+      "loesung": -4500,
+      "erklaerung": "Normal-FGK = {{fl|€}} × {{normal|%}} = {{fl*normal/100|€}}\nIst-FGK = {{ist|€}}\nDifferenz = {{fl*normal/100 - ist|€}} → **Kostenunterdeckung** von {{abs(fl*normal/100 - ist)|€}} (es wurde zu wenig verrechnet)."
+    },
+    {
+      "id": "ksk-kalk-10",
+      "typ": "zahl",
+      "frage": "Ein Kunde ist bereit, für einen Rohrflansch F-80 höchstens {{lvp|€}} (Listenpreis netto) zu zahlen. Er erhält {{rb|%}} Rabatt und {{s|%}} Skonto. Die Westpfalz Metallwerk GmbH möchte {{g|%}} Gewinn erzielen.\n\nWie hoch dürfen die **Selbstkosten** je Stück höchstens sein (Rückwärtskalkulation)?",
+      "vars": { "lvp": 250, "rb": 15, "s": 2, "g": 10 },
+      "calc": "r2(r2(r2(lvp*(1-rb/100))*(1-s/100)) / (1+g/100))",
+      "einheit": "€",
+      "loesung": 189.32,
+      "erklaerung": "Listenverkaufspreis {{lvp|€}} − {{rb|%}} Rabatt = ZVP {{r2(lvp*(1-rb/100))|€}}\n− {{s|%}} Skonto = BVP {{r2(r2(lvp*(1-rb/100))*(1-s/100))|€}}\nDer Gewinn wird **auf Hundert** von den Selbstkosten berechnet, also BVP = 110 %:\nSK = BVP ÷ {{1+g/100}} = **{{r2(r2(r2(lvp*(1-rb/100))*(1-s/100)) / (1+g/100))|€}}**"
+    },
+    {
+      "id": "ksk-kalk-11",
+      "typ": "zahl",
+      "frage": "Für den Rohrflansch F-80 gilt ein Marktpreis (Listenpreis netto) von {{lvp|€}}. Kalkuliert werden {{rb|%}} Rabatt und {{s|%}} Skonto. Die Selbstkosten betragen {{sk|€}}.\n\nWie viel Prozent Gewinn (bezogen auf die Selbstkosten) werden erzielt (Differenzkalkulation)? Runden Sie auf zwei Nachkommastellen.",
+      "vars": { "lvp": 250, "rb": 15, "s": 2, "sk": 195 },
+      "calc": "r2((r2(r2(lvp*(1-rb/100))*(1-s/100)) - sk) / sk * 100)",
+      "einheit": "%",
+      "toleranz": 0.01,
+      "loesung": 6.79,
+      "erklaerung": "Von oben: {{lvp|€}} − {{rb|%}} = ZVP {{r2(lvp*(1-rb/100))|€}} − {{s|%}} = **BVP {{r2(r2(lvp*(1-rb/100))*(1-s/100))|€}}**\nVon unten: SK {{sk|€}}\nGewinn = BVP − SK = {{r2(r2(lvp*(1-rb/100))*(1-s/100)) - sk|€}}\nGewinn in % = {{r2(r2(lvp*(1-rb/100))*(1-s/100)) - sk|€}} ÷ {{sk|€}} × 100 = **{{r2((r2(r2(lvp*(1-rb/100))*(1-s/100)) - sk) / sk * 100)|%}}**"
+    },
+    {
+      "id": "ksk-kalk-12",
+      "typ": "mehrfach",
+      "frage": "Welche der folgenden Kosten sind bei der Westpfalz Metallwerk GmbH **Einzelkosten**? (Mehrere Antworten richtig)",
+      "optionen": [
+        "Edelstahlblech, das direkt in das Gehäuse G-200 eingeht",
+        "Akkordlöhne der Mitarbeiter an der Kantbank",
+        "Kosten für ein Spezialwerkzeug, das nur für einen Kundenauftrag angefertigt wird",
+        "Gehalt der Leiterin Vertrieb",
+        "Abschreibung auf die Lagerhalle",
+        "Stromkosten der gesamten Fertigung"
+      ],
+      "loesung": [0, 1, 2],
+      "erklaerung": "Einzelkosten lassen sich einem Kostenträger **direkt** zurechnen: Fertigungsmaterial, Fertigungslöhne und Sondereinzelkosten (z. B. Spezialwerkzeug für einen Auftrag).\nGehälter, Abschreibungen auf Gebäude und Strom für die gesamte Fertigung sind **Gemeinkosten** und werden über Zuschläge verrechnet."
+    },
+    {
+      "id": "ksk-kalk-13",
+      "typ": "zuordnung",
+      "frage": "Ordnen Sie jeder Gemeinkostenart die richtige **Zuschlagsgrundlage** zu.",
+      "paare": [
+        ["Materialgemeinkosten", "Fertigungsmaterial"],
+        ["Fertigungsgemeinkosten", "Fertigungslöhne"],
+        ["Verwaltungsgemeinkosten", "Herstellkosten des Umsatzes"],
+        ["Vertriebsgemeinkosten", "Herstellkosten des Umsatzes"]
+      ],
+      "erklaerung": "MGK → Fertigungsmaterial\nFGK → Fertigungslöhne (oder Maschinenstunden bei maschinenintensiver Fertigung)\nVwGK und VtGK → Herstellkosten des Umsatzes"
+    },
+    {
+      "id": "ksk-kalk-14",
+      "typ": "zahl",
+      "frage": "Die Herstellkosten eines Sonderauftrags betragen {{hk|€}}. Es gelten {{vw|%}} VwGK und {{vt|%}} VtGK. Für eine Spezialverpackung (Sondereinzelkosten des Vertriebs) fallen zusätzlich {{sekv|€}} an.\n\nErmitteln Sie die **Selbstkosten**.",
+      "vars": { "hk": 6400, "vw": 8, "vt": 5, "sekv": 120 },
+      "calc": "r2(hk*(1+(vw+vt)/100) + sekv)",
+      "einheit": "€",
+      "loesung": 7352,
+      "erklaerung": "VwGK = {{hk|€}} × {{vw|%}} = {{hk*vw/100|€}}\nVtGK = {{hk|€}} × {{vt|%}} = {{hk*vt/100|€}}\nSEKV = {{sekv|€}} (werden direkt addiert, nicht bezuschlagt)\n**Selbstkosten** = {{r2(hk*(1+(vw+vt)/100) + sekv)|€}}"
+    },
+    {
+      "id": "ksk-kalk-15",
+      "typ": "einfach",
+      "frage": "Wodurch unterscheidet sich die Nachkalkulation von der Vorkalkulation?",
+      "optionen": [
+        "Die Nachkalkulation wird nach Auftragsabschluss mit Ist-Kosten durchgeführt und dient der Kontrolle der Vorkalkulation.",
+        "Die Nachkalkulation wird vor Angebotsabgabe mit Normalzuschlägen durchgeführt.",
+        "Die Nachkalkulation berücksichtigt nur variable Kosten.",
+        "Die Nachkalkulation ermittelt den Preis der Konkurrenz."
+      ],
+      "loesung": 0,
+      "erklaerung": "**Vorkalkulation**: vor dem Auftrag, mit Normalkosten/-zuschlägen → Angebotspreis.\n**Nachkalkulation**: nach dem Auftrag, mit Ist-Kosten → Kontrolle, ob kalkulierter Gewinn erreicht wurde (Über-/Unterdeckung)."
+    },
+    {
+      "id": "ksk-kalk-16",
+      "typ": "zahl",
+      "frage": "Aus dem BAB liegen folgende Werte vor:\n- Fertigungsmaterial {{fm|€}}, MGK {{mgkS|€}}\n- Fertigungslöhne {{fl|€}}, FGK {{fgkS|€}}\n\nWie hoch sind die **Herstellkosten der Erzeugung**?",
+      "vars": { "fm": 315000, "mgkS": 37800, "fl": 160000, "fgkS": 232000 },
+      "calc": "fm + mgkS + fl + fgkS",
+      "einheit": "€",
+      "loesung": 744800,
+      "erklaerung": "Materialkosten = {{fm|€}} + {{mgkS|€}} = {{fm+mgkS|€}}\nFertigungskosten = {{fl|€}} + {{fgkS|€}} = {{fl+fgkS|€}}\n**HK der Erzeugung** = {{fm+mgkS+fl+fgkS|€}}"
+    }
+  ],
+  "karten": [
+    { "id": "ksk-kalk-k01", "vorne": "Kalkulationsschema bis zu den Herstellkosten", "hinten": "Fertigungsmaterial\n+ MGK\n= **Materialkosten**\nFertigungslöhne\n+ FGK\n+ Sondereinzelkosten der Fertigung\n= **Fertigungskosten**\nMK + FK = **Herstellkosten**" },
+    { "id": "ksk-kalk-k02", "vorne": "Kalkulationsschema von den Herstellkosten bis zum Listenverkaufspreis", "hinten": "Herstellkosten\n+ VwGK + VtGK (+ SEKV)\n= **Selbstkosten**\n+ Gewinn (auf Hundert)\n= **Barverkaufspreis**\n+ Skonto + Provision (im Hundert)\n= **Zielverkaufspreis**\n+ Rabatt (im Hundert)\n= **Listenverkaufspreis netto**" },
+    { "id": "ksk-kalk-k03", "vorne": "Formel: Gemeinkosten-Zuschlagssatz", "hinten": "Zuschlagssatz = Gemeinkosten ÷ Zuschlagsgrundlage × 100\nz. B. MGK-Satz = MGK ÷ Fertigungsmaterial × 100" },
+    { "id": "ksk-kalk-k04", "vorne": "Herstellkosten des Umsatzes – Formel", "hinten": "HK der Erzeugung\n− Mehrbestand (Bestandsmehrung)\n+ Minderbestand (Bestandsminderung)\n= **HK des Umsatzes** (Basis für VwGK- und VtGK-Zuschlag)" },
+    { "id": "ksk-kalk-k05", "vorne": "„Auf Hundert“ vs. „im Hundert“", "hinten": "**Auf Hundert**: Basis = bekannter Wert (100 %), z. B. Gewinn auf Selbstkosten → × (1 + p)\n**Im Hundert**: bekannter Wert = 100 % − p, z. B. Skonto, Rabatt → ÷ (1 − p)" },
+    { "id": "ksk-kalk-k06", "vorne": "Kostenüberdeckung / Kostenunterdeckung", "hinten": "**Überdeckung**: Normalkosten > Istkosten (Gewinn höher als kalkuliert)\n**Unterdeckung**: Normalkosten < Istkosten (Gewinn niedriger als kalkuliert)" },
+    { "id": "ksk-kalk-k07", "vorne": "Vorwärts-, Rückwärts-, Differenzkalkulation – wann welche?", "hinten": "**Vorwärts**: Kosten bekannt → Angebotspreis gesucht\n**Rückwärts**: Marktpreis vorgegeben → max. Selbstkosten/Einstandspreis gesucht\n**Differenz**: Preis und Kosten bekannt → erzielbarer Gewinn gesucht" },
+    { "id": "ksk-kalk-k08", "vorne": "Was sind Sondereinzelkosten? Beispiele", "hinten": "Einzelkosten, die nur für einen bestimmten Auftrag anfallen.\n**der Fertigung**: Spezialwerkzeug, Modelle, Lizenzgebühren\n**des Vertriebs**: Spezialverpackung, Fracht, Vertreterprovision für den Auftrag\nSie werden **nicht** bezuschlagt, sondern direkt addiert." },
+    { "id": "ksk-kalk-k09", "vorne": "Normalzuschlagssätze – warum verwendet man sie?", "hinten": "Durchschnittswerte vergangener Perioden. Sie glätten zufällige Schwankungen der Ist-Gemeinkosten und ermöglichen eine schnelle, stabile Vorkalkulation von Angeboten." },
+    { "id": "ksk-kalk-k10", "vorne": "Einzelkosten vs. Gemeinkosten", "hinten": "**Einzelkosten**: direkt dem Kostenträger zurechenbar (Fertigungsmaterial, Fertigungslöhne, Sondereinzelkosten)\n**Gemeinkosten**: nicht direkt zurechenbar, Verteilung über BAB und Zuschlagssätze (Gehälter, Mieten, Abschreibungen, Energie)" },
+    { "id": "ksk-kalk-k11", "vorne": "Wozu dient der Betriebsabrechnungsbogen (BAB)?", "hinten": "Verteilung der Gemeinkosten auf die Kostenstellen (Material, Fertigung, Verwaltung, Vertrieb) und Ermittlung der Ist-Zuschlagssätze für die Kalkulation sowie der Über-/Unterdeckung." }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "ihk-lernapp-industriekaufleute",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm test && vite build",
+    "preview": "vite preview",
+    "test": "node scripts/test-content.mjs",
+    "fill": "node scripts/fill-answers.mjs",
+    "icons": "node scripts/make-icons.mjs"
+  },
+  "devDependencies": {
+    "vite": "6.4.1"
+  }
+}

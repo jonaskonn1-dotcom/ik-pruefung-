@@ -1,0 +1,22 @@
+{
+  "ihk": "IHK Pfalz",
+  "beruf": "Industriekaufmann/-frau",
+  "pruefungsordnung": "ao2024",
+  "termine": {
+    "schriftlich": { "von": "2026-11-24", "bis": "2026-11-25", "label": "Schriftliche Prüfung Teil 2" },
+    "muendlich":   { "von": "2027-01-04", "bis": "2027-01-29", "label": "Fachaufgabe im Einsatzgebiet" }
+  },
+  "quiz": {
+    "standardAnzahl": 10,
+    "toleranzStandard": 0.01,
+    "fehlerkorbRichtigBisEntfernen": 2
+  },
+  "notenschluessel": [
+    { "ab": 92, "note": 1, "text": "sehr gut" },
+    { "ab": 81, "note": 2, "text": "gut" },
+    { "ab": 67, "note": 3, "text": "befriedigend" },
+    { "ab": 50, "note": 4, "text": "ausreichend" },
+    { "ab": 30, "note": 5, "text": "mangelhaft" },
+    { "ab": 0,  "note": 6, "text": "ungenügend" }
+  ]
+}

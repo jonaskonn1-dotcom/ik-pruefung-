@@ -1,0 +1,24 @@
+{
+  "name": "Westpfalz Metallwerk GmbH",
+  "kurz": "WPM",
+  "hinweis": "Fiktives Modellunternehmen – Ähnlichkeiten mit realen Firmen sind zufällig.",
+  "sitz": "Industriestraße 12, 67659 Kaiserslautern",
+  "rechtsform": "GmbH",
+  "mitarbeiter": 240,
+  "branche": "Metallverarbeitung (Industrie)",
+  "produkte": [
+    { "nr": "G-200", "name": "Schaltschrankgehäuse G-200", "art": "Blechgehäuse aus Edelstahl" },
+    { "nr": "H-50",  "name": "Montagehalterung H-50", "art": "gekantete Stahlhalterung, verzinkt" },
+    { "nr": "F-80",  "name": "Rohrflansch F-80", "art": "CNC-Drehteil" }
+  ],
+  "personen": [
+    { "name": "Dr. Sabine Hartmann", "rolle": "Geschäftsführerin" },
+    { "name": "Michael Becker", "rolle": "Prokurist, Leitung Rechnungswesen/Controlling" },
+    { "name": "Aylin Demir", "rolle": "Leitung Vertrieb" },
+    { "name": "Thomas Wagner", "rolle": "Leitung Personal" },
+    { "name": "Jana Schulz", "rolle": "Leitung Einkauf" },
+    { "name": "Lukas Weber", "rolle": "Auszubildender Industriekaufmann" }
+  ],
+  "lieferanten": ["Saar-Stahlhandel KG (fiktiv)", "Rhein-Blech AG (fiktiv)"],
+  "kunden": ["Elektrobau Neustadt GmbH (fiktiv)", "Anlagenbau Ludwigshafen AG (fiktiv)", "Nordic Switchgear AB, Schweden (fiktiv)"]
+}

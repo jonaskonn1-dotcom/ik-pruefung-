@@ -1,0 +1,43 @@
+{
+  "id": "ao2024",
+  "name": "Neue AO 2024 (gestreckte Abschlussprüfung)",
+  "kurz": "AO 2024",
+  "rechtsgrundlage": "IndKflAusbV vom 12.03.2024 (BGBl. 2024 I Nr. 94), in Kraft seit 01.08.2024",
+  "bereiche": [
+    {
+      "id": "t1", "teil": 1, "kurz": "Teil 1",
+      "name": "Leistungserstellung, Logistik, Beschaffung und Buchhaltung",
+      "dauer": 90, "gewicht": 25, "art": "schriftlich",
+      "hinweis": "Im 4. Ausbildungshalbjahr abgelegt – hier zum Wiederholen."
+    },
+    {
+      "id": "mvpk", "teil": 2, "kurz": "MVPK",
+      "name": "Marketing, Vertrieb, Personalwesen und kaufmännische Steuerung und Kontrolle",
+      "dauer": 150, "gewicht": 35, "art": "schriftlich",
+      "aufgaben": "ca. 60 % offene / 40 % gebundene Aufgaben"
+    },
+    {
+      "id": "wiso", "teil": 2, "kurz": "WiSo",
+      "name": "Wirtschafts- und Sozialkunde",
+      "dauer": 60, "gewicht": 10, "art": "schriftlich",
+      "aufgaben": "gebunden (maschinell auswertbar)"
+    },
+    {
+      "id": "fa", "teil": 2, "kurz": "Fachaufgabe",
+      "name": "Fachaufgabe im Einsatzgebiet",
+      "gewicht": 30, "art": "muendlich",
+      "teile": [
+        { "name": "Dokumentation", "gewicht": 10 },
+        { "name": "Präsentation (ca. 10 Min.)", "gewicht": 20, "dauer": 10 },
+        { "name": "Fachgespräch (ca. 20 Min.)", "gewicht": 70, "dauer": 20 }
+      ]
+    }
+  ],
+  "bestehen": [
+    "Gesamtergebnis aus Teil 1 und Teil 2 mindestens „ausreichend“",
+    "Ergebnis von Teil 2 mindestens „ausreichend“",
+    "mindestens zwei Prüfungsbereiche von Teil 2 mindestens „ausreichend“",
+    "kein Prüfungsbereich von Teil 2 „ungenügend“"
+  ],
+  "bestehenHinweis": "Bestehensregeln aus Sekundärquellen zusammengefasst – im Verordnungstext (§ 14 IndKflAusbV) prüfen."
+}

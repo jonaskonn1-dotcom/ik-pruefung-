@@ -1,0 +1,37 @@
+{
+  "stand": "2026",
+  "abgerufen": "2026-11-01",
+  "hinweis": "Werte ändern sich jährlich. Vor der Prüfung gegen die Quelle prüfen. In Prüfungsaufgaben gibt die AkA die benötigten Sätze in der Regel vor – dann gelten die Werte aus der Aufgabe.",
+  "quellen": {
+    "drv": "https://www.deutsche-rentenversicherung.de/DRV/DE/Ueber-uns-und-Presse/Presse/Meldungen/2025/250910-sv-rechengroessen-vo-2026",
+    "tk-rechengroessen": "https://www.tk.de/firmenkunden/versicherung/beitraege-faq-und-mehr/zahlen-und-grenzwerte/sozialversicherungs-rechengroessen-2026-2203234",
+    "tk-mindestlohn": "https://www.tk.de/firmenkunden/service/fachthemen/versicherung-fachthema/mindestlohn-2026-minijobs-und-uebergangsbereich-2203074",
+    "lexware": "https://help.lexware.de/de-form/articles/548100-neue-rechengrossen-ab-dem-01-01-2026",
+    "haufe": "https://www.haufe.de/personal/entgelt/beitragssaetze-zur-sozialversicherung_78_493770.html",
+    "aok": "https://www.aok.de/fk/rh/tools/weitere-inhalte/beitraege-und-rechengroessen-der-sozialversicherung/beitragssaetze/",
+    "finanz-de": "https://www.finanz.de/news/artikel-10559/"
+  },
+  "werte": {
+    "mindestlohn":          { "wert": 13.90,   "einheit": "€/Std.",   "label": "Gesetzlicher Mindestlohn", "quelle": "tk-mindestlohn", "hinweis": "Ab 01.01.2027: 14,60 €/Std." },
+    "minijobGrenze":        { "wert": 603,     "einheit": "€/Monat",  "label": "Geringfügigkeitsgrenze (Minijob)", "quelle": "tk-mindestlohn" },
+    "uebergangsbereichBis": { "wert": 2000,    "einheit": "€/Monat",  "label": "Übergangsbereich (Midijob) bis", "quelle": "tk-mindestlohn", "hinweis": "Übergangsbereich 603,01 € bis 2.000 €" },
+    "grundfreibetrag":      { "wert": 12348,   "einheit": "€/Jahr",   "label": "Grundfreibetrag Einkommensteuer (Ledige)", "quelle": "finanz-de" },
+    "kvAllgemein":          { "wert": 14.6,    "einheit": "%",        "label": "Krankenversicherung allgemeiner Beitragssatz", "quelle": "lexware", "hinweis": "je zur Hälfte AG/AN (7,3 %)" },
+    "kvErmaessigt":         { "wert": 14.0,    "einheit": "%",        "label": "Krankenversicherung ermäßigter Beitragssatz", "quelle": "lexware" },
+    "kvZusatzDurchschnitt": { "wert": 2.9,     "einheit": "%",        "label": "Durchschnittlicher Zusatzbeitrag KV", "quelle": "lexware", "hinweis": "Jede Krankenkasse legt ihren eigenen Zusatzbeitrag fest; hälftig AG/AN" },
+    "pv":                   { "wert": 3.6,     "einheit": "%",        "label": "Pflegeversicherung Beitragssatz", "quelle": "lexware", "hinweis": "AG 1,8 % / AN 1,8 % (Sachsen: AG 1,3 % / AN 2,3 %)" },
+    "pvKinderlosZuschlag":  { "wert": 0.6,     "einheit": "%",        "label": "PV-Zuschlag für Kinderlose (ab 23 J.)", "quelle": "lexware", "hinweis": "trägt der Arbeitnehmer allein" },
+    "pvAbschlagJeKind":     { "wert": 0.25,    "einheit": "%-Pkt.",   "label": "PV-Abschlag je Kind (2. bis 5. Kind unter 25 J.)", "quelle": "haufe", "hinweis": "nur Arbeitnehmeranteil" },
+    "pvSachsenAG":          { "wert": 1.3,     "einheit": "%",        "label": "PV-Arbeitgeberanteil in Sachsen", "quelle": "aok" },
+    "rv":                   { "wert": 18.6,    "einheit": "%",        "label": "Rentenversicherung", "quelle": "haufe", "hinweis": "je 9,3 % AG/AN" },
+    "av":                   { "wert": 2.6,     "einheit": "%",        "label": "Arbeitslosenversicherung", "quelle": "haufe", "hinweis": "je 1,3 % AG/AN" },
+    "insolvenzgeldumlage":  { "wert": 0.15,    "einheit": "%",        "label": "Insolvenzgeldumlage (nur AG)", "quelle": "aok" },
+    "bbgKvMonat":           { "wert": 5812.50, "einheit": "€/Monat",  "label": "Beitragsbemessungsgrenze KV/PV", "quelle": "drv" },
+    "bbgKvJahr":            { "wert": 69750,   "einheit": "€/Jahr",   "label": "Beitragsbemessungsgrenze KV/PV (Jahr)", "quelle": "drv" },
+    "bbgRvMonat":           { "wert": 8450,    "einheit": "€/Monat",  "label": "Beitragsbemessungsgrenze RV/AV", "quelle": "drv", "hinweis": "bundeseinheitlich" },
+    "bbgRvJahr":            { "wert": 101400,  "einheit": "€/Jahr",   "label": "Beitragsbemessungsgrenze RV/AV (Jahr)", "quelle": "drv" },
+    "jaegMonat":            { "wert": 6450,    "einheit": "€/Monat",  "label": "Versicherungspflichtgrenze KV (JAEG)", "quelle": "drv" },
+    "jaegJahr":             { "wert": 77400,   "einheit": "€/Jahr",   "label": "Versicherungspflichtgrenze KV (Jahr)", "quelle": "drv" },
+    "bezugsgroesse":        { "wert": 3955,    "einheit": "€/Monat",  "label": "Bezugsgröße", "quelle": "drv" }
+  }
+}

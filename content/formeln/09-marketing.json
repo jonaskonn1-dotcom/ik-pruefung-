@@ -1,0 +1,12 @@
+{
+  "titel": "Marketing und Vertrieb",
+  "kurz": "Marketing",
+  "formeln": [
+    { "id": "f-mk-marktanteil", "name": "Marktanteil", "formel": "Marktanteil = eigener Umsatz (Absatz) ÷ Marktvolumen × 100\nrelativer Marktanteil = eigener Marktanteil ÷ Marktanteil des größten Konkurrenten", "erklaerung": "Relativer Marktanteil ist die x-Achse der BCG-Matrix (Portfolio-Analyse).", "beispiel": { "vars": { "u": 4.2, "mv": 35 }, "text": "{{u}} Mio. € ÷ {{mv}} Mio. € × 100 = {{u/mv*100|%}}", "calc": "u/mv*100", "ergebnis": 12 }, "tags": ["Marktforschung", "Portfolio"] },
+    { "id": "f-mk-saettigung", "name": "Sättigungsgrad", "formel": "Sättigungsgrad = Marktvolumen ÷ Marktpotenzial × 100", "erklaerung": "Marktpotenzial = maximal mögliche Absatzmenge; Marktvolumen = tatsächlich realisierte Menge.", "tags": ["Marktforschung"] },
+    { "id": "f-mk-elast", "name": "Preiselastizität der Nachfrage", "formel": "Elastizität = relative Mengenänderung (%) ÷ relative Preisänderung (%)", "erklaerung": "|E| > 1 elastisch (Preissenkung erhöht Umsatz), |E| < 1 unelastisch.", "beispiel": { "vars": { "dm": 15, "dp": -5 }, "text": "{{dm|%}} ÷ ({{dp|%}}) = {{dm/dp}}", "calc": "dm/dp", "ergebnis": -3 }, "tags": ["Preispolitik", "WiSo"] },
+    { "id": "f-mk-werbeerfolg", "name": "Werbeerfolg / ROMI", "formel": "Werbeerfolg = Umsatzzuwachs (bzw. DB-Zuwachs) − Werbekosten\nWerberendite = (DB-Zuwachs − Werbekosten) ÷ Werbekosten × 100", "erklaerung": "Problem der Zurechenbarkeit (andere Einflüsse).", "tags": ["Kommunikationspolitik", "Online-Marketing"] },
+    { "id": "f-mk-conversion", "name": "Conversion Rate / Klickrate", "formel": "Conversion Rate = Abschlüsse ÷ Besucher × 100\nClick-Through-Rate (CTR) = Klicks ÷ Impressionen × 100\nCost per Click = Kosten ÷ Klicks", "erklaerung": "Kennzahlen im Online-Marketing.", "tags": ["Online-Marketing"] },
+    { "id": "f-mk-kundenwert", "name": "Kundendeckungsbeitrag (Kundenerfolgsrechnung)", "formel": "Bruttoerlöse − Erlösschmälerungen = Nettoerlöse − variable Kosten = Kunden-DB I − kundenspezifische Kosten (Besuche, Service) = Kunden-DB II", "erklaerung": "Grundlage für CRM und ABC-Kundenanalyse.", "tags": ["CRM", "Vertrieb"] }
+  ]
+}
